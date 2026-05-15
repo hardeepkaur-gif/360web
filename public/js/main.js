@@ -322,8 +322,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Audit Your Existing Pages',
     subtitle: '',
     text: 'We begin with a detailed on-site audit using tools such as Google Search Console, Screaming Frog, Ahrefs, SEMrush, and advanced SEO platforms to assess indexing, metadata, content quality, and technical signals. This allows us to identify issues that affect visibility and prioritise high-impact improvements.',
-    image: '/assets/images/compare-section-office-bg.png',
-    alt: 'On-site SEO audit with Search Console, crawl tools and analytics',
+    image: '/assets/images/on-page-seo-process-step-audit.png',
+    alt: 'Desk covered with reports, charts and sticky notes around a central banner reading AUDIT',
     points: []
   },
   {
@@ -331,8 +331,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Identify Keyword and Content Gaps',
     subtitle: '',
     text: 'We analyse your current keyword coverage against competitors to uncover missed opportunities and content gaps. This includes mapping primary and secondary keywords while addressing issues such as keyword cannibalisation.',
-    image: '/assets/images/ai-section-meeting-bg.png',
-    alt: 'Keyword gap analysis mapped against competitor search coverage',
+    image: '/assets/images/on-page-seo-process-step-keyword-gaps.png',
+    alt: 'Magnifying glass over a laptop dashboard highlighting Top Keywords with analytics metrics.',
     points: []
   },
   {
@@ -340,8 +340,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Optimise Content and Metadata',
     subtitle: '',
     text: 'We refine your page content, title tags, and meta descriptions to align with search intent and improve click-through rates. Every update follows proven metadata tagging best practices to strengthen relevance and visibility.',
-    image: '/assets/images/webdev-mockup-desktop.png',
-    alt: 'Page content title tags and meta descriptions aligned to search intent',
+    image: '/assets/images/on-page-seo-process-step-optimise-content.png',
+    alt: 'Tablet on a desk with Content headline and floating SEO icons including search, media and growth symbols',
     points: []
   },
   {
@@ -349,8 +349,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Improve Internal Links and Page Structure',
     subtitle: '',
     text: 'We restructure internal linking to create a logical flow across your website and improve crawlability. Clear page hierarchy and contextual links help distribute authority and support stronger rankings.',
-    image: '/assets/images/webdev-hero-workspace.png',
-    alt: 'Internal linking and site hierarchy plan on screen',
+    image: '/assets/images/on-page-seo-process-step-internal-links.png',
+    alt: 'Keyboard with a custom key labelled Link Building, gear icon and blue paperclips',
     points: []
   },
   {
@@ -358,8 +358,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Track Rankings, Traffic and Conversions',
     subtitle: '',
     text: 'We track keyword rankings, organic traffic, and how users actually behave on your pages, then adjust based on what is working. Insights from analytics and reporting tools guide ongoing optimisation and ensure your strategy remains effective.',
-    image: '/assets/images/webdev-split-hero-ref.png',
-    alt: 'Organic traffic conversions and rankings tracked in analytics',
+    image: '/assets/images/on-page-seo-process-step-tracking.png',
+    alt: 'Laptop on a desk displaying analytics dashboards with charts, gauges and performance metrics.',
     points: []
   },
   {
@@ -367,8 +367,8 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Clear Deliverables',
     subtitle: '',
     text: 'Every project is defined by a clear scope, with specific deliverables agreed before work begins. This ensures transparency, consistent execution, and measurable outcomes from your optimisation service.',
-    image: '/assets/images/on-page-seo-hero.png',
-    alt: 'Agreed SEO deliverables and project scope documented clearly',
+    image: '/assets/images/on-page-seo-process-step-deliverables.png',
+    alt: 'Professional at a desk with headset, dual monitors showing project dashboards and organised workspace.',
     points: []
   }
 ];
