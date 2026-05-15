@@ -11981,6 +11981,15 @@ section.section.svc-transform {
     url("/assets/images/ai-agency-vs-traditional-bg.png");
   background-position: center 36%;
 }
+
+/* SEO Audit vs Free Website Audit — professional review backdrop */
+#seo-audit-vs-free-compare .compare__photo {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("/assets/images/seo-audit-vs-free-compare-bg.png");
+  background-position: center center;
+}
+
 #seo-cw-agency-compare .seo-cw-unified-compare,
 #seo-audit-vs-free-compare .seo-cw-unified-compare {
   margin: 28px auto 24px;

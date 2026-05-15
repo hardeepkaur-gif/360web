@@ -379,8 +379,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Discovery & Business Context',
     subtitle: '',
     text: 'We understand your website, target audience, services, locations, competitors and commercial goals.',
-    image: '/assets/images/compare-section-office-bg.png',
-    alt: 'Discovery session covering website, audience, services and commercial goals',
+    image: '/assets/images/seo-audit-process-step-discovery.png',
+    alt: 'Team collaborating around a table with charts, laptop and documents in a discovery meeting',
     points: []
   },
   {
@@ -388,8 +388,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Data Collection',
     subtitle: '',
     text: 'We review Search Console, GA4, crawl data, keyword rankings, backlink tools and live SERPs.',
-    image: '/assets/images/ai-section-meeting-bg.png',
-    alt: 'SEO data collection from Search Console, GA4, crawls and rank tracking',
+    image: '/assets/images/seo-audit-process-step-data-collection.png',
+    alt: 'Presenter reviewing spreadsheets and charts on a boardroom screen with colleagues at the table',
     points: []
   },
   {
@@ -397,8 +397,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Full Website Audit',
     subtitle: '',
     text: 'We inspect technical issues, content quality, page structure, keyword targeting and competitor performance.',
-    image: '/assets/images/webdev-mockup-desktop.png',
-    alt: 'Full website SEO audit across technical, content and competitor factors',
+    image: '/assets/images/seo-audit-process-step-full-audit.png',
+    alt: 'Analyst at a desk reviewing analytics dashboards and charts on a large monitor',
     points: []
   },
   {
@@ -406,8 +406,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Priority Scoring',
     subtitle: '',
     text: 'Every issue is ranked by impact, urgency and effort. You know what to fix first.',
-    image: '/assets/images/webdev-hero-workspace.png',
-    alt: 'SEO issues prioritised by impact urgency and effort',
+    image: '/assets/images/seo-audit-process-step-priority-scoring.png',
+    alt: 'Hands holding a phone with a satisfaction-style gauge overlay suggesting scored priorities',
     points: []
   },
   {
@@ -415,8 +415,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'SEO Audit Report',
     subtitle: '',
     text: 'You receive a clear report with findings, screenshots, explanations and recommended actions.',
-    image: '/assets/images/webdev-split-hero-ref.png',
-    alt: 'SEO audit report with findings screenshots and recommendations',
+    image: '/assets/images/seo-audit-process-step-report.png',
+    alt: 'Professional at a monitor displaying REPORT with charts search and analytics style icons',
     points: []
   },
   {
@@ -424,8 +424,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Strategy Call',
     subtitle: '',
     text: 'We walk you through the audit in plain English and explain the best next steps.',
-    image: '/assets/images/social-media-hero.png',
-    alt: 'Strategy call walking through SEO audit findings and next steps',
+    image: '/assets/images/seo-audit-process-step-strategy-call.png',
+    alt: 'Consultant on a phone call at a desk with annual report charts visible on monitor',
     points: []
   },
   {
@@ -433,8 +433,8 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Implementation Support',
     subtitle: '',
     text: 'You can fix issues internally, share the report with your developer, or let our SEO team handle the execution.',
-    image: '/assets/images/on-page-seo-hero.png',
-    alt: 'SEO implementation support in-house developer handoff or agency execution',
+    image: '/assets/images/seo-audit-process-step-implementation-support.png',
+    alt: 'Person holding a phone with a SUPPORT overlay showing tools globe email and gears icons',
     points: []
   }
 ];
