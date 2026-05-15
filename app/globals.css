@@ -16682,6 +16682,17 @@ section.section.svc-transform {
   min-height: auto;
 }
 
+/* Hero H1: exactly three lines — line 1 / line 2 / remainder */
+.hero.hero--on-page-seo #seo-hero-title .hero__title-line {
+  display: block;
+}
+@media (min-width: 560px) {
+  .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
+  .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(2) {
+    white-space: nowrap;
+  }
+}
+
 .hero__on-page-seo-frame {
   position: relative;
   width: 100%;
