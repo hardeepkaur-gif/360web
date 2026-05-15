@@ -10891,9 +10891,13 @@ section.section.svc-transform {
   margin: 0;
   padding-left: 1.2rem;
   list-style: disc;
+  column-count: 2;
+  column-gap: clamp(18px, 3vw, 32px);
 }
 .svc-img-desc .svc-audit-list li {
   margin-bottom: 5px;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 .svc-img-desc .svc-audit-list li:last-child {
   margin-bottom: 0;
@@ -10927,6 +10931,9 @@ section.section.svc-transform {
     grid-template-columns: 48px 1fr;
     gap: 12px 16px;
     padding: 14px 10px;
+  }
+  .svc-img-desc .svc-audit-list {
+    column-count: 1;
   }
   .sl-desc {
     grid-column: 2 / 3;
