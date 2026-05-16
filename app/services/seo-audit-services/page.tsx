@@ -28,6 +28,34 @@ body:has(#seo-audit-hero-title) #main.svc-page {
 }
 
 @media (max-width: 767px) {
+  body:has(#seo-audit-hero-title) #main.svc-page h2 {
+    font-size: 34px !important;
+    line-height: 1.15 !important;
+  }
+  body:has(#seo-audit-hero-title) #main.svc-page h3 {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+  body:has(#seo-audit-hero-title) .hero.hero--editorial .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(28px, 6vw, 40px);
+  }
+  body:has(#seo-audit-hero-title) .hero__content {
+    display: flex;
+    flex-direction: column;
+  }
+  body:has(#seo-audit-hero-title) #seo-audit-hero-title {
+    font-size: 36px !important;
+    line-height: 1.12 !important;
+  }
+  body:has(#seo-audit-hero-title) .hero__photo.hero__photo--devices {
+    order: 10;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+  }
   body:has(#seo-audit-hero-title) .container {
     padding-left: max(16px, env(safe-area-inset-left));
     padding-right: max(16px, env(safe-area-inset-right));
