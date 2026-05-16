@@ -6,9 +6,9 @@ const SECTION_WRAP =
   "px-4 md:px-10 lg:px-20 py-8 md:py-12 lg:py-20";
 const INNER = "w-full max-w-7xl mx-auto";
 const H1 =
-  "text-[36px] leading-tight md:text-4xl lg:text-5xl font-bold";
+  "text-[32px] leading-tight md:text-4xl lg:text-5xl font-bold";
 const H2 =
-  "text-[34px] leading-tight md:text-4xl lg:text-5xl font-bold";
+  "text-[28px] leading-tight md:text-4xl lg:text-5xl font-bold";
 const H3 =
   "text-[24px] leading-tight md:text-4xl lg:text-5xl font-bold";
 const P =

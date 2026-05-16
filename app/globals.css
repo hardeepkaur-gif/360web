@@ -4371,8 +4371,16 @@ h2 {
    ============================================================ */
 @media (max-width: 767px) {
   h1 {
-    font-size: 36px !important;
+    font-size: 32px !important;
     line-height: 1.12 !important;
+  }
+  h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+  h3 {
+    font-size: 20px !important;
+    line-height: 1.2 !important;
   }
 }
 
@@ -4512,7 +4520,7 @@ h2 {
 @media (max-width: 560px) {
   .container { padding: 0 20px; }
   .section { padding: 56px 0; }
-  .hero__title { font-size: 36px; }
+  .hero__title { font-size: 32px; }
   .hero__subtitle { font-size: 16px; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { justify-content: center; }
@@ -9061,8 +9069,8 @@ h2.section__title--light .serif-coral,
 }
 
 @media (max-width: 720px) {
+  /* h2 sizing — h3.section__title (AI cost CTA) stays larger via .section__title rule below */
   h2,
-  .section__title,
   .svc-sidebar__title,
   .principles-v2__title,
   .sectors-bridge__title,
@@ -9070,6 +9078,10 @@ h2.section__title--light .serif-coral,
   .cta-banner__inner h2,
   .contact__copy h2,
   .cta-final h2.cta-final__title {
+    font-size: 28px;
+    letter-spacing: -0.02em;
+  }
+  .section__title {
     font-size: 34px;
     letter-spacing: -0.02em;
   }
@@ -9088,6 +9100,43 @@ main.svc-page {
   max-width: 100%;
   min-width: 0;
   overflow-x: clip;
+}
+
+/* Service pages — editorial + devices hero: mobile stack = chip → title → copy → CTAs → stats → visual (matches on-page SEO) */
+@media (max-width: 767px) {
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(28px, 6vw, 40px);
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__content {
+    display: flex;
+    flex-direction: column;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__photo.hero__photo--devices {
+    order: 10;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  #main.svc-page .container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  #main.svc-page img:not(.nav__logo):not(.proc-desc__img) {
+    max-width: 100%;
+    height: auto;
+  }
 }
 .svc-page h2 {
   font-size: 44px;
@@ -9112,7 +9161,7 @@ main.svc-page {
 
 @media (max-width: 560px) {
   #main.svc-page .hero.hero--editorial .hero__title {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.12;
   }
   #main.svc-page .hero.hero--editorial .hero__subtitle {
@@ -10927,7 +10976,7 @@ section.section.svc-transform {
 }
 .svc-img-title {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 800;
   line-height: 1.2;
   color: var(--white);
@@ -10992,6 +11041,12 @@ section.section.svc-transform {
     font-size: 15px;
   }
   .sl-name { font-size: 20px; }
+}
+@media (max-width: 767px) {
+  .sl-num,
+  .sl-name {
+    font-size: 18px;
+  }
 }
 @media (max-width: 560px) {
   .svc-hdr .ttl {
@@ -13540,7 +13595,7 @@ section.section.svc-transform {
 }
 @media (max-width: 560px) {
   .wp-hero-split__title {
-    font-size: 36px;
+    font-size: 32px;
     line-height: 1.12;
   }
   .wp-hero-split__lede {
@@ -17227,6 +17282,18 @@ section#ai-marketing-why-ai-powered {
   padding-right: clamp(12px, 3vw, 32px);
 }
 
+/* Desktop: copy is first in DOM for mobile stack order — pin visual left, copy right */
+@media (min-width: 969px) {
+  #seo-services-overview.seo-split .seo-split__content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  #seo-services-overview.seo-split .seo-split__visual {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
 /* —— Visual column —— */
 .seo-split__visual {
   position: relative;
@@ -17397,6 +17464,10 @@ section#ai-marketing-why-ai-powered {
   .seo-split__grid {
     grid-template-columns: 1fr;
     gap: 44px;
+  }
+  /* Id-qualified grid above beats generic `.seo-split__grid` — force single column on phones */
+  #seo-services-overview.seo-split .seo-split__grid {
+    grid-template-columns: 1fr;
   }
   .seo-split__visual {
     max-width: 520px;
@@ -18675,6 +18746,13 @@ section#ai-marketing-why-ai-powered {
 
   .seo-matters__blob--b {
     bottom: 58px;
+  }
+}
+
+/* On-page SEO: id-qualified grid stays 2 cols unless overridden — stack copy → visual (matches editorial split mobile) */
+@media (max-width: 968px) {
+  #why-on-page-seo-matters.seo-matters .seo-matters__grid {
+    grid-template-columns: 1fr;
   }
 }
 
