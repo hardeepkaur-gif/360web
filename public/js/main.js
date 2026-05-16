@@ -212,8 +212,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Audit and Discovery',
     subtitle: '',
     text: 'We assess your existing social presence, ad account history, content performance, and overall scenario before recommending anything.',
-    image: 'https://images.unsplash.com/photo-1611162616305-69e3eada7f9b?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Audit and Discovery step visual',
+    image: '/assets/images/social-media-process-audit-discovery.png',
+    alt: 'Professional using a tablet at night with floating glowing social and app icons above the screen in a modern office.',
     points: []
   },
   {
@@ -221,8 +221,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Audience and Competitor Research',
     subtitle: '',
     text: 'We define exactly who you are targeting, where they spend time, and what your closest competitors are doing well or getting wrong.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Audience and Competitor Research step visual',
+    image: '/assets/images/social-media-process-audience-competitor-research.png',
+    alt: 'Marketer at a laptop with floating social and analytics graphics—likes, charts, messaging icons, and trend lines—in a bright workspace.',
     points: []
   },
   {
@@ -230,8 +230,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Channel and Content Strategy',
     subtitle: '',
     text: 'We select the right platforms for your goals, establish content pillars, define tone of voice, and set measurable KPIs.',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Channel and Content Strategy step visual',
+    image: '/assets/images/social-media-process-channel-content-strategy.png',
+    alt: 'Workshop with a presenter gesturing at a flip chart showing a messaging-app logo and performance graph while teammates take notes at a conference table.',
     points: []
   },
   {
@@ -239,8 +239,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Content and Campaign Production',
     subtitle: '',
     text: 'Copy, creative, and campaign builds are produced in-house and submitted for approval before anything is published or launched. You see everything before it goes live.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Content and Campaign Production step visual',
+    image: '/assets/images/social-media-process-content-campaign-production.png',
+    alt: 'Laptop with a webpage on screen and colourful 3D social icons—Instagram, Twitter, Facebook, YouTube, Pinterest, Snapchat, Google, and chat bubbles—floating outward.',
     points: []
   },
   {
@@ -248,8 +248,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Launch and Active Management',
     subtitle: '',
     text: 'Campaigns go live, content published on schedule, community responses are managed daily - we handle the execution so your team does not have to.',
-    image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Launch and Active Management step visual',
+    image: '/assets/images/social-media-process-launch-active-management.png',
+    alt: 'Illustration of a smartphone with a megaphone and growth arrow on screen, surrounded by linked social platform tiles and a Social Media Marketing label.',
     points: []
   },
   {
@@ -257,8 +257,8 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Monthly Reporting and Optimisation',
     subtitle: '',
     text: 'Performance is reviewed against agreed KPIs every month. What is working gets scaled. Every report comes with a clear action list, not just numbers.',
-    image: 'https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Monthly Reporting and Optimisation step visual',
+    image: '/assets/images/social-media-process-monthly-reporting-optimisation.png',
+    alt: 'Team collaborating at a conference table while reviewing analytics dashboards with charts and graphs on a laptop screen.',
     points: []
   }
 ];
@@ -270,8 +270,8 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'Before we do anything or offer any suggestions, we listen to you. We map your current flow, identify where your time and money are wasting, assess your data quality, and understand your commercial objectives.',
-    image: '/assets/images/compare-section-office-bg.png',
-    alt: 'Consultants mapping business workflows and data context with a client',
+    image: '/assets/images/ai-consultancy-process-understand-business.png',
+    alt: 'Consultants and clients in a working session around a conference table with growth analytics on a laptop and a sticky-note planning wall.',
     points: []
   },
   {
@@ -280,8 +280,8 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A long implementation cycle is not required for every AI opportunity. We identify the highest impact, lower effort use cases in your businesses. These are opportunities that can deliver your first proof of value within weeks before the full roadmap begins.',
-    image: '/assets/images/ai-section-meeting-bg.png',
-    alt: 'Team prioritising quick-win AI use cases on a workshop board',
+    image: '/assets/images/ai-consultancy-process-quick-wins.png',
+    alt: 'Human and robotic hands reaching toward a glowing AI sphere with digital globe motifs over a blurred city skyline.',
     points: []
   },
   {
@@ -290,8 +290,8 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A prioritised practical action plan includes confirmed use cases, recommended tools or custom build specifications, delivery sequence, resource requirements, integration, consideration, and measurable success criteria. We do not believe in delivering slide decks that sit in your download folder unopened.',
-    image: '/assets/images/webdev-hero-workspace.png',
-    alt: 'Prioritised AI roadmap and delivery planning session',
+    image: '/assets/images/ai-consultancy-process-90-day-roadmap.png',
+    alt: 'Executive in a suit using a VR headset while interacting with floating dashboards, charts, and HR analytics overlays.',
     points: []
   },
   {
@@ -300,8 +300,8 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'We build and configure your AI solution. Then these solutions integrate with your existing technology stacks. Test all these properly and provide you with a proper documented outcome.',
-    image: '/assets/images/webdev-mockup-desktop.png',
-    alt: 'Implementation and integration of AI tools into existing technology stacks',
+    image: '/assets/images/ai-consultancy-process-implementation-integration.png',
+    alt: 'Two specialists collaborating at dual monitors showing a 3D AI brain model, code, and data visualisations in a high-tech workspace.',
     points: []
   },
   {
@@ -310,8 +310,8 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A deployed solution that your team does not use is just a waste of time and investment. We provide a structured approach and tailored training to your workflow and the team\'s existing capabilities. If you want proper ongoing consultancy services, we will provide these.',
-    image: '/assets/images/ai-consultancy-about-hero.png',
-    alt: 'Training and handover so client teams can run AI solutions with confidence',
+    image: '/assets/images/ai-consultancy-process-training-handover-support.png',
+    alt: 'Facilitator presenting to a seated team in a modern office with a screen showing Conversation workshop.',
     points: []
   }
 ];
@@ -445,8 +445,8 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Discovery and Content Audit',
     subtitle: '',
     text: 'We assess your current website, content gaps, and performance in Google search.',
-    image: '/assets/images/compare-section-office-bg.png',
-    alt: 'Discovery and content audit with Google Search performance review',
+    image: '/assets/images/seo-content-process-discovery-content-audit.png',
+    alt: 'Hands on a laptop with a magnifying glass and floating AUDIT graphic—checklist, documents, and analytics icons—for discovery and content audit.',
     points: []
   },
   {
@@ -481,8 +481,8 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'On-Page Optimisation',
     subtitle: '',
     text: 'We refine headings, metadata, internal links, and formatting to support crawlability and indexing.',
-    image: '/assets/images/webdev-mockup-desktop.png',
-    alt: 'On-page optimisation of headings metadata and internal links',
+    image: '/assets/images/seo-content-process-on-page-optimisation.png',
+    alt: 'Person on a laptop with neon holographic charts and gauges floating above the screen—data analysis and technical tuning.',
     points: []
   },
   {
@@ -490,8 +490,8 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Review and Iteration',
     subtitle: '',
     text: 'Content is refined based on performance, ensuring long-term improvement and alignment with search trends.',
-    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1100&q=80',
-    alt: 'Content performance review and iterative SEO improvements',
+    image: '/assets/images/seo-content-process-review-iteration.png',
+    alt: 'Wall mood board with a central REVIEW banner, charts, timelines, sticky notes, and brand cards—evaluation and iterative planning.',
     points: []
   }
 ];
