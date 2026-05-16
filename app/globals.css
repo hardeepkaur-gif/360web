@@ -9403,6 +9403,82 @@ section.section.svc-transform {
   }
 }
 
+/* Choosing agency — mobile: drop stretched column + fixed 3:4 frame so image hugs natural height (no dead space under asset) */
+@media (max-width: 992px) {
+  #ai-marketing-choose-agency .svc-transform__grid {
+    align-items: start;
+  }
+
+  #ai-marketing-choose-agency .svc-transform__visual {
+    display: block;
+    min-height: 0;
+    height: auto;
+    align-self: stretch;
+  }
+
+  #ai-marketing-choose-agency .svc-transform__photos {
+    display: block;
+    flex: none;
+    height: auto;
+    width: 100%;
+  }
+
+  #ai-marketing-choose-agency .svc-transform__photo--primary {
+    flex: none;
+    display: block;
+    aspect-ratio: unset;
+    height: auto;
+    min-height: 0;
+  }
+
+  #ai-marketing-choose-agency .svc-transform__photo--primary img {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    display: block;
+  }
+}
+
+/* Web Dev showcase — mobile: tight photo stack (drop min-height + forced 3:4 frame that leaves a blank band above the overlapping secondary image) */
+@media (max-width: 992px) {
+  #svc-webdev-transform .svc-transform__grid {
+    align-items: start;
+  }
+
+  #svc-webdev-transform .svc-transform__visual {
+    display: block;
+    min-height: 0;
+    height: auto;
+  }
+
+  #svc-webdev-transform .svc-transform__photos {
+    display: block;
+    height: auto;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  #svc-webdev-transform .svc-transform__photo--primary {
+    display: block;
+    aspect-ratio: unset;
+    height: auto;
+    min-height: 0;
+  }
+
+  #svc-webdev-transform .svc-transform__photo--primary img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #svc-webdev-transform .svc-transform__photo--secondary {
+    bottom: -6%;
+    right: -4%;
+    width: 56%;
+  }
+}
+
 .svc-transform__badge {
   position: absolute;
   top: 12%;
@@ -9572,14 +9648,23 @@ section.section.svc-transform {
 }
 @media (max-width: 992px) {
   .svc-transform__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 80px;
+  }
+  /* Consultant section only: flex column guarantees heading → copy → bullets → imagery (no grid side-by-side) */
+  #svc-ai-consultant-role .svc-transform__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(40px, 9vw, 64px);
   }
   .svc-transform__visual {
     order: 2;
     max-width: 440px;
     margin: 0 auto;
     width: 100%;
+    min-width: 0;
+    grid-column: 1 / -1;
   }
   .svc-transform__photos {
     margin-left: auto;
@@ -9588,9 +9673,109 @@ section.section.svc-transform {
   .svc-transform__content {
     order: 1;
     padding-right: 0;
+    min-width: 0;
+    grid-column: 1 / -1;
   }
   .svc-transform__badge {
     right: -4%;
+  }
+}
+
+/* AI Consultancy — “What Does an AI Consultant Do?”: mobile shell matches “What Is an AI Consultancy?” (heading → copy → bullets → single image) */
+@media (max-width: 992px) {
+  #svc-ai-consultant-role.section.svc-transform {
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding-block: clamp(52px, 8vw, 96px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #svc-ai-consultant-role.section.svc-transform::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(720px 400px at 12% 20%, rgba(26, 95, 191, 0.07), transparent 58%),
+      radial-gradient(520px 340px at 88% 78%, rgba(255, 77, 58, 0.06), transparent 55%);
+  }
+
+  #svc-ai-consultant-role .svc-transform__grid {
+    gap: clamp(28px, 5vw, 36px);
+    position: relative;
+    z-index: 1;
+  }
+
+  #svc-ai-consultant-role .svc-transform__content {
+    padding-block: 8px 0;
+  }
+
+  #svc-ai-consultant-role .svc-transform__content .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  #svc-ai-consultant-role .svc-transform__desc,
+  #svc-ai-consultant-role .svc-transform__desc--lede {
+    font-size: 16px;
+    line-height: 1.65;
+    font-weight: 500;
+    color: var(--ink-3);
+    max-width: none;
+  }
+
+  #svc-ai-consultant-role .svc-transform__list-intro {
+    margin: 1.15rem 0 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    max-width: none;
+  }
+
+  #svc-ai-consultant-role .svc-transform__bullets {
+    max-width: none;
+    margin-bottom: 6px;
+  }
+
+  #svc-ai-consultant-role .svc-transform__bullets li {
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink-3);
+    line-height: 1.65;
+  }
+
+  #svc-ai-consultant-role .svc-transform__visual-bg {
+    display: none;
+  }
+
+  #svc-ai-consultant-role .svc-transform__visual {
+    min-height: 0;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  #svc-ai-consultant-role .svc-transform__photos {
+    margin-inline: auto;
+    max-width: 100%;
+  }
+
+  #svc-ai-consultant-role .svc-transform__photo--primary {
+    aspect-ratio: 3 / 2;
+    border-radius: clamp(16px, 2.4vw, 22px);
+    border: 1px solid rgba(15, 42, 74, 0.09);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.88) inset,
+      0 28px 70px -28px rgba(15, 42, 74, 0.38);
+  }
+
+  #svc-ai-consultant-role .svc-transform__photo--primary img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #svc-ai-consultant-role .svc-transform__photo--secondary {
+    display: none;
   }
 }
 @media (max-width: 560px) {
@@ -9606,9 +9791,11 @@ section.section.svc-transform {
   }
 }
 
-/* AI Consultancy — content left, image column right */
-.svc-transform--ai .svc-transform__grid {
-  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+/* AI Consultancy — content left, image column right (not side-by-side on mobile) */
+@media (min-width: 993px) {
+  .svc-transform--ai .svc-transform__grid {
+    grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  }
 }
 
 .svc-transform--ai .svc-transform__content {
@@ -9710,12 +9897,6 @@ section.section.svc-transform {
 
 .svc-ai-trust__title-row + .svc-ai-trust__title-row {
   margin-top: 0.14em;
-}
-
-@media (min-width: 768px) {
-  .svc-ai-trust__title-row:first-child {
-    white-space: nowrap;
-  }
 }
 
 .svc-ai-trust__copy {
