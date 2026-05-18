@@ -5,18 +5,19 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 360 Web Solutions",
+  title: "Terms and Conditions | 360 Web Solutions",
   description:
-    "Contact 360 Web Solutions about SEO, PPC, GEO, social media, and web development. Send a message or find us on the map.",
+    "Terms and Conditions for 360 Smart Solutions Limited trading as 360 Web Solutions — services, fees, IP, liability, and governing law.",
   openGraph: {
-    title: "Contact Us | 360 Web Solutions",
+    title: "Terms and Conditions | 360 Web Solutions",
     description:
-      "Reach our UK team by form, email, or phone — we aim to respond within one business day.",
+      "Legal terms for engaging 360 Web Solutions: contract formation, payment, client responsibilities, cancellation, and dispute resolution.",
   },
 };
 
-export default function ContactUsPage() {
-  const html = loadLegacySiteHtml("contact-us.html");
+export default function TermsAndConditionsPage() {
+  const html = loadLegacySiteHtml("terms-and-conditions.html");
+
 
   return (
     <>

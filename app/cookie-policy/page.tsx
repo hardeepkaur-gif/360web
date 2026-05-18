@@ -5,18 +5,19 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 360 Web Solutions",
+  title: "Cookie Policy | 360 Web Solutions",
   description:
-    "Contact 360 Web Solutions about SEO, PPC, GEO, social media, and web development. Send a message or find us on the map.",
+    "How 360 Smart Solutions Limited trading as 360 Web Solutions uses cookies on 360websolutions.co.uk — categories, consent, and how to manage preferences.",
   openGraph: {
-    title: "Contact Us | 360 Web Solutions",
+    title: "Cookie Policy | 360 Web Solutions",
     description:
-      "Reach our UK team by form, email, or phone — we aim to respond within one business day.",
+      "Cookie Policy: strictly necessary, analytics, functional cookies, legal framework (PECR / UK GDPR), and browser controls.",
   },
 };
 
-export default function ContactUsPage() {
-  const html = loadLegacySiteHtml("contact-us.html");
+export default function CookiePolicyPage() {
+  const html = loadLegacySiteHtml("cookie-policy.html");
+
 
   return (
     <>

@@ -5,18 +5,19 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 360 Web Solutions",
+  title: "Intellectual Property Notice | 360 Web Solutions",
   description:
-    "Contact 360 Web Solutions about SEO, PPC, GEO, social media, and web development. Send a message or find us on the map.",
+    "Copyright, trade marks, permitted use of 360websolutions.co.uk content, client deliverables, and how to report IP concerns — 360 Smart Solutions Limited.",
   openGraph: {
-    title: "Contact Us | 360 Web Solutions",
+    title: "Intellectual Property Notice | 360 Web Solutions",
     description:
-      "Reach our UK team by form, email, or phone — we aim to respond within one business day.",
+      "IP ownership, brand use, deliverables framework, proprietary methodologies, and enforcement — England and Wales.",
   },
 };
 
-export default function ContactUsPage() {
-  const html = loadLegacySiteHtml("contact-us.html");
+export default function IntellectualPropertyNoticePage() {
+  const html = loadLegacySiteHtml("intellectual-property-notice.html");
+
 
   return (
     <>

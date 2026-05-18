@@ -5,18 +5,19 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 360 Web Solutions",
+  title: "Refund & Cancellation Policy | 360 Web Solutions",
   description:
-    "Contact 360 Web Solutions about SEO, PPC, GEO, social media, and web development. Send a message or find us on the map.",
+    "How 360 Smart Solutions Limited handles refunds and cancellations for retainer and project engagements — notice periods, deposits, and statutory rights.",
   openGraph: {
-    title: "Contact Us | 360 Web Solutions",
+    title: "Refund & Cancellation Policy | 360 Web Solutions",
     description:
-      "Reach our UK team by form, email, or phone — we aim to respond within one business day.",
+      "Cancellation notice, fees during notice, project refunds, eligibility, and how to request — England and Wales.",
   },
 };
 
-export default function ContactUsPage() {
-  const html = loadLegacySiteHtml("contact-us.html");
+export default function RefundCancellationPolicyPage() {
+  const html = loadLegacySiteHtml("refund-cancellation-policy.html");
+
 
   return (
     <>

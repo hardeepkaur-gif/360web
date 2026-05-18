@@ -1,12 +1,9 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Script from "next/script";
 
+import { loadLegacyHomeHtml } from "@/lib/loadLegacySiteChrome";
+
 export default function Home() {
-  const html = readFileSync(
-    join(process.cwd(), "content", "body.html"),
-    "utf-8"
-  );
+  const html = loadLegacyHomeHtml();
 
   return (
     <>

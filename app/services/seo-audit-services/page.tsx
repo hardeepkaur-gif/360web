@@ -1,7 +1,7 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Script from "next/script";
 import type { Metadata } from "next";
+
+import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
   title:
@@ -66,9 +66,8 @@ body:has(#seo-audit-hero-title) #main.svc-page {
 `;
 
 export default function SeoAuditServicesPage() {
-  const html = readFileSync(
-    join(process.cwd(), "content", "services", "seo-audit-services.html"),
-    "utf-8"
+  const html = loadLegacyPageWithSiteFooter(
+    "services/seo-audit-services.html",
   );
 
   return (

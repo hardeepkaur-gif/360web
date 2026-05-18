@@ -1,7 +1,7 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Script from "next/script";
 import type { Metadata } from "next";
+
+import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
   title:
@@ -16,9 +16,8 @@ export const metadata: Metadata = {
 };
 
 export default function AiMarketingAgencyPage() {
-  const html = readFileSync(
-    join(process.cwd(), "content", "services", "ai-marketing-agency.html"),
-    "utf-8"
+  const html = loadLegacyPageWithSiteFooter(
+    "services/ai-marketing-agency.html",
   );
 
   return (

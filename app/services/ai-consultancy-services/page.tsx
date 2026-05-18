@@ -1,7 +1,7 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import Script from "next/script";
 import type { Metadata } from "next";
+
+import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
   title: "AI Consultancy Services UK | 360 Web Solutions — Strategy & Implementation",
@@ -15,9 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function AiConsultancyServicesPage() {
-  const html = readFileSync(
-    join(process.cwd(), "content", "services", "ai-consultancy-services.html"),
-    "utf-8"
+  const html = loadLegacyPageWithSiteFooter(
+    "services/ai-consultancy-services.html",
   );
 
   return (

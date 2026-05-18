@@ -1823,4 +1823,32 @@ window.activateStep = function (i) {
       tryOpenTawk(0);
     });
   }
+
+  /* ---------- Privacy Policy page: sidebar active section (IntersectionObserver) ---------- */
+  var privacyRoot = document.querySelector('.privacy-policy-page');
+  if (privacyRoot && 'IntersectionObserver' in window) {
+    var ppSections = privacyRoot.querySelectorAll('.content section[id]');
+    var ppLinks = privacyRoot.querySelectorAll('.sidebar nav a[href^="#"]');
+    if (ppSections.length && ppLinks.length) {
+      var ppObs = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            ppLinks.forEach(function (l) {
+              l.classList.remove('active');
+            });
+            var href = '#' + entry.target.id;
+            var targetLink = Array.from(ppLinks).find(function (l) {
+              return l.getAttribute('href') === href;
+            });
+            if (targetLink) targetLink.classList.add('active');
+          });
+        },
+        { rootMargin: '-20% 0px -70% 0px' }
+      );
+      ppSections.forEach(function (s) {
+        ppObs.observe(s);
+      });
+    }
+  }
 })();

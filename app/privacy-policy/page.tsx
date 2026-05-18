@@ -5,18 +5,18 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Contact Us | 360 Web Solutions",
+  title: "Privacy Policy | 360 Web Solutions",
   description:
-    "Contact 360 Web Solutions about SEO, PPC, GEO, social media, and web development. Send a message or find us on the map.",
+    "How 360 Web Solutions Ltd collects, uses, and protects personal data — UK GDPR aligned, plain English.",
   openGraph: {
-    title: "Contact Us | 360 Web Solutions",
+    title: "Privacy Policy | 360 Web Solutions",
     description:
-      "Reach our UK team by form, email, or phone — we aim to respond within one business day.",
+      "Privacy Policy for 360 Web Solutions: data collection, legal basis, retention, cookies, your rights, and how to contact us.",
   },
 };
 
-export default function ContactUsPage() {
-  const html = loadLegacySiteHtml("contact-us.html");
+export default function PrivacyPolicyPage() {
+  const html = loadLegacySiteHtml("privacy-policy.html");
 
   return (
     <>
