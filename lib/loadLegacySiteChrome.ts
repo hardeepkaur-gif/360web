@@ -23,6 +23,11 @@ function siteFooter(): string {
   return footerCache;
 }
 
+/** Same footer/livechat/to-top append as service routes (`loadLegacyPageWithSiteFooter`). */
+function withSiteFooter(markupBeforeFooter: string): string {
+  return `${markupBeforeFooter.trimEnd()}\n${siteFooter()}`;
+}
+
 /**
  * Compose legacy HTML: shared announcement/nav + inner fragment + shared footer/livechat.
  * `innerFilename` must live under `content/` (e.g. `privacy-policy.html`).
@@ -30,14 +35,14 @@ function siteFooter(): string {
 export function loadLegacySiteHtml(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
-  return siteHeader() + inner + siteFooter();
+  return withSiteFooter(siteHeader() + inner);
 }
 
 /** Home page: same chrome as policy/contact (`site-header` + main-only body + site-footer). */
 export function loadLegacyHomeHtml(): string {
   const innerPath = join(ROOT, "content", "body.html");
-  const inner = readFileSync(innerPath, "utf-8").trimEnd();
-  return `${siteHeader()}${inner}\n${siteFooter()}`;
+  const inner = readFileSync(innerPath, "utf-8");
+  return withSiteFooter(siteHeader() + inner);
 }
 
 /**
@@ -46,6 +51,6 @@ export function loadLegacyHomeHtml(): string {
  */
 export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
-  const inner = readFileSync(innerPath, "utf-8").trimEnd();
-  return `${inner}\n${siteFooter()}`;
+  const inner = readFileSync(innerPath, "utf-8");
+  return withSiteFooter(inner);
 }
