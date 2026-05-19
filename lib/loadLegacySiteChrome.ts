@@ -9,7 +9,12 @@ const FOOTER_PATH = join(ROOT, "content/partials/site-footer.html");
 let headerCache: string | undefined;
 let footerCache: string | undefined;
 
+const isDev = process.env.NODE_ENV === "development";
+
 function siteHeader(): string {
+  if (isDev) {
+    return readFileSync(HEADER_PATH, "utf-8");
+  }
   if (headerCache === undefined) {
     headerCache = readFileSync(HEADER_PATH, "utf-8");
   }
@@ -17,6 +22,9 @@ function siteHeader(): string {
 }
 
 function siteFooter(): string {
+  if (isDev) {
+    return readFileSync(FOOTER_PATH, "utf-8");
+  }
   if (footerCache === undefined) {
     footerCache = readFileSync(FOOTER_PATH, "utf-8");
   }
