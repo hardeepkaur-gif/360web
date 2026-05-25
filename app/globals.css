@@ -20727,7 +20727,7 @@ section#what-we-do.about-what-we-do {
    About Us page
    ============================================================ */
 .about-page-hero__media {
-  background-image: url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2200&q=82");
+  background-image: url("/assets/images/about-hero-bg.png");
 }
 .about-page-hero__eyebrow {
   margin: 0 0 12px;
@@ -20784,12 +20784,12 @@ section#what-we-do.about-what-we-do {
 }
 .about-intro__title {
   margin: 0 0 20px;
-  max-width: 14ch;
+  max-width: none;
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.5vw, 48px);
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
   color: var(--navy);
 }
 .about-intro__lede {
