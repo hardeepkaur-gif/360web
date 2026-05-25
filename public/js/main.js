@@ -104,7 +104,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Discovery and Planning',
     subtitle: '',
     text: 'We start by understanding your business, your market, and what your website needs to achieve commercially. This is where competitors are reviewed, and the project scope is locked in writing before anything else moves forward.',
-    image: '/assets/images/webdev-hero-workspace.png',
+    image: '/assets/images/webdev-process-discovery.png',
     alt: 'Discovery and planning workshop for commercial website goals',
     points: []
   },
@@ -113,7 +113,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Site Structure and UX Mapping',
     subtitle: '',
     text: 'Before any design work begins, we map the full site architecture. This covers page hierarchy, internal linking structure, URL logic, and user journey flows. Every decision at this stage is made with both search engine crawlability and user behaviour in mind.',
-    image: '/assets/images/webdev-mockup-desktop.png',
+    image: '/assets/images/webdev-process-ux-mapping.png',
     alt: 'Site architecture and UX journey mapping across key pages',
     points: []
   },
@@ -122,7 +122,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Design Direction',
     subtitle: '',
     text: 'We establish the visual language of your website based on your brand, your audience, and your conversion goals.',
-    image: '/assets/images/webdev-split-hero-ref.png',
+    image: '/assets/images/webdev-process-design-direction.png',
     alt: 'Design direction workshop for brand-aligned conversion-focused pages',
     points: []
   },
@@ -131,7 +131,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Development and Build',
     subtitle: '',
     text: 'Your website is built by our in-house development team to agreed specifications. Code is written clean, performance is prioritised from the first build, and the CMS is configured so your team can manage content without technical dependency.',
-    image: '/assets/images/webdev-mockup-mobile.png',
+    image: '/assets/images/webdev-process-development-build.png',
     alt: 'In-house development and CMS build for responsive performance-focused websites',
     points: []
   },
@@ -140,7 +140,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Testing and Pre-Launch QA',
     subtitle: '',
     text: 'Every page is tested across devices, browsers, and screen sizes before launch. We check load speed, mobile responsiveness, form functionality, tracking setup, redirect logic, and technical SEO implementation as standard.',
-    image: '/assets/images/compare-section-office-bg.png',
+    image: '/assets/images/webdev-process-qa-testing.png',
     alt: 'Pre-launch QA testing for performance, tracking, and technical SEO',
     points: []
   },
@@ -149,7 +149,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Launch and Ongoing Support',
     subtitle: '',
     text: 'Launch is managed by the same team that built the site. Once live, we remain available for support, performance monitoring, and ongoing development as your business grows for long-term user satisfaction.',
-    image: '/assets/images/ai-section-meeting-bg.png',
+    image: '/assets/images/webdev-process-launch-support.png',
     alt: 'Post-launch support and ongoing development planning session',
     points: []
   }
