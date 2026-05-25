@@ -20726,6 +20726,21 @@ section#what-we-do.about-what-we-do {
 /* ============================================================
    About Us page
    ============================================================ */
+
+/* Uniform 70px top/bottom padding on all about page sections */
+.about-page > section,
+.about-page .about-intro,
+.about-page .about-system,
+.about-page .about-diff,
+.about-page .about-what-we-do,
+.about-page .about-sectors-stripes,
+.about-page .about-founder,
+.about-page .about-stand-for,
+.about-page .about-page-cta {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
 .about-page-hero__media {
   background-image: url("/assets/images/about-hero-bg.png");
 }
