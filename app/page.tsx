@@ -24,6 +24,7 @@ export default function Home() {
         href="/assets/images/hero-home-digital-agency.webp"
         as="image"
         type="image/webp"
+        fetchPriority="high"
       />
       <div
         className="site-legacy"

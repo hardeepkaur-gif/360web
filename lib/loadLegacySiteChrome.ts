@@ -11,6 +11,15 @@ let footerCache: string | undefined;
 
 const isDev = process.env.NODE_ENV === "development";
 
+function minifyHtml(html: string): string {
+  return html
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/\n\s*\n/g, "\n")
+    .replace(/^\s+/gm, "")
+    .replace(/\s{2,}/g, " ")
+    .replace(/>\s+</g, "><");
+}
+
 function siteHeader(): string {
   if (isDev) {
     return readFileSync(HEADER_PATH, "utf-8");
@@ -31,32 +40,23 @@ function siteFooter(): string {
   return footerCache;
 }
 
-/** Same footer/livechat/to-top append as service routes (`loadLegacyPageWithSiteFooter`). */
 function withSiteFooter(markupBeforeFooter: string): string {
-  return `${markupBeforeFooter.trimEnd()}\n${siteFooter()}`;
+  const raw = `${markupBeforeFooter.trimEnd()}\n${siteFooter()}`;
+  return isDev ? raw : minifyHtml(raw);
 }
 
-/**
- * Compose legacy HTML: shared announcement/nav + inner fragment + shared footer/livechat.
- * `innerFilename` must live under `content/` (e.g. `privacy-policy.html`).
- */
 export function loadLegacySiteHtml(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
   return withSiteFooter(siteHeader() + inner);
 }
 
-/** Home page: same chrome as policy/contact (`site-header` + main-only body + site-footer). */
 export function loadLegacyHomeHtml(): string {
   const innerPath = join(ROOT, "content", "body.html");
   const inner = readFileSync(innerPath, "utf-8");
   return withSiteFooter(siteHeader() + inner);
 }
 
-/**
- * Page HTML that already includes its own header/nav; append the canonical site footer
- * (same file as the home page footer: `content/partials/site-footer.html`).
- */
 export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
