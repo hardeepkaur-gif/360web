@@ -104,7 +104,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Discovery and Planning',
     subtitle: '',
     text: 'We start by understanding your business, your market, and what your website needs to achieve commercially. This is where competitors are reviewed, and the project scope is locked in writing before anything else moves forward.',
-    image: '/assets/images/webdev-process-discovery.png',
+    image: '/assets/images/webdev-process-discovery.webp',
     alt: 'Discovery and planning workshop for commercial website goals',
     points: []
   },
@@ -113,7 +113,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Site Structure and UX Mapping',
     subtitle: '',
     text: 'Before any design work begins, we map the full site architecture. This covers page hierarchy, internal linking structure, URL logic, and user journey flows. Every decision at this stage is made with both search engine crawlability and user behaviour in mind.',
-    image: '/assets/images/webdev-process-ux-mapping.png',
+    image: '/assets/images/webdev-process-ux-mapping.webp',
     alt: 'Site architecture and UX journey mapping across key pages',
     points: []
   },
@@ -122,7 +122,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Design Direction',
     subtitle: '',
     text: 'We establish the visual language of your website based on your brand, your audience, and your conversion goals.',
-    image: '/assets/images/webdev-process-design-direction.png',
+    image: '/assets/images/webdev-process-design-direction.webp',
     alt: 'Design direction workshop for brand-aligned conversion-focused pages',
     points: []
   },
@@ -131,7 +131,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Development and Build',
     subtitle: '',
     text: 'Your website is built by our in-house development team to agreed specifications. Code is written clean, performance is prioritised from the first build, and the CMS is configured so your team can manage content without technical dependency.',
-    image: '/assets/images/webdev-process-development-build.png',
+    image: '/assets/images/webdev-process-development-build.webp',
     alt: 'In-house development and CMS build for responsive performance-focused websites',
     points: []
   },
@@ -140,7 +140,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Testing and Pre-Launch QA',
     subtitle: '',
     text: 'Every page is tested across devices, browsers, and screen sizes before launch. We check load speed, mobile responsiveness, form functionality, tracking setup, redirect logic, and technical SEO implementation as standard.',
-    image: '/assets/images/webdev-process-qa-testing.png',
+    image: '/assets/images/webdev-process-qa-testing.webp',
     alt: 'Pre-launch QA testing for performance, tracking, and technical SEO',
     points: []
   },
@@ -149,7 +149,7 @@ const WEBDEV_PROCESS_STEPS = [
     title: 'Launch and Ongoing Support',
     subtitle: '',
     text: 'Launch is managed by the same team that built the site. Once live, we remain available for support, performance monitoring, and ongoing development as your business grows for long-term user satisfaction.',
-    image: '/assets/images/webdev-process-launch-support.png',
+    image: '/assets/images/webdev-process-launch-support.webp',
     alt: 'Post-launch support and ongoing development planning session',
     points: []
   }
@@ -161,7 +161,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'Scope & technical discovery',
     subtitle: 'Goals, stack, and constraints captured before development starts.',
     text: 'We workshop your content model, integrations, hosting, SEO baseline, and any migration risks. You get a written scope, sitemap draft, and a timeline tied to realistic milestones.',
-    image: '/assets/images/webdev-hero-workspace.png',
+    image: '/assets/images/webdev-hero-workspace.webp',
     alt: 'WordPress discovery workshop reviewing scope, CMS goals, and technical constraints'
   },
   {
@@ -169,7 +169,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'IA, templates & editor UX',
     subtitle: 'Structure and editing flows designed for your team — not a generic theme.',
     text: 'We map page types, blocks, fields, and navigation so content editors get a predictable experience. Technical SEO and Core Web Vitals are considered at template level, not bolted on later.',
-    image: '/assets/images/webdev-mockup-desktop.png',
+    image: '/assets/images/webdev-mockup-desktop.webp',
     alt: 'Information architecture and WordPress template planning on desktop'
   },
   {
@@ -177,7 +177,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'Custom theme & component build',
     subtitle: 'Lean PHP, clean CSS/JS, and components you can reuse.',
     text: 'We build a bespoke theme (or headless front-end if agreed) with reusable components, accessible markup, and no unnecessary plugin weight. Output is optimised for speed and maintainability.',
-    image: '/assets/images/webdev-split-hero-ref.png',
+    image: '/assets/images/webdev-split-hero-ref.webp',
     alt: 'Custom WordPress theme and component development'
   },
   {
@@ -185,7 +185,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'Integrations & technical SEO',
     subtitle: 'Forms, CRMs, analytics, and schema wired without fragility.',
     text: 'Plugins and APIs are integrated with staging checks, error handling, and documentation. Redirects, canonicals, XML sitemaps, and structured data are validated before content goes live.',
-    image: '/assets/images/compare-section-office-bg.png',
+    image: '/assets/images/compare-section-office-bg.webp',
     alt: 'WordPress integrations and technical SEO implementation'
   },
   {
@@ -193,7 +193,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'Staging QA & handover',
     subtitle: 'Devices, speed, and editor training before launch.',
     text: 'Cross-browser and device QA, Core Web Vitals checks, security hardening, and backup strategy. Your team gets hands-on CMS training so day-two updates do not depend on us.',
-    image: '/assets/images/ai-section-meeting-bg.png',
+    image: '/assets/images/ai-section-meeting-bg.webp',
     alt: 'QA testing and WordPress CMS training session'
   },
   {
@@ -201,7 +201,7 @@ const WORDPRESS_PROCESS_STEPS = [
     title: 'Launch & ongoing care',
     subtitle: 'The same engineers stay with you after go-live.',
     text: 'Controlled launch with monitoring, patching, and improvements on a schedule that fits your risk profile. We prioritise stability, uptime, and measurable speed — not endless change requests.',
-    image: '/assets/images/webdev-mockup-mobile.png',
+    image: '/assets/images/webdev-mockup-mobile.webp',
     alt: 'Post-launch WordPress maintenance and monitoring'
   }
 ];
@@ -212,7 +212,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Audit and Discovery',
     subtitle: '',
     text: 'We assess your existing social presence, ad account history, content performance, and overall scenario before recommending anything.',
-    image: '/assets/images/social-media-process-audit-discovery.png',
+    image: '/assets/images/social-media-process-audit-discovery.webp',
     alt: 'Professional using a tablet at night with floating glowing social and app icons above the screen in a modern office.',
     points: []
   },
@@ -221,7 +221,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Audience and Competitor Research',
     subtitle: '',
     text: 'We define exactly who you are targeting, where they spend time, and what your closest competitors are doing well or getting wrong.',
-    image: '/assets/images/social-media-process-audience-competitor-research.png',
+    image: '/assets/images/social-media-process-audience-competitor-research.webp',
     alt: 'Marketer at a laptop with floating social and analytics graphics—likes, charts, messaging icons, and trend lines—in a bright workspace.',
     points: []
   },
@@ -230,7 +230,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Channel and Content Strategy',
     subtitle: '',
     text: 'We select the right platforms for your goals, establish content pillars, define tone of voice, and set measurable KPIs.',
-    image: '/assets/images/social-media-process-channel-content-strategy.png',
+    image: '/assets/images/social-media-process-channel-content-strategy.webp',
     alt: 'Workshop with a presenter gesturing at a flip chart showing a messaging-app logo and performance graph while teammates take notes at a conference table.',
     points: []
   },
@@ -239,7 +239,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Content and Campaign Production',
     subtitle: '',
     text: 'Copy, creative, and campaign builds are produced in-house and submitted for approval before anything is published or launched. You see everything before it goes live.',
-    image: '/assets/images/social-media-process-content-campaign-production.png',
+    image: '/assets/images/social-media-process-content-campaign-production.webp',
     alt: 'Laptop with a webpage on screen and colourful 3D social icons—Instagram, Twitter, Facebook, YouTube, Pinterest, Snapchat, Google, and chat bubbles—floating outward.',
     points: []
   },
@@ -248,7 +248,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Launch and Active Management',
     subtitle: '',
     text: 'Campaigns go live, content published on schedule, community responses are managed daily - we handle the execution so your team does not have to.',
-    image: '/assets/images/social-media-process-launch-active-management.png',
+    image: '/assets/images/social-media-process-launch-active-management.webp',
     alt: 'Illustration of a smartphone with a megaphone and growth arrow on screen, surrounded by linked social platform tiles and a Social Media Marketing label.',
     points: []
   },
@@ -257,7 +257,7 @@ const SOCIAL_PROCESS_STEPS = [
     title: 'Monthly Reporting and Optimisation',
     subtitle: '',
     text: 'Performance is reviewed against agreed KPIs every month. What is working gets scaled. Every report comes with a clear action list, not just numbers.',
-    image: '/assets/images/social-media-process-monthly-reporting-optimisation.png',
+    image: '/assets/images/social-media-process-monthly-reporting-optimisation.webp',
     alt: 'Team collaborating at a conference table while reviewing analytics dashboards with charts and graphs on a laptop screen.',
     points: []
   }
@@ -270,7 +270,7 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'Before we do anything or offer any suggestions, we listen to you. We map your current flow, identify where your time and money are wasting, assess your data quality, and understand your commercial objectives.',
-    image: '/assets/images/ai-consultancy-process-understand-business.png',
+    image: '/assets/images/ai-consultancy-process-understand-business.webp',
     alt: 'Consultants and clients in a working session around a conference table with growth analytics on a laptop and a sticky-note planning wall.',
     points: []
   },
@@ -280,7 +280,7 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A long implementation cycle is not required for every AI opportunity. We identify the highest impact, lower effort use cases in your businesses. These are opportunities that can deliver your first proof of value within weeks before the full roadmap begins.',
-    image: '/assets/images/ai-consultancy-process-quick-wins.png',
+    image: '/assets/images/ai-consultancy-process-quick-wins.webp',
     alt: 'Human and robotic hands reaching toward a glowing AI sphere with digital globe motifs over a blurred city skyline.',
     points: []
   },
@@ -290,7 +290,7 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A prioritised practical action plan includes confirmed use cases, recommended tools or custom build specifications, delivery sequence, resource requirements, integration, consideration, and measurable success criteria. We do not believe in delivering slide decks that sit in your download folder unopened.',
-    image: '/assets/images/ai-consultancy-process-90-day-roadmap.png',
+    image: '/assets/images/ai-consultancy-process-90-day-roadmap.webp',
     alt: 'Executive in a suit using a VR headset while interacting with floating dashboards, charts, and HR analytics overlays.',
     points: []
   },
@@ -300,7 +300,7 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'We build and configure your AI solution. Then these solutions integrate with your existing technology stacks. Test all these properly and provide you with a proper documented outcome.',
-    image: '/assets/images/ai-consultancy-process-implementation-integration.png',
+    image: '/assets/images/ai-consultancy-process-implementation-integration.webp',
     alt: 'Two specialists collaborating at dual monitors showing a 3D AI brain model, code, and data visualisations in a high-tech workspace.',
     points: []
   },
@@ -310,7 +310,7 @@ const AI_CONSULTANCY_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A deployed solution that your team does not use is just a waste of time and investment. We provide a structured approach and tailored training to your workflow and the team\'s existing capabilities. If you want proper ongoing consultancy services, we will provide these.',
-    image: '/assets/images/ai-consultancy-process-training-handover-support.png',
+    image: '/assets/images/ai-consultancy-process-training-handover-support.webp',
     alt: 'Facilitator presenting to a seated team in a modern office with a screen showing Conversation workshop.',
     points: []
   }
@@ -322,7 +322,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Audit Your Existing Pages',
     subtitle: '',
     text: 'We begin with a detailed on-site audit using tools such as Google Search Console, Screaming Frog, Ahrefs, SEMrush, and advanced SEO platforms to assess indexing, metadata, content quality, and technical signals. This allows us to identify issues that affect visibility and prioritise high-impact improvements.',
-    image: '/assets/images/on-page-seo-process-step-audit.png',
+    image: '/assets/images/on-page-seo-process-step-audit.webp',
     alt: 'Desk covered with reports, charts and sticky notes around a central banner reading AUDIT',
     points: []
   },
@@ -331,7 +331,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Identify Keyword and Content Gaps',
     subtitle: '',
     text: 'We analyse your current keyword coverage against competitors to uncover missed opportunities and content gaps. This includes mapping primary and secondary keywords while addressing issues such as keyword cannibalisation.',
-    image: '/assets/images/on-page-seo-process-step-keyword-gaps.png',
+    image: '/assets/images/on-page-seo-process-step-keyword-gaps.webp',
     alt: 'Magnifying glass over a laptop dashboard highlighting Top Keywords with analytics metrics.',
     points: []
   },
@@ -340,7 +340,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Optimise Content and Metadata',
     subtitle: '',
     text: 'We refine your page content, title tags, and meta descriptions to align with search intent and improve click-through rates. Every update follows proven metadata tagging best practices to strengthen relevance and visibility.',
-    image: '/assets/images/on-page-seo-process-step-optimise-content.png',
+    image: '/assets/images/on-page-seo-process-step-optimise-content.webp',
     alt: 'Tablet on a desk with Content headline and floating SEO icons including search, media and growth symbols',
     points: []
   },
@@ -349,7 +349,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Improve Internal Links and Page Structure',
     subtitle: '',
     text: 'We restructure internal linking to create a logical flow across your website and improve crawlability. Clear page hierarchy and contextual links help distribute authority and support stronger rankings.',
-    image: '/assets/images/on-page-seo-process-step-internal-links.png',
+    image: '/assets/images/on-page-seo-process-step-internal-links.webp',
     alt: 'Keyboard with a custom key labelled Link Building, gear icon and blue paperclips',
     points: []
   },
@@ -358,7 +358,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Track Rankings, Traffic and Conversions',
     subtitle: '',
     text: 'We track keyword rankings, organic traffic, and how users actually behave on your pages, then adjust based on what is working. Insights from analytics and reporting tools guide ongoing optimisation and ensure your strategy remains effective.',
-    image: '/assets/images/on-page-seo-process-step-tracking.png',
+    image: '/assets/images/on-page-seo-process-step-tracking.webp',
     alt: 'Laptop on a desk displaying analytics dashboards with charts, gauges and performance metrics.',
     points: []
   },
@@ -367,7 +367,7 @@ const ONPAGE_SEO_PROCESS_STEPS = [
     title: 'Clear Deliverables',
     subtitle: '',
     text: 'Every project is defined by a clear scope, with specific deliverables agreed before work begins. This ensures transparency, consistent execution, and measurable outcomes from your optimisation service.',
-    image: '/assets/images/on-page-seo-process-step-deliverables.png',
+    image: '/assets/images/on-page-seo-process-step-deliverables.webp',
     alt: 'Professional at a desk with headset, dual monitors showing project dashboards and organised workspace.',
     points: []
   }
@@ -379,7 +379,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Discovery & Business Context',
     subtitle: '',
     text: 'We understand your website, target audience, services, locations, competitors and commercial goals.',
-    image: '/assets/images/seo-audit-process-step-discovery.png',
+    image: '/assets/images/seo-audit-process-step-discovery.webp',
     alt: 'Team collaborating around a table with charts, laptop and documents in a discovery meeting',
     points: []
   },
@@ -388,7 +388,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Data Collection',
     subtitle: '',
     text: 'We review Search Console, GA4, crawl data, keyword rankings, backlink tools and live SERPs.',
-    image: '/assets/images/seo-audit-process-step-data-collection.png',
+    image: '/assets/images/seo-audit-process-step-data-collection.webp',
     alt: 'Presenter reviewing spreadsheets and charts on a boardroom screen with colleagues at the table',
     points: []
   },
@@ -397,7 +397,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Full Website Audit',
     subtitle: '',
     text: 'We inspect technical issues, content quality, page structure, keyword targeting and competitor performance.',
-    image: '/assets/images/seo-audit-process-step-full-audit.png',
+    image: '/assets/images/seo-audit-process-step-full-audit.webp',
     alt: 'Analyst at a desk reviewing analytics dashboards and charts on a large monitor',
     points: []
   },
@@ -406,7 +406,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Priority Scoring',
     subtitle: '',
     text: 'Every issue is ranked by impact, urgency and effort. You know what to fix first.',
-    image: '/assets/images/seo-audit-process-step-priority-scoring.png',
+    image: '/assets/images/seo-audit-process-step-priority-scoring.webp',
     alt: 'Hands holding a phone with a satisfaction-style gauge overlay suggesting scored priorities',
     points: []
   },
@@ -415,7 +415,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'SEO Audit Report',
     subtitle: '',
     text: 'You receive a clear report with findings, screenshots, explanations and recommended actions.',
-    image: '/assets/images/seo-audit-process-step-report.png',
+    image: '/assets/images/seo-audit-process-step-report.webp',
     alt: 'Professional at a monitor displaying REPORT with charts search and analytics style icons',
     points: []
   },
@@ -424,7 +424,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Strategy Call',
     subtitle: '',
     text: 'We walk you through the audit in plain English and explain the best next steps.',
-    image: '/assets/images/seo-audit-process-step-strategy-call.png',
+    image: '/assets/images/seo-audit-process-step-strategy-call.webp',
     alt: 'Consultant on a phone call at a desk with annual report charts visible on monitor',
     points: []
   },
@@ -433,7 +433,7 @@ const SEO_AUDIT_PROCESS_STEPS = [
     title: 'Implementation Support',
     subtitle: '',
     text: 'You can fix issues internally, share the report with your developer, or let our SEO team handle the execution.',
-    image: '/assets/images/seo-audit-process-step-implementation-support.png',
+    image: '/assets/images/seo-audit-process-step-implementation-support.webp',
     alt: 'Person holding a phone with a SUPPORT overlay showing tools globe email and gears icons',
     points: []
   }
@@ -445,7 +445,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Discovery and Content Audit',
     subtitle: '',
     text: 'We assess your current website, content gaps, and performance in Google search.',
-    image: '/assets/images/seo-content-process-discovery-content-audit.png',
+    image: '/assets/images/seo-content-process-discovery-content-audit.webp',
     alt: 'Hands on a laptop with a magnifying glass and floating AUDIT graphic—checklist, documents, and analytics icons—for discovery and content audit.',
     points: []
   },
@@ -481,7 +481,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'On-Page Optimisation',
     subtitle: '',
     text: 'We refine headings, metadata, internal links, and formatting to support crawlability and indexing.',
-    image: '/assets/images/seo-content-process-on-page-optimisation.png',
+    image: '/assets/images/seo-content-process-on-page-optimisation.webp',
     alt: 'Person on a laptop with neon holographic charts and gauges floating above the screen—data analysis and technical tuning.',
     points: []
   },
@@ -490,7 +490,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Review and Iteration',
     subtitle: '',
     text: 'Content is refined based on performance, ensuring long-term improvement and alignment with search trends.',
-    image: '/assets/images/seo-content-process-review-iteration.png',
+    image: '/assets/images/seo-content-process-review-iteration.webp',
     alt: 'Wall mood board with a central REVIEW banner, charts, timelines, sticky notes, and brand cards—evaluation and iterative planning.',
     points: []
   }
@@ -503,7 +503,7 @@ const AI_MARKETING_PROCESS_STEPS = [
     subtitle: '',
     text:
       'A large amount of marketing data is processed using AI. You can identify search trends and audience behaviour more quickly with it. Also, AI helps marketers with best-performing campaigns and growth opportunities.',
-    image: '/assets/images/ai-marketing-process-ai-insights.png',
+    image: '/assets/images/ai-marketing-process-ai-insights.webp',
     alt: 'Marketer at a laptop interacting with floating holographic dashboards and AI-labelled analytics panels.',
     points: []
   },
@@ -513,7 +513,7 @@ const AI_MARKETING_PROCESS_STEPS = [
     subtitle: '',
     text:
       "Human strategists ensure that the campaign matches the brand's tone and long-term growth objectives. They decide the audience that matters, the brand positioning and where the budget should be allocated.",
-    image: '/assets/images/ai-marketing-process-human-strategy.png',
+    image: '/assets/images/ai-marketing-process-human-strategy.webp',
     alt: 'Strategist in a VR headset exploring holographic business dashboards and charts.',
     points: []
   },
@@ -523,7 +523,7 @@ const AI_MARKETING_PROCESS_STEPS = [
     subtitle: '',
     text:
       'AI speeds up marketing after the strategy is done through automation. It helps in content briefs and ad variations. This helps the marketing team to launch faster and scale productivity.',
-    image: '/assets/images/ai-marketing-process-ai-assisted-execution.png',
+    image: '/assets/images/ai-marketing-process-ai-assisted-execution.webp',
     alt: 'Professional holding a glowing phone projecting an AI Assistant graphic with gears and prompt workflow labels.',
     points: []
   },
@@ -533,7 +533,7 @@ const AI_MARKETING_PROCESS_STEPS = [
     subtitle: '',
     text:
       'The marketing team analyses performance and makes the final optimisation. They review campaign quality, adjust messaging, refine targeting, improve landing pages, etc., all to interpret customer behaviour based on real business context.',
-    image: '/assets/images/ai-marketing-process-performance-optimisation.png',
+    image: '/assets/images/ai-marketing-process-performance-optimisation.webp',
     alt: 'Professional at a laptop with glowing holographic charts connected to a central AI icon.',
     points: []
   },
@@ -543,7 +543,7 @@ const AI_MARKETING_PROCESS_STEPS = [
     subtitle: '',
     text:
       'AI helps the marketing team track rankings and conversions. After interpreting the data, humans analyse the factors impacting performance. This data is then turned into an actionable strategy for growth and future development.',
-    image: '/assets/images/ai-marketing-process-reporting.png',
+    image: '/assets/images/ai-marketing-process-reporting.webp',
     alt: 'Laptop showing analytics dashboards with a robotic hand resting on the keyboard.',
     points: []
   }
@@ -1226,18 +1226,52 @@ window.activateStep = function (i) {
           '<span>Sending...</span>';
       }
 
-      setTimeout(() => {
-        const inner = form.querySelector('.contact__form-inner');
-        if (inner) inner.style.display = 'none';
-        else {
-          form.querySelectorAll(
-            'input, select, textarea, .chips, .contact__form-head, .form-field, .form-row, .contact__submit'
-          ).forEach(el => {
-            el.style.display = 'none';
-          });
-        }
-        if (successEl) successEl.hidden = false;
-      }, 900);
+      const checkedServices = Array.from(form.querySelectorAll('.chips input[type="checkbox"]:checked'))
+        .map(cb => cb.closest('label')?.textContent?.trim() || '')
+        .filter(Boolean)
+        .join(', ');
+
+      const formData = new FormData(form);
+      const payload = {
+        formType: 'booking',
+        name: (formData.get('name') || '').toString().trim(),
+        email: (formData.get('email') || '').toString().trim(),
+        phone: (formData.get('phone') || '').toString().trim(),
+        company: (formData.get('company') || '').toString().trim(),
+        preferred_date: (formData.get('preferred_date') || '').toString().trim(),
+        preferred_time: (formData.get('preferred_time') || '').toString().trim(),
+        industry: (formData.get('industry') || '').toString().trim(),
+        services: checkedServices,
+        timezone: (formData.get('timezone') || '').toString().trim(),
+        message: (formData.get('message') || '').toString().trim(),
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(res => res.json())
+        .then(() => {
+          const inner = form.querySelector('.contact__form-inner');
+          if (inner) inner.style.display = 'none';
+          else {
+            form.querySelectorAll(
+              'input, select, textarea, .chips, .contact__form-head, .form-field, .form-row, .contact__submit'
+            ).forEach(el => {
+              el.style.display = 'none';
+            });
+          }
+          if (successEl) successEl.hidden = false;
+        })
+        .catch(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '';
+            submitBtn.innerHTML = 'Request this session';
+          }
+          alert('Something went wrong. Please try again or call us directly.');
+        });
     });
 
     form.querySelectorAll('input, select, textarea').forEach(input => {
@@ -1278,10 +1312,33 @@ window.activateStep = function (i) {
         simpleSubmitBtn.textContent = 'Sending...';
       }
 
-      setTimeout(() => {
-        simpleInner.style.display = 'none';
-        simpleSuccess.hidden = false;
-      }, 650);
+      const simplePayload = {
+        formType: 'contact',
+        name: nameEl.value.trim(),
+        email: emailEl.value.trim(),
+        phone: (simpleForm.querySelector('input[name="phone"]')?.value || '').trim(),
+        company: (simpleForm.querySelector('input[name="company"]')?.value || '').trim(),
+        message: msgEl.value.trim(),
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(simplePayload),
+      })
+        .then(res => res.json())
+        .then(() => {
+          simpleInner.style.display = 'none';
+          simpleSuccess.hidden = false;
+        })
+        .catch(() => {
+          if (simpleSubmitBtn) {
+            simpleSubmitBtn.disabled = false;
+            simpleSubmitBtn.style.opacity = '';
+            simpleSubmitBtn.textContent = 'Send message';
+          }
+          alert('Something went wrong. Please try again or call us directly.');
+        });
     });
 
     simpleForm.querySelectorAll('input, textarea').forEach(input => {

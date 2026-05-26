@@ -4,6 +4,9 @@ import "./globals.css";
 
 const tawkEmbedSrc = process.env.NEXT_PUBLIC_TAWK_EMBED_SRC?.trim();
 
+const FONT_URL =
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap";
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
@@ -32,15 +35,22 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Sora:wght@500;600;700;800;900&family=Syne:wght@400;600;700;800&display=swap"
-          rel="stylesheet"
+          rel="dns-prefetch"
+          href="https://images.unsplash.com"
         />
+        <link rel="preload" href={FONT_URL} as="style" />
+        <link href={FONT_URL} rel="stylesheet" media="print" />
+        <noscript>
+          <link href={FONT_URL} rel="stylesheet" />
+        </noscript>
       </head>
       <body>
+        <Script id="font-swap" strategy="afterInteractive">{`
+document.querySelectorAll('link[media="print"][href*="fonts.googleapis"]').forEach(function(l){l.media="all"});
+`}</Script>
         {children}
         {tawkEmbedSrc ? (
           <>
-            {/* Run before embed: hides Tawk&apos;s stock bubble — open via branded panel / Tawk_API.maximize() */}
             <Script id="tawk-api-hide-default" strategy="beforeInteractive">{`
 var Tawk_API = window.Tawk_API || {};
 window.Tawk_API = Tawk_API;

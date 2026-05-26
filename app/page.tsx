@@ -19,6 +19,12 @@ export default function Home() {
 
   return (
     <>
+      <link
+        rel="preload"
+        href="/assets/images/hero-home-digital-agency.webp"
+        as="image"
+        type="image/webp"
+      />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
