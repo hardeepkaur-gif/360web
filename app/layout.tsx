@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 
-const tawkEmbedSrc = process.env.NEXT_PUBLIC_TAWK_EMBED_SRC?.trim();
+const tawkEmbedSrc = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
 
 const inter = Inter({
   subsets: ["latin"],
