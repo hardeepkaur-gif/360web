@@ -17,7 +17,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Discover',
     subtitle: 'We find the gaps your competitors are already exploiting.',
     text: 'A full audit of your current digital presence — SEO health, paid account structure, content gaps, technical issues, and competitive landscape.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-discover.webp',
     alt: 'Team reviewing audit analytics to discover competitor gaps',
     points: [
       'Complete digital health audit',
@@ -31,7 +31,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Strategise',
     subtitle: 'A plan built for your market — not pulled from a shared template folder.',
     text: 'We build a bespoke strategy from what the audit tells us — channel mix, budget allocation, content plan, and 90-day targets. No two 360 strategies look the same, because no two businesses face the same market.',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-strategise.webp',
     alt: 'Strategist mapping a bespoke channel mix, budget allocation and 90-day targets',
     points: [
       'Bespoke channel mix & budget allocation',
@@ -45,7 +45,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Execute',
     subtitle: 'Built and launched in weeks, not quarters.',
     text: 'Every channel, every tactic, every asset is built and launched with precision by the specialist who owns that channel.',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-execute.webp',
     alt: 'Specialists collaborating to build and launch campaigns with precision',
     points: [
       'Specialist-led channel execution',
@@ -59,7 +59,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Measure',
     subtitle: 'Real numbers, in real time — not a summary 30 days after the fact.',
     text: 'Your live dashboard goes live before your campaigns do. Every metric that matters to your business — traffic, leads, revenue, ROAS, CAC — is tracked in one place, visible to you at any time, without having to ask.',
-    image: 'https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-measure.webp',
     alt: 'Live real-time marketing performance dashboard with revenue and ROAS metrics',
     points: [
       'Real-time performance dashboard',
@@ -73,7 +73,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Optimise',
     subtitle: 'We act on the data the same week it changes.',
     text: "Continuous optimisation is not a phrase in our proposal — it's a standing instruction. When something underperforms, we adjust before the next report. When something overperforms, we reallocate the budget to compound it.",
-    image: 'https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-optimise.webp',
     alt: 'Analyst iterating weekly on campaign data to optimise performance',
     points: [
       'Weekly optimisation cycles',
@@ -87,7 +87,7 @@ const DEFAULT_PROCESS_STEPS = [
     title: 'Scale',
     subtitle: 'When the foundations are right, growth accelerates.',
     text: 'Once the system is performing, we push harder — more budget, more channels, more markets. Scaling without a solid foundation just burns money faster. Scaling with one turns a working campaign into a compounding growth engine.',
-    image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-scale.webp',
     alt: 'Growth chart showing compounding scale across multiple channels and markets',
     points: [
       'Multi-market expansion',
@@ -454,7 +454,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Keyword Research and Planning',
     subtitle: '',
     text: 'We identify target keywords, analyse competitors, and define content priorities based on search demand.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-process-discover.webp',
     alt: 'Keyword research and content planning based on search demand',
     points: []
   },
@@ -463,7 +463,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'Content Strategy and Briefing',
     subtitle: '',
     text: 'Each page is mapped with clear structure, intent, and SEO requirements before writing begins.',
-    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-smm-process-research.webp',
     alt: 'Content strategy and editorial briefing before writing',
     points: []
   },
@@ -472,7 +472,7 @@ const SEO_CONTENT_WRITING_PROCESS_STEPS = [
     title: 'SEO Content Writing',
     subtitle: '',
     text: 'Content is written for clarity, rankings, and engagement, aligned with technical SEO principles.',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1100&q=80',
+    image: '/assets/images/home-smm-process-content.webp',
     alt: 'SEO content writing for clarity and rankings',
     points: []
   },

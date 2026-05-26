@@ -48,9 +48,9 @@
   --radius-xl: 28px;
   --btn-radius: 15px;
 
-  --font-display: "Sora", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-stat-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-display: var(--font-sora), "Sora", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-stat-serif: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
 
   /* H2 gradient text (high contrast, readable on light backgrounds) */
   --grad-text-h2: linear-gradient(108deg, #061222 0%, #0F2A4A 28%, #1A5FBF 72%, #4C8AE0 100%);
@@ -22145,5 +22145,4 @@ section.about-system.section {
   }
 }
 
-@tailwind utilities;
 

@@ -1,11 +1,30 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Sora, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
 const tawkEmbedSrc = process.env.NEXT_PUBLIC_TAWK_EMBED_SRC?.trim();
 
-const FONT_URL =
-  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap";
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const sora = Sora({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  variable: "--font-sora",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  display: "swap",
+  variable: "--font-playfair",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -26,28 +45,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${sora.variable} ${playfair.variable}`}
+    >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="dns-prefetch"
-          href="https://images.unsplash.com"
-        />
-        <link rel="preload" href={FONT_URL} as="style" />
-        <link href={FONT_URL} rel="stylesheet" media="print" />
-        <noscript>
-          <link href={FONT_URL} rel="stylesheet" />
-        </noscript>
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
       </head>
       <body>
-        <Script id="font-swap" strategy="afterInteractive">{`
-document.querySelectorAll('link[media="print"][href*="fonts.googleapis"]').forEach(function(l){l.media="all"});
-`}</Script>
         {children}
         {tawkEmbedSrc ? (
           <>

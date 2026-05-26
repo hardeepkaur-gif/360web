@@ -26,7 +26,8 @@ export default function PrivacyPolicyPage() {
         dangerouslySetInnerHTML={{ __html: html }}
         suppressHydrationWarning
       />
-      <Script src="/js/main.js" strategy="afterInteractive" />
+      <Script src="/js/main.js" strategy="lazyOnload" />
     </>
   );
 }
+
