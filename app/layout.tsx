@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Playfair_Display } from "next/font/google";
 import Script from "next/script";
-import "./globals.css";
+import "./critical.css";
 
 const tawkEmbedSrc = process.env.NEXT_PUBLIC_TAWK_EMBED_SRC?.trim();
 
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     "UK digital marketing agency for SEO, PPC, app development, and web design, with 24/7 support and full-service growth strategies that cover every angle.",
   other: { "theme-color": "#0F2A4A" },
-  icons: { icon: "/assets/images/logo.png" },
+  icons: { icon: "/assets/images/logo.webp" },
 };
 
 export default function RootLayout({
@@ -50,7 +50,11 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable} ${playfair.variable}`}
     >
       <head>
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href="/css/main.css";l.media="print";l.onload=function(){this.media="all"};document.head.appendChild(l)})()`,
+          }}
+        />
       </head>
       <body>
         {children}
