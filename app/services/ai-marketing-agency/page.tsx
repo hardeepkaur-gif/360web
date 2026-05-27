@@ -4,14 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title:
-    "AI Marketing Agency UK | 360 Web Solutions — Campaigns, Content & Growth",
+  title: "Human-Led AI Marketing Agency | 360 Web Solutions UK",
   description:
-    "UK AI marketing agency: brand-safe creative, paid and organic campaigns, and measurable growth — with AI used where it genuinely improves speed and performance.",
+    "Our AI-powered marketing agency is a blend of human strategy and AI automation. Designed for UK businesses, we help them drive better results across SEO, paid media, and content automation.",
   openGraph: {
-    title: "AI Marketing Agency UK | 360 Web Solutions",
+    title: "Human-Led AI Marketing Agency | 360 Web Solutions UK",
     description:
-      "Strategy-led marketing with practical AI — not gimmicks. Talk to our UK in-house team about your next campaign.",
+      "Our AI-powered marketing agency is a blend of human strategy and AI automation. Designed for UK businesses, we help them drive better results across SEO, paid media, and content automation.",
   },
 };
 

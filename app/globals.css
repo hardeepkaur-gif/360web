@@ -14423,16 +14423,63 @@ section.section.svc-transform {
   flex-direction: column;
   min-height: 0;
 }
-.contact-live-chat__chrome {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  min-height: 340px;
+
+.contact-showcase {
+  margin: 0;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(15, 42, 74, 0.1);
   box-shadow: 0 14px 44px rgba(15, 42, 74, 0.12);
   background: var(--white);
+  height: 72%;
+  min-height: 0;
+}
+
+.contact-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.contact-live-chat__chrome {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 42, 74, 0.1);
+  box-shadow: 0 14px 44px rgba(15, 42, 74, 0.12);
+  background: var(--white);
+}
+.contact-live-chat__open {
+  width: 100%;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+.contact-live-chat__composer-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px dashed rgba(15, 42, 74, 0.18);
+  border-radius: 12px;
+  background: var(--soft);
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.contact-live-chat__composer-trigger:hover {
+  border-color: rgba(26, 95, 191, 0.35);
+  background: rgba(26, 95, 191, 0.06);
+  box-shadow: 0 4px 16px rgba(15, 42, 74, 0.06);
+}
+.contact-live-chat__composer-trigger svg {
+  flex-shrink: 0;
+  color: var(--coral);
 }
 .contact-live-chat__header {
   display: flex;
@@ -14507,16 +14554,10 @@ section.section.svc-transform {
   background: var(--white);
   border-top: 1px solid rgba(15, 42, 74, 0.08);
 }
-.contact-live-chat__composer-row {
-  border: 1px dashed rgba(15, 42, 74, 0.18);
-  border-radius: 12px;
-  padding: 12px 14px;
-  margin-bottom: 10px;
-  background: var(--soft);
-}
 .contact-live-chat__composer-faux {
   font-size: 14px;
   color: var(--ink-4);
+  text-align: left;
 }
 .contact-live-chat__quick {
   display: flex;
@@ -14628,7 +14669,7 @@ section.section.svc-transform {
 }
 @media (max-width: 900px) {
   .contact-live-chat__chrome {
-    min-height: 300px;
+    min-height: 360px;
   }
   .contact-page-map__grid {
     grid-template-columns: 1fr;

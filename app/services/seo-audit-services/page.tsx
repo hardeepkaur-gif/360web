@@ -4,14 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title:
-    "SEO Audit Services UK | 360 Web Solutions — Technical & Content Analysis",
+  title: "SEO Audit Services UK | Technical, Content & AI SEO Audits",
   description:
-    "In-depth SEO audits for UK businesses. We analyse technical health, on-page signals, and search visibility — then hand you a clear, prioritised roadmap.",
+    "Get a professional SEO audit for your website. We review technical SEO, content, rankings, backlinks, competitors and AI visibility with clear action points.",
   openGraph: {
-    title: "SEO Audit Services UK | 360 Web Solutions",
+    title: "SEO Audit Services UK | Technical, Content & AI SEO Audits",
     description:
-      "Technical, on-page, and off-site analysis with actionable fixes — not a PDF dump. UK in-house specialists.",
+      "Get a professional SEO audit for your website. We review technical SEO, content, rankings, backlinks, competitors and AI visibility with clear action points.",
   },
 };
 

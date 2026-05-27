@@ -4,15 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title:
-    "SEO Content Writing Services UK | 360 Web Solutions — Search‑First Copy",
+  title: "SEO Content Writing Services for Google & AI Search",
   description:
-    "SEO content writing for UK businesses — search intent, structure, and E‑E‑A‑T signals built in. Briefs, drafts, and optimisation from an in-house editorial team.",
+    "Rank faster with SEO content built on keyword research, search intent, and topical authority. Written by an in-house UK team so pages rank on Google and get cited by tools like ChatGPT and Perplexity.",
   openGraph: {
-    title:
-      "SEO Content Writing Services UK | 360 Web Solutions",
+    title: "SEO Content Writing Services for Google & AI Search",
     description:
-      "Copy and long-form content engineered for rankings and conversions — not filler. UK in-house writers and SEO specialists.",
+      "Rank faster with SEO content built on keyword research, search intent, and topical authority. Written by an in-house UK team so pages rank on Google and get cited by tools like ChatGPT and Perplexity.",
   },
 };
 

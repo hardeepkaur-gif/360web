@@ -4,15 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title:
-    "On-Page SEO Services UK | 360 Web Solutions — Higher Rankings, Qualified Traffic",
+  title: "On-Page SEO Services UK | 360 Web Solutions",
   description:
-    "On-page SEO services for UK businesses. We optimise content, metadata, internal links and technical elements so your pages rank higher and convert qualified traffic.",
+    "Struggling to rank in UK search results? 360 Web Solutions delivers on-page SEO services that improves rankings and traffic with full in-house execution",
   openGraph: {
-    title:
-      "On-Page SEO Services UK | 360 Web Solutions",
+    title: "On-Page SEO Services UK | 360 Web Solutions",
     description:
-      "Improve your content, metadata, internal links and technical SEO so pages rank higher, attract qualified traffic, and convert consistently.",
+      "Struggling to rank in UK search results? 360 Web Solutions delivers on-page SEO services that improves rankings and traffic with full in-house execution",
   },
 };
 

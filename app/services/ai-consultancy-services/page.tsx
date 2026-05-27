@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "AI Consultancy Services UK | 360 Web Solutions — Strategy & Implementation",
+  title: "AI Consultancy Services UK| 360 Web Solutions",
   description:
-    "Practical AI consultancy for UK businesses: use-case prioritisation, tooling, governance, and rollout — from an in-house team you can hold accountable.",
+    "Are you looking for AI consultancy services for your business? We delivered a production-ready AI solution that delivers real ROI. Get a free consultation today.",
   openGraph: {
-    title: "AI Consultancy Services UK | 360 Web Solutions",
+    title: "AI Consultancy Services UK| 360 Web Solutions",
     description:
-      "Strategy, safe adoption, and measurable outcomes — without hype. Book a conversation with our UK specialists.",
+      "Are you looking for AI consultancy services for your business? We delivered a production-ready AI solution that delivers real ROI. Get a free consultation today.",
   },
 };
 

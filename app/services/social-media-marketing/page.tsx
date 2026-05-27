@@ -4,15 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title:
-    "Social Media Marketing Services UK | 360 Web Solutions — Measurable Results",
+  title: "Social Media Marketing Services UK - 360 Web Solutions",
   description:
     "We build social media strategies, content systems and paid campaigns that drive measurable business growth. Trusted social media marketing agency serving brands across the UK.",
   openGraph: {
-    title:
-      "Social Media Marketing Agency UK — Measurable Results | 360 Web Solutions",
+    title: "Social Media Marketing Services UK - 360 Web Solutions",
     description:
-      "Strategy, content systems and paid social that connect to revenue — not vanity metrics.",
+      "We build social media strategies, content systems and paid campaigns that drive measurable business growth. Trusted social media marketing agency serving brands across the UK.",
   },
 };
 

@@ -2,7 +2,19 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Sora, Playfair_Display } from "next/font/google";
 import Script from "next/script";
 
-const tawkEmbedSrc = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
+const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
+
+const TAWK_LOADER = `
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src="${TAWK_EMBED_SRC}";
+s1.charset="UTF-8";
+s1.setAttribute("crossorigin","*");
+if(s0&&s0.parentNode){s0.parentNode.insertBefore(s1,s0);}else{document.body.appendChild(s1);}
+})();
+`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -109,15 +121,9 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        {tawkEmbedSrc ? (
-          <Script
-            id="tawk-script"
-            src={tawkEmbedSrc}
-            strategy="lazyOnload"
-            crossOrigin="anonymous"
-            charSet="UTF-8"
-          />
-        ) : null}
+        <Script id="tawk-loader" strategy="afterInteractive">
+          {TAWK_LOADER}
+        </Script>
       </body>
     </html>
   );
