@@ -892,27 +892,21 @@ h2 {
   font-size: clamp(17px, 2vw, 22px);
   font-weight: 700;
   letter-spacing: .04em;
-  color: var(--ink-3);
-  filter: grayscale(1);
-  opacity: .58;
+  color: #000;
   transition:
     color .35s var(--ease),
-    filter .35s var(--ease),
-    opacity .35s var(--ease),
     transform .35s var(--ease);
   cursor: default;
 }
 
 .trusted__logo em {
   font-style: normal;
-  color: var(--coral);
+  color: inherit;
   letter-spacing: .04em;
 }
 
 .trusted__logo:hover {
-  color: var(--navy);
-  filter: grayscale(0);
-  opacity: 1;
+  color: var(--coral);
   transform: translateY(-2px);
 }
 
