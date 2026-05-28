@@ -11,7 +11,6 @@ var s1=document.createElement("script"),s0=document.getElementsByTagName("script
 s1.async=true;
 s1.src="${TAWK_EMBED_SRC}";
 s1.charset="UTF-8";
-s1.setAttribute("crossorigin","*");
 if(s0&&s0.parentNode){s0.parentNode.insertBefore(s1,s0);}else{document.body.appendChild(s1);}
 })();
 `;

@@ -54,9 +54,28 @@
     setTimeout(initCaseStudyFilters, 1000);
   }
 
+  function initReviewTabsA11y() {
+    const chips = Array.from(document.querySelectorAll(".gr-filters .gr-chip"));
+    if (!chips.length) return;
+
+    chips.forEach((chip) => {
+      chip.setAttribute("role", "tab");
+      chip.setAttribute("aria-selected", chip.classList.contains("is-active") ? "true" : "false");
+      chip.addEventListener("click", () => {
+        chips.forEach((item) => {
+          item.setAttribute("aria-selected", item === chip ? "true" : "false");
+        });
+      });
+    });
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot, { once: true });
+    document.addEventListener("DOMContentLoaded", () => {
+      boot();
+      initReviewTabsA11y();
+    }, { once: true });
   } else {
     boot();
+    initReviewTabsA11y();
   }
 })();
