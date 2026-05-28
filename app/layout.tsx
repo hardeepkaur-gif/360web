@@ -126,6 +126,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isProduction = process.env.NODE_ENV === "production";
+
   return (
     <html
       lang="en"
@@ -139,11 +141,13 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
-        <Script id="tawk-loader" strategy="afterInteractive">
-          {TAWK_LOADER}
-        </Script>
+        {isProduction ? (
+          <Script id="tawk-loader" strategy="afterInteractive">
+            {TAWK_LOADER}
+          </Script>
+        ) : null}
       </body>
     </html>
   );
