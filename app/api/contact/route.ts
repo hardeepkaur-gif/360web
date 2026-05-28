@@ -48,7 +48,7 @@ function thankYouHtml(name: string, formType: string) {
   const body =
     formType === "booking"
       ? `<p style="color:#333;line-height:1.7">Thank you for requesting a free strategy session with <strong>360 Web Solutions</strong>. We&rsquo;ve received your booking details and a member of our team will confirm your session by email within one business day.</p>
-         <p style="color:#333;line-height:1.7">In the meantime, feel free to explore our <a href="https://360websolutions.co.uk/#work" style="color:#FF4D3A">case studies</a> to see how we help businesses like yours grow.</p>`
+        <p style="color:#333;line-height:1.7">In the meantime, feel free to explore our <a href="https://360websolutions.co.uk/case-studies" style="color:#FF4D3A">case studies</a> to see how we help businesses like yours grow.</p>`
       : `<p style="color:#333;line-height:1.7">Thank you for reaching out to <strong>360 Web Solutions</strong>. We&rsquo;ve received your message and one of our team members will get back to you as soon as possible.</p>
          <p style="color:#333;line-height:1.7">We typically respond within one business day. If your enquiry is urgent, call us at <a href="tel:+442071835339" style="color:#FF4D3A">+44 (0)20 7183 5339</a>.</p>`;
 

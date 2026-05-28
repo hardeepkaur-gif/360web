@@ -998,7 +998,7 @@ export default function SEOAuditService() {
               Book your SEO audit consultation
             </a>
             <a
-              href="/#work"
+              href="/case-studies"
               className={`${BTN} border border-white/40 bg-transparent text-white`}
             >
               View our results

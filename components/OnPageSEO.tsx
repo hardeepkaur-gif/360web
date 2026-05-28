@@ -892,7 +892,7 @@ export default function OnPageSEO() {
               </svg>
             </a>
             <a
-              href="/#work"
+              href="/case-studies"
               className={`${BTN} border border-white/40 bg-transparent text-white`}
             >
               View our results
@@ -1298,7 +1298,7 @@ export default function OnPageSEO() {
               </svg>
             </a>
             <a
-              href="/#work"
+              href="/case-studies"
               className={`${BTN} border border-white/40 bg-transparent text-white`}
             >
               View our results

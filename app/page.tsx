@@ -33,6 +33,7 @@ export default function Home() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/work-filters-fix.js" strategy="lazyOnload" />
     </>
   );
 }
