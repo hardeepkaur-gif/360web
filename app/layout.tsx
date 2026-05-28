@@ -7,11 +7,32 @@ const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu
 const TAWK_LOADER = `
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src="${TAWK_EMBED_SRC}";
-s1.charset="UTF-8";
-if(s0&&s0.parentNode){s0.parentNode.insertBefore(s1,s0);}else{document.body.appendChild(s1);}
+var loaded=false;
+function inject(){
+  if(loaded) return;
+  loaded=true;
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src="${TAWK_EMBED_SRC}";
+  s1.charset="UTF-8";
+  if(s0&&s0.parentNode){s0.parentNode.insertBefore(s1,s0);}else{document.body.appendChild(s1);}
+}
+function onFirstIntent(){
+  inject();
+  window.removeEventListener("scroll", onFirstIntent, {passive:true});
+  window.removeEventListener("mousemove", onFirstIntent);
+  window.removeEventListener("touchstart", onFirstIntent, {passive:true});
+  window.removeEventListener("keydown", onFirstIntent);
+}
+window.addEventListener("scroll", onFirstIntent, {passive:true});
+window.addEventListener("mousemove", onFirstIntent);
+window.addEventListener("touchstart", onFirstIntent, {passive:true});
+window.addEventListener("keydown", onFirstIntent);
+if("requestIdleCallback" in window){
+  requestIdleCallback(function(){ setTimeout(inject, 12000); }, {timeout: 15000});
+}else{
+  setTimeout(inject, 12000);
+}
 })();
 `;
 
