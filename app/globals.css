@@ -22213,8 +22213,9 @@ section.about-system.section {
 .work-card__tags span,
 .work-card__year,
 .work-card__stats span,
+.work-card__body .work-card__stats span,
 .footer__contact-label {
-  color: #000000;
+  color: #000000 !important;
 }
 
 
