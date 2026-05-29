@@ -1875,7 +1875,7 @@ h2 {
 }
 .work-feature__chip em {
   display: block; font-style: normal;
-  font-size: 10px; color: var(--ink-2);
+  font-size: 10px; color: #000000;
   letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
   margin-bottom: 2px;
 }
@@ -1987,14 +1987,14 @@ h2 {
 .work-card__tags span {
   font-size: 11px; letter-spacing: .06em; font-weight: 600;
   padding: 5px 10px; border-radius: 999px;
-  background: rgba(26, 95, 191, .08); color: var(--blue);
+  background: rgba(26, 95, 191, .08); color: #000000;
   transition: all .3s var(--ease);
 }
 .work-card:hover .work-card__tags span:first-child {
   background: var(--coral); color: var(--white);
 }
 .work-card__year {
-  font-size: 11px; font-weight: 700; color: var(--ink-2);
+  font-size: 11px; font-weight: 700; color: #000000;
   padding: 5px 10px; border-radius: 999px;
   background: #e9eef5; letter-spacing: .04em;
   flex-shrink: 0;
@@ -2044,7 +2044,7 @@ h2 {
   font-weight: 700; color: var(--navy); letter-spacing: -.01em;
   margin-bottom: 2px;
 }
-.work-card__stats span { font-size: 11px; color: var(--ink-2); letter-spacing: .02em; }
+.work-card__stats span { font-size: 11px; color: #000000; letter-spacing: .02em; }
 
 /* CTA link with arrow pill */
 .work-card__link {
@@ -3966,7 +3966,7 @@ h2 {
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--f-ink-3);
+  color: #000000;
 }
 .footer__contact a { color: var(--f-ink); }
 .footer__contact a:hover { color: var(--coral); }
@@ -22208,12 +22208,13 @@ section.about-system.section {
   background-image: url("/assets/images/about-hero-bg.png");
 }
 
-/* Lighthouse contrast hard overrides */
+/* Lighthouse contrast: ensure readable text on light backgrounds */
 .work-feature__chip em,
+.work-card__tags span,
 .work-card__year,
 .work-card__stats span,
 .footer__contact-label {
-  color: #000 !important;
+  color: #000000;
 }
 
 
