@@ -7868,8 +7868,9 @@ section.section.svc-transform {
 
 /* Web Dev showcase — mobile: tight photo stack (drop min-height + forced 3:4 frame that leaves a blank band above the overlapping secondary image) */
 #svc-webdev-transform .svc-transform__desc a.brand-link:hover {
-  color: var(--coral-2);
-  text-decoration: underline;
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
 }
 .svc-transform__bullets li:hover::before {
   transform: translateY(-50%) translateX(8px);
@@ -9598,6 +9599,26 @@ section#ai-marketing-why-ai-powered {
 }
 
 /* Hero visual (single image) — desktop: height matches accordion stack via visual-slot + absolute fill */
+
+/* —— On-page SEO — results you can expect —— */
+
+#on-page-seo-results .seo-results-expect__text a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
+#on-page-seo-process .proc-desc__text a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
+#seo-include .svc-img-desc a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
 
 /* —— Why on-page SEO matters —— */
 
