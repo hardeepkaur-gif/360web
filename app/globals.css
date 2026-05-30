@@ -4753,6 +4753,14 @@ h2 {
   line-height: 1.7;
   text-align: left;
 }
+.ai-sec__lede--in-intro {
+  margin: 22px auto 0;
+  max-width: 820px;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  text-align: center;
+}
 
 /* Copy left · counters right — equal width & equal column height */
 .ai-sec__split {
