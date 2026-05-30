@@ -68,7 +68,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "360 Web Solutions Digital Marketing Agency London & UK",
   description:
-    "UK digital marketing agency for SEO, PPC, app development, and web design, with 24/7 support and full-service growth strategies that cover every angle.",
+    "UK digital marketing agency for SEO, PPC, web design, and content — in-house strategy, execution, and measurable growth across every channel.",
   other: { "theme-color": "#0F2A4A" },
   icons: { icon: "/assets/images/logo.webp" },
 };
