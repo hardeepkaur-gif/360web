@@ -81,7 +81,8 @@ async function main() {
   const partials = globHtml(path.join(root, "content", "partials"));
   const homeContent = [
     path.join(root, "content", "body.html"),
-    ...partials,
+    path.join(root, "content", "partials", "google-reviews-grid.html"),
+    ...partials.filter((f) => !f.endsWith("google-reviews-grid.html")),
   ].filter((f) => fs.existsSync(f));
 
   const allContent = globHtml(path.join(root, "content"));

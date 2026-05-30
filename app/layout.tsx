@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Sora, Playfair_Display } from "next/font/google";
+import { Inter, Sora } from "next/font/google";
 import Script from "next/script";
+
+import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 
 const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
 
+/** Load Tawk only after real user intent — avoids PSI/mobile TBT from idle auto-inject. */
 const TAWK_LOADER = `
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -28,11 +31,6 @@ window.addEventListener("scroll", onFirstIntent, {passive:true});
 window.addEventListener("mousemove", onFirstIntent);
 window.addEventListener("touchstart", onFirstIntent, {passive:true});
 window.addEventListener("keydown", onFirstIntent);
-if("requestIdleCallback" in window){
-  requestIdleCallback(function(){ setTimeout(inject, 12000); }, {timeout: 15000});
-}else{
-  setTimeout(inject, 12000);
-}
 })();
 `;
 
@@ -49,14 +47,6 @@ const sora = Sora({
   weight: ["700"],
   display: "swap",
   variable: "--font-sora",
-  preload: false,
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700"],
-  display: "swap",
-  variable: "--font-playfair",
   preload: false,
 });
 
@@ -137,7 +127,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero__photo-img{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9}
 .reveal{opacity:0;transform:translateY(28px)}
 .reveal.is-visible{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
-@media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu,.nav__phone{display:none}.nav__toggle{display:flex}.hero__subtitle{margin-inline:auto}}
+@media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu,.nav__phone{display:none}.nav__toggle{display:flex}.hero__subtitle{margin-inline:auto}.announcement{display:none}}
 @media(max-width:600px){.hero{padding:50px 0 40px}.hero__inner{padding:20px 16px 0}.container{padding:0 16px}}
 `.trim();
 
@@ -151,20 +141,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${sora.variable} ${playfair.variable}`}
+      className={`${inter.variable} ${sora.variable}`}
     >
       <head>
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var a="/css/all.css";if("requestIdleCallback"in window){var l=document.createElement("link");l.rel="preload";l.as="style";l.href=a;document.head.appendChild(l);requestIdleCallback(function(){var s=document.createElement("link");s.rel="stylesheet";s.href=a;document.head.appendChild(s)})}else{var s=document.createElement("link");s.rel="stylesheet";s.href=a;s.media="print";s.onload=function(){this.media="all"};document.head.appendChild(s)}})()`,
-          }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }} />
       </head>
       <body suppressHydrationWarning>
         {children}
         {isProduction ? (
-          <Script id="tawk-loader" strategy="afterInteractive">
+          <Script id="tawk-loader" strategy="lazyOnload">
             {TAWK_LOADER}
           </Script>
         ) : null}
