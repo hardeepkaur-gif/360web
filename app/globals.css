@@ -9589,6 +9589,15 @@ section.section.svc-transform {
   color: var(--ink-3);
   max-width: 720px;
 }
+#svc-webdev-transform .svc-transform__desc a.brand-link {
+  color: var(--coral);
+  font-weight: 600;
+  text-decoration: none;
+}
+#svc-webdev-transform .svc-transform__desc a.brand-link:hover {
+  color: var(--coral-2);
+  text-decoration: underline;
+}
 .svc-transform__desc--lede {
   font-size: 17px;
   font-weight: 600;
@@ -12047,16 +12056,6 @@ section.section.svc-transform {
 }
 
 /* ---------- Web Development Services ---------- */
-.brand-link {
-  color: var(--coral);
-  font-weight: 600;
-  text-decoration: none;
-  transition: color .2s ease;
-}
-.brand-link:hover {
-  color: var(--coral-2);
-  text-decoration: underline;
-}
 .svc-hero__lede--tight {
   margin-bottom: 14px;
 }
