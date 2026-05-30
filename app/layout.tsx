@@ -90,6 +90,8 @@ a{color:inherit;text-decoration:none}
 #seo-include .svc-img-desc a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
 #seo-audit-process .pst-content p a.brand-link,#why-choose-seo-audit .seo-choose__text a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
 #seo-audit-process .pst-content p a.brand-link:hover,#why-choose-seo-audit .seo-choose__text a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
+#svc-ai-about .svc-ai-about__para a.brand-link,#svc-ai-trust-market .svc-ai-trust__copy a.brand-link,#svc-ai-why-choose .seo-choose__text a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
+#svc-ai-about .svc-ai-about__para a.brand-link:hover,#svc-ai-trust-market .svc-ai-trust__copy a.brand-link:hover,#svc-ai-why-choose .seo-choose__text a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
 #seo-content-built-for-rankings .seo-split__content p a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
 #seo-content-built-for-rankings .seo-split__content p a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
 #seo-content-we-offer .svc-img-desc a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
