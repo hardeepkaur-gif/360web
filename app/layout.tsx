@@ -88,6 +88,8 @@ a{color:inherit;text-decoration:none}
 #on-page-seo-process .proc-desc__text a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
 #seo-include .svc-img-desc a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
 #seo-include .svc-img-desc a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
+#seo-audit-process .pst-content p a.brand-link,#why-choose-seo-audit .seo-choose__text a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
+#seo-audit-process .pst-content p a.brand-link:hover,#why-choose-seo-audit .seo-choose__text a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
 ul{list-style:none;margin:0;padding:0}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 28px}

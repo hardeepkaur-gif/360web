@@ -19022,6 +19022,21 @@ section#ai-marketing-why-ai-powered {
   text-decoration: underline !important;
 }
 
+#seo-audit-process .pst-content p a.brand-link,
+#why-choose-seo-audit .seo-choose__text a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+#seo-audit-process .pst-content p a.brand-link:hover,
+#why-choose-seo-audit .seo-choose__text a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
 .seo-results-expect__visual {
   position: relative;
   padding: 28px 0 44px 12px;

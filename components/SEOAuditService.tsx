@@ -464,12 +464,10 @@ export default function SEOAuditService() {
             </div>
             <div className="flex min-w-0 flex-col gap-4 md:gap-6">
               <h2 id="seo-audit-split-title" className={H2}>
-                SEO Audit Services Built for{" "}
-                <span className={GRAD_CORAL}>Top Rankings</span>
+                What Is an <span className={GRAD_CORAL}>SEO Audit?</span>
               </h2>
               <p className={P}>
-                <strong>What Is an SEO Audit?</strong> An SEO audit is an
-                in-depth analysis of your site&apos;s organic search results. It
+                An SEO audit is an in-depth analysis of your site&apos;s organic search results. It
                 can pinpoint technical problems, content gaps, keyword gaps, and
                 competitor opportunities that could be preventing you from
                 appearing in search engines such as Google.
