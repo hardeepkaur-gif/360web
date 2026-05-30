@@ -16386,6 +16386,38 @@ section#ai-marketing-why-ai-powered {
   text-decoration: underline !important;
 }
 
+#ai-marketing-tools-human-strategy .svc-ai-trust__copy a.brand-link,
+#ai-marketing-services-include .svc-img-desc a.brand-link,
+#ai-marketing-why-ai-powered .seo-split__content p a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+#ai-marketing-tools-human-strategy .svc-ai-trust__copy a.brand-link:hover,
+#ai-marketing-services-include .svc-img-desc a.brand-link:hover,
+#ai-marketing-why-ai-powered .seo-split__content p a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
+#services .svc-hdr .sub a.brand-link,
+#outcomes .ind-card__desc a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+#services .svc-hdr .sub a.brand-link:hover,
+#outcomes .ind-card__desc a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
 .seo-results-expect__visual {
   position: relative;
   padding: 28px 0 44px 12px;
