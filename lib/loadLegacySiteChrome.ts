@@ -5,6 +5,8 @@ const ROOT = process.cwd();
 
 const HEADER_PATH = join(ROOT, "content/partials/site-header.html");
 const FOOTER_PATH = join(ROOT, "content/partials/site-footer.html");
+const GOOGLE_REVIEWS_GRID_PATH = join(ROOT, "content/partials/google-reviews-grid.html");
+const GOOGLE_REVIEWS_MARKER = "<!-- @google-reviews-grid@ -->";
 
 let headerCache: string | undefined;
 let footerCache: string | undefined;
@@ -40,8 +42,14 @@ function siteFooter(): string {
   return footerCache;
 }
 
+function injectGoogleReviews(html: string): string {
+  if (!html.includes(GOOGLE_REVIEWS_MARKER)) return html;
+  const grid = readFileSync(GOOGLE_REVIEWS_GRID_PATH, "utf-8");
+  return html.replace(GOOGLE_REVIEWS_MARKER, grid.trim());
+}
+
 function withSiteFooter(markupBeforeFooter: string): string {
-  const raw = `${markupBeforeFooter.trimEnd()}\n${siteFooter()}`;
+  const raw = injectGoogleReviews(`${markupBeforeFooter.trimEnd()}\n${siteFooter()}`);
   return isDev ? raw : minifyHtml(raw);
 }
 
