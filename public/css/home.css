@@ -9627,6 +9627,18 @@ section#ai-marketing-why-ai-powered {
   text-decoration: underline !important;
 }
 
+#seo-content-built-for-rankings .seo-split__content p a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
+#seo-content-we-offer .svc-img-desc a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
 /* —— Why on-page SEO matters —— */
 
 /* On-page SEO — equal width for copy vs visual */
