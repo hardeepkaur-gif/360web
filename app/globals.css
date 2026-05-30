@@ -4904,7 +4904,7 @@ h2 {
   gap: 12px;
 }
 .ai-stats--stack .ai-stat__metric .ai-stat__value {
-  font-size: clamp(40px, 8vw, 56px);
+  font-size: clamp(28px, 5.5vw, 42px);
 }
 .ai-stats--stack .ai-stat__title {
   font-size: 17px;
@@ -6877,7 +6877,7 @@ h2 {
     gap: 8px;
   }
   .ai-sec__intro-line .eyebrow__line { width: 16px; }
-  .ai-stats--stack .ai-stat__metric .ai-stat__value { font-size: 48px; }
+  .ai-stats--stack .ai-stat__metric .ai-stat__value { font-size: 34px; }
   .principle { padding: 28px 22px 24px; }
   .ind-card { padding: 28px 24px 22px; }
 }
@@ -12047,6 +12047,16 @@ section.section.svc-transform {
 }
 
 /* ---------- Web Development Services ---------- */
+.brand-link {
+  color: var(--coral);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.brand-link:hover {
+  color: var(--coral-2);
+  text-decoration: underline;
+}
 .svc-hero__lede--tight {
   margin-bottom: 14px;
 }
