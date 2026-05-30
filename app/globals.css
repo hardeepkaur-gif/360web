@@ -17306,7 +17306,7 @@ section.section.svc-transform {
 }
 
 .hero.hero--editorial.hero--webdev-mockups.hero--ai-consultancy .hero__inner {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.68fr);
   gap: clamp(40px, 5vw, 64px);
   align-items: center;
 }
@@ -17324,8 +17324,8 @@ section.section.svc-transform {
 .hero__photo--ai-consultancy-hero .hero__smm-illustration {
   width: auto;
   height: auto;
-  max-width: min(100%, 960px);
-  max-height: min(100%, 960px);
+  max-width: min(100%, 520px);
+  max-height: min(100%, 520px);
   object-fit: contain;
   object-position: center;
   border-radius: clamp(14px, 2.2vw, 22px);
@@ -17349,7 +17349,7 @@ section.section.svc-transform {
 
 @media (min-width: 768px) {
   .hero.hero--ai-consultancy .hero__photo--ai-consultancy-hero .hero__smm-illustration {
-    max-height: min(960px, 82vh);
+    max-height: min(520px, 72vh);
   }
 }
 
