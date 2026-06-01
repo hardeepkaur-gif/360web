@@ -11538,11 +11538,37 @@ section.section.svc-transform {
   font-weight: 800;
 }
 .wp-hero-split__lede {
-  margin: 0 0 28px;
+  margin: 0 0 16px;
   font-size: clamp(17px, 1.35vw, 19px);
   line-height: 1.65;
   color: var(--ink-3);
   max-width: 520px;
+}
+.wp-hero-split__cta-line {
+  margin: 0 0 22px;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: var(--ink-2);
+  max-width: 520px;
+}
+.wp-hero-split__trust {
+  margin: 18px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  max-width: 520px;
+}
+.wp-hero-split__trust::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--coral);
+  vertical-align: 0.1em;
 }
 /* Match home hero (editorial) button look — ghost-play is otherwise scoped to .hero--editorial only */
 .wp-hero-split .hero__cta {
@@ -14611,7 +14637,8 @@ section.section.svc-transform {
 }
 
 /* SEO Audit — hero illustration treatment */
-.hero__photo--seo-audit-hero .hero__smm-illustration {
+.hero__photo--seo-audit-hero .hero__smm-illustration,
+.hero__photo--local-seo-hero .hero__smm-illustration {
   border-radius: clamp(14px, 2.2vw, 24px);
 }
 
