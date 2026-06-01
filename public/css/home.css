@@ -8650,6 +8650,18 @@ section.section.svc-transform {
   }
 }
 /* WordPress offerings: 3×2 grid + homepage-style icons + blue hover */
+
+/* WordPress services: long-form detail list */
+.wp-svc-detail__item:hover {
+  border-color: rgba(26, 95, 191, 0.22);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .wp-svc-detail__item:hover {
+    transform: none;
+  }
+}
 .wp-svc-card:hover .wp-svc-card__ring {
   opacity: 1;
   transform: scale(1);
