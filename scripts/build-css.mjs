@@ -42,6 +42,12 @@ const SAFELIST = {
     /^section/,
     /^container/,
     /^eyebrow/,
+    /^wp-svc/,
+    /^wp-offer/,
+    /^wp-compare/,
+    /^wp-what-is/,
+    /^wp-about/,
+    /^wp-hero/,
   ],
   greedy: [/hover/, /focus/, /active/, /open/, /visible/, /selected/],
 };
