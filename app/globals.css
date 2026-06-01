@@ -12354,22 +12354,18 @@ section.section.svc-transform {
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__head,
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row,
 #ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__head,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row,
-#wp-what-is .compare__table--audit-two-col .compare__head,
-#wp-what-is .compare__table--audit-two-col .compare__row {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row {
   grid-template-columns: 1fr 1fr;
 }
 
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#wp-what-is .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
   border-bottom-left-radius: var(--radius-xl);
 }
 
 /* Clear 3-col X on 2nd cell; pro column checkmark only */
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before,
-#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before {
   content: none;
   width: 0;
   height: 0;
@@ -12831,14 +12827,148 @@ section.section.svc-transform {
   margin-top: 0;
   max-width: none;
 }
-#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell::before {
-  content: none !important;
-  width: 0;
-  height: 0;
+
+/* WordPress what-is: software vs services card comparison table */
+.wp-compare-cards__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+}
+.wp-compare-cards__head {
+  padding: 20px 22px 16px;
+}
+.wp-compare-cards__head--software {
+  background: linear-gradient(180deg, #E8F1FC 0%, #EDF5FD 100%);
+  border-right: 1px solid rgba(26, 95, 191, 0.2);
+}
+.wp-compare-cards__head--services {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--navy) 100%);
+}
+.wp-compare-cards__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.wp-compare-cards__icon--software {
+  background: rgba(26, 95, 191, 0.18);
+  color: var(--blue);
+}
+.wp-compare-cards__icon--services {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+.wp-compare-cards__col-title {
+  margin: 0 0 2px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+.wp-compare-cards__head--software .wp-compare-cards__col-title {
+  color: var(--navy);
+}
+.wp-compare-cards__head--services .wp-compare-cards__col-title {
+  color: var(--white);
+}
+.wp-compare-cards__col-sub {
   margin: 0;
-  border: none;
-  background: none;
-  box-shadow: none;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.wp-compare-cards__head--software .wp-compare-cards__col-sub {
+  color: var(--blue);
+  font-weight: 500;
+}
+.wp-compare-cards__head--services .wp-compare-cards__col-sub {
+  color: rgba(255, 255, 255, 0.78);
+}
+.wp-compare-cards__divider {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 22px;
+  background: var(--soft);
+  border-top: 1px solid var(--line);
+}
+.wp-compare-cards__divider-ico {
+  flex-shrink: 0;
+  color: var(--ink-4);
+}
+.wp-compare-cards__divider-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.wp-compare-cards__cell {
+  padding: 14px 22px 16px;
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+.wp-compare-cards__cell:not(.wp-compare-cards__cell--services) {
+  border-right: 1px solid var(--line);
+}
+.wp-compare-cards__cell--services {
+  background: linear-gradient(180deg, rgba(26, 95, 191, 0.03) 0%, rgba(255, 77, 58, 0.04) 100%);
+}
+.wp-compare-cards__text {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.wp-compare-cards__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.wp-compare-cards__pill--soft {
+  background: rgba(26, 95, 191, 0.1);
+  color: var(--blue);
+  border: 1px solid rgba(26, 95, 191, 0.16);
+}
+.wp-compare-cards__pill--coral {
+  background: var(--peach-soft);
+  color: #C43A28;
+  border: 1px solid var(--peach-ring);
+}
+.wp-compare-cards__cell--last-left {
+  border-bottom-left-radius: calc(var(--radius-xl) - 1px);
+}
+.wp-compare-cards__cell--last {
+  border-bottom-right-radius: calc(var(--radius-xl) - 1px);
+}
+@media (max-width: 560px) {
+  .wp-compare-cards__head,
+  .wp-compare-cards__cell {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .wp-compare-cards__divider {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .wp-compare-cards__head--software .wp-compare-cards__col-title,
+  .wp-compare-cards__head--services .wp-compare-cards__col-title {
+    font-size: 12px;
+  }
 }
 
 /* WordPress sub-service page: distinct but brand-consistent visuals */
