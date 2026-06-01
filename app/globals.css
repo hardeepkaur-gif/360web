@@ -12354,18 +12354,22 @@ section.section.svc-transform {
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__head,
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row,
 #ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__head,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row,
+#wp-what-is .compare__table--audit-two-col .compare__head,
+#wp-what-is .compare__table--audit-two-col .compare__row {
   grid-template-columns: 1fr 1fr;
 }
 
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
+#wp-what-is .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
   border-bottom-left-radius: var(--radius-xl);
 }
 
 /* Clear 3-col X on 2nd cell; pro column checkmark only */
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before,
+#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before {
   content: none;
   width: 0;
   height: 0;
@@ -12792,14 +12796,20 @@ section.section.svc-transform {
 }
 
 /* WordPress sub-service page: what-is + software vs services */
+.wp-about-split--what-is .section__head {
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+.wp-about-split--what-is .wp-what-is__lede-2 {
+  margin-top: 14px;
+}
+.wp-about-split--what-is .wp-about-split__grid {
+  align-items: center;
+}
 #wp-what-is .wp-what-is__vs {
-  position: relative;
-  z-index: 1;
-  max-width: 1160px;
-  margin-inline: auto;
-  margin-top: clamp(40px, 5vw, 64px);
-  padding-top: clamp(36px, 4.5vw, 52px);
-  border-top: 1px solid var(--line);
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border-top: none;
 }
 #wp-what-is .wp-what-is__vs-title {
   margin: 0 0 14px;
@@ -12809,11 +12819,9 @@ section.section.svc-transform {
   line-height: 1.15;
   letter-spacing: -0.03em;
   color: var(--navy);
-  max-width: 720px;
 }
 #wp-what-is .wp-what-is__vs-lede {
   margin: 0 0 24px;
-  max-width: 720px;
   font-size: 16px;
   line-height: 1.65;
   color: var(--ink-3);
@@ -12821,36 +12829,16 @@ section.section.svc-transform {
 }
 #wp-what-is .wp-what-is__table {
   margin-top: 0;
-  max-width: 920px;
+  max-width: none;
 }
-#wp-what-is .compare__table--audit-two-col .compare__head,
-#wp-what-is .compare__table--audit-two-col .compare__row {
-  grid-template-columns: 1fr 1fr;
-}
-#wp-what-is .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
-  border-bottom-left-radius: var(--radius-xl);
-}
-#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2)::before {
-  content: none;
+#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell::before {
+  content: none !important;
   width: 0;
   height: 0;
   margin: 0;
   border: none;
   background: none;
   box-shadow: none;
-}
-#wp-what-is .compare__table--audit-two-col .compare__row .compare__cell:nth-child(2).compare__cell--us::before {
-  content: "";
-  display: inline-block;
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  margin-top: 2px;
-  border-radius: 50%;
-  background: var(--coral);
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 11px no-repeat;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 11px no-repeat;
 }
 
 /* WordPress sub-service page: distinct but brand-consistent visuals */
