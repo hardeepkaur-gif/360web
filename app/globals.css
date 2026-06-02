@@ -12820,6 +12820,17 @@ section.section.svc-transform {
   min-width: 0;
 }
 
+/* Local SEO compare table: keep a balanced 3-column width */
+#local-seo-compare .compare__table {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#local-seo-compare .compare__head,
+#local-seo-compare .compare__row {
+  grid-template-columns: 1.1fr 1fr 1fr;
+}
+
 /* WordPress sub-service page: what-is + software vs services */
 .wp-about-split--what-is .section__head {
   margin-bottom: clamp(40px, 5vw, 64px);
