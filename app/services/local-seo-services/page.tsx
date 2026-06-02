@@ -83,6 +83,7 @@ export default function LocalSeoServicesPage() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/local-seo-process.js" strategy="lazyOnload" />
     </>
   );
 }
