@@ -19,6 +19,20 @@ body:has(#local-seo-hero-title) #main.svc-page {
   min-width: 0;
 }
 
+body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__inner {
+  align-items: start;
+}
+
+body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__figure {
+  flex: none;
+}
+
+body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__hero-img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
 @media (max-width: 767px) {
   body:has(#local-seo-hero-title) #main.svc-page h2 {
     font-size: 28px !important;
