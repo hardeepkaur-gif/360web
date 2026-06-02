@@ -6,7 +6,7 @@ const ROOT = process.cwd();
 const HEADER_PATH = join(ROOT, "content/partials/site-header.html");
 const FOOTER_PATH = join(ROOT, "content/partials/site-footer.html");
 const GOOGLE_REVIEWS_GRID_PATH = join(ROOT, "content/partials/google-reviews-grid.html");
-const GOOGLE_REVIEWS_MARKER = "<!-- @google-reviews-grid@ -->";
+export const GOOGLE_REVIEWS_MARKER = "<!-- @google-reviews-grid@ -->";
 
 let headerCache: string | undefined;
 let footerCache: string | undefined;
@@ -42,14 +42,14 @@ function siteFooter(): string {
   return footerCache;
 }
 
-function injectGoogleReviews(html: string): string {
+function injectGoogleReviews(html: string, gridHtml?: string): string {
   if (!html.includes(GOOGLE_REVIEWS_MARKER)) return html;
-  const grid = readFileSync(GOOGLE_REVIEWS_GRID_PATH, "utf-8");
+  const grid = gridHtml ?? readFileSync(GOOGLE_REVIEWS_GRID_PATH, "utf-8");
   return html.replace(GOOGLE_REVIEWS_MARKER, grid.trim());
 }
 
-function withSiteFooter(markupBeforeFooter: string): string {
-  const raw = injectGoogleReviews(`${markupBeforeFooter.trimEnd()}\n${siteFooter()}`);
+function withSiteFooter(markupBeforeFooter: string, gridHtml?: string): string {
+  const raw = injectGoogleReviews(`${markupBeforeFooter.trimEnd()}\n${siteFooter()}`, gridHtml);
   return isDev ? raw : minifyHtml(raw);
 }
 
@@ -59,10 +59,10 @@ export function loadLegacySiteHtml(innerFilename: string): string {
   return withSiteFooter(siteHeader() + inner);
 }
 
-export function loadLegacyHomeHtml(): string {
+export function loadLegacyHomeHtml(gridHtml?: string): string {
   const innerPath = join(ROOT, "content", "body.html");
   const inner = readFileSync(innerPath, "utf-8");
-  return withSiteFooter(siteHeader() + inner);
+  return withSiteFooter(siteHeader() + inner, gridHtml);
 }
 
 export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
