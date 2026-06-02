@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const OWNER_EMAIL = process.env.CONTACT_EMAIL ?? "360websolutionsuk@gmail.com";
+const OWNER_EMAIL = process.env.CONTACT_EMAIL ?? "info@360websolutions.co.uk";
 const SMTP_USER = process.env.SMTP_USER ?? OWNER_EMAIL;
 const SMTP_PASS = process.env.SMTP_PASS ?? "";
 

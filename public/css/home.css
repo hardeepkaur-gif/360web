@@ -2402,6 +2402,13 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   transform: translateY(-2px);
   box-shadow: 0 20px 44px rgba(255, 77, 58, .5);
 }
+.gr-section__disclosure {
+  margin: 0 0 24px;
+  max-width: 52rem;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--g-text-2);
+}
 .gr-more__note {
   margin: 12px 0 0;
   font-size: 12.5px;
