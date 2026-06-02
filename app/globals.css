@@ -7275,6 +7275,23 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   font-weight: 500;
   margin-top: 2px;
 }
+a.hero__pill--rating {
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+a.hero__pill--rating:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 22px 48px rgba(15, 42, 74, .42),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+a.hero__pill--rating:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
 
 /* Bottom-center ROI card */
 .hero__photo-stat {
