@@ -21,26 +21,25 @@ body:has(#local-seo-hero-title) #main.svc-page {
 
 @media (min-width: 961px) {
   body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__inner {
-    align-items: stretch;
+    align-items: start;
   }
 
   body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__visual {
-    display: flex;
-    flex-direction: column;
+    display: block;
     min-height: 0;
+    width: 100%;
   }
 
   body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__figure {
-    flex: 1 1 auto;
-    min-height: 0;
-    height: 100%;
+    margin: 0;
+    width: 100%;
     overflow: hidden;
   }
 
   body:has(#local-seo-hero-title) #local-seo-what-is .svc-ai-about__hero-img {
     width: 100%;
     height: 100%;
-    min-height: 0;
+    min-height: 0 !important;
     object-fit: cover;
     object-position: center;
   }
@@ -103,6 +102,16 @@ body:has(#local-seo-hero-title) #main.svc-page {
   border-radius: 50%;
   background: var(--coral);
 }
+
+@media (min-width: 1081px) {
+  body:has(#local-seo-hero-title) #local-seo-services-include .svc-body {
+    align-items: start;
+  }
+
+  body:has(#local-seo-hero-title) #local-seo-services-include .svc-right {
+    min-height: 0 !important;
+  }
+}
 `;
 
 export default function LocalSeoServicesPage() {
@@ -127,6 +136,8 @@ export default function LocalSeoServicesPage() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/local-seo-what-is.js" strategy="lazyOnload" />
+      <Script src="/js/local-seo-services-include.js" strategy="lazyOnload" />
       <Script src="/js/local-seo-process.js" strategy="lazyOnload" />
     </>
   );
