@@ -156,7 +156,11 @@ export default function LocalSeoServicesPage() {
       <Script src="/js/main.js" strategy="lazyOnload" />
       <Script src="/js/local-seo-what-is.js" strategy="lazyOnload" />
       <Script src="/js/local-seo-services-include.js" strategy="lazyOnload" />
-      <Script src="/js/local-seo-process.js" strategy="lazyOnload" />
+      <Script
+        id="local-seo-process"
+        src="/js/local-seo-process.js"
+        strategy="lazyOnload"
+      />
     </>
   );
 }
