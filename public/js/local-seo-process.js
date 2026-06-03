@@ -7,86 +7,82 @@
   const LOCAL_SEO_PROCESS_STEPS = [
     {
       num: "01",
-      title: "Website Audit (Free)",
+      title: "Website Audit – Free!",
       subtitle: "",
-      text: "Our first step is a complete local SEO audit to identify visibility gaps and ranking blockers.",
-      image: "/assets/images/seo-audit-process-step-discovery.webp",
-      alt: "Website audit and local SEO discovery setup with reports and analytics.",
+      text: "Our first step in improving search results for your website is an analysis of your website to increase visibility in local searches, including Google Business Profile optimisation and citation.",
+      image: "/assets/images/local-seo-process-audit.webp",
+      alt: "Team reviewing technical SEO metrics and local search rankings on office monitors.",
       points: [
         "Google Business Profile performance",
         "Local keyword visibility",
-        "Website structure and local landing pages",
-        "Technical SEO issues and NAP consistency",
+        "Website structure",
+        "Local landing pages",
+        "Technical SEO issues",
+        "NAP consistency",
       ],
     },
     {
       num: "02",
       title: "Competitor and SERP Analysis",
       subtitle: "",
-      text: "We analyse top local competitors and optimise to capture stronger visibility across local SERP features.",
-      image: "/assets/images/seo-audit-process-step-data-collection.webp",
-      alt: "Competitor and SERP review meeting with ranking and search feature analysis.",
+      text: "Our team analyses your top-ranking competitors and the strategies they are following to boost their engagement by optimising for the entire SERP. After this evaluation, it becomes quite easy for us to work on the areas your business is missing.",
+      image: "/assets/images/local-seo-process-competitor.webp",
+      alt: "Professionals reviewing competitor analysis reports and SEO performance data.",
       points: [
-        "Featured snippets optimisation",
-        "Local pack visibility strategy",
-        "Knowledge panel opportunities",
-        "Content structure and local backlink review",
+        "Featured Snippets: We optimise your content so it grabs the “position zero” spot where Google shows direct answers to people’s questions.",
+        "Local Packs: We get your business into the local pack, where local businesses pop up for relevant searches.",
+        "Knowledge Panels: We aim to get your business in the knowledge panel, so it’s front and centre, giving users a quick idea of what you offer.",
+        "Content structure",
+        "Google Business Profile strength",
+        "Local backlinks",
+        "Review quality and frequency",
+        "Keyword targeting",
       ],
     },
     {
       num: "03",
       title: "Local Keyword and Intent Mapping",
       subtitle: "",
-      text: "We map service + location keywords to buyer intent so your pages target users ready to enquire.",
-      image: "/assets/images/seo-audit-process-step-full-audit.webp",
-      alt: "Analyst mapping local keywords and intent by geography and search behavior.",
+      text: "Successful local SEO services for small business growth require targeting keywords that match buyer intent. Optimising your pages for these keywords increases visibility in search results, including in maps results and AI-powered search, which can drive more organic website traffic, foot traffic, inquiries, and sales. That way, you’ll be sure that your site targets users who are ready to make an enquiry about your services.",
+      image: "/assets/images/local-seo-process-keywords.webp",
+      alt: "Analyst reviewing keyword performance data and local search intent on dual monitors.",
       points: [
         "Service intent",
         "Geographic relevance",
         "Purchase intent",
-        "Mobile search behavior and local competition",
+        "Mobile search behaviour",
+        "Local competition",
       ],
     },
     {
       num: "04",
       title: "On-page Optimisation for Service Pages",
       subtitle: "",
-      text: "We optimise your key pages so Google understands service relevance and local proximity signals.",
-      image: "/assets/images/seo-audit-process-step-priority-scoring.webp",
-      alt: "Team prioritising on-page local SEO actions by impact and urgency.",
+      text: "On-page optimisation helps to make your site more relevant for local searches and also improves user experience and conversion chances. On-page SEO for local search is all about showing Google you’re relevant to the service a customer wants, and that you’re close enough to be useful to them.",
+      image: "/assets/images/local-seo-process-onpage.webp",
+      alt: "Team planning service page SEO structure on a whiteboard with meta titles and local SEO notes.",
       points: [
         "Meta titles and descriptions",
-        "Local landing pages and internal linking",
-        "Service-specific content and heading structure",
-        "Location relevance signals",
+        "Local landing pages",
+        "Internal linking",
+        "Service-specific content",
+        "Heading structure",
+        "Location signals",
       ],
     },
     {
       num: "05",
       title: "Monthly Reporting and Performance Tracking",
       subtitle: "",
-      text: "We report on measurable outcomes and conversion movement, not vanity metrics.",
-      image: "/assets/images/seo-audit-process-step-report.webp",
-      alt: "Monthly local SEO reporting dashboard with rank, traffic, and conversion tracking.",
+      text: "Professional SEO services are always based on transparency. We offer monthly reporting that focuses on tangible business results rather than vanity metrics. This includes local ranking gains, Google Maps visibility, increased traffic, and conversion monitoring. Monthly SEO performance is measured through comprehensive monthly reports that combine data from multiple sources to demonstrate growth and visibility.",
+      image: "/assets/images/local-seo-process-reporting.webp",
+      alt: "Agency team reviewing monthly local SEO performance reports on laptops and a wall display.",
       points: [
-        "Local rank tracking and maps visibility",
-        "Traffic, calls, and enquiry performance",
-        "GBP integration and backlink quality tracking",
-        "Competitive benchmark analysis",
-      ],
-    },
-    {
-      num: "06",
-      title: "Refinement and Growth Iteration",
-      subtitle: "",
-      text: "After each cycle, we refine strategy around your strongest growth opportunities and weakest visibility gaps.",
-      image: "/assets/images/seo-audit-process-step-strategy-call.webp",
-      alt: "Strategy review call to refine local SEO actions and growth priorities.",
-      points: [
-        "Fix missed areas identified in reviews",
-        "Scale winning location pages and terms",
-        "Improve review quality and consistency",
-        "Sustain rankings with ongoing optimisation",
+        "Local rank tracking",
+        "Traffic analysis",
+        "Google Business Profile integration",
+        "Backlink quality tracking",
+        "Competitive analysis with benchmark local rivals in your industry",
       ],
     },
   ];
@@ -143,7 +139,6 @@
 
     if (desc) {
       desc.classList.remove("is-flipping");
-      // trigger reflow
       void desc.offsetWidth;
       desc.classList.add("is-flipping");
     }
@@ -170,11 +165,17 @@
     }
     if (descTag) descTag.textContent = `Step ${step.num} · ${step.title}`;
 
-    document.querySelectorAll(".pn-dot").forEach((dot, dotIdx) => {
+    document.querySelectorAll("#local-seo-process .pn-dot").forEach((dot, dotIdx) => {
       dot.classList.toggle("is-active", dotIdx === idx);
     });
   };
 
+  document.querySelectorAll("#local-seo-process .pn-dot").forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const step = Number.parseInt(dot.getAttribute("data-step") || "0", 10);
+      window.activateStep(step);
+    });
+  });
+
   requestAnimationFrame(() => window.activateStep(0));
 })();
-

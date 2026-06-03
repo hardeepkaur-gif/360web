@@ -112,6 +112,24 @@ body:has(#local-seo-hero-title) #main.svc-page {
     min-height: 0 !important;
   }
 }
+
+#local-seo-compare .compare__table {
+  max-width: 820px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#local-seo-compare .compare__head,
+#local-seo-compare .compare__row {
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr) minmax(0, 0.95fr);
+}
+
+#local-seo-compare .compare__head .compare__cell,
+#local-seo-compare .compare__row .compare__cell {
+  padding-left: 18px;
+  padding-right: 18px;
+}
 `;
 
 export default function LocalSeoServicesPage() {
