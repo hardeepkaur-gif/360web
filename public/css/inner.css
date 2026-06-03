@@ -2824,8 +2824,12 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 .contact__cal-day {
   position: relative;
+  width: 36px;
+  height: 36px;
   min-height: 36px;
-  width: 100%;
+  max-width: 36px;
+  margin-inline: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   border: none;
   background: transparent;

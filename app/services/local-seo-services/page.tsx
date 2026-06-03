@@ -112,7 +112,7 @@ export default function LocalSeoServicesPage() {
     <>
       <link
         rel="preload"
-        href="/assets/images/seo-audit-service-local.webp"
+        href="/assets/images/local-seo-hero.webp"
         as="image"
         type="image/webp"
         fetchPriority="high"
