@@ -130,6 +130,38 @@ body:has(#local-seo-hero-title) #main.svc-page {
   padding-left: 18px;
   padding-right: 18px;
 }
+
+@media (min-width: 961px) {
+  body:has(#local-seo-hero-title) #local-seo-packages-pricing.seo-matters .seo-matters__grid {
+    align-items: stretch;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(36px, 5vw, 64px);
+  }
+
+  body:has(#local-seo-hero-title) #local-seo-packages-pricing.seo-matters .seo-matters__visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    padding: 12px 0 12px 12px;
+    min-height: 0;
+  }
+
+  body:has(#local-seo-hero-title) #local-seo-packages-pricing.seo-matters .seo-matters__frame {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  body:has(#local-seo-hero-title) #local-seo-packages-pricing.seo-matters .seo-matters__frame img {
+    aspect-ratio: unset;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+}
 `;
 
 export default function LocalSeoServicesPage() {
