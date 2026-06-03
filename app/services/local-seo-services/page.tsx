@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Local SEO Services UK | Google Maps & Local Search",
+  title: "Local SEO Services UK | Improve Local Rankings Fast",
   description:
-    "Local SEO services for UK small businesses. Improve Google Maps visibility, local pack rankings, and high-intent enquiries with Google Business Profile optimisation.",
+    "Boost your visibility with local SEO services tailored for UK businesses. Improve Google rankings, maps visibility, traffic, and local leads.",
   openGraph: {
-    title: "Local SEO Services UK | Google Maps & Local Search",
+    title: "Local SEO Services UK | Improve Local Rankings Fast",
     description:
-      "Local SEO services for UK small businesses. Improve Google Maps visibility, local pack rankings, and high-intent enquiries with Google Business Profile optimisation.",
+      "Boost your visibility with local SEO services tailored for UK businesses. Improve Google rankings, maps visibility, traffic, and local leads.",
   },
 };
 
