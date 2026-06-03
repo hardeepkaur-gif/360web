@@ -73,6 +73,10 @@ body:has(#local-seo-hero-title) #main.svc-page {
   }
 }
 
+#local-seo-why-matters .seo-who-needs__lede {
+  max-width: 100%;
+}
+
 #local-seo-why-matters .local-seo-why-matters__list {
   margin: 0.65rem 0 0;
   padding: 0;

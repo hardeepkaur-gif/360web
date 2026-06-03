@@ -68,5 +68,5 @@ export function loadLegacyHomeHtml(gridHtml?: string): string {
 export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
-  return withSiteFooter(inner);
+  return withSiteFooter(siteHeader() + inner);
 }
