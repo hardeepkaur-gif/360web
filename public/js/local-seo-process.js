@@ -11,7 +11,7 @@
       subtitle: "",
       text: "Our first step in improving search results for your website is an analysis of your website to increase visibility in local searches, including Google Business Profile optimisation and citation.",
       image: "/assets/images/local-seo-process-audit.webp",
-      alt: "Team reviewing technical SEO metrics and local search rankings on office monitors.",
+      alt: "SEO team reviewing technical SEO metrics and local search ranking dashboards on wall monitors.",
       points: [
         "Google Business Profile performance",
         "Local keyword visibility",
@@ -27,7 +27,7 @@
       subtitle: "",
       text: "Our team analyses your top-ranking competitors and the strategies they are following to boost their engagement by optimising for the entire SERP. After this evaluation, it becomes quite easy for us to work on the areas your business is missing.",
       image: "/assets/images/local-seo-process-competitor.webp",
-      alt: "Professionals reviewing competitor analysis reports and SEO performance data.",
+      alt: "SEO specialists analysing competitor performance data on monitors and printed reports.",
       points: [
         "Featured Snippets: We optimise your content so it grabs the “position zero” spot where Google shows direct answers to people’s questions.",
         "Local Packs: We get your business into the local pack, where local businesses pop up for relevant searches.",
@@ -45,7 +45,7 @@
       subtitle: "",
       text: "Successful local SEO services for small business growth require targeting keywords that match buyer intent. Optimising your pages for these keywords increases visibility in search results, including in maps results and AI-powered search, which can drive more organic website traffic, foot traffic, inquiries, and sales. That way, you’ll be sure that your site targets users who are ready to make an enquiry about your services.",
       image: "/assets/images/local-seo-process-keywords.webp",
-      alt: "Analyst reviewing keyword performance data and local search intent on dual monitors.",
+      alt: "SEO analyst reviewing keyword performance tables and Google search results on dual monitors.",
       points: [
         "Service intent",
         "Geographic relevance",
@@ -60,7 +60,7 @@
       subtitle: "",
       text: "On-page optimisation helps to make your site more relevant for local searches and also improves user experience and conversion chances. On-page SEO for local search is all about showing Google you’re relevant to the service a customer wants, and that you’re close enough to be useful to them.",
       image: "/assets/images/local-seo-process-onpage.webp",
-      alt: "Team planning service page SEO structure on a whiteboard with meta titles and local SEO notes.",
+      alt: "Team collaborating on a service page SEO plan whiteboard with meta titles and local structure.",
       points: [
         "Meta titles and descriptions",
         "Local landing pages",
@@ -76,7 +76,7 @@
       subtitle: "",
       text: "Professional SEO services are always based on transparency. We offer monthly reporting that focuses on tangible business results rather than vanity metrics. This includes local ranking gains, Google Maps visibility, increased traffic, and conversion monitoring. Monthly SEO performance is measured through comprehensive monthly reports that combine data from multiple sources to demonstrate growth and visibility.",
       image: "/assets/images/local-seo-process-reporting.webp",
-      alt: "Agency team reviewing monthly local SEO performance reports on laptops and a wall display.",
+      alt: "Agency team reviewing local rankings, maps data, and monthly SEO performance on screens.",
       points: [
         "Local rank tracking",
         "Traffic analysis",
