@@ -108,6 +108,11 @@ export default function EmailMarketingServicesPage() {
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
       <Script src="/js/email-marketing-services-include.js" strategy="lazyOnload" />
+      <Script
+        id="email-marketing-process"
+        src="/js/email-marketing-process.js"
+        strategy="lazyOnload"
+      />
     </>
   );
 }

@@ -8150,6 +8150,8 @@ section.section.svc-transform {
 }
 
 /* Web development page: "Types of Websites We Build" cards */
+
+/* Email marketing — platform cards: 4 across, then 3 centred */
 .wd-type-card:hover {
   background: #fbfdff;
   box-shadow: inset 3px 0 0 var(--blue);
@@ -8582,15 +8584,19 @@ section.section.svc-transform {
 
 /* ---------- Web Dev: Classic comparison redesign ---------- */
 
-/* SEO content writing + SEO audit services: unified score + criteria box + table spacing */
+/* SEO content writing + SEO audit + email marketing: unified score + table spacing */
 
 /* AI Marketing Agency — compare hero photo (Prompt Engineering / team collaboration) */
 
 /* SEO Audit vs Free Website Audit — professional review backdrop */
 
+/* Email tool vs agency — same professional review backdrop */
+
 /* AI Consultancy vs AI Automation Agency — AUTOMATION workshop backdrop */
 
-/* SEO audit compare: two-column chip strip (free vs professional) */
+/* SEO audit + email marketing: two-column chip strip */
+
+/* Email tool vs agency: Feature + Tool + Agency (3 columns) */
 
 /* SEO audit: table is only Free vs Professional (no criteria column) */
 
