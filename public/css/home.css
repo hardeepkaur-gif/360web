@@ -8151,9 +8151,10 @@ section.section.svc-transform {
 
 /* Web development page: "Types of Websites We Build" cards */
 
-/* Email marketing — platform cards: 4 in row 1, 3 centred in row 2 */
-/* Row 1: four equal cards */
-/* Row 2: three cards centred (one column margin each side) */
+/* Email marketing platforms — 4 + 3 layout on “Types of Websites” ind-card grid */
+#email-marketing-platforms .ind-card:hover h3 .ind-card__sub {
+  color: rgba(255, 255, 255, 0.85);
+}
 .wd-type-card:hover {
   background: #fbfdff;
   box-shadow: inset 3px 0 0 var(--blue);
@@ -10578,6 +10579,8 @@ section#seo-content-writing-process {
   background: #f5f7fa;
 }
 
+/* Email Marketing — industry-specific trust cards (longer copy) */
+
 /* AI Marketing — who needs: remove extra top gap */
 section#ai-marketing-who-needs.seo-trust.section--svc {
   padding-top: 0;
@@ -10775,7 +10778,8 @@ section#ai-marketing-why-ai-powered {
 
 #svc-ai-about .svc-ai-about__para a.brand-link:hover,
 #svc-ai-trust-market .svc-ai-trust__copy a.brand-link:hover,
-#svc-ai-why-choose .seo-choose__text a.brand-link:hover {
+#svc-ai-why-choose .seo-choose__text a.brand-link:hover,
+#email-marketing-why-choose .seo-choose__text a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;
   text-decoration: underline !important;
@@ -10900,17 +10904,20 @@ section#ai-marketing-why-ai-powered {
 
 /* Scroll reveal + stagger */
 
-#seo-audit-cost .seo-audit-cost__card.reveal.is-visible {
+#seo-audit-cost .seo-audit-cost__card.reveal.is-visible,
+#email-marketing-pricing .seo-audit-cost__card.reveal.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1);
 }
 
-#seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible {
+#seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible,
+#email-marketing-pricing .seo-audit-cost__card--featured.reveal.is-visible {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover {
+  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover,
+  #email-marketing-pricing .seo-audit-cost__card.reveal.is-visible:hover {
     transform: translate3d(0, -8px, 0) scale(1.01);
     border-color: rgba(255, 77, 58, 0.26);
     box-shadow:
@@ -10919,7 +10926,8 @@ section#ai-marketing-why-ai-powered {
       0 0 0 1px rgba(15, 42, 74, 0.06);
   }
 
-  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible:hover {
+  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible:hover,
+  #email-marketing-pricing .seo-audit-cost__card--featured.reveal.is-visible:hover {
     transform: translate3d(0, -8px, 0) scale(1.01);
     border-color: rgba(255, 77, 58, 0.3);
     box-shadow:
@@ -10928,7 +10936,8 @@ section#ai-marketing-why-ai-powered {
       0 0 0 1px rgba(255, 77, 58, 0.14);
   }
 
-  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover::before {
+  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover::before,
+  #email-marketing-pricing .seo-audit-cost__card.reveal.is-visible:hover::before {
     left: 8px;
     right: 8px;
     height: 4px;
@@ -10937,14 +10946,16 @@ section#ai-marketing-why-ai-powered {
     box-shadow: 0 2px 14px rgba(255, 77, 58, 0.28);
   }
 
-  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover .seo-audit-cost__card-bg {
+  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible:hover .seo-audit-cost__card-bg,
+  #email-marketing-pricing .seo-audit-cost__card.reveal.is-visible:hover .seo-audit-cost__card-bg {
     opacity: 0.72;
   }
 }
 
 @media (max-width: 900px) {
 
-  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible {
+  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible,
+  #email-marketing-pricing .seo-audit-cost__card--featured.reveal.is-visible {
     transform: translate3d(0, 0, 0) scale(1);
   }
 }
@@ -10952,13 +10963,16 @@ section#ai-marketing-why-ai-powered {
 @media (prefers-reduced-motion: reduce) {
   
   #seo-audit-cost .seo-audit-cost__card.reveal.is-visible,
-  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible {
+  #email-marketing-pricing .seo-audit-cost__card.reveal.is-visible,
+  #seo-audit-cost .seo-audit-cost__card--featured.reveal.is-visible,
+  #email-marketing-pricing .seo-audit-cost__card--featured.reveal.is-visible {
     transition-duration: 0.01ms !important;
     transform: none !important;
     opacity: 1 !important;
   }
 
-  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible::before {
+  #seo-audit-cost .seo-audit-cost__card.reveal.is-visible::before,
+  #email-marketing-pricing .seo-audit-cost__card.reveal.is-visible::before {
     animation: none !important;
   }
 }
@@ -10994,7 +11008,8 @@ section#ai-marketing-why-ai-powered {
 
 /* Responsive */
 
-section#why-choose-on-page-seo {
+section#why-choose-on-page-seo,
+section#email-marketing-why-choose {
   background: #f5f7fa;
 }
 

@@ -81,6 +81,19 @@ body:has(#email-marketing-hero-title) #main.svc-page {
   text-decoration: underline !important;
   -webkit-text-fill-color: #ff6a5a !important;
 }
+
+#email-marketing-what .seo-split__content p a.brand-link {
+  color: #ff4d3a !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ff4d3a !important;
+}
+
+#email-marketing-what .seo-split__content p a.brand-link:hover {
+  color: #ff6a5a !important;
+  text-decoration: underline !important;
+  -webkit-text-fill-color: #ff6a5a !important;
+}
 `;
 
 export default function EmailMarketingServicesPage() {
