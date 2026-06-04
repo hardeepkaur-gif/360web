@@ -14859,7 +14859,8 @@ section.section.svc-transform {
 
 /* SEO Audit — hero illustration treatment */
 .hero__photo--seo-audit-hero .hero__smm-illustration,
-.hero__photo--local-seo-hero .hero__smm-illustration {
+.hero__photo--local-seo-hero .hero__smm-illustration,
+.hero__photo--email-marketing-hero .hero__smm-illustration {
   border-radius: clamp(14px, 2.2vw, 24px);
 }
 
