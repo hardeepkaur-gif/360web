@@ -8668,6 +8668,8 @@ section.section.svc-transform {
 /* On-page SEO: 4-column educational table — hide challenger ✕ markers on desktop only
    (mobile compare layout reuses nth-child labels via ::before). */
 
+/* Local SEO compare table: narrower width, balanced columns */
+
 /* WordPress sub-service page: what-is + software vs services */
 .wp-about-split--what-is .section__head {
   margin-bottom: clamp(40px, 5vw, 64px);

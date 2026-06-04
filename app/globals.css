@@ -14372,7 +14372,7 @@ section.section.svc-transform {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(24px, 4vw, 44px);
-  align-items: stretch;
+  align-items: start;
 }
 .contact-simple__col--form,
 .contact-simple__col--map,
@@ -14382,13 +14382,11 @@ section.section.svc-transform {
   min-width: 0;
 }
 .contact-simple__panel {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
 .contact-simple__form-stack,
 .contact-simple__map-stack {
-  flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
@@ -14438,7 +14436,6 @@ section.section.svc-transform {
   }
 }
 .contact-simple__form {
-  flex: 1;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -14702,13 +14699,11 @@ section.section.svc-transform {
   border: 1px solid rgba(15, 42, 74, 0.1);
   box-shadow: 0 14px 44px rgba(15, 42, 74, 0.12);
   background: var(--white);
-  height: 72%;
-  min-height: 0;
 }
 
 .contact-showcase img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center top;
   display: block;
