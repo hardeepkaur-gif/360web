@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Email Marketing Services UK | Campaigns, Automation & ROI",
+  title: "Expert Email Marketing Services UK | Drive Real ROI",
   description:
-    "Professional email marketing services for UK businesses. Strategy, design, automation and reporting to turn subscribers into customers.",
+    "When strategy, automation and design work together, email marketing delivers exceptional ROI. 360 Web Solutions turns your inbox into a revenue-generating engine.",
   openGraph: {
-    title: "Email Marketing Services UK | Campaigns, Automation & ROI",
+    title: "Expert Email Marketing Services UK | Drive Real ROI",
     description:
-      "Professional email marketing services for UK businesses. Strategy, design, automation and reporting to turn subscribers into customers.",
+      "When strategy, automation and design work together, email marketing delivers exceptional ROI. 360 Web Solutions turns your inbox into a revenue-generating engine.",
   },
 };
 
@@ -45,6 +45,42 @@ body:has(#email-marketing-hero-title) #main.svc-page {
     padding-right: max(40px, env(safe-area-inset-right));
   }
 }
+
+@media (min-width: 1081px) {
+  body:has(#email-marketing-hero-title) #email-marketing-services-include .svc-body {
+    align-items: start;
+  }
+
+  body:has(#email-marketing-hero-title) #email-marketing-services-include .svc-right {
+    min-height: 0 !important;
+  }
+}
+
+#email-marketing-services-include .svc-hdr .sub a.brand-link {
+  color: #ff4d3a !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ff4d3a !important;
+}
+
+#email-marketing-services-include .svc-hdr .sub a.brand-link:hover {
+  color: #ff6a5a !important;
+  text-decoration: underline !important;
+  -webkit-text-fill-color: #ff6a5a !important;
+}
+
+#email-marketing-why-roi .smm-diag__footer a.brand-link {
+  color: #ff4d3a !important;
+  font-weight: 600;
+  text-decoration: none !important;
+  -webkit-text-fill-color: #ff4d3a !important;
+}
+
+#email-marketing-why-roi .smm-diag__footer a.brand-link:hover {
+  color: #ff6a5a !important;
+  text-decoration: underline !important;
+  -webkit-text-fill-color: #ff6a5a !important;
+}
 `;
 
 export default function EmailMarketingServicesPage() {
@@ -71,6 +107,7 @@ export default function EmailMarketingServicesPage() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/email-marketing-services-include.js" strategy="lazyOnload" />
     </>
   );
 }
