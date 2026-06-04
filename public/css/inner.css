@@ -9850,29 +9850,31 @@ section.section.svc-transform {
   background: var(--white);
 }
 
-/* Email marketing — platform cards: 4 across, then 3 centred */
+/* Email marketing — platform cards: 4 in row 1, 3 centred in row 2 */
 .email-platforms {
   background: var(--white);
 }
-.email-platforms__rows {
-  display: flex;
-  flex-direction: column;
+#email-marketing-platforms .email-platforms__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
   position: relative;
   z-index: 2;
 }
-.email-platforms__row {
-  display: grid;
-  gap: 24px;
+/* Row 1: four equal cards */
+#email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(-n + 4) {
+  grid-column: span 3;
 }
-.email-platforms__row--4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-@media (min-width: 821px) {
-  .email-platforms__row--3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: 75%;
-    margin-inline: auto;
+/* Row 2: three cards centred (one column margin each side) */
+@media (min-width: 901px) {
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(5) {
+    grid-column: 2 / 5;
+  }
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(6) {
+    grid-column: 5 / 8;
+  }
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(7) {
+    grid-column: 8 / 11;
   }
 }
 .email-platforms .ind-card h3 .ind-card__sub {
@@ -9882,15 +9884,17 @@ section.section.svc-transform {
   color: var(--ink-3);
   margin-top: 4px;
 }
-@media (max-width: 1100px) {
-  .email-platforms__row--4 {
+@media (max-width: 900px) {
+  #email-marketing-platforms .email-platforms__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .email-platforms__row--3 {
-    width: 100%;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(-n + 4),
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(5),
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(6),
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(7) {
+    grid-column: auto;
   }
-  .email-platforms__row--3 .ind-card:last-child {
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(7) {
     grid-column: 1 / -1;
     max-width: calc(50% - 12px);
     margin-inline: auto;
@@ -9898,11 +9902,10 @@ section.section.svc-transform {
   }
 }
 @media (max-width: 720px) {
-  .email-platforms__row--4,
-  .email-platforms__row--3 {
+  #email-marketing-platforms .email-platforms__grid {
     grid-template-columns: 1fr;
   }
-  .email-platforms__row--3 .ind-card:last-child {
+  #email-marketing-platforms .email-platforms__grid > .ind-card:nth-child(7) {
     max-width: none;
     grid-column: auto;
   }

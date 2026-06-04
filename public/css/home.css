@@ -8151,7 +8151,9 @@ section.section.svc-transform {
 
 /* Web development page: "Types of Websites We Build" cards */
 
-/* Email marketing — platform cards: 4 across, then 3 centred */
+/* Email marketing — platform cards: 4 in row 1, 3 centred in row 2 */
+/* Row 1: four equal cards */
+/* Row 2: three cards centred (one column margin each side) */
 .wd-type-card:hover {
   background: #fbfdff;
   box-shadow: inset 3px 0 0 var(--blue);
