@@ -12416,10 +12416,6 @@ section.section.svc-transform {
   flex-direction: column;
   min-width: 0;
 }
-.contact-simple__panel {
-  display: flex;
-  flex-direction: column;
-}
 .contact-simple__form-stack {
   display: flex;
   flex-direction: column;
