@@ -10598,6 +10598,8 @@ section#ai-marketing-why-ai-powered {
 
 /* On-page SEO — editorial split: match image column width to copy column */
 
+/* Email marketing — What Are: single image, height matches copy column */
+
 /* Desktop: copy is first in DOM for mobile stack order — pin visual left, copy right */
 
 /* —— Visual column —— */
@@ -10815,6 +10817,10 @@ section#ai-marketing-why-ai-powered {
 /* —— Why on-page SEO matters —— */
 
 /* On-page SEO — equal width for copy vs visual */
+
+section#email-marketing-agency-switch.seo-matters {
+  background: #f1f4f9;
+}
 
 /* SEO content writing — improving existing: stretch visual to match copy column height */
 

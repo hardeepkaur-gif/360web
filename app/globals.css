@@ -16732,7 +16732,6 @@ section.section.svc-transform {
 /* Centered header above the diagnosis grid */
 .smm-diag__head {
   text-align: center;
-  max-width: 820px;
   margin: 0 auto clamp(36px, 5vw, 64px);
 }
 
@@ -16770,7 +16769,6 @@ section.section.svc-transform {
 }
 
 .smm-diag__head .smm-diag__lede {
-  max-width: 720px;
   margin: 0 auto;
   font-size: 16px;
 }
@@ -17835,7 +17833,6 @@ section.section.svc-transform {
 .seo-trust__head .section__title {
   margin-left: auto;
   margin-right: auto;
-  max-width: 920px;
   text-align: center;
   text-wrap: balance;
 }
@@ -17992,7 +17989,6 @@ section#seo-content-writing-process {
 
 .seo-trust__lede {
   margin: clamp(12px, 2vw, 18px) auto 0;
-  max-width: 720px;
   text-align: center;
   font-size: clamp(15px, 1.05vw, 17px);
   line-height: 1.65;
@@ -18157,6 +18153,66 @@ section#ai-marketing-why-ai-powered {
 
 #seo-services-overview.seo-split .seo-split__photo-stack {
   padding-right: clamp(12px, 3vw, 32px);
+}
+
+/* Email marketing — What Are: single image, height matches copy column */
+#email-marketing-what.seo-split--equal .seo-split__grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(40px, 5vw, 68px);
+}
+
+#email-marketing-what.seo-split--equal .seo-split__visual {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-left: 18px;
+}
+
+#email-marketing-what.seo-split--equal .seo-split__accent-bar {
+  top: 0;
+  bottom: 0;
+}
+
+#email-marketing-what.seo-split--equal .seo-split__photo-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+}
+
+#email-marketing-what.seo-split--equal .seo-split__photo-main-wrap {
+  flex: 1;
+  display: flex;
+  min-height: 100%;
+  animation: none;
+}
+
+#email-marketing-what.seo-split--equal .seo-split__img-main {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  aspect-ratio: unset;
+  object-fit: cover;
+}
+
+@media (max-width: 968px) {
+  #email-marketing-what.seo-split--equal .seo-split__visual {
+    max-width: 520px;
+    margin-inline: auto;
+    min-height: 0;
+  }
+
+  #email-marketing-what.seo-split--equal .seo-split__photo-main-wrap {
+    min-height: 0;
+  }
+
+  #email-marketing-what.seo-split--equal .seo-split__img-main {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 0;
+  }
 }
 
 /* Desktop: copy is first in DOM for mobile stack order — pin visual left, copy right */
@@ -19600,6 +19656,10 @@ section#ai-marketing-why-ai-powered {
 
 #why-on-page-seo-matters.seo-matters .seo-matters__visual {
   padding: 28px 0 44px;
+}
+
+section#email-marketing-agency-switch.seo-matters {
+  background: #f1f4f9;
 }
 
 #email-marketing-agency-switch.seo-matters .seo-matters__grid {
