@@ -1,0 +1,33 @@
+import Script from "next/script";
+import type { Metadata } from "next";
+
+import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
+
+export const metadata: Metadata = {
+  title: "Link Building Services UK That Earns High Authority Backlinks | 360 Web Solutions",
+  description:
+    "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
+  openGraph: {
+    title: "Link Building Services UK That Earns High Authority Backlinks | 360 Web Solutions",
+    description:
+      "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
+  },
+};
+
+export default function LinkBuildingServicesPage() {
+  const html = loadLegacyPageWithSiteFooter(
+    "services/link-building-services.html",
+  );
+
+  return (
+    <>
+      <div
+        className="site-legacy"
+        style={{ display: "contents" }}
+        dangerouslySetInnerHTML={{ __html: html }}
+        suppressHydrationWarning
+      />
+      <Script src="/js/main.js" strategy="lazyOnload" />
+    </>
+  );
+}

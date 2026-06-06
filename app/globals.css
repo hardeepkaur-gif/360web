@@ -17606,6 +17606,25 @@ section.section.svc-transform {
   border-radius: clamp(14px, 2.2vw, 24px);
 }
 
+/* Link Building — five trust signals in hero stat strip */
+body:has(#link-building-hero-title) .hero__stats.hero__stats--compact {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  row-gap: 18px;
+}
+
+body:has(#link-building-hero-title) .hero__stats.hero__stats--compact .hero__stat {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 108px;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  body:has(#link-building-hero-title) .hero__stats.hero__stats--compact .hero__stat {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
 /* =====================================================================
    AI Consultancy — equal columns, intrinsic image + floating animation
    ===================================================================== */
@@ -20720,10 +20739,6 @@ section#email-marketing-why-choose {
 }
 
 section#email-marketing-process.section--svc {
-  padding-top: 0;
-}
-
-section#email-marketing-why-choose.seo-choose.section--svc {
   padding-top: 0;
 }
 
