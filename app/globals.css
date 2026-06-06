@@ -17606,23 +17606,28 @@ section.section.svc-transform {
   border-radius: clamp(14px, 2.2vw, 24px);
 }
 
-/* Link Building — five trust signals in hero stat strip */
-body:has(#link-building-hero-title) .hero__stats.hero__stats--compact {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  row-gap: 18px;
+/* Link Building — trust signals on one line */
+body:has(#link-building-hero-title) .hero__trust-line {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line-2);
+  font-size: clamp(10px, 0.85vw + 9px, 12.5px);
+  line-height: 1.45;
+  color: var(--ink-3);
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
 
-body:has(#link-building-hero-title) .hero__stats.hero__stats--compact .hero__stat {
-  flex: 1 1 calc(33.333% - 20px);
-  min-width: 108px;
-  text-align: left;
+body:has(#link-building-hero-title) .hero__trust-line::-webkit-scrollbar {
+  display: none;
 }
 
-@media (max-width: 720px) {
-  body:has(#link-building-hero-title) .hero__stats.hero__stats--compact .hero__stat {
-    flex: 1 1 calc(50% - 12px);
-  }
+body:has(#link-building-hero-title) .hero__trust-line__label,
+body:has(#link-building-hero-title) .hero__trust-line strong {
+  color: var(--navy);
+  font-weight: 700;
 }
 
 /* =====================================================================
