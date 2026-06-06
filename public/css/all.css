@@ -9933,6 +9933,11 @@ section.section.svc-transform {
 #ai-marketing-services-include.section--svc {
   padding-top: 0;
 }
+
+/* Email Marketing — services follows “What is…”; remove extra top inset */
+#email-marketing-services-include.section--svc {
+  padding-top: 0;
+}
 .svc-360bg {
   position: absolute;
   inset: 50% auto auto 50%;
