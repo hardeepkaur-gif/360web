@@ -1627,13 +1627,22 @@ h2 {
 .work-card__tags {
   display: flex; flex-wrap: wrap; gap: 6px;
 }
-.work-card__tags span {
+.work-card__tags span,
+.work-card__tags a {
   font-size: 11px; letter-spacing: .06em; font-weight: 600;
   padding: 5px 10px; border-radius: 999px;
   background: rgba(26, 95, 191, .08); color: #000000;
   transition: all .3s var(--ease);
+  text-decoration: none;
 }
-.work-card:hover .work-card__tags span:first-child {
+.work-card:hover .work-card__tags span:first-child,
+.work-card:hover .work-card__tags a:first-child {
+  background: var(--coral); color: var(--white);
+}
+.work-card__tags a:hover {
+  background: rgba(26, 95, 191, .16);
+}
+.work-card:hover .work-card__tags a:first-child:hover {
   background: var(--coral); color: var(--white);
 }
 .work-card__year {
@@ -3123,6 +3132,26 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.footer__form--centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer__form--centered .footer__form-row {
+  justify-content: center;
+  width: 100%;
+}
+
+.footer__form--centered .footer__form-note {
+  padding-left: 0;
+  text-align: center;
+}
+
+.footer__cta:has(.footer__form--centered) {
+  align-items: center;
 }
 
 .footer__form-row {

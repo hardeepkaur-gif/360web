@@ -63,7 +63,7 @@ function reviewCardMarkup(review: PlacesReview, idx: number): string {
             </div>
             <p class="gr-card__text">${escapeHtml(text)}</p>
             <footer class="gr-card__foot">
-              <a class="gr-action" href="${GOOGLE_SHARE_URL}" target="_blank" rel="noopener noreferrer">View on Google <span aria-hidden="true">&rarr;</span></a>
+              <a class="gr-action" href="${GOOGLE_SHARE_URL}" target="_blank" rel="nofollow noopener">View on Google <span aria-hidden="true">&rarr;</span></a>
             </footer>
           </article>`;
 }
