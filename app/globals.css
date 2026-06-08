@@ -5554,7 +5554,8 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 /* AI Marketing — four use-case cards: 2×2 from tablet up (default industries grid is 3 cols) */
 @media (min-width: 821px) {
-  #ai-marketing-business-use .industries__grid {
+  #ai-marketing-business-use .industries__grid,
+  #cro-uk-businesses .industries__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 980px;
     margin-inline: auto;
@@ -12955,6 +12956,41 @@ section.section.svc-transform {
   min-width: 0;
 }
 
+/* CRO pricing — two-column type vs cost table */
+#cro-pricing-compare .compare__photo {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("/assets/images/on-page-seo-pillars-compare-bg.png");
+  background-position: center center;
+}
+
+#cro-pricing-compare .compare__table {
+  max-width: 820px;
+  width: 100%;
+  margin-inline: auto;
+}
+
+#cro-pricing-compare .compare__table--cro-pricing .compare__head,
+#cro-pricing-compare .compare__table--cro-pricing .compare__row {
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+}
+
+#cro-pricing-compare .compare__table--cro-pricing .compare__row--last .compare__cell:first-child {
+  border-bottom-left-radius: var(--radius-xl);
+}
+
+@media (min-width: 821px) {
+  #cro-pricing-compare .compare__table--cro-pricing .compare__row .compare__cell:nth-child(2)::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  #cro-pricing-compare .compare__table--cro-pricing .compare__row .compare__cell:nth-child(2) {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
 /* Local SEO compare table: narrower width, balanced columns */
 #local-seo-compare .compare__table {
   max-width: 820px;
@@ -17500,7 +17536,11 @@ section.section.svc-transform {
   }
 }
 
-/* ---------- On-Page SEO hero: balanced columns, home-style frame, subtle SERP tint ---------- */
+/* CRO hero — reuse on-page SEO frame; two-line H1 */
+.hero.hero--cro #cro-hero-title .hero__title-line {
+  display: block;
+}
+
 .hero.hero--editorial.hero--webdev-mockups.hero--on-page-seo .hero__inner {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(48px, 5vw, 72px);
@@ -18223,12 +18263,14 @@ section#ai-marketing-why-ai-powered {
 }
 
 /* On-page SEO — editorial split: match image column width to copy column */
-#seo-services-overview.seo-split .seo-split__grid {
+#seo-services-overview.seo-split .seo-split__grid,
+#cro-services-overview.seo-split .seo-split__grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(40px, 5vw, 68px);
 }
 
-#seo-services-overview.seo-split .seo-split__photo-stack {
+#seo-services-overview.seo-split .seo-split__photo-stack,
+#cro-services-overview.seo-split .seo-split__photo-stack {
   padding-right: clamp(12px, 3vw, 32px);
 }
 
@@ -18294,11 +18336,13 @@ section#ai-marketing-why-ai-powered {
 
 /* Desktop: copy is first in DOM for mobile stack order — pin visual left, copy right */
 @media (min-width: 969px) {
-  #seo-services-overview.seo-split .seo-split__content {
+  #seo-services-overview.seo-split .seo-split__content,
+  #cro-services-overview.seo-split .seo-split__content {
     grid-column: 2;
     grid-row: 1;
   }
-  #seo-services-overview.seo-split .seo-split__visual {
+  #seo-services-overview.seo-split .seo-split__visual,
+  #cro-services-overview.seo-split .seo-split__visual {
     grid-column: 1;
     grid-row: 1;
   }
@@ -19731,8 +19775,14 @@ section#ai-marketing-why-ai-powered {
   gap: clamp(36px, 5vw, 64px);
 }
 
-#why-on-page-seo-matters.seo-matters .seo-matters__visual {
+#why-on-page-seo-matters.seo-matters .seo-matters__visual,
+#what-is-cro.seo-matters .seo-matters__visual {
   padding: 28px 0 44px;
+}
+
+#what-is-cro.seo-matters .seo-matters__grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 64px);
 }
 
 section#email-marketing-agency-switch.seo-matters {
@@ -19854,8 +19904,15 @@ section#email-marketing-agency-switch.seo-matters {
     seo-matters-on-page-shade 8s ease-in-out infinite;
 }
 
+#what-is-cro.seo-matters .seo-matters__frame {
+  animation:
+    seo-matters-on-page-float 8s ease-in-out infinite,
+    seo-matters-on-page-shade 8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  #why-on-page-seo-matters.seo-matters .seo-matters__frame {
+  #why-on-page-seo-matters.seo-matters .seo-matters__frame,
+  #what-is-cro.seo-matters .seo-matters__frame {
     animation: none;
   }
 }
@@ -20791,7 +20848,12 @@ section#email-marketing-why-choose {
   background: #f5f7fa;
 }
 
-section#email-marketing-process.section--svc {
+section#why-choose-cro {
+  background: #f5f7fa;
+}
+
+section#email-marketing-process.section--svc,
+section#cro-process.section--svc {
   padding-top: 0;
 }
 
@@ -21016,6 +21078,11 @@ section#what-we-do.about-what-we-do {
   max-width: 920px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.seo-choose__cta-wrap {
+  margin: 0;
+  text-align: center;
 }
 
 .seo-choose__item--bonus {

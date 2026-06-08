@@ -8705,6 +8705,8 @@ section.section.svc-transform {
 /* On-page SEO: 4-column educational table — hide challenger ✕ markers on desktop only
    (mobile compare layout reuses nth-child labels via ::before). */
 
+/* CRO pricing — two-column type vs cost table */
+
 /* Local SEO compare table: narrower width, balanced columns */
 
 /* WordPress sub-service page: what-is + software vs services */
@@ -10238,7 +10240,11 @@ section.section.svc-transform {
   }
 }
 
-/* ---------- On-Page SEO hero: balanced columns, home-style frame, subtle SERP tint ---------- */
+/* CRO hero — reuse on-page SEO frame; two-line H1 */
+.hero.hero--cro #cro-hero-title .hero__title-line {
+  display: block;
+}
+
 .hero.hero--editorial.hero--webdev-mockups.hero--on-page-seo .hero__inner {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(48px, 5vw, 72px);
@@ -11089,7 +11095,12 @@ section#email-marketing-why-choose {
   background: #f5f7fa;
 }
 
-section#email-marketing-process.section--svc {
+section#why-choose-cro {
+  background: #f5f7fa;
+}
+
+section#email-marketing-process.section--svc,
+section#cro-process.section--svc {
   padding-top: 0;
 }
 
@@ -11293,6 +11304,7 @@ section.about-system.section {
 /* Lighthouse contrast: ensure readable text on light backgrounds */
 .work-feature__chip em,
 .work-card__tags span,
+.work-card__tags a,
 .work-card__year,
 .work-card__stats span,
 .work-card__body .work-card__stats span,
