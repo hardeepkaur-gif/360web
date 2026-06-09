@@ -10863,7 +10863,9 @@ section#ai-marketing-why-ai-powered {
 #svc-ai-about .svc-ai-about__para a.brand-link:hover,
 #svc-ai-trust-market .svc-ai-trust__copy a.brand-link:hover,
 #svc-ai-why-choose .seo-choose__text a.brand-link:hover,
-#email-marketing-why-choose .seo-choose__text a.brand-link:hover {
+#email-marketing-why-choose .seo-choose__text a.brand-link:hover,
+#cro-uk-businesses .section__lede a.brand-link:hover,
+#why-choose-cro .seo-choose__lede a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;
   text-decoration: underline !important;
@@ -11109,9 +11111,12 @@ section#why-choose-cro {
   background: #f5f7fa;
 }
 
-section#email-marketing-process.section--svc,
-section#cro-process.section--svc {
+section#email-marketing-process.section--svc {
   padding-top: 0;
+}
+
+section#cro-process.section--svc {
+  padding-top: clamp(72px, 9vw, 100px);
 }
 
 section#why-choose-seo {
