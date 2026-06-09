@@ -8191,6 +8191,8 @@ section.section.svc-transform {
 /* Email Marketing — services follows “What is…”; remove extra top inset */
 
 /* Social Media Marketing — equal columns for service list vs image panel */
+
+/* CRO — image panel matches left service list height */
 .sl.active,
 .sl:hover {
   background: rgba(255, 77, 58, .05);
@@ -10010,9 +10012,9 @@ section.section.svc-transform {
   }
 }
 
-/* 2 cols + lone 5th row: center the last card */
+/* 2 cols + lone 5th row: center the last card (5-item lists only) */
 
-/* 3 cards + 2 centered below */
+/* 3 cards + 2 centered below (5-item lists only) */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -10676,7 +10678,9 @@ section#ai-marketing-why-ai-powered {
 
 /* Email marketing — What Are: single image, height matches copy column */
 
-/* Desktop: copy is first in DOM for mobile stack order — pin visual left, copy right */
+/* Desktop: on-page SEO — copy right, visual left (mobile stack unchanged) */
+
+/* CRO overview — centered heading, copy left, visual right */
 
 /* —— Visual column —— */
 
@@ -10893,6 +10897,10 @@ section#ai-marketing-why-ai-powered {
 /* —— Why on-page SEO matters —— */
 
 /* On-page SEO — equal width for copy vs visual */
+
+section#what-is-cro.seo-matters {
+  background: #f5f7fa;
+}
 
 section#email-marketing-agency-switch.seo-matters {
   background: #f1f4f9;
@@ -11121,6 +11129,10 @@ section#seo-audit-common-problems {
 }
 
 section#on-page-effective-2026 {
+  background: #f5f7fa;
+}
+
+section#cro-uk-businesses {
   background: #f5f7fa;
 }
 

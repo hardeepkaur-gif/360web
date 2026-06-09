@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Conversion Rate Optimisation Services UK | 360 Web Solutions",
+  title: "CRO Agency UK | Conversion Rate Optimisation Services",
   description:
-    "Turn more of your existing traffic into leads and customers. Our CRO services help UK businesses audit, test and measure conversion barriers with data-backed changes.",
+    "Fix conversion barriers fast with our Conversion Rate Optimisation services. Convert more visitors without more ad spend. Book your one-hour audit.",
   openGraph: {
-    title: "Conversion Rate Optimisation Services UK | 360 Web Solutions",
+    title: "CRO Agency UK | Conversion Rate Optimisation Services",
     description:
-      "Turn more of your existing traffic into leads and customers. Our CRO services help UK businesses audit, test and measure conversion barriers with data-backed changes.",
+      "Fix conversion barriers fast with our Conversion Rate Optimisation services. Convert more visitors without more ad spend. Book your one-hour audit.",
   },
 };
 
