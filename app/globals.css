@@ -15625,6 +15625,34 @@ section.section.svc-transform {
   }
 }
 
+/* CRO trust signals — second row matches first row (3-up, left-aligned) */
+@media (min-width: 901px) {
+  #cro-certifications .ai-cert-stripes__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: start;
+  }
+
+  #cro-certifications .ai-cert-stripes__item {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 900px) {
+  #cro-certifications .ai-cert-stripes__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: start;
+  }
+
+  #cro-certifications .ai-cert-stripes__item {
+    grid-column: auto !important;
+    justify-self: stretch !important;
+    max-width: none !important;
+  }
+}
+
 /* ---------- AI Consultancy — about showcase (hero + copy) ---------- */
 .svc-ai-about {
   padding-block: clamp(52px, 8vw, 96px);
@@ -18382,27 +18410,88 @@ section#ai-marketing-why-ai-powered {
   }
 }
 
-/* CRO overview — centered heading, copy left, visual right */
+/* CRO overview — centered heading, image left, copy right, equal column heights */
 #cro-services-overview.seo-split--top-head .seo-split__head {
   text-align: center;
+  width: 100%;
   max-width: 920px;
   margin-inline: auto;
   margin-bottom: clamp(32px, 4.5vw, 52px);
 }
 
-#cro-services-overview.seo-split--top-head .seo-split__head .section__title {
+#cro-services-overview.seo-split--top-head .seo-split__head .section__title,
+#cro-services-overview.seo-split--top-head .seo-split__head .seo-split__title {
+  text-align: center;
+  margin-inline: auto;
   margin-bottom: 0;
 }
 
+#cro-services-overview.seo-split--top-head .seo-split__grid {
+  align-items: stretch;
+}
+
 @media (min-width: 969px) {
-  #cro-services-overview.seo-split--top-head .seo-split__content {
+  #cro-services-overview.seo-split--top-head .seo-split__visual {
     grid-column: 1;
     grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding-left: 18px;
   }
 
-  #cro-services-overview.seo-split--top-head .seo-split__visual {
+  #cro-services-overview.seo-split--top-head .seo-split__content {
     grid-column: 2;
     grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__accent-bar {
+    top: 0;
+    bottom: 0;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__photo-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    padding: 0 clamp(36px, 7%, 76px) 56px 0;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__photo-main-wrap {
+    flex: 1;
+    display: flex;
+    min-height: 100%;
+    animation: none;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__img-main {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: unset;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 968px) {
+  #cro-services-overview.seo-split--top-head .seo-split__visual {
+    max-width: 520px;
+    margin-inline: auto;
+    min-height: 0;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__photo-main-wrap {
+    min-height: 0;
+  }
+
+  #cro-services-overview.seo-split--top-head .seo-split__img-main {
+    aspect-ratio: 4 / 5;
+    height: auto;
+    min-height: 0;
   }
 }
 
@@ -19853,8 +19942,6 @@ section#what-is-cro.seo-matters {
   }
 
   #what-is-cro.seo-matters .seo-matters__visual {
-    grid-column: 1;
-    grid-row: 1;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -19863,8 +19950,6 @@ section#what-is-cro.seo-matters {
   }
 
   #what-is-cro.seo-matters .seo-matters__content {
-    grid-column: 2;
-    grid-row: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;

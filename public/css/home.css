@@ -10025,6 +10025,8 @@ section.section.svc-transform {
 
 /* About Us — sectors (certification stripes layout, 6 items) */
 
+/* CRO trust signals — second row matches first row (3-up, left-aligned) */
+
 /* ---------- AI Consultancy — about showcase (hero + copy) ---------- */
 
 /* ---------- Web Dev — post-hero outlined marquee ticker ---------- */
@@ -10680,7 +10682,7 @@ section#ai-marketing-why-ai-powered {
 
 /* Desktop: on-page SEO — copy right, visual left (mobile stack unchanged) */
 
-/* CRO overview — centered heading, copy left, visual right */
+/* CRO overview — centered heading, image left, copy right, equal column heights */
 
 /* —— Visual column —— */
 
