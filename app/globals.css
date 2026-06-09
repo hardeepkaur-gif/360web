@@ -4384,11 +4384,14 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 /* ------------------ REVEAL ANIMATION ------------------ */
 .reveal {
-  opacity: 0; transform: translateY(28px);
+  opacity: 1; transform: none;
   transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
   transition-delay: var(--delay, 0s);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.js-ready .reveal {
+  opacity: 0; transform: translateY(28px);
+}
+.js-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
