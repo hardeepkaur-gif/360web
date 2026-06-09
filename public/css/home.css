@@ -3619,11 +3619,11 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 /* ------------------ REVEAL ANIMATION ------------------ */
 .reveal {
-  opacity: 0; transform: translateY(28px);
+  opacity: 1; transform: none;
   transition: opacity .9s var(--ease-out), transform .9s var(--ease-out);
   transition-delay: var(--delay, 0s);
 }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.js-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -11319,6 +11319,24 @@ section.about-system.section {
 }
 
 /* ================= CASE STUDIES PAGE HERO ================= */
+
+/* ================= SERVICES HUB PAGE ================= */
+
+.svc-hub-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(26, 95, 191, 0.22);
+  box-shadow: 0 22px 48px rgba(15, 42, 74, 0.12);
+}
+
+.svc-hub-card:hover .svc-hub-card__num {
+  color: rgba(255, 77, 58, 0.14);
+  -webkit-text-stroke-color: transparent;
+}
+
+.svc-hub-card:hover .svc-hub-card__cta {
+  gap: 12px;
+  color: var(--coral-2);
+}
 
 /* Lighthouse contrast: ensure readable text on light backgrounds */
 .work-feature__chip em,
