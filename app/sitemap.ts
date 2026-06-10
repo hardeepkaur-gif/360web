@@ -16,19 +16,18 @@ const staticPages: SitemapEntry[] = [
   { path: "/case-studies", changeFrequency: "monthly", priority: 0.8 },
 ];
 
+/** Keep in sync with `content/partials/site-header.html` Services dropdown. */
 const servicePages: SitemapEntry[] = [
-  "ai-consultancy-services",
-  "ai-marketing-agency",
-  "conversion-rate-optimisation-services",
-  "email-marketing-services",
-  "link-building-services",
-  "local-seo-services",
   "on-page-seo-services",
+  "local-seo-services",
   "seo-audit-services",
   "seo-content-writing-services",
+  "ai-consultancy-services",
+  "ai-marketing-agency",
   "social-media-marketing",
+  "email-marketing-services",
+  "conversion-rate-optimisation-services",
   "web-development-services",
-  "wordpress-development-services",
 ].map((slug) => ({
   path: `/services/${slug}`,
   changeFrequency: "monthly" as const,
