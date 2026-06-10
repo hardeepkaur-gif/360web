@@ -1,6 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import { HomeSchemaScript } from "@/components/HomeSchemaScript";
 import { loadLegacyHomeHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <>
+      <HomeSchemaScript />
       <link rel="preload" href="/css/home.css" as="style" />
       <link
         rel="preload"

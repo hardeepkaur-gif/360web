@@ -2,6 +2,9 @@ import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
 
+import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
+import { PAGE_BREADCRUMBS } from "@/lib/breadcrumbSchema";
+
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
@@ -20,6 +23,7 @@ export default function ContactUsPage() {
 
   return (
     <>
+      <BreadcrumbSchemaScript items={PAGE_BREADCRUMBS.contactUs} />
       <div
         className="site-legacy"
         style={{ display: "contents" }}

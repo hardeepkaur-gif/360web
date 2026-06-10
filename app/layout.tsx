@@ -6,6 +6,7 @@ import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import { SiteSchemaScript } from "@/components/SiteSchemaScript";
 
 const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
 
@@ -151,6 +152,7 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable}`}
     >
       <head>
+        <SiteSchemaScript />
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
         <script dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }} />
       </head>

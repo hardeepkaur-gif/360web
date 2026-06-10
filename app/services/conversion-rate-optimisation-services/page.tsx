@@ -1,6 +1,9 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
+import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
+import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -54,6 +57,8 @@ export default function ConversionRateOptimisationServicesPage() {
 
   return (
     <>
+      <ServiceSchemaScript slug="conversion-rate-optimisation-services" />
+      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("conversion-rate-optimisation-services")} />
       <style
         dangerouslySetInnerHTML={{ __html: CRO_ROUTE_RESPONSIVE_CSS }}
       />

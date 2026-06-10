@@ -1,6 +1,9 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
+import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
+import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -21,6 +24,8 @@ export default function SocialMediaMarketingPage() {
 
   return (
     <>
+      <ServiceSchemaScript slug="social-media-marketing" />
+      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("social-media-marketing")} />
       <div
         className="site-legacy"
         style={{ display: "contents" }}

@@ -1,6 +1,9 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
+import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
+import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -71,6 +74,8 @@ export default function SeoAuditServicesPage() {
 
   return (
     <>
+      <ServiceSchemaScript slug="seo-audit-services" />
+      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("seo-audit-services")} />
       <style
         dangerouslySetInnerHTML={{ __html: SEO_AUDIT_ROUTE_RESPONSIVE_CSS }}
       />

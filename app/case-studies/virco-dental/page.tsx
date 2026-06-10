@@ -2,6 +2,8 @@ import Script from "next/script";
 import type { Metadata } from "next";
 
 import "../case-study-d1.css";
+import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
+import { getCaseStudyBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -20,6 +22,7 @@ export default function VircoDentalCaseStudyPage() {
 
   return (
     <>
+      <BreadcrumbSchemaScript items={getCaseStudyBreadcrumbTrail("virco-dental")} />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
