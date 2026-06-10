@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import Script from "next/script";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
+import { SITE_URL } from "@/lib/site";
 
 const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
 
@@ -56,6 +57,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "360 Web Solutions Digital Marketing Agency London & UK",
   description:
     "UK digital marketing agency for SEO, PPC, web design, and content — in-house strategy, execution, and measurable growth across every channel.",
