@@ -5,6 +5,8 @@ import Script from "next/script";
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
 
+import CookieConsentBanner from "@/components/CookieConsentBanner";
+
 const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
 
 /** Load Tawk only after real user intent — avoids PSI/mobile TBT from idle auto-inject. */
@@ -154,6 +156,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning>
         {children}
+        <CookieConsentBanner />
         {isProduction ? (
           <Script id="tawk-loader" strategy="lazyOnload">
             {TAWK_LOADER}

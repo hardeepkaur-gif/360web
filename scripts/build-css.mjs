@@ -48,6 +48,7 @@ const SAFELIST = {
     /^wp-what-is/,
     /^wp-about/,
     /^wp-hero/,
+    /^cookie-consent/,
   ],
   greedy: [/hover/, /focus/, /active/, /open/, /visible/, /selected/],
 };
