@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Digital Marketing Services UK | 360 Web Solutions",
   description:
     "Explore all 360 Web Solutions services: SEO, local SEO, content, AI consultancy, social media, email marketing, CRO, and web development for UK businesses.",
+  alternates: {
+    canonical: "/services",
+  },
   openGraph: {
     title: "Digital Marketing Services UK | 360 Web Solutions",
     description:

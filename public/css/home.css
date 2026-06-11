@@ -10891,7 +10891,7 @@ section#ai-marketing-why-ai-powered {
   text-decoration: underline !important;
 }
 
-#services .svc-hdr .sub a.brand-link:hover,
+#home-services .svc-hdr .sub a.brand-link:hover,
 #outcomes .ind-card__desc a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;

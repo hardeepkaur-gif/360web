@@ -15,11 +15,21 @@ export const metadata: Metadata = {
   },
 };
 
+const LEGACY_SERVICES_HASH_REDIRECT = `
+(function(){
+  var path=location.pathname||"/";
+  if((path==="/"||path==="")&&location.hash.toLowerCase()==="#services"){
+    location.replace("/services");
+  }
+})();
+`.trim();
+
 export default function Home() {
   const html = loadLegacyHomeHtml();
 
   return (
     <>
+      <script dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }} />
       <HomeSchemaScript />
       <link rel="preload" href="/css/home.css" as="style" />
       <link
