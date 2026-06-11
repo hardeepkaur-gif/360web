@@ -1,49 +1,19 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
-import Script from "next/script";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { SiteSchemaScript } from "@/components/SiteSchemaScript";
-
-const TAWK_EMBED_SRC = "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
-
-/** Load Tawk only after real user intent — avoids PSI/mobile TBT from idle auto-inject. */
-const TAWK_LOADER = `
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var loaded=false;
-function inject(){
-  if(loaded) return;
-  loaded=true;
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src="${TAWK_EMBED_SRC}";
-  s1.charset="UTF-8";
-  if(s0&&s0.parentNode){s0.parentNode.insertBefore(s1,s0);}else{document.body.appendChild(s1);}
-}
-function onFirstIntent(){
-  inject();
-  window.removeEventListener("scroll", onFirstIntent, {passive:true});
-  window.removeEventListener("mousemove", onFirstIntent);
-  window.removeEventListener("touchstart", onFirstIntent, {passive:true});
-  window.removeEventListener("keydown", onFirstIntent);
-}
-window.addEventListener("scroll", onFirstIntent, {passive:true});
-window.addEventListener("mousemove", onFirstIntent);
-window.addEventListener("touchstart", onFirstIntent, {passive:true});
-window.addEventListener("keydown", onFirstIntent);
-})();
-`;
+import TawkChatLoader from "@/components/TawkChatLoader";
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600"],
   display: "swap",
   variable: "--font-inter",
-  preload: true,
+  preload: false,
 });
 
 const sora = Sora({
@@ -147,8 +117,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isProduction = process.env.NODE_ENV === "production";
-
   return (
     <html
       lang="en"
@@ -162,11 +130,7 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         {children}
         <CookieConsentBanner />
-        {isProduction ? (
-          <Script id="tawk-loader" strategy="lazyOnload">
-            {TAWK_LOADER}
-          </Script>
-        ) : null}
+        <TawkChatLoader />
       </body>
     </html>
   );
