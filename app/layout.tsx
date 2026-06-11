@@ -67,7 +67,10 @@ export const metadata: Metadata = {
   verification: {
     google: "pxb9xXMeX0PHyOKwtpuQHfUZ5pqmFnxHieceKz_uHLE",
   },
-  other: { "theme-color": "#0F2A4A" },
+  other: {
+    "theme-color": "#0F2A4A",
+    "p:domain_verify": "6502b3662f974c843f233e786efd5816",
+  },
   icons: { icon: "/assets/images/logo.webp" },
 };
 

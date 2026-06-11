@@ -1,19 +1,28 @@
+import { JsonLdScript } from "@/components/JsonLdScript";
 import {
-  createBreadcrumbSchema,
-  type BreadcrumbItem,
+  createCaseStudyPageSchemaGraph,
+  createStaticPageSchemaGraph,
+  type CaseStudySlug,
+  type PageBreadcrumbKey,
 } from "@/lib/breadcrumbSchema";
 
-type BreadcrumbSchemaScriptProps = {
-  items: readonly BreadcrumbItem[];
-};
+type BreadcrumbSchemaScriptProps =
+  | { pageKey: PageBreadcrumbKey }
+  | { caseStudy: CaseStudySlug };
 
-export function BreadcrumbSchemaScript({ items }: BreadcrumbSchemaScriptProps) {
-  const schema = createBreadcrumbSchema([...items]);
+function schemaId(props: BreadcrumbSchemaScriptProps) {
+  if ("pageKey" in props) {
+    return `breadcrumb-schema-${props.pageKey}`;
+  }
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return `breadcrumb-schema-${props.caseStudy}`;
+}
+
+export function BreadcrumbSchemaScript(props: BreadcrumbSchemaScriptProps) {
+  const schema =
+    "pageKey" in props
+      ? createStaticPageSchemaGraph(props.pageKey)
+      : createCaseStudyPageSchemaGraph(props.caseStudy);
+
+  return <JsonLdScript id={schemaId(props)} data={schema} />;
 }

@@ -3,7 +3,6 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
-import { PAGE_BREADCRUMBS } from "@/lib/breadcrumbSchema";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +22,7 @@ export default function AboutUsPage() {
 
   return (
     <>
-      <BreadcrumbSchemaScript items={PAGE_BREADCRUMBS.aboutUs} />
+      <BreadcrumbSchemaScript pageKey="aboutUs" />
       <div
         className="site-legacy"
         style={{ display: "contents" }}

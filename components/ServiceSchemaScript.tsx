@@ -1,17 +1,13 @@
-import { createServiceSchema, SERVICE_SCHEMAS, type ServiceSchemaSlug } from "@/lib/serviceSchema";
+import { JsonLdScript } from "@/components/JsonLdScript";
+import { createServicePageSchemaGraph } from "@/lib/breadcrumbSchema";
+import type { ServiceSchemaSlug } from "@/lib/serviceSchema";
 
 type ServiceSchemaScriptProps = {
   slug: ServiceSchemaSlug;
 };
 
 export function ServiceSchemaScript({ slug }: ServiceSchemaScriptProps) {
-  const entry = SERVICE_SCHEMAS[slug];
-  const schema = createServiceSchema(entry);
+  const schema = createServicePageSchemaGraph(slug);
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <JsonLdScript id={`service-schema-${slug}`} data={schema} />;
 }

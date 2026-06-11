@@ -110,9 +110,8 @@ export const SERVICE_SCHEMAS = {
 
 export type ServiceSchemaSlug = keyof typeof SERVICE_SCHEMAS;
 
-export function createServiceSchema(entry: ServiceSchemaEntry) {
+export function createServiceNode(entry: ServiceSchemaEntry) {
   return {
-    "@context": "https://schema.org",
     "@type": "Service",
     name: entry.name,
     serviceType: entry.serviceType,
@@ -123,5 +122,12 @@ export function createServiceSchema(entry: ServiceSchemaEntry) {
       name: "United Kingdom",
     },
     description: entry.description,
+  };
+}
+
+export function createServiceSchema(entry: ServiceSchemaEntry) {
+  return {
+    "@context": "https://schema.org",
+    ...createServiceNode(entry),
   };
 }

@@ -2,7 +2,6 @@ import Script from "next/script";
 import type { Metadata } from "next";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
-import { PAGE_BREADCRUMBS } from "@/lib/breadcrumbSchema";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -21,7 +20,7 @@ export default function CaseStudiesPage() {
 
   return (
     <>
-      <BreadcrumbSchemaScript items={PAGE_BREADCRUMBS.caseStudies} />
+      <BreadcrumbSchemaScript pageKey="caseStudies" />
       <div
         className="site-legacy"
         style={{ display: "contents" }}

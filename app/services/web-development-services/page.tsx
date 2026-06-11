@@ -1,9 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
-import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
-import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -25,7 +23,6 @@ export default function WebDevelopmentServicesPage() {
   return (
     <>
       <ServiceSchemaScript slug="web-development-services" />
-      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("web-development-services")} />
       <div
         className="site-legacy"
         style={{ display: "contents" }}

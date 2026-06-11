@@ -1,9 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
-import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
-import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -173,7 +171,6 @@ export default function LocalSeoServicesPage() {
   return (
     <>
       <ServiceSchemaScript slug="local-seo-services" />
-      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("local-seo-services")} />
       <link
         rel="preload"
         href="/assets/images/local-seo-hero.webp"

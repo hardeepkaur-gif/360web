@@ -1,9 +1,7 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
-import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
-import { getServiceBreadcrumbTrail } from "@/lib/breadcrumbSchema";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
@@ -107,7 +105,6 @@ export default function EmailMarketingServicesPage() {
   return (
     <>
       <ServiceSchemaScript slug="email-marketing-services" />
-      <BreadcrumbSchemaScript items={getServiceBreadcrumbTrail("email-marketing-services")} />
       <link
         rel="preload"
         href="/assets/images/email-marketing-hero.webp"
