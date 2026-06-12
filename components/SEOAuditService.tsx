@@ -421,7 +421,7 @@ export default function SEOAuditService() {
           <div className="relative order-last flex min-w-0 flex-1 justify-center md:order-none">
             <img
               src="/assets/images/seo-audit-hero.png"
-              alt="Flat illustration of a laptop showing analytics and a world map, with a magnifying glass over the screen and business icons in orbit — representing a detailed SEO audit."
+              alt="Laptop illustration with analytics, world map and magnifying glass"
               width={800}
               height={800}
               className={`${IMG} max-w-lg`}

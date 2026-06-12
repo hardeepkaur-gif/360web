@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
+import { TAWK_PERFORMANCE_PATCH } from "@/lib/tawkPerformancePatch";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { SiteSchemaScript } from "@/components/SiteSchemaScript";
@@ -124,6 +125,9 @@ export default function RootLayout({
     >
       <head>
         <SiteSchemaScript />
+        {process.env.NODE_ENV === "production" ? (
+          <script dangerouslySetInnerHTML={{ __html: TAWK_PERFORMANCE_PATCH }} />
+        ) : null}
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
         <script dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }} />
       </head>
