@@ -91,9 +91,18 @@ export function patchTawkPerformanceLogging() {
     let requestUrl = "";
 
     const originalOpen = xhr.open.bind(xhr);
-    xhr.open = (...args: Parameters<XMLHttpRequest["open"]>) => {
-      requestUrl = String(args[1] ?? "");
-      return originalOpen(...args);
+    xhr.open = function (
+      method: string,
+      url: string | URL,
+      async?: boolean,
+      username?: string | null,
+      password?: string | null,
+    ) {
+      requestUrl = String(url ?? "");
+      if (typeof async === "boolean") {
+        return originalOpen(method, url, async, username, password);
+      }
+      return originalOpen(method, url);
     };
 
     const originalSend = xhr.send.bind(xhr);
@@ -112,8 +121,14 @@ export function patchTawkPerformanceLogging() {
             configurable: true,
             value: '{"success":true}',
           });
-          xhr.onreadystatechange?.call(xhr, new Event("readystatechange"));
-          xhr.onload?.call(xhr, new Event("load"));
+          xhr.onreadystatechange?.call(
+            xhr,
+            new Event("readystatechange") as XMLHttpRequestEventMap["readystatechange"],
+          );
+          xhr.onload?.call(
+            xhr,
+            new ProgressEvent("load") as XMLHttpRequestEventMap["load"],
+          );
         });
         return;
       }
@@ -126,7 +141,7 @@ export function patchTawkPerformanceLogging() {
 
   window.XMLHttpRequest = function XMLHttpRequest() {
     return createPatchedXHR();
-  } as typeof XMLHttpRequest;
+  } as unknown as typeof XMLHttpRequest;
   window.XMLHttpRequest.prototype = OriginalXHR.prototype;
 
   if (navigator.sendBeacon) {
