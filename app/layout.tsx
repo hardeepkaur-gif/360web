@@ -107,8 +107,8 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero__photo{position:relative}
 .hero__photo-frame{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
 .hero__photo-img{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9}
-.reveal{opacity:0;transform:translateY(28px)}
-.reveal.is-visible{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.is-visible{opacity:1;transform:none}
 @media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu,.nav__phone{display:none}.nav__toggle{display:flex}.hero__subtitle{margin-inline:auto}.announcement{display:none}}
 @media(max-width:600px){.hero{padding:50px 0 40px}.hero__inner{padding:20px 16px 0}.container{padding:0 16px}}
 `.trim();

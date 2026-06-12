@@ -2,7 +2,8 @@
 export const DEFERRED_STYLES_LOADER = `
 (function(){
   var p=(location.pathname||'/').replace(/\\/$/,'')||'/';
-  var href=(p===''||p==='/')?'/css/home.css':'/css/inner.css';
+  if(p===''||p==='/')return;
+  var href='/css/inner.css';
   var preload=document.createElement('link');
   preload.rel='preload';
   preload.as='style';

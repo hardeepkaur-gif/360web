@@ -31,7 +31,7 @@ export default function Home() {
     <>
       <script dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }} />
       <HomeSchemaScript />
-      <link rel="preload" href="/css/home.css" as="style" />
+      <link rel="stylesheet" href="/css/home.css" />
       <link
         rel="preload"
         href="/assets/images/hero-home-digital-agency.webp"
@@ -45,8 +45,8 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: html }}
         suppressHydrationWarning
       />
-      <Script src="/js/main.js" strategy="lazyOnload" />
-      <Script src="/js/work-filters-fix.js" strategy="lazyOnload" />
+      <Script src="/js/main.js?v=20250609" strategy="afterInteractive" />
+      <Script src="/js/work-filters-fix.js?v=20250609" strategy="afterInteractive" />
     </>
   );
 }
