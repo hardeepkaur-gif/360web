@@ -5231,7 +5231,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   padding: 80px 0;
   position: relative;
 }
-/* “360” watermark — centered on seam with Principles; half in each section */
+/* “360” watermark — centered on seam with trusted strip above */
 .services-editorial::before {
   content: "360";
   position: absolute;
