@@ -60,6 +60,7 @@ const legalPages: SitemapEntry[] = [
   priority: 0.3,
 }));
 
+/** Blog listing and WordPress posts are intentionally excluded until requested. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 

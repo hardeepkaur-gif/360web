@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BlogCard } from "@/components/BlogCard";
+import { BlogPageHero } from "@/components/BlogPageHero";
 import { BlogPagination } from "@/components/BlogPagination";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { LegacySiteShell } from "@/components/LegacySiteShell";
@@ -26,17 +27,19 @@ export const metadata: Metadata = {
 };
 
 type BlogsPageProps = {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: Promise<{ page?: string; search?: string; category?: string }>;
 };
 
 export default async function BlogsPage({ searchParams }: BlogsPageProps) {
   const params = await searchParams;
   const currentPage = Math.max(1, Number.parseInt(params.page ?? "1", 10) || 1);
+  const search = params.search?.trim();
+  const category = params.category?.trim();
 
   let postsResult;
 
   try {
-    postsResult = await fetchPosts(currentPage);
+    postsResult = await fetchPosts(currentPage, undefined, { search, categorySlug: category });
   } catch {
     notFound();
   }
@@ -54,39 +57,37 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
         data={createBlogListingSchemaGraph(LISTING_DESCRIPTION)}
       />
 
-      <section className="blog-hero">
+      <BlogPageHero
+        title="Blog"
+        eyebrow="360 Web Solutions"
+        subtitle="Digital marketing insights, SEO guides, and growth strategies from our London team."
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Blog" },
+        ]}
+      />
+
+      <section className="blog-listing">
         <div className="container">
-          <span className="blog-hero__eyebrow">
-            <span className="blog-hero__eyebrow-line" aria-hidden="true" />
-            Insights &amp; guides
-          </span>
-          <h1 className="blog-hero__title">Blog</h1>
-          <p className="blog-hero__lede">
-            Practical advice on SEO, content, AI marketing, and conversion from
-            our London team.
-          </p>
+          {posts.length ? (
+            <>
+              <div className="blog-grid">
+                {posts.map((post) => (
+                  <BlogCard key={post.id} post={post} />
+                ))}
+              </div>
+              <BlogPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+              />
+            </>
+          ) : (
+            <div className="blog-empty">
+              <p>No blog posts published yet. Check back soon.</p>
+            </div>
+          )}
         </div>
       </section>
-
-      <div className="container">
-        {posts.length ? (
-          <>
-            <div className="blog-grid">
-              {posts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
-            <BlogPagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-            />
-          </>
-        ) : (
-          <div className="blog-empty">
-            <p>No blog posts published yet. Check back soon.</p>
-          </div>
-        )}
-      </div>
     </LegacySiteShell>
   );
 }

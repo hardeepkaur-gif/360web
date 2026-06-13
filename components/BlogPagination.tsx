@@ -16,38 +16,19 @@ export function BlogPagination({ currentPage, totalPages }: BlogPaginationProps)
 
   return (
     <nav className="blog-pagination" aria-label="Blog pagination">
-      {currentPage > 1 ? (
-        <Link href={pageHref(currentPage - 1)} className="blog-pagination__btn">
-          ← Previous
-        </Link>
-      ) : (
-        <span className="blog-pagination__btn blog-pagination__btn--disabled">
-          ← Previous
-        </span>
-      )}
-
-      <div className="blog-pagination__pages">
+      <ul className="blog-pagination__list">
         {pages.map((page) => (
-          <Link
-            key={page}
-            href={pageHref(page)}
-            className={`blog-pagination__page${page === currentPage ? " is-active" : ""}`}
-            aria-current={page === currentPage ? "page" : undefined}
-          >
-            {page}
-          </Link>
+          <li key={page}>
+            <Link
+              href={pageHref(page)}
+              className={`blog-pagination__page${page === currentPage ? " is-active" : ""}`}
+              aria-current={page === currentPage ? "page" : undefined}
+            >
+              {page}
+            </Link>
+          </li>
         ))}
-      </div>
-
-      {currentPage < totalPages ? (
-        <Link href={pageHref(currentPage + 1)} className="blog-pagination__btn">
-          Next →
-        </Link>
-      ) : (
-        <span className="blog-pagination__btn blog-pagination__btn--disabled">
-          Next →
-        </span>
-      )}
+      </ul>
     </nav>
   );
 }

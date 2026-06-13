@@ -1,19 +1,23 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { BlogPageHero } from "@/components/BlogPageHero";
+import { BlogPostSidebar } from "@/components/BlogPostSidebar";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { LegacySiteShell } from "@/components/LegacySiteShell";
 import { resolvePostSeo, seoToMetadata } from "@/lib/blogSeo";
 import { createBlogPostSchemaGraph } from "@/lib/blogSchema";
 import {
   fetchAllPostSlugs,
+  fetchCategories,
   fetchPostBySlug,
-  formatBlogDate,
+  fetchPostCommentCount,
+  fetchRecentPosts,
+  formatBlogDateBadge,
   getFeaturedImage,
   getPostAuthorName,
-  getPostCategories,
+  preparePostContent,
   stripHtml,
 } from "@/lib/wordpress";
 
@@ -57,11 +61,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  const seo = await resolvePostSeo(post, `/blogs/${slug}`);
+  const [seo, commentCount, recentPosts, categories] = await Promise.all([
+    resolvePostSeo(post, `/blogs/${slug}`),
+    fetchPostCommentCount(post.id),
+    fetchRecentPosts(4, slug),
+    fetchCategories(),
+  ]);
+
   const title = stripHtml(post.title.rendered);
   const image = getFeaturedImage(post);
-  const categories = getPostCategories(post);
   const author = getPostAuthorName(post);
+  const dateBadge = formatBlogDateBadge(post.date);
+  const commentLabel =
+    commentCount === 1 ? "1 Comment" : `${commentCount} Comments`;
 
   return (
     <LegacySiteShell>
@@ -70,44 +82,65 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         data={createBlogPostSchemaGraph(post, seo.description)}
       />
 
-      <article className="blog-post">
-        <div className="container">
-          <Link href="/blogs" className="blog-post__back">
-            ← Back to blog
-          </Link>
+      <BlogPageHero
+        title="Blog Details"
+        crumbs={[
+          { label: "Home", href: "/" },
+          { label: "Blog", href: "/blogs" },
+          { label: title },
+        ]}
+      />
 
-          <header className="blog-post__header">
-            <div className="blog-post__meta">
-              <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
-              <span>{author}</span>
-              {categories.map((category) => (
-                <span key={category.slug} className="blog-post__category">
-                  {category.name}
-                </span>
-              ))}
-            </div>
-            <h1 className="blog-post__title">{title}</h1>
-          </header>
+      <section className="blog-single">
+        <div className="container blog-single__grid">
+          <BlogPostSidebar recentPosts={recentPosts} categories={categories} />
 
-          {image ? (
-            <figure className="blog-post__featured">
-              <Image
-                src={image.url}
-                alt={image.alt}
-                width={image.width ?? 1200}
-                height={image.height ?? 675}
-                priority
-                sizes="(max-width: 900px) 100vw, 820px"
-              />
-            </figure>
-          ) : null}
+          <article className="blog-single__main">
+            {image ? (
+              <figure className="blog-single__featured">
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  width={image.width ?? 1200}
+                  height={image.height ?? 675}
+                  priority
+                  sizes="(max-width: 991px) 100vw, 720px"
+                  className="blog-single__featured-img"
+                />
+                <figcaption className="blog-single__date-badge">
+                  <span className="blog-single__date-day">{dateBadge.day}</span>
+                  <span className="blog-single__date-month">{dateBadge.month}</span>
+                </figcaption>
+              </figure>
+            ) : null}
 
-          <div
-            className="blog-post__content"
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          />
+            <ul className="blog-single__meta">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M20 21a8 8 0 1 0-16 0" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+                <span>By {author}</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <span>{commentLabel}</span>
+              </li>
+            </ul>
+
+            <h1 className="blog-single__title">{title}</h1>
+
+            <div
+              className="blog-post__content"
+              dangerouslySetInnerHTML={{
+                __html: preparePostContent(post.content.rendered),
+              }}
+            />
+          </article>
         </div>
-      </article>
+      </section>
     </LegacySiteShell>
   );
 }
