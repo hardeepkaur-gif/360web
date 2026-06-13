@@ -1,11 +1,22 @@
 import type { NextConfig } from "next";
 
+const wpImageHost =
+  process.env.WORDPRESS_IMAGE_HOST ||
+  "goldenrod-lion-234427.hostingersite.com";
+
 const nextConfig: NextConfig = {
   compress: true,
 
   images: {
     formats: ["image/webp", "image/avif"],
     minimumCacheTTL: 60 * 60 * 24 * 365,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: wpImageHost,
+        pathname: "/wp-content/uploads/**",
+      },
+    ],
   },
 
   async headers() {

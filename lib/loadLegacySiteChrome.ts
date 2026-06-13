@@ -70,3 +70,12 @@ export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
   const inner = readFileSync(innerPath, "utf-8");
   return withSiteFooter(siteHeader() + inner);
 }
+
+/** Header / footer only — for React pages (e.g. WordPress blog). */
+export function loadLegacySiteHeaderHtml(): string {
+  return siteHeader();
+}
+
+export function loadLegacySiteFooterHtml(): string {
+  return siteFooter();
+}
