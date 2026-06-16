@@ -6,13 +6,13 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Propday CRM Case Study | 360 Web Solutions — Custom PropTech Platform",
+  title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
   description:
-    "How 360 Web Solutions built Propday CRM from the ground up — custom lettings management, compliance workflows, and real-time reporting for a PropTech lettings operation.",
+    "See how 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting.",
   openGraph: {
-    title: "Propday CRM Case Study | 360 Web Solutions",
+    title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
     description:
-      "A property management system built from the ground up — web development, AI consultancy, and automation for real lettings operations.",
+      "See how 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting.",
   },
 };
 

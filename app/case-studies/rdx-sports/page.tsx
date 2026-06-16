@@ -6,11 +6,11 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "RDX Sports Case Study | 360 Web Solutions — Amazon Marketplace Growth",
+  title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
   description:
     "How 360 Web Solutions transformed RDX Sports from fragmented Amazon listings into a conversion-engineered marketplace operation across UK and EU.",
   openGraph: {
-    title: "RDX Sports Case Study | 360 Web Solutions",
+    title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
     description:
       "From storefront to scalable marketplace engine — marketplace SEO, on-page SEO, and CRO for a 25-year combat sports brand on Amazon UK/EU.",
   },

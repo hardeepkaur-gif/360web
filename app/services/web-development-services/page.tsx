@@ -7,11 +7,11 @@ import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Web Development Services | Custom Websites That Convert",
   description:
-    "Web development services built for speed, UI-UX, SEO, growth, and conversion. 360 Web Solutions builds custom websites, WordPress, Shopify, and ecommerce platforms for UK businesses.",
+    "Web development services built for speed, UX, SEO and conversions. We create custom, WordPress, Shopify and ecommerce websites for UK businesses.",
   openGraph: {
     title: "Web Development Services | Custom Websites That Convert",
     description:
-      "Web development services built for speed, UI-UX, SEO, growth, and conversion. 360 Web Solutions builds custom websites, WordPress, Shopify, and ecommerce platforms for UK businesses.",
+      "Web development services built for speed, UX, SEO and conversions. We create custom, WordPress, Shopify and ecommerce websites for UK businesses.",
   },
 };
 

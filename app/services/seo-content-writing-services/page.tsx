@@ -7,11 +7,11 @@ import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "SEO Content Writing Services for Google & AI Search",
   description:
-    "Rank faster with SEO content built on keyword research, search intent, and topical authority. Written by an in-house UK team so pages rank on Google and get cited by tools like ChatGPT and Perplexity.",
+    "Rank faster with SEO content built on keyword research. Written by an in-house UK team so you rank on Google and get cited by tools like ChatGPT and Perplexity.",
   openGraph: {
     title: "SEO Content Writing Services for Google & AI Search",
     description:
-      "Rank faster with SEO content built on keyword research, search intent, and topical authority. Written by an in-house UK team so pages rank on Google and get cited by tools like ChatGPT and Perplexity.",
+      "Rank faster with SEO content built on keyword research. Written by an in-house UK team so you rank on Google and get cited by tools like ChatGPT and Perplexity.",
   },
 };
 

@@ -6,13 +6,13 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "eHealth Solutions Case Study | 360 Web Solutions — Healthcare Digital Transformation",
+  title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
   description:
-    "How 360 Web Solutions delivered ePrivate Prescription, EMRpro, and LabLink for eHealth Solutions — secure cloud platforms for private healthcare across the UK.",
+    "How 360 Web Solutions delivered secure healthcare software including ePrivate Prescription, EMRpro and LabLink for UK providers.",
   openGraph: {
-    title: "eHealth Solutions Case Study | 360 Web Solutions",
+    title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
     description:
-      "Healthcare digital transformation where reliability is the product — custom cloud platforms for private clinicians and pharmacies.",
+      "How 360 Web Solutions delivered secure healthcare software including ePrivate Prescription, EMRpro and LabLink for UK providers.",
   },
 };
 

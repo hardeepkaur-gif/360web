@@ -6,13 +6,13 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Virco Dental Case Study | 360 Web Solutions — eBay Marketplace Growth",
+  title: "Virco Dental | 360 Web Solutions eBay Marketplace Growth",
   description:
-    "How 360 Web Solutions built marketplace authority for Virco Dental on eBay UK — credibility architecture, marketplace SEO, and e-commerce in a trust-critical healthcare category.",
+    "How 360 Web Solutions built marketplace authority for Virco Dental on eBay UK marketplace SEO, and e-commerce in a trust-critical healthcare category.",
   openGraph: {
-    title: "Virco Dental Case Study | 360 Web Solutions",
+    title: "Virco Dental | 360 Web Solutions eBay Marketplace Growth",
     description:
-      "Building marketplace authority in dental and healthcare supply — from fragmented catalogue to eBay Top-Rated Seller.",
+      "How 360 Web Solutions built marketplace authority for Virco Dental on eBay UK marketplace SEO, and e-commerce in a trust-critical healthcare category.",
   },
 };
 

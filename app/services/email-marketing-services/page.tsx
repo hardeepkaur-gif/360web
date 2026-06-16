@@ -7,11 +7,11 @@ import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Expert Email Marketing Services UK | Drive Real ROI",
   description:
-    "When strategy, automation and design work together, email marketing delivers exceptional ROI. 360 Web Solutions turns your inbox into a revenue-generating engine.",
+    "Expert email marketing services for UK businesses, from strategy and campaign to design and automation, fully managed by our team. Book a free consultation.",
   openGraph: {
     title: "Expert Email Marketing Services UK | Drive Real ROI",
     description:
-      "When strategy, automation and design work together, email marketing delivers exceptional ROI. 360 Web Solutions turns your inbox into a revenue-generating engine.",
+      "Expert email marketing services for UK businesses, from strategy and campaign to design and automation, fully managed by our team. Book a free consultation.",
   },
 };
 

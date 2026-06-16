@@ -7,13 +7,13 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "About Us | 360 Web Solutions",
+  title: "About Us | 360 Web Solutions and digital marketing agency",
   description:
-    "360 Web Solutions is a UK AI-powered digital agency headquartered in London. One partner, no seams — strategy, execution, and accountable growth under one roof.",
+    "Meet 360 Web Solutions, a UK AI-powered digital agency delivering SEO, PPC, web development and growth strategies from a single team.",
   openGraph: {
-    title: "About Us | 360 Web Solutions",
+    title: "About Us | 360 Web Solutions and digital marketing agency",
     description:
-      "Learn how 360 Web Solutions closes the gap between strategy and execution — systems-led SEO, AI, content, web, and performance for ambitious UK businesses.",
+      "Meet 360 Web Solutions, a UK AI-powered digital agency delivering SEO, PPC, web development and growth strategies from a single team.",
   },
 };
 

@@ -9,11 +9,11 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Disclaimer | 360 Web Solutions",
   description:
-    "Website disclaimer for 360 Smart Solutions Limited trading as 360 Web Solutions: no guarantee of SEO results, content accuracy, third-party links, and limitation of liability.",
+    "Website disclaimer for 360 Smart Solutions Limited trading as 360 Web Solutions covering SEO results, content accuracy, third-party links and liability.",
   openGraph: {
     title: "Disclaimer | 360 Web Solutions",
     description:
-      "Legal disclaimer for 360websolutions.co.uk — read alongside our Privacy Policy, Cookie Policy, and Terms and Conditions.",
+      "Website disclaimer for 360 Smart Solutions Limited trading as 360 Web Solutions covering SEO results, content accuracy, third-party links and liability.",
   },
 };
 

@@ -6,13 +6,13 @@ import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Xogo Sports Case Study | 360 Web Solutions — eBay Marketplace Growth",
+  title: "Xogo Sports | 360 Web Solutions eBay Marketplace Growth",
   description:
-    "How 360 Web Solutions shifted Xogo Sports from price competition to positioned brand value on eBay UK — marketplace SEO, on-page SEO, and CRO for sports equipment retail.",
+    "Discover how 360 Web Solutions helped Xogo Sports increase visibility and sales through eBay marketplace SEO, on-page optimisation and CRO.",
   openGraph: {
-    title: "Xogo Sports Case Study | 360 Web Solutions",
+    title: "Xogo Sports | 360 Web Solutions eBay Marketplace Growth",
     description:
-      "Winning the comparison view on eBay — from undifferentiated seller to positioned brand with 100% positive feedback across 13,000+ items sold.",
+      "Discover how 360 Web Solutions helped Xogo Sports increase visibility and sales through eBay marketplace SEO, on-page optimisation and CRO.",
   },
 };
 
