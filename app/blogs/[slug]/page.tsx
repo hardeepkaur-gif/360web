@@ -84,6 +84,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       <BlogPageHero
         title="Blog Details"
+        variant="single"
         crumbs={[
           { label: "Home", href: "/" },
           { label: "Blog", href: "/blogs" },

@@ -416,7 +416,7 @@ const FAQS: { q: string; a: string }[] = [
   },
   {
     q: "Do I need on-page SEO if I am already running ads or doing off page seo?",
-    a: "Yes, paid traffic and off page seo can bring visibility, but without proper on-site optimisation, your pages will struggle to convert or sustain rankings. On-page SEO ensures your traffic actually turns into results.",
+    a: "Yes, On-page SEO is still mandatory even if you are running ads or investing in off-page SEO. Ads can drive traffic and backlinks can build authority, but poorly optimised pages struggle to rank and convert. On-page SEO helps search engines understand your content and improves the user experience once visitors arrive on your website.",
   },
   {
     q: "Can on-page SEO really improve conversions, not just traffic?",

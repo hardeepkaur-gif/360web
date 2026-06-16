@@ -10,6 +10,7 @@ type BlogPageHeroProps = {
   crumbs: BlogHeroCrumb[];
   eyebrow?: string;
   subtitle?: string;
+  variant?: "listing" | "single";
 };
 
 export function BlogPageHero({
@@ -17,10 +18,11 @@ export function BlogPageHero({
   crumbs,
   eyebrow,
   subtitle,
+  variant = "listing",
 }: BlogPageHeroProps) {
   return (
     <section
-      className="contact-page-hero about-page-hero blog-page-hero reveal"
+      className={`contact-page-hero about-page-hero blog-page-hero blog-page-hero--${variant} reveal`}
       aria-labelledby="blog-page-title"
     >
       <div

@@ -91,6 +91,22 @@ export function stripHtml(html: string): string {
   return decodeWpHtml(html);
 }
 
+export function getPostExcerpt(post: WPPost): string {
+  const excerpt = stripHtml(post.excerpt.rendered).replace(/\[\s*…?\s*\]|\[\.\.\.\]/g, "").trim();
+
+  if (excerpt) {
+    return excerpt;
+  }
+
+  const fromContent = stripHtml(post.content.rendered);
+
+  if (fromContent.length <= 220) {
+    return fromContent;
+  }
+
+  return `${fromContent.slice(0, 220).replace(/\s+\S*$/, "").trim()}…`;
+}
+
 export function getFeaturedImage(post: WPPost) {
   const media = post._embedded?.["wp:featuredmedia"]?.[0];
   if (!media?.source_url) return null;

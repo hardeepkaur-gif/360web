@@ -5,6 +5,7 @@ import {
   formatBlogDate,
   getCategoryTags,
   getFeaturedImage,
+  getPostExcerpt,
   stripHtml,
   type WPPostWithMeta,
 } from "@/lib/wordpress";
@@ -15,13 +16,10 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   const title = stripHtml(post.title.rendered);
+  const excerpt = getPostExcerpt(post);
   const image = getFeaturedImage(post);
   const tags = getCategoryTags(post);
   const href = `/blogs/${post.slug}`;
-  const commentLabel =
-    post.commentCount === 1
-      ? "1 Comment"
-      : `${post.commentCount} Comments`;
 
   return (
     <article className="blog-card">
@@ -64,18 +62,13 @@ export function BlogCard({ post }: BlogCardProps) {
               </svg>
               <time dateTime={post.date}>{formatBlogDate(post.date)}</time>
             </li>
-            <li className="blog-card__meta-sep" aria-hidden="true">|</li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              <span>{commentLabel}</span>
-            </li>
           </ul>
 
           <h2 className="blog-card__title">
             <Link href={href}>{title}</Link>
           </h2>
+
+          <p className="blog-card__excerpt">{excerpt}</p>
 
           <Link href={href} className="blog-card__btn">
             Read More
