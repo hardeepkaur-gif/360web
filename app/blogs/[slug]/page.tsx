@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { BlogPageHero } from "@/components/BlogPageHero";
 import { BlogPostSidebar } from "@/components/BlogPostSidebar";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { LegacySiteShell } from "@/components/LegacySiteShell";
@@ -14,7 +13,6 @@ import {
   fetchPostBySlug,
   fetchPostCommentCount,
   fetchRecentPosts,
-  formatBlogDateBadge,
   getFeaturedImage,
   getPostAuthorName,
   preparePostContent,
@@ -71,7 +69,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const title = stripHtml(post.title.rendered);
   const image = getFeaturedImage(post);
   const author = getPostAuthorName(post);
-  const dateBadge = formatBlogDateBadge(post.date);
   const commentLabel =
     commentCount === 1 ? "1 Comment" : `${commentCount} Comments`;
 
@@ -80,16 +77,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <JsonLdScript
         id={`blog-post-schema-${post.id}`}
         data={createBlogPostSchemaGraph(post, seo.description)}
-      />
-
-      <BlogPageHero
-        title="Blog Details"
-        variant="single"
-        crumbs={[
-          { label: "Home", href: "/" },
-          { label: "Blog", href: "/blogs" },
-          { label: title },
-        ]}
       />
 
       <section className="blog-single">
@@ -108,10 +95,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   sizes="(max-width: 991px) 100vw, 720px"
                   className="blog-single__featured-img"
                 />
-                <figcaption className="blog-single__date-badge">
-                  <span className="blog-single__date-day">{dateBadge.day}</span>
-                  <span className="blog-single__date-month">{dateBadge.month}</span>
-                </figcaption>
               </figure>
             ) : null}
 
