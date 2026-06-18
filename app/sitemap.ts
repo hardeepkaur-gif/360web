@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { SITE_URL } from "@/lib/site";
+import { fetchAllPostsForSitemap } from "@/lib/wordpress";
 
 type SitemapEntry = {
   path: string;
@@ -14,6 +15,7 @@ const staticPages: SitemapEntry[] = [
   { path: "/contact-us", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services", changeFrequency: "weekly", priority: 0.9 },
   { path: "/case-studies", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blogs", changeFrequency: "weekly", priority: 0.7 },
 ];
 
 /** Keep in sync with `content/partials/site-header.html` Services dropdown. */
@@ -60,16 +62,37 @@ const legalPages: SitemapEntry[] = [
   priority: 0.3,
 }));
 
-/** Blog listing and WordPress posts are intentionally excluded until requested. */
-export default function sitemap(): MetadataRoute.Sitemap {
+function mapStaticEntries(entries: SitemapEntry[]): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  return [...staticPages, ...servicePages, ...caseStudyPages, ...legalPages].map(
-    ({ path, changeFrequency, priority }) => ({
-      url: `${SITE_URL}${path}`,
-      lastModified,
-      changeFrequency,
-      priority,
-    }),
-  );
+  return entries.map(({ path, changeFrequency, priority }) => ({
+    url: `${SITE_URL}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }));
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const staticSitemap = mapStaticEntries([
+    ...staticPages,
+    ...servicePages,
+    ...caseStudyPages,
+    ...legalPages,
+  ]);
+
+  try {
+    const posts = await fetchAllPostsForSitemap();
+
+    const blogPostEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+      url: `${SITE_URL}/blogs/${post.slug}`,
+      lastModified: new Date(post.modified),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }));
+
+    return [...staticSitemap, ...blogPostEntries];
+  } catch {
+    return staticSitemap;
+  }
 }
