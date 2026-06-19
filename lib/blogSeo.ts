@@ -99,7 +99,10 @@ export function seoToMetadata(seo: BlogSeoMeta): Metadata {
   return {
     title,
     description,
-    robots: seo.robots,
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: canonical ? { canonical } : undefined,
     openGraph: {
       title: seo.ogTitle ?? title,

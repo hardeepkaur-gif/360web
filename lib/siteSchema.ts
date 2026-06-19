@@ -39,6 +39,10 @@ export const SITE_SERVICES = [
     path: "/services/email-marketing-services",
   },
   {
+    name: "Google Ads Management",
+    path: "/services/google-ads-management-services",
+  },
+  {
     name: "Conversion Rate Optimisation Services",
     path: "/services/conversion-rate-optimisation-services",
   },

@@ -74,6 +74,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "Email marketing services where strategy, automation, and design work together to turn your inbox into a revenue-generating engine.",
   },
+  "google-ads-management-services": {
+    slug: "google-ads-management-services",
+    name: "Google Ads Management",
+    serviceType: "Google Ads Management",
+    path: "/services/google-ads-management-services",
+    description:
+      "Google Ads management for UK businesses — end-to-end campaign strategy, keyword targeting, landing page performance, and transparent pricing.",
+  },
   "conversion-rate-optimisation-services": {
     slug: "conversion-rate-optimisation-services",
     name: "Conversion Rate Optimisation Services",

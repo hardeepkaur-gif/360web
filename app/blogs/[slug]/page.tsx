@@ -48,7 +48,13 @@ export async function generateMetadata({
   }
 
   const seo = await resolvePostSeo(post, `/blogs/${slug}`);
-  return seoToMetadata(seo);
+  return {
+    ...seoToMetadata(seo),
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
