@@ -5,13 +5,13 @@ import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Google Ads Management UK | Campaigns That Convert Into Leads",
+  title: "Google Ads Management UK | 360 Web Solutions",
   description:
-    "Google Ads management for UK businesses — end-to-end campaign strategy, keyword targeting, landing page performance, and transparent pricing with no long-term contracts.",
+    "Wasting budget on Google ads that don't convert? Our expert Google Ads management delivers real leads and full transparency, with no long contracts.",
   openGraph: {
-    title: "Google Ads Management UK | Campaigns That Convert Into Leads",
+    title: "Google Ads Management UK | 360 Web Solutions",
     description:
-      "Google Ads management for UK businesses — end-to-end campaign strategy, keyword targeting, landing page performance, and transparent pricing with no long-term contracts.",
+      "Wasting budget on Google ads that don't convert? Our expert Google Ads management delivers real leads and full transparency, with no long contracts.",
   },
 };
 

@@ -10,8 +10,8 @@
       title: "Week 1–2: Audit Strategy and Account",
       subtitle: "",
       text: "We begin by auditing your existing account or building one from scratch if there isn't any preexisting account. The audit helps us to identify wasted ad spend, structural issues, missing conversion tracking, and keyword gaps. We then define campaign architecture, match types, and build the negative keywords lists that save your budget from day one. Conversion tracking is set up or verified in GA4 before a single campaign goes live.",
-      image: "/assets/images/home-process-discover.webp",
-      alt: "Team auditing Google Ads account structure, tracking, and keyword performance.",
+      image: "/assets/images/google-ads-process-audit-strategy.png",
+      alt: "Analyst auditing Google Ads account strategy with financial and performance data overlays.",
       points: [],
     },
     {
@@ -19,8 +19,8 @@
       title: "Week 3–4: Campaign Launch and Budget Allocation",
       subtitle: "",
       text: "We launch campaigns with controlled initial budgets, split across campaign types based on your funnel stage and business objective. If your business needs leads quickly, it gets more weight behind search. An e-commerce client with strong product margins gets shopping prioritised. Budget allocation is a strategic decision, but not a default 50/50 split.",
-      image: "/assets/images/ai-marketing-paid-ads.webp",
-      alt: "Google Ads campaigns launching with budget allocation across search and shopping channels.",
+      image: "/assets/images/google-ads-process-campaign-launch.png",
+      alt: "Google Ads campaign launch and budget allocation service displayed on a desktop monitor.",
       points: [],
     },
     {
@@ -28,8 +28,8 @@
       title: "What Happens After You Sign Up",
       subtitle: "",
       text: "There's a kick-off call within 48 hours. Audit delivered by the end of the first week. Strategy sign-off and campaign build-in are done by week two, and the campaign is live by the third week. The first performance review is done at day 30. It's not that you'd have to wait months to see movement because our onboarding is built around getting you actionable data as soon as possible.",
-      image: "/assets/images/home-process-strategise.webp",
-      alt: "Agency onboarding call planning Google Ads strategy and campaign timeline.",
+      image: "/assets/images/google-ads-process-after-sign-up.png",
+      alt: "Client signing up on laptop during Google Ads onboarding and account setup.",
       points: [],
     },
   ];
