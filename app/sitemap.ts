@@ -28,6 +28,7 @@ const servicePages: SitemapEntry[] = [
   "ai-marketing-agency",
   "social-media-marketing",
   "email-marketing-services",
+  "google-ads-management-services",
   "conversion-rate-optimisation-services",
   "web-development-services",
 ].map((slug) => ({
