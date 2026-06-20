@@ -95,7 +95,7 @@ export default function GoogleAdsManagementServicesPage() {
       <ServiceSchemaScript slug="google-ads-management-services" />
       <link
         rel="preload"
-        href="/assets/images/ai-marketing-agency-hero.webp"
+        href="/assets/images/google-ads-management-hero-v2.webp"
         as="image"
         type="image/webp"
         fetchPriority="high"
