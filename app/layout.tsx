@@ -35,6 +35,13 @@ export const metadata: Metadata = {
   title: "360 Web Solutions Digital Marketing Agency London & UK",
   description:
     "UK digital marketing agency for SEO, PPC, web design, and content — in-house strategy, execution, and measurable growth across every channel.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "./",
+  },
   verification: {
     google: "pxb9xXMeX0PHyOKwtpuQHfUZ5pqmFnxHieceKz_uHLE",
   },
