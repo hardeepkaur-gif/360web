@@ -55,7 +55,7 @@ function thankYouHtml(name: string, formType: string) {
   return `
     <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto">
       <div style="background:#0F2A4A;padding:24px 32px;border-radius:12px 12px 0 0;text-align:center">
-        <img src="https://360websolutions.co.uk/assets/images/logo.png" alt="360 Web Solutions" width="140" style="margin-bottom:8px" />
+        <img src="https://360websolutions.co.uk/assets/images/logo.webp" alt="360 Web Solutions" width="140" style="margin-bottom:8px" />
       </div>
       <div style="background:#fff;padding:32px;border:1px solid #E5E7EB;border-top:none;border-radius:0 0 12px 12px">
         <h2 style="margin:0 0 16px;font-size:22px;color:#0F2A4A">Hi ${firstName},</h2>

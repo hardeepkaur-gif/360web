@@ -30,7 +30,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "01",
     name: "Keyword Research and Page Mapping",
-    image: "/assets/images/on-page-seo-keyword-research.png",
+    image: "/assets/images/on-page-seo-keyword-research.webp",
     alt: "Desk with keyword research notes and SEO icons on a clipboard.",
     title: "Keyword Research and Page Mapping",
     desc: "Every successful page starts with clarity. We identify high-intent keywords based on real search behaviour and map them to the most relevant pages on your site. This prevents keyword cannibalisation, improves targeting, and ensures each page serves a clear purpose within your overall SEO strategy.",
@@ -38,7 +38,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "02",
     name: "SEO Content Optimisation",
-    image: "/assets/images/on-page-seo-content-optimisation.png",
+    image: "/assets/images/on-page-seo-content-optimisation.webp",
     alt: "Desk with SEO notebook diagram: research, content, analysis, and Search Engine Optimize checklist.",
     title: "SEO Content Optimisation",
     desc: "Content remains one of the most important ranking factors, but it must do more than include keywords. We refine your content to match search intent, improve depth, and present information in a way that is both useful to users and easily understood by search engines. The result is content that supports stronger SEO rankings and keeps users engaged.",
@@ -46,7 +46,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "03",
     name: "Meta Title and Meta Description Optimisation",
-    image: "/assets/images/on-page-seo-meta-title-description.png",
+    image: "/assets/images/on-page-seo-meta-title-description.webp",
     alt: "Hands holding a tablet showing a search engine results page with titles and snippets.",
     title: "Meta Title and Meta Description Optimisation",
     desc: "Metadata is often underestimated, yet it directly influences how your pages appear in search results. We create titles and descriptions that adhere to search engine guidelines, incorporate relevant keywords, and encourage users to click. Even small improvements in click-through rate can lead to noticeable gains in traffic.",
@@ -54,7 +54,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "04",
     name: "Heading Structure and Content Formatting",
-    image: "/assets/images/on-page-seo-heading-structure.png",
+    image: "/assets/images/on-page-seo-heading-structure.webp",
     alt: "Laptop on a desk showing a hand-drawn layout and structure diagram labelled Concept.",
     title: "Heading Structure and Content Formatting",
     desc: "A well-structured page is easier to read and easier to rank. We organise your headings logically using H1, H2, and H3 tags, ensuring your content flows naturally while signalling relevance to search engines. Clear structure improves readability and helps users find what they need without friction.",
@@ -62,7 +62,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "05",
     name: "Internal Linking and Site Architecture",
-    image: "/assets/images/on-page-seo-internal-linking.png",
+    image: "/assets/images/on-page-seo-internal-linking.webp",
     alt: "Laptop with hands typing and floating page layouts connected by a chain-link icon.",
     title: "Internal Linking and Site Architecture",
     desc: "Internal linking is one of the most overlooked drivers of ranking performance, but it plays a critical role in how your site performs. We build logical connections between your pages, helping search engines crawl your site more effectively while guiding users towards relevant content. This strengthens authority across your website and improves overall visibility.",
@@ -70,7 +70,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "06",
     name: "URL Structure Optimisation",
-    image: "/assets/images/on-page-seo-url-structure.png",
+    image: "/assets/images/on-page-seo-url-structure.webp",
     alt: "Developer at a monitor with code and an overlaid search bar showing a web URL.",
     title: "URL Structure Optimisation",
     desc: "Clean, descriptive URLs make it easier for both users and search engines to understand your pages. We ensure your URLs are concise, keyword-relevant where appropriate, and free from unnecessary parameters that can affect indexing.",
@@ -78,7 +78,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "07",
     name: "Image Alt Text and Media Optimisation",
-    image: "/assets/images/on-page-seo-media-optimisation.png",
+    image: "/assets/images/on-page-seo-media-optimisation.webp",
     alt: "Person with headphones using a laptop showing a Multimedia graphic on screen.",
     title: "Image Alt Text and Media Optimisation",
     desc: "Images support both user experience and SEO when used correctly. We optimise file sizes for faster loading and add descriptive alt text so search engines can interpret visual content. This also improves accessibility, which is becoming increasingly important in modern search evaluation.",
@@ -86,7 +86,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "08",
     name: "Schema Markup and Structured Data",
-    image: "/assets/images/on-page-seo-schema-structured-data.png",
+    image: "/assets/images/on-page-seo-schema-structured-data.webp",
     alt: "Laptop on a desk showing a hand-drawn DATA infographic with connect, share, and innovation labels.",
     title: "Schema Markup and Structured Data",
     desc: "Structured data helps search engines understand your content at a deeper level. We implement schema markup where relevant to improve your chances of appearing in rich results, such as FAQs, reviews, and enhanced listings that stand out in search results.",
@@ -94,7 +94,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "09",
     name: "Page Speed and Mobile Experience",
-    image: "/assets/images/on-page-seo-page-speed.png",
+    image: "/assets/images/on-page-seo-page-speed.webp",
     alt: "Laptop showing website speed optimization gauge with high loading speed on screen.",
     title: "Page Speed and Mobile Experience",
     desc: "Performance is a direct ranking factor. Studies show that around 53% of users abandon a page if it takes longer than three seconds to load. We work alongside development teams to improve load times, optimise assets, and ensure your pages deliver a fast and consistent experience across all devices. This is where on-page work overlaps with a technical SEO service.",
@@ -102,7 +102,7 @@ const SERVICE_ITEMS: SvcItem[] = [
   {
     num: "10",
     name: "Canonical Tags and Duplicate Content Checks",
-    image: "/assets/images/on-page-seo-canonical-duplicate-checks.png",
+    image: "/assets/images/on-page-seo-canonical-duplicate-checks.webp",
     alt: "Phone and desktop monitor both showing checklist interfaces with verified items.",
     title: "Canonical Tags and Duplicate Content Checks",
     desc: "Duplicate content can dilute your rankings and confuse search engines. We review and implement canonical tags correctly to ensure search engines recognise the preferred version of each page. This protects your content and maintains the integrity of your SEO efforts.",
@@ -324,7 +324,7 @@ const PROCESS_STEPS: {
     title: "Audit Your Existing Pages",
     tag: "Step 01 · Audit Your Existing Pages",
     text: "We begin with a detailed on-site audit using tools such as Google Search Console, Screaming Frog, Ahrefs, SEMrush, and advanced SEO platforms to assess indexing, metadata, content quality, and technical signals. This allows us to identify issues that affect visibility and prioritise high-impact improvements.",
-    image: "/assets/images/on-page-seo-process-step-audit.png",
+    image: "/assets/images/on-page-seo-process-step-audit.webp",
     alt: "Desk covered with reports, charts and sticky notes around a central banner reading AUDIT.",
   },
   {
@@ -333,7 +333,7 @@ const PROCESS_STEPS: {
     title: "Identify Keyword and Content Gaps",
     tag: "Step 02 · Identify Keyword and Content Gaps",
     text: "We map search intent to your pages, uncover missing topics, and compare coverage against competitors so each URL targets the right queries without cannibalisation.",
-    image: "/assets/images/on-page-seo-keyword-research.png",
+    image: "/assets/images/on-page-seo-keyword-research.webp",
     alt: "Desk with keyword research notes and SEO icons on a clipboard.",
   },
   {
@@ -342,7 +342,7 @@ const PROCESS_STEPS: {
     title: "Optimise Content and Metadata",
     tag: "Step 03 · Optimise Content and Metadata",
     text: "We refine headings, body copy, meta titles and descriptions for clarity, intent alignment and CTR — improving both relevance signals and user experience.",
-    image: "/assets/images/on-page-seo-content-optimisation.png",
+    image: "/assets/images/on-page-seo-content-optimisation.webp",
     alt: "Desk with SEO notebook diagram: research, content, analysis, and Search Engine Optimize checklist.",
   },
   {
@@ -351,7 +351,7 @@ const PROCESS_STEPS: {
     title: "Improve Internal Links and Page Structure",
     tag: "Step 04 · Improve Internal Links and Page Structure",
     text: "Logical internal linking and clean IA help crawlers and users discover your most important pages and distribute authority effectively.",
-    image: "/assets/images/on-page-seo-internal-linking.png",
+    image: "/assets/images/on-page-seo-internal-linking.webp",
     alt: "Laptop with hands typing and floating page layouts connected by a chain-link icon.",
   },
   {
@@ -360,7 +360,7 @@ const PROCESS_STEPS: {
     title: "Track Rankings, Traffic and Conversions",
     tag: "Step 05 · Track Rankings, Traffic and Conversions",
     text: "We monitor rankings, impressions and on-site behaviour so improvements are measurable and we can iterate based on what moves commercial outcomes.",
-    image: "/assets/images/on-page-seo-page-speed.png",
+    image: "/assets/images/on-page-seo-page-speed.webp",
     alt: "Laptop showing website speed optimization gauge with high loading speed on screen.",
   },
   {
@@ -369,7 +369,7 @@ const PROCESS_STEPS: {
     title: "Clear Deliverables",
     tag: "Step 06 · Clear Deliverables",
     text: "You receive a prioritised action list, implementation guidance and plain-English reporting — whether your team executes or we support delivery.",
-    image: "/assets/images/on-page-seo-schema-structured-data.png",
+    image: "/assets/images/on-page-seo-schema-structured-data.webp",
     alt: "Laptop on a desk showing a hand-drawn DATA infographic with connect, share, and innovation labels.",
   },
 ];
@@ -542,7 +542,7 @@ export default function OnPageSEO() {
           </div>
           <div className="relative flex min-w-0 flex-1 justify-center">
             <img
-              src="/assets/images/on-page-seo-hero.png"
+              src="/assets/images/on-page-seo-hero.webp"
               alt="Laptop on a desk displaying an SEO infographic with search optimisation icons on screen."
               width={800}
               height={800}
@@ -710,7 +710,7 @@ export default function OnPageSEO() {
             </div>
             <div className="relative flex min-w-0 flex-1 flex-col gap-4 md:gap-6">
               <img
-                src="/assets/images/on-page-seo-uk-businesses-visual.png"
+                src="/assets/images/on-page-seo-uk-businesses-visual.webp"
                 alt="Futuristic SEO holographic interface with large SEO lettering and digital analytics displays."
                 width={560}
                 height={700}
@@ -859,7 +859,7 @@ export default function OnPageSEO() {
       >
         <div className={`${INNER} relative z-10 flex flex-col items-center text-center`}>
           <img
-            src="/assets/images/logo.png"
+            src="/assets/images/logo.webp"
             alt=""
             width={38}
             height={38}
@@ -1138,7 +1138,7 @@ export default function OnPageSEO() {
             </div>
             <div className="relative min-w-0 flex-1">
               <img
-                src="/assets/images/on-page-seo-matters-visual.png"
+                src="/assets/images/on-page-seo-matters-visual.webp"
                 alt="Team around a table with devices collaborating over a central SEO graphic and analytics icons."
                 width={640}
                 height={480}
@@ -1186,7 +1186,7 @@ export default function OnPageSEO() {
             </ol>
             <div className="flex min-w-0 flex-1 flex-col gap-6">
               <img
-                src="/assets/images/on-page-seo-choose-us-visual.png"
+                src="/assets/images/on-page-seo-choose-us-visual.webp"
                 alt="Hands holding a tablet showing SEO search bar graphics with rocket, charts and optimisation icons."
                 width={800}
                 height={600}
@@ -1229,7 +1229,7 @@ export default function OnPageSEO() {
           <div className={`${FLEX_ROW} items-start gap-8 md:gap-12 lg:gap-16`}>
             <div className="min-w-0 flex-1">
             <img
-              src="/assets/images/on-page-seo-who-needs-hero.png"
+              src="/assets/images/on-page-seo-who-needs-hero.webp"
               alt="Person reviewing analytics and performance dashboards on a laptop in a bright workspace."
               width={1200}
               height={800}
@@ -1266,7 +1266,7 @@ export default function OnPageSEO() {
       >
         <div className={`${INNER} relative z-10 flex flex-col items-center text-center`}>
           <img
-            src="/assets/images/logo.png"
+            src="/assets/images/logo.webp"
             alt=""
             width={38}
             height={38}

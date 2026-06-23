@@ -3172,6 +3172,18 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
+.home-crawl-services {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .footer__form-row {
   display: flex;
   align-items: stretch;
@@ -3913,7 +3925,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
       rgba(0, 0, 0, 0.72),
       rgba(0, 0, 0, 0.72)
     ),
-    url("/assets/images/ai-section-meeting-bg.png");
+    url("/assets/images/ai-section-meeting-bg.webp");
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -5143,7 +5155,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
       rgba(0, 0, 0, 0.72),
       rgba(0, 0, 0, 0.72)
     ),
-    url("/assets/images/compare-section-office-bg.png");
+    url("/assets/images/compare-section-office-bg.webp");
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -9717,7 +9729,7 @@ section.section.svc-transform {
       rgba(15, 42, 74, 0.82) 42%,
       rgba(19, 47, 82, 0.9) 100%
     ),
-    url('/assets/images/ai-consultancy-about-hero.png');
+    url('/assets/images/ai-consultancy-about-hero.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10797,7 +10809,7 @@ section.section.svc-transform {
 #ai-agency-vs-traditional-compare .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/ai-agency-vs-traditional-bg.png");
+    url("/assets/images/ai-agency-vs-traditional-bg.webp");
   background-position: center 36%;
 }
 
@@ -10805,7 +10817,7 @@ section.section.svc-transform {
 #seo-audit-vs-free-compare .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/seo-audit-vs-free-compare-bg.png");
+    url("/assets/images/seo-audit-vs-free-compare-bg.webp");
   background-position: center center;
 }
 
@@ -10813,7 +10825,7 @@ section.section.svc-transform {
 #email-tool-vs-agency-compare .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/seo-audit-vs-free-compare-bg.png");
+    url("/assets/images/seo-audit-vs-free-compare-bg.webp");
   background-position: center center;
 }
 
@@ -10821,7 +10833,7 @@ section.section.svc-transform {
 #svc-ai-vs-automation .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/ai-consultancy-vs-automation-agency-bg.png");
+    url("/assets/images/ai-consultancy-vs-automation-agency-bg.webp");
   background-position: center 38%;
 }
 
@@ -11029,7 +11041,7 @@ section.section.svc-transform {
 .seo-types-compare .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/on-page-seo-pillars-compare-bg.png");
+    url("/assets/images/on-page-seo-pillars-compare-bg.webp");
   background-position: center center;
 }
 .seo-types-compare .compare__num {
@@ -11043,7 +11055,7 @@ section.section.svc-transform {
 #cro-pricing-compare .compare__photo {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
-    url("/assets/images/on-page-seo-pillars-compare-bg.png");
+    url("/assets/images/on-page-seo-pillars-compare-bg.webp");
   background-position: center center;
 }
 
@@ -19297,7 +19309,7 @@ section#what-we-do.about-what-we-do {
 }
 
 .about-page-hero__media {
-  background-image: url("/assets/images/about-hero-bg.png");
+  background-image: url("/assets/images/about-hero-bg.webp");
 }
 .about-page-hero__eyebrow {
   margin: 0 0 12px;
@@ -20413,7 +20425,7 @@ section.about-system.section {
 
 /* ================= CASE STUDIES PAGE HERO ================= */
 .case-studies-page-hero__media {
-  background-image: url("/assets/images/about-hero-bg.png");
+  background-image: url("/assets/images/about-hero-bg.webp");
 }
 
 /* ================= SERVICES HUB PAGE ================= */

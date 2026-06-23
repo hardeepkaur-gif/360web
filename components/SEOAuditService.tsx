@@ -27,7 +27,7 @@ const PROCESS_STEPS = [
     num: "01",
     title: "Discovery & Business Context",
     text: "We understand your website, target audience, services, locations, competitors and commercial goals.",
-    image: "/assets/images/seo-audit-process-step-discovery.png",
+    image: "/assets/images/seo-audit-process-step-discovery.webp",
     alt: "Team collaborating around a table with charts, laptop and documents in a discovery meeting.",
     tag: "Step 01 · Discovery & Business Context",
     short: "DISCOVER",
@@ -36,7 +36,7 @@ const PROCESS_STEPS = [
     num: "02",
     title: "Data Collection",
     text: "We review Search Console, GA4, crawl data, keyword rankings, backlink tools and live SERPs.",
-    image: "/assets/images/seo-audit-process-step-data-collection.png",
+    image: "/assets/images/seo-audit-process-step-data-collection.webp",
     alt: "Presenter reviewing spreadsheets and charts on a boardroom screen with colleagues at the table.",
     tag: "Step 02 · Data Collection",
     short: "DATA",
@@ -45,7 +45,7 @@ const PROCESS_STEPS = [
     num: "03",
     title: "Full Website Audit",
     text: "We inspect technical issues, content quality, page structure, keyword targeting and competitor performance.",
-    image: "/assets/images/seo-audit-process-step-full-audit.png",
+    image: "/assets/images/seo-audit-process-step-full-audit.webp",
     alt: "Analyst at a desk reviewing analytics dashboards and charts on a large monitor.",
     tag: "Step 03 · Full Website Audit",
     short: "WEBSITE",
@@ -54,7 +54,7 @@ const PROCESS_STEPS = [
     num: "04",
     title: "Priority Scoring",
     text: "Every issue is ranked by impact, urgency and effort. You know what to fix first.",
-    image: "/assets/images/seo-audit-process-step-priority-scoring.png",
+    image: "/assets/images/seo-audit-process-step-priority-scoring.webp",
     alt: "Hands holding a phone with a satisfaction-style gauge overlay suggesting scored priorities.",
     tag: "Step 04 · Priority Scoring",
     short: "PRIORITY",
@@ -63,7 +63,7 @@ const PROCESS_STEPS = [
     num: "05",
     title: "SEO Audit Report",
     text: "You receive a clear report with findings, screenshots, explanations and recommended actions.",
-    image: "/assets/images/seo-audit-process-step-report.png",
+    image: "/assets/images/seo-audit-process-step-report.webp",
     alt: "Professional at a monitor displaying REPORT with charts search and analytics style icons.",
     tag: "Step 05 · SEO Audit Report",
     short: "REPORT",
@@ -72,7 +72,7 @@ const PROCESS_STEPS = [
     num: "06",
     title: "Strategy Call",
     text: "We walk you through the audit in plain English and explain the best next steps.",
-    image: "/assets/images/seo-audit-process-step-strategy-call.png",
+    image: "/assets/images/seo-audit-process-step-strategy-call.webp",
     alt: "Consultant on a phone call at a desk with annual report charts visible on monitor.",
     tag: "Step 06 · Strategy Call",
     short: "STRATEGY",
@@ -81,7 +81,7 @@ const PROCESS_STEPS = [
     num: "07",
     title: "Implementation Support",
     text: "You can fix issues internally, share the report with your developer, or let our SEO team handle the execution.",
-    image: "/assets/images/seo-audit-process-step-implementation-support.png",
+    image: "/assets/images/seo-audit-process-step-implementation-support.webp",
     alt: "Person holding a phone with a SUPPORT overlay showing tools globe email and gears icons.",
     tag: "Step 07 · Implementation Support",
     short: "SUPPORT",
@@ -99,7 +99,7 @@ type AuditSvc = {
 const AUDIT_SERVICES: AuditSvc[] = [
   {
     title: "Technical SEO Audit",
-    img: "/assets/images/seo-audit-service-technical.png",
+    img: "/assets/images/seo-audit-service-technical.webp",
     alt: "Two professionals reviewing a bar chart and data on a laptop at a desk.",
     bullets: [
       "Crawling and indexing",
@@ -120,7 +120,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "On-Page SEO Audit",
-    img: "/assets/images/seo-audit-service-on-page.png",
+    img: "/assets/images/seo-audit-service-on-page.webp",
     alt: "Analyst comparing printed charts with performance dashboards on a large monitor.",
     bullets: [
       "Meta titles",
@@ -137,7 +137,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "Content Audit",
-    img: "/assets/images/seo-audit-service-content.png",
+    img: "/assets/images/seo-audit-service-content.webp",
     alt: "Team reviewing printed charts, tablet spreadsheets and laptop analytics on a wooden table.",
     bullets: [
       "Thin content",
@@ -154,7 +154,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "Keyword & Search Intent Audit",
-    img: "/assets/images/seo-audit-service-keyword-intent.png",
+    img: "/assets/images/seo-audit-service-keyword-intent.webp",
     alt: "Graphic search bar labelled Keywords with magnifying glass over professional workspace collage.",
     bullets: [
       "Current ranking keywords",
@@ -168,7 +168,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "Competitor SEO Audit",
-    img: "/assets/images/seo-audit-service-competitor.png",
+    img: "/assets/images/seo-audit-service-competitor.webp",
     alt: "Two colleagues reviewing charts and performance printouts on a clipboard at a desk.",
     bullets: [
       "Competitor rankings",
@@ -183,7 +183,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "Backlink Audit",
-    img: "/assets/images/seo-audit-service-backlink.png",
+    img: "/assets/images/seo-audit-service-backlink.webp",
     alt: "Analyst at a monitor displaying BACKLINKS with SEO and linking icons on screen.",
     bullets: [
       "Link quality",
@@ -197,7 +197,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "Local SEO Audit",
-    img: "/assets/images/seo-audit-service-local.png",
+    img: "/assets/images/seo-audit-service-local.webp",
     alt: "Person holding a phone with a glowing projected SEO interface showing search and analytics icons.",
     bullets: [
       "Google Business Profile",
@@ -212,7 +212,7 @@ const AUDIT_SERVICES: AuditSvc[] = [
   },
   {
     title: "AI Visibility / GEO Audit",
-    img: "/assets/images/seo-audit-service-ai-geo.png",
+    img: "/assets/images/seo-audit-service-ai-geo.webp",
     alt: "Presenter with calculator beside business reports, charts on board and tablet with dashboards.",
     bullets: [],
     extra: (
@@ -420,7 +420,7 @@ export default function SEOAuditService() {
           </div>
           <div className="relative order-last flex min-w-0 flex-1 justify-center md:order-none">
             <img
-              src="/assets/images/seo-audit-hero.png"
+              src="/assets/images/seo-audit-hero.webp"
               alt="Laptop illustration with analytics, world map and magnifying glass"
               width={800}
               height={800}
@@ -443,7 +443,7 @@ export default function SEOAuditService() {
             <div className={`${FLEX_ROW} gap-4 md:gap-6 lg:col-span-1 lg:flex-row`}>
               <div className="relative flex min-w-0 flex-1 flex-col gap-4">
                 <img
-                  src="/assets/images/seo-audit-built-for-rankings-main.png"
+                  src="/assets/images/seo-audit-built-for-rankings-main.webp"
                   alt="Desktop monitor on a desk showing analytics dashboards with charts and performance metrics."
                   width={560}
                   height={700}
@@ -566,7 +566,7 @@ export default function SEOAuditService() {
             </div>
             <div className="relative flex min-w-0 flex-1 justify-center">
               <img
-                src="/assets/images/seo-audit-why-needs-audit.png"
+                src="/assets/images/seo-audit-why-needs-audit.webp"
                 alt="Specialist at a desk studying analytics dashboards on a large monitor in a dim workspace."
                 width={900}
                 height={900}
@@ -891,7 +891,7 @@ export default function SEOAuditService() {
             </div>
             <div className={`${FLEX_ROW} gap-6`}>
               <img
-                src="/assets/images/seo-audit-duration-visual.png"
+                src="/assets/images/seo-audit-duration-visual.webp"
                 alt="Team around a conference table reviewing web design on a monitor, charts and laptops."
                 width={640}
                 height={480}

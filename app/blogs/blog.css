@@ -5,11 +5,11 @@
 
 /* Hero uses shared .contact-page-hero / .about-page-hero from inner.css */
 .blog-page-hero--listing .blog-page-hero__media {
-  background-image: url("/assets/images/blog-hero-bg.png");
+  background-image: url("/assets/images/blog-hero-bg.webp");
 }
 
 .blog-page-hero--single .blog-page-hero__media {
-  background-image: url("/assets/images/single-blog-hero-bg.png");
+  background-image: url("/assets/images/single-blog-hero-bg.webp");
 }
 
 /* ---------- Listing section ---------- */

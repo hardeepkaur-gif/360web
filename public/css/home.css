@@ -3154,6 +3154,18 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   align-items: center;
 }
 
+.home-crawl-services {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .footer__form-row {
   display: flex;
   align-items: stretch;
@@ -3895,7 +3907,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
       rgba(0, 0, 0, 0.72),
       rgba(0, 0, 0, 0.72)
     ),
-    url("/assets/images/ai-section-meeting-bg.png");
+    url("/assets/images/ai-section-meeting-bg.webp");
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -5105,7 +5117,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
       rgba(0, 0, 0, 0.72),
       rgba(0, 0, 0, 0.72)
     ),
-    url("/assets/images/compare-section-office-bg.png");
+    url("/assets/images/compare-section-office-bg.webp");
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -11475,14 +11487,3 @@ section.about-system.section {
   }
 }
 
-.home-crawl-services {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
