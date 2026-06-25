@@ -29,7 +29,11 @@ export default function Home() {
 
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }} />
+      <Script
+        id="legacy-services-hash-redirect"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
+      />
       <HomeSchemaScript />
       <link rel="stylesheet" href="/css/home.css" />
       <link

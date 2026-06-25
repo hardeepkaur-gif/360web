@@ -1,3 +1,4 @@
+import { JsonLdScript } from "@/components/JsonLdScript";
 import {
   createHomepageWebPageNode,
   createSchemaGraph,
@@ -16,9 +17,6 @@ const homepageSchemaGraph = createSchemaGraph(
 
 export function HomeSchemaScript() {
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchemaGraph) }}
-    />
+    <JsonLdScript id="homepage-schema" data={homepageSchemaGraph} />
   );
 }

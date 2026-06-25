@@ -1,11 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
+import Script from "next/script";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
 import { TAWK_PERFORMANCE_PATCH } from "@/lib/tawkPerformancePatch";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
+import { GeoLayerScript } from "@/components/GeoLayerScript";
 import { SiteSchemaScript } from "@/components/SiteSchemaScript";
 import TawkChatLoader from "@/components/TawkChatLoader";
 
@@ -41,6 +43,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "./",
+    types: {
+      "text/plain": "/llms.txt",
+    },
   },
   verification: {
     google: "pxb9xXMeX0PHyOKwtpuQHfUZ5pqmFnxHieceKz_uHLE",
@@ -131,14 +136,23 @@ export default function RootLayout({
       className={`${inter.variable} ${sora.variable}`}
     >
       <head>
-        <SiteSchemaScript />
-        {process.env.NODE_ENV === "production" ? (
-          <script dangerouslySetInnerHTML={{ __html: TAWK_PERFORMANCE_PATCH }} />
-        ) : null}
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
-        <script dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }} />
       </head>
       <body suppressHydrationWarning>
+        <SiteSchemaScript />
+        <GeoLayerScript />
+        <Script
+          id="deferred-styles-loader"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }}
+        />
+        {process.env.NODE_ENV === "production" ? (
+          <Script
+            id="tawk-performance-patch"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{ __html: TAWK_PERFORMANCE_PATCH }}
+          />
+        ) : null}
         {children}
         <CookieConsentBanner />
         <TawkChatLoader />

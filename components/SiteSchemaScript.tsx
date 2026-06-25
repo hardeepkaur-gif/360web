@@ -1,10 +1,6 @@
+import { JsonLdScript } from "@/components/JsonLdScript";
 import { siteSchemaGraph } from "@/lib/siteSchema";
 
 export function SiteSchemaScript() {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchemaGraph) }}
-    />
-  );
+  return <JsonLdScript id="site-schema" data={siteSchemaGraph} />;
 }
