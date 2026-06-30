@@ -5,15 +5,68 @@ import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Link Building Services UK That Earns High Authority Backlinks | 360 Web Solutions",
+  title: "Link Building Services UK That Earns High Authority Backlinks",
   description:
     "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
   openGraph: {
-    title: "Link Building Services UK That Earns High Authority Backlinks | 360 Web Solutions",
+    title: "Link Building Services UK That Earns High Authority Backlinks",
     description:
       "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
   },
 };
+
+const LINK_BUILDING_ROUTE_RESPONSIVE_CSS = `
+body:has(#link-building-hero-title) #main.svc-page {
+  min-width: 0;
+}
+
+#link-building-white-vs-black .compare__head,
+#link-building-white-vs-black .compare__row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+
+#link-building-white-vs-black .compare__row .compare__cell::before {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  body:has(#link-building-hero-title) #main.svc-page h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+  body:has(#link-building-hero-title) #link-building-hero-title {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+  }
+  body:has(#link-building-hero-title) .hero__stats--trust {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body:has(#link-building-hero-title) .compare__cta-actions,
+  body:has(#link-building-hero-title) .cta-final__btns {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  body:has(#link-building-hero-title) .compare__cta-actions .btn,
+  body:has(#link-building-hero-title) .cta-final__btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body:has(#link-building-hero-title) .container {
+    padding-left: max(40px, env(safe-area-inset-left));
+    padding-right: max(40px, env(safe-area-inset-right));
+  }
+  body:has(#link-building-hero-title) #link-building-pricing .seo-audit-cost__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 920px;
+    margin-inline: auto;
+  }
+}
+`;
 
 export default function LinkBuildingServicesPage() {
   const html = loadLegacyPageWithSiteFooter(
@@ -23,13 +76,16 @@ export default function LinkBuildingServicesPage() {
   return (
     <>
       <ServiceSchemaScript slug="link-building-services" />
+      <style
+        dangerouslySetInnerHTML={{ __html: LINK_BUILDING_ROUTE_RESPONSIVE_CSS }}
+      />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
         dangerouslySetInnerHTML={{ __html: html }}
         suppressHydrationWarning
       />
-      <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/main.js?v=20250609" strategy="lazyOnload" />
     </>
   );
 }
