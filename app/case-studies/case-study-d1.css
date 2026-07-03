@@ -49,7 +49,13 @@
 .cs-d1 #cs-ehealth-strategy,
 .cs-d1 #cs-ehealth-delivered,
 .cs-d1 #cs-ehealth-outcome,
-.cs-d1 #cs-ehealth-learning {
+.cs-d1 #cs-ehealth-learning,
+.cs-d1 #cs-uk-frozen-food-client,
+.cs-d1 #cs-uk-frozen-food-challenge,
+.cs-d1 #cs-uk-frozen-food-approach,
+.cs-d1 #cs-uk-frozen-food-outcome,
+.cs-d1 #cs-uk-frozen-food-tech,
+.cs-d1 #cs-uk-frozen-food-learning {
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -81,6 +87,9 @@
 }
 .cs-d1-hero--ehealth .cs-d1-hero__img {
   background-image: url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80");
+}
+.cs-d1-hero--uk-frozen-food .cs-d1-hero__img {
+  background-image: url("https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1600&q=80");
 }
 .cs-d1-hero__overlay {
   position: absolute;
@@ -207,24 +216,470 @@
 #cs-virco-challenge.seo-split .seo-split__title,
 #cs-ehealth-challenge.seo-split .seo-split__title,
 #cs-propday-challenge.seo-split .seo-split__title,
-#cs-xogo-challenge.seo-split .seo-split__title {
+#cs-xogo-challenge.seo-split .seo-split__title,
+#cs-uk-frozen-food-challenge.seo-split .seo-split__title {
   margin-bottom: 24px;
+}
+#cs-uk-frozen-food-client .ai-mkt-what__badge-dot {
+  background: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 77, 58, 0.28);
 }
 #cs-rdx-challenge .cs-d1-split__photo-stack,
 #cs-virco-challenge .cs-d1-split__photo-stack,
 #cs-ehealth-challenge .cs-d1-split__photo-stack,
 #cs-propday-challenge .cs-d1-split__photo-stack,
-#cs-xogo-challenge .cs-d1-split__photo-stack {
+#cs-xogo-challenge .cs-d1-split__photo-stack,
+#cs-uk-frozen-food-challenge .cs-d1-split__photo-stack {
   padding: 12px clamp(16px, 3vw, 32px) 12px 0;
 }
 #cs-rdx-challenge .seo-split__img-main,
 #cs-virco-challenge .seo-split__img-main,
 #cs-ehealth-challenge .seo-split__img-main,
 #cs-propday-challenge .seo-split__img-main,
-#cs-xogo-challenge .seo-split__img-main {
+#cs-xogo-challenge .seo-split__img-main,
+#cs-uk-frozen-food-challenge .seo-split__img-main {
   aspect-ratio: 4 / 5;
   max-height: 520px;
   object-fit: cover;
+}
+
+/* Challenge list */
+.cs-d1-challenge-list {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+.cs-d1-challenge-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.cs-d1-challenge-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+/* Build timeline — sticky image + scrolling steps */
+.cs-d1-timeline__head {
+  max-width: 720px;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+.cs-d1-timeline-scroll {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  column-gap: clamp(36px, 5vw, 68px);
+  align-items: stretch;
+}
+.cs-d1-timeline-scroll__aside {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  padding-left: 18px;
+  min-height: 100%;
+}
+.cs-d1-timeline-scroll__pin {
+  position: sticky;
+  top: 110px;
+  width: 100%;
+}
+.cs-d1-timeline-scroll__figure {
+  position: relative;
+  margin: 0;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--navy);
+}
+.cs-d1-timeline-scroll__figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cs-d1-timeline-scroll__caption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(15, 42, 74, 0.12);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.cs-d1-timeline-scroll__caption-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 77, 58, 0.25);
+}
+.cs-d1-timeline-scroll__steps {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+.cs-d1-timeline-scroll__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 28px);
+}
+.cs-d1-timeline__item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: clamp(14px, 2vw, 22px);
+  padding: clamp(22px, 3vw, 28px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.cs-d1-timeline__num {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(26, 95, 191, 0.12), rgba(255, 77, 58, 0.08));
+  border: 1px solid rgba(26, 95, 191, 0.14);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--blue);
+}
+.cs-d1-timeline__title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--navy);
+}
+.cs-d1-timeline__body p,
+.cs-d1-timeline__body ul {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.68;
+  color: var(--ink-2);
+}
+.cs-d1-timeline__body ul {
+  padding-left: 18px;
+}
+.cs-d1-timeline__body li {
+  margin-bottom: 6px;
+}
+.cs-d1-timeline__problem {
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(255, 77, 58, 0.06);
+  border-left: 3px solid var(--coral);
+}
+.cs-d1-timeline__action {
+  margin-top: 14px !important;
+}
+
+#cs-uk-frozen-food-approach.cs-d1-timeline {
+  overflow: visible;
+}
+
+@media (max-width: 968px) {
+  .cs-d1-timeline-scroll {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+  .cs-d1-timeline-scroll__aside {
+    grid-column: 1;
+    grid-row: auto;
+    max-width: 520px;
+    margin-inline: auto;
+    padding-left: 0;
+    min-height: 0;
+  }
+  .cs-d1-timeline-scroll__pin {
+    position: static;
+    height: auto !important;
+  }
+  .cs-d1-timeline-scroll__figure {
+    height: auto;
+  }
+  .cs-d1-timeline-scroll__figure img {
+    height: auto;
+    max-height: 420px;
+    aspect-ratio: 4 / 5;
+  }
+  .cs-d1-timeline-scroll__steps {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .cs-d1-timeline__item {
+    grid-template-columns: 1fr;
+  }
+  .cs-d1-timeline__num {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+/* Results list */
+.cs-d1-results-list {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.cs-d1-results-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.cs-d1-results-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+/* Tech stack */
+.cs-d1-tech {
+  padding-block: clamp(48px, 6vw, 64px);
+}
+.cs-d1-tech__card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 4.5vw, 48px);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(26, 95, 191, 0.14);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 247, 250, 0.98)),
+    linear-gradient(135deg, rgba(26, 95, 191, 0.06), rgba(255, 77, 58, 0.04));
+  box-shadow:
+    0 24px 60px rgba(15, 42, 74, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.cs-d1-tech__card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--coral));
+}
+.cs-d1-tech__glow {
+  position: absolute;
+  top: -80px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 95, 191, 0.12), transparent 68%);
+  pointer-events: none;
+}
+.cs-d1-tech__head {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin-bottom: clamp(24px, 3vw, 32px);
+}
+.cs-d1-tech__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(26, 95, 191, 0.16);
+  background: rgba(26, 95, 191, 0.06);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.cs-d1-tech__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 77, 58, 0.22);
+}
+.cs-d1-tech__title {
+  margin-bottom: 12px;
+}
+.cs-d1-tech__lede {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-3);
+}
+.cs-d1-tech__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.cs-d1-tech__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 8px 24px rgba(15, 42, 74, 0.04);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--navy);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.cs-d1-tech__item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(26, 95, 191, 0.22);
+  box-shadow: 0 14px 32px rgba(15, 42, 74, 0.08);
+}
+.cs-d1-tech__item-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(26, 95, 191, 0.12), rgba(255, 77, 58, 0.08));
+  color: var(--blue);
+}
+.cs-d1-tech__item-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.cs-d1-tech__item--wordpress .cs-d1-tech__item-icon {
+  color: #21759b;
+  background: rgba(33, 117, 155, 0.12);
+}
+.cs-d1-tech__item--woocommerce .cs-d1-tech__item-icon {
+  color: #7f54b3;
+  background: rgba(127, 84, 179, 0.12);
+}
+.cs-d1-tech__item--elementor .cs-d1-tech__item-icon {
+  color: #92003b;
+  background: rgba(146, 0, 59, 0.1);
+}
+.cs-d1-tech__item--php .cs-d1-tech__item-icon {
+  color: #777bb4;
+  background: rgba(119, 123, 180, 0.14);
+}
+.cs-d1-tech__item--cloud .cs-d1-tech__item-icon {
+  color: #1a5fbf;
+  background: rgba(26, 95, 191, 0.12);
+}
+.cs-d1-tech__item--cdn .cs-d1-tech__item-icon {
+  color: #ff4d3a;
+  background: rgba(255, 77, 58, 0.1);
+}
+.cs-d1-tech__item--database .cs-d1-tech__item-icon {
+  color: #0f2a4a;
+  background: rgba(15, 42, 74, 0.08);
+}
+.cs-d1-tech__item--workflow .cs-d1-tech__item-icon {
+  color: #14866a;
+  background: rgba(20, 134, 106, 0.12);
+}
+.cs-d1-tech__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(15, 42, 74, 0.08);
+}
+.cs-d1-tech__footer-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.cs-d1-tech__link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--navy), #163a66);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(15, 42, 74, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.cs-d1-tech__link-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #163a66, var(--blue));
+  box-shadow: 0 14px 32px rgba(26, 95, 191, 0.22);
+  color: var(--white);
+}
+
+@media (max-width: 1024px) {
+  .cs-d1-tech__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .cs-d1-tech__grid {
+    grid-template-columns: 1fr;
+  }
+  .cs-d1-tech__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cs-d1-tech__link-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Strategy — reuses .ai-mkt-what from globals */
@@ -455,6 +910,9 @@
 }
 .cs-d1-learning--ehealth .cs-d1-learning__img {
   background-image: url("https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80");
+}
+.cs-d1-learning--uk-frozen-food .cs-d1-learning__img {
+  background-image: url("https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80");
 }
 .cs-d1-learning__img::before {
   content: "";

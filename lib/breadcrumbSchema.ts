@@ -104,6 +104,7 @@ export const CASE_STUDY_BREADCRUMBS = {
   "xogo-sports": "Xogo Sports",
   "propday-crm": "Propday CRM",
   "ehealth-solutions": "eHealth Solutions",
+  "uk-frozen-food": "UK Frozen Food",
 } as const;
 
 export type CaseStudySlug = keyof typeof CASE_STUDY_BREADCRUMBS;
