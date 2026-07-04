@@ -17327,6 +17327,23 @@ section#ai-marketing-why-ai-powered {
   text-decoration: underline !important;
 }
 
+#link-building-what-is a.brand-link,
+#link-building-services-include a.brand-link,
+#faq-link-building a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: none !important;
+}
+
+#link-building-what-is a.brand-link:hover,
+#link-building-services-include a.brand-link:hover,
+#faq-link-building a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+  text-decoration: underline !important;
+}
+
 .seo-results-expect__visual {
   position: relative;
   padding: 28px 0 44px 12px;
