@@ -94,7 +94,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .announcement p{margin:0;flex:1}
 .announcement__cta{color:var(--coral);font-weight:600}
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.72);backdrop-filter:saturate(150%) blur(18px);-webkit-backdrop-filter:saturate(150%) blur(18px);border-bottom:1px solid rgba(15,42,74,.06);overflow:visible}
-.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:16px 28px}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:16px 28px;position:relative}
 .nav__brand{display:flex;align-items:center}
 .nav__logo{height:44px;width:auto}
 .nav__menu>ul{display:flex;gap:36px;align-items:center}
@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero__photo-img{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9}
 .reveal{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.is-visible{opacity:1;transform:none}
-@media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu{position:fixed;top:70px;left:0;right:0;background:#fff;padding:24px 28px;opacity:0;pointer-events:none;transform:translateY(-10px);transition:all .3s;z-index:9999;box-shadow:0 10px 30px rgba(15,42,74,.08);max-height:calc(100vh - 70px);overflow-y:auto}.nav__menu.is-open{opacity:1;pointer-events:auto;transform:translateY(0)}.nav__menu>ul{flex-direction:column;align-items:flex-start;gap:16px}.nav__dropdown-panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:3px solid rgba(26,95,191,.16);border-radius:0;padding:6px 0 8px 12px;margin:6px 0 0 2px;min-width:auto;background:transparent}.nav__phone{display:none}.nav__toggle{display:flex}.hero__subtitle{margin-inline:auto}.announcement{display:none}}
+@media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu{display:block;position:absolute;top:100%;left:0;right:0;background:#fff;padding:24px 28px;z-index:9999;box-shadow:0 10px 30px rgba(15,42,74,.12);border-bottom:1px solid rgba(15,42,74,.06);max-height:calc(100vh - 70px);overflow-y:auto}.nav__menu>ul{display:flex;flex-direction:column;align-items:flex-start;gap:16px;list-style:none;margin:0;padding:0}.nav__menu li{width:100%}.nav__menu a{display:block;padding:8px 0;font-size:15px;color:#0F2A4A}.nav__dropdown-panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:3px solid rgba(26,95,191,.16);border-radius:0;padding:6px 0 8px 12px;margin:6px 0 0 2px;min-width:auto;background:transparent;display:block}.nav__phone{display:none}.nav__toggle{display:none}.hero__subtitle{margin-inline:auto}.announcement{display:none}}
 @media(max-width:600px){.hero{padding:50px 0 40px}.hero__inner{padding:20px 16px 0}.container{padding:0 16px}}
 `.trim();
 
@@ -156,13 +156,6 @@ export default function RootLayout({
         {children}
         <CookieConsentBanner />
         <TawkChatLoader />
-        <Script
-          id="nav-toggle"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `document.addEventListener("click",function(e){var b=e.target.closest("#navToggle");if(b){var m=document.querySelector(".nav__menu");if(m){var open=m.classList.toggle("is-open");b.setAttribute("aria-expanded",String(open))}return}var m2=document.querySelector(".nav__menu");if(m2&&m2.classList.contains("is-open")&&!m2.contains(e.target)){m2.classList.remove("is-open");var t=document.getElementById("navToggle");if(t)t.setAttribute("aria-expanded","false")}});`,
-          }}
-        />
       </body>
     </html>
   );
