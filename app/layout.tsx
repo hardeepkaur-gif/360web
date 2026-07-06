@@ -8,6 +8,7 @@ import { TAWK_PERFORMANCE_PATCH } from "@/lib/tawkPerformancePatch";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { GeoLayerScript } from "@/components/GeoLayerScript";
+import { MobileNavToggle } from "@/components/MobileNavToggle";
 import { SiteSchemaScript } from "@/components/SiteSchemaScript";
 import TawkChatLoader from "@/components/TawkChatLoader";
 
@@ -124,7 +125,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero__photo-img{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9}
 .reveal{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.is-visible{opacity:1;transform:none}
-@media(max-width:991px){.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;padding:24px 28px;z-index:9999;box-shadow:0 10px 30px rgba(15,42,74,.12);border-bottom:1px solid rgba(15,42,74,.06);max-height:calc(100vh - 70px);overflow-y:auto}.nav__menu.is-open{display:block}.nav__menu>ul{display:flex;flex-direction:column;align-items:flex-start;gap:16px;list-style:none;margin:0;padding:0}.nav__menu li{width:100%}.nav__menu a{display:block;padding:8px 0;font-size:15px;color:#0F2A4A}.nav__dropdown-panel{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;border-left:3px solid rgba(26,95,191,.16);border-radius:0;padding:6px 0 8px 12px;margin:6px 0 0 2px;min-width:auto;background:transparent;display:block}.nav__phone{display:none}.nav__toggle{display:flex}.nav__actions .btn{display:none}.hero__subtitle{margin-inline:auto}.announcement{display:none}}
+@media(max-width:991px){.nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#fff!important}body.nav-open .nav{z-index:99999!important}.nav__inner{flex-wrap:nowrap}.hero__inner{grid-template-columns:1fr;gap:40px;text-align:center}.nav__menu{display:none!important;position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:76px 28px 28px!important;background:#fff!important;z-index:99998!important;box-shadow:none!important;border-bottom:none!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}.nav__menu.is-open,body.nav-open .nav__menu{display:block!important}.nav__menu>ul{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:16px!important;list-style:none!important;margin:0!important;padding:0!important;width:100%!important}.nav__menu li{width:100%}.nav__menu a{display:block!important;padding:10px 0!important;font-size:16px!important;color:#0F2A4A!important}.nav__dropdown-panel{position:static!important;opacity:1!important;visibility:visible!important;transform:none!important;box-shadow:none!important;border:none!important;border-left:3px solid rgba(26,95,191,.16)!important;border-radius:0!important;padding:6px 0 8px 12px!important;margin:6px 0 0 2px!important;min-width:auto!important;background:transparent!important;display:block!important}.nav__phone{display:none}.nav__toggle{display:flex!important;position:relative!important;z-index:99999!important}.nav__actions .btn{display:none!important}.hero__subtitle{margin-inline:auto}.announcement{display:none}body.nav-open{overflow:hidden}}
 @media(max-width:600px){.hero{padding:50px 0 40px}.hero__inner{padding:20px 16px 0}.container{padding:0 16px}}
 `.trim();
 
@@ -157,9 +158,9 @@ export default function RootLayout({
           />
         ) : null}
         {children}
+        <MobileNavToggle />
         <CookieConsentBanner />
         <TawkChatLoader />
-        <Script src="/js/nav-toggle.js" strategy="afterInteractive" />
       </body>
     </html>
   );
