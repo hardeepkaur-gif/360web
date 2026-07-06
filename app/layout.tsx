@@ -159,6 +159,7 @@ export default function RootLayout({
         {children}
         <CookieConsentBanner />
         <TawkChatLoader />
+        <Script src="/js/nav-toggle.js" strategy="afterInteractive" />
       </body>
     </html>
   );

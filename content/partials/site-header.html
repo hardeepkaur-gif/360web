@@ -61,28 +61,9 @@
           <span>+44 20 7183 5339</span>
         </a>
         <a href="/contact-us" class="btn btn--primary btn--compact">Free Strategy Session</a>
-        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <button type="button" class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </header>
-
-  <script>
-  (function(){
-    var btn = document.getElementById('navToggle');
-    var menu = document.querySelector('.nav__menu');
-    if(!btn || !menu) return;
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var isOpen = menu.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(isOpen));
-    });
-    document.addEventListener('click', function(e){
-      if(menu.classList.contains('is-open') && !menu.contains(e.target) && !btn.contains(e.target)){
-        menu.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }
-    });
-  })();
-  </script>
