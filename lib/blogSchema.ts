@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/site";
 import {
   getFeaturedImage,
   getPostAuthorName,
+  proxyWpImage,
   stripHtml,
   type WPPost,
 } from "@/lib/wordpress";
@@ -63,7 +64,7 @@ export function createBlogPostSchemaGraph(post: WPPost, seoDescription?: string)
           ? {
               image: {
                 "@type": "ImageObject",
-                url: image.url,
+                url: proxyWpImage(image.url, { width: 1200, absolute: true }),
                 ...(image.width ? { width: image.width } : {}),
                 ...(image.height ? { height: image.height } : {}),
               },

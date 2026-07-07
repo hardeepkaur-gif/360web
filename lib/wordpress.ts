@@ -1,8 +1,51 @@
+import { SITE_URL } from "@/lib/site";
+
 const DEFAULT_WP_API =
   "https://goldenrod-lion-234427.hostingersite.com/wp-json";
 
 export const WORDPRESS_API_URL =
   process.env.WORDPRESS_API_URL?.replace(/\/$/, "") || DEFAULT_WP_API;
+
+/**
+ * Hosts whose images must never be hotlinked directly by the browser or by
+ * crawlers. Anything matching these is routed through our own domain via the
+ * Next.js image optimizer (the same `/_next/image?url=…` pipeline that
+ * `next/image` already uses for the blog sidebar thumbnails).
+ */
+const WP_IMAGE_HOSTS: string[] = (() => {
+  const hosts = new Set<string>(["goldenrod-lion-234427.hostingersite.com"]);
+  try {
+    hosts.add(new URL(WORDPRESS_API_URL).host);
+  } catch {
+    /* keep the hardcoded default */
+  }
+  return [...hosts];
+})();
+
+export function isWpImageUrl(url: string): boolean {
+  if (!url) return false;
+  return WP_IMAGE_HOSTS.some((host) => url.includes(host));
+}
+
+type ProxyImageOptions = {
+  width?: number;
+  quality?: number;
+  /** Emit a fully-qualified URL (needed for og:image / JSON-LD). */
+  absolute?: boolean;
+};
+
+/**
+ * Rewrite a WordPress backend image URL so it is served from our own domain
+ * through the Next.js image optimizer. Non-backend URLs are returned as-is.
+ */
+export function proxyWpImage(
+  url: string,
+  { width = 1080, quality = 75, absolute = false }: ProxyImageOptions = {},
+): string {
+  if (!isWpImageUrl(url)) return url;
+  const prefix = absolute ? SITE_URL : "";
+  return `${prefix}/_next/image?url=${encodeURIComponent(url)}&w=${width}&q=${quality}`;
+}
 
 export const BLOG_POSTS_PER_PAGE = 9;
 
@@ -206,11 +249,30 @@ export function preparePostContent(html: string): string {
   return html.replace(/<img\b([^>]*?)>/gi, (_match, attrs: string) => {
     let next = attrs;
 
-    if (!/\bloading\s*=/.test(attrs)) {
+    // 1. Route any backend `src` through our own /_next/image proxy so the
+    //    browser never hotlinks the WordPress host directly.
+    next = next.replace(
+      /\bsrc\s*=\s*(["'])(.*?)\1/i,
+      (whole, quote: string, url: string) =>
+        isWpImageUrl(url) ? `src=${quote}${proxyWpImage(url)}${quote}` : whole,
+    );
+
+    // 2. Drop `srcset` entries that still point at the backend (the proxied
+    //    single `src` covers rendering). Remove the now-orphaned `sizes` too.
+    next = next.replace(
+      /\s+srcset\s*=\s*(["'])(.*?)\1/i,
+      (whole, _quote: string, value: string) =>
+        isWpImageUrl(value) ? "" : whole,
+    );
+    if (!/\bsrcset\s*=/.test(next)) {
+      next = next.replace(/\s+sizes\s*=\s*(["']).*?\1/i, "");
+    }
+
+    if (!/\bloading\s*=/.test(next)) {
       next += ' loading="lazy"';
     }
 
-    if (!/\bclass\s*=/.test(attrs)) {
+    if (!/\bclass\s*=/.test(next)) {
       next += ' class="blog-post__inline-img"';
     } else {
       next = next.replace(

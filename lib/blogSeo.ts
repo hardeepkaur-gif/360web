@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { SITE_URL } from "@/lib/site";
-import { stripHtml, type WPPost } from "@/lib/wordpress";
+import { proxyWpImage, stripHtml, type WPPost } from "@/lib/wordpress";
 
 export type BlogSeoMeta = {
   title?: string;
@@ -95,6 +95,10 @@ export function seoToMetadata(seo: BlogSeoMeta): Metadata {
   const title = seo.title;
   const description = seo.description;
   const canonical = seo.canonical;
+  // og:image / twitter:image must be absolute and served from our own domain.
+  const ogImage = seo.ogImage
+    ? proxyWpImage(seo.ogImage, { width: 1200, absolute: true })
+    : undefined;
 
   return {
     title,
@@ -109,13 +113,13 @@ export function seoToMetadata(seo: BlogSeoMeta): Metadata {
       description: seo.ogDescription ?? description,
       url: canonical,
       type: "article",
-      images: seo.ogImage ? [{ url: seo.ogImage }] : undefined,
+      images: ogImage ? [{ url: ogImage }] : undefined,
     },
     twitter: {
-      card: seo.ogImage ? "summary_large_image" : "summary",
+      card: ogImage ? "summary_large_image" : "summary",
       title: seo.ogTitle ?? title,
       description: seo.ogDescription ?? description,
-      images: seo.ogImage ? [seo.ogImage] : undefined,
+      images: ogImage ? [ogImage] : undefined,
     },
   };
 }
