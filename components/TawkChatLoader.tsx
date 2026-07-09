@@ -2,64 +2,45 @@
 
 import { useEffect } from "react";
 
-import { getCookieConsent, hasAcceptedCookies } from "@/lib/cookieConsent";
+import { hasAcceptedCookies } from "@/lib/cookieConsent";
+import {
+  handleQueuedTawkOpen,
+  injectTawk,
+  openTawkChat,
+} from "@/lib/tawkEmbed";
 import { patchTawkPerformanceLogging } from "@/lib/tawkPerformancePatch";
-
-const TAWK_EMBED_SRC =
-  "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
-
-declare global {
-  interface Window {
-    __tawkInjected?: boolean;
-    Tawk_API?: Record<string, unknown>;
-    Tawk_LoadStart?: Date;
-  }
-}
-
-function injectTawk() {
-  if (window.__tawkInjected || !hasAcceptedCookies()) return;
-
-  window.__tawkInjected = true;
-  patchTawkPerformanceLogging();
-
-  window.Tawk_API = window.Tawk_API || {};
-  window.Tawk_LoadStart = new Date();
-
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = TAWK_EMBED_SRC;
-  script.charset = "UTF-8";
-  document.body.appendChild(script);
-}
 
 export default function TawkChatLoader() {
   useEffect(() => {
-    if (process.env.NODE_ENV !== "production") return;
-
     patchTawkPerformanceLogging();
+    window.openTawkChat = openTawkChat;
 
     const onConsent = () => {
-      if (hasAcceptedCookies()) injectTawk();
+      if (!hasAcceptedCookies()) return;
+
+      injectTawk();
+      handleQueuedTawkOpen();
     };
 
     onConsent();
     window.addEventListener("360:cookie-consent", onConsent);
 
-    const onIntent = () => {
-      if (hasAcceptedCookies()) injectTawk();
-      window.removeEventListener("scroll", onIntent);
-      window.removeEventListener("touchstart", onIntent);
+    const onChatTrigger = (event: MouseEvent) => {
+      const trigger = (event.target as HTMLElement | null)?.closest(
+        "[data-open-tawk-chat]",
+      );
+      if (!trigger) return;
+
+      event.preventDefault();
+      openTawkChat();
     };
 
-    if (getCookieConsent() === "accepted") {
-      window.addEventListener("scroll", onIntent, { passive: true });
-      window.addEventListener("touchstart", onIntent, { passive: true });
-    }
+    document.addEventListener("click", onChatTrigger);
 
     return () => {
       window.removeEventListener("360:cookie-consent", onConsent);
-      window.removeEventListener("scroll", onIntent);
-      window.removeEventListener("touchstart", onIntent);
+      document.removeEventListener("click", onChatTrigger);
+      delete window.openTawkChat;
     };
   }, []);
 

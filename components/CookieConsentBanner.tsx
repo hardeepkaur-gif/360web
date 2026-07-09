@@ -57,8 +57,8 @@ export default function CookieConsentBanner() {
           </p>
           <p id="cookie-consent-desc" className="cookie-consent__text">
             We use cookies to improve your experience, analyse site traffic, and
-            support our chat service. You can accept or decline non-essential
-            cookies.{" "}
+            enable our live chat widget. Accept cookies to see the chat button in
+            the bottom right corner.{" "}
             <Link href="/cookie-policy" className="cookie-consent__link">
               Cookie Policy
             </Link>
