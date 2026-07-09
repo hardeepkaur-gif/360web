@@ -141,15 +141,15 @@ export default function RootLayout({
     >
       <head>
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
-      </head>
-      <body suppressHydrationWarning>
-        <SiteSchemaScript />
-        <GeoLayerScript />
         <Script
           id="deferred-styles-loader"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }}
         />
+      </head>
+      <body suppressHydrationWarning>
+        <SiteSchemaScript />
+        <GeoLayerScript />
         {process.env.NODE_ENV === "production" ? (
           <Script
             id="tawk-performance-patch"

@@ -70,6 +70,17 @@ body:has(#google-ads-hero-title) #main.svc-page {
   align-items: center;
 }
 
+#google-ads-process .proc-desc__text p {
+  margin: 0 0 18px;
+  font-size: 14.5px;
+  color: var(--ink-3);
+  line-height: 1.65;
+}
+
+#google-ads-process .proc-desc__text p:last-child {
+  margin-bottom: 0;
+}
+
 #google-ads-who-we-work-with {
   background: #f8fafd;
 }
@@ -114,7 +125,7 @@ export default function GoogleAdsManagementServicesPage() {
         src="/js/google-ads-services-include.js"
         strategy="lazyOnload"
       />
-      <Script src="/js/google-ads-process.js" strategy="lazyOnload" />
+      <Script src="/js/google-ads-process.js?v=20250709" strategy="afterInteractive" />
     </>
   );
 }
