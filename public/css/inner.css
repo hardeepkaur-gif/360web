@@ -2906,6 +2906,13 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   margin-bottom: 18px;
 }
 
+.contact__timezone-note {
+  margin: 14px 0 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
 .contact__secure {
   display: inline-flex;
   align-items: center;
@@ -3705,40 +3712,19 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 @media (max-width: 820px) {
   .announcement { display: none; }
 
-  .nav {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: var(--white);
-  }
-
   .section { padding: 64px 0; }
   .section__head { margin-bottom: 50px; }
   .section__head--split { flex-direction: column; align-items: flex-start; }
 
   .nav__menu {
-    display: none !important;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
+    position: fixed; top: 70px; left: 0; right: 0;
     background: var(--white);
-    padding: 76px 28px 28px;
-    opacity: 1;
-    pointer-events: auto;
-    transition: none;
-    z-index: 99998;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid var(--line);
+    padding: 24px 28px; box-shadow: var(--shadow-lg);
+    transform: translateY(-10px); opacity: 0; pointer-events: none;
+    transition: all .3s var(--ease);
   }
-  body.nav-open .nav__menu,
-  .nav__menu.is-open {
-    display: block !important;
-  }
-  .nav__toggle {
-    position: relative;
-    z-index: 99999;
-  }
+  .nav__menu.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .nav__menu > ul { flex-direction: column; align-items: flex-start; gap: 16px; }
   .nav__dropdown-panel {
     position: static;
@@ -3770,7 +3756,6 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   }
   .nav__phone { display: none; }
   .nav__toggle { display: inline-flex; }
-  .nav__actions .btn { display: none; }
 
   .hero { padding: 60px 0 60px; }
   .hero__inner { padding: 20px 28px 40px; }
@@ -10913,23 +10898,13 @@ section.section.svc-transform {
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__head,
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row,
 #ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__head,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row,
-#link-building-white-vs-black .compare__table--audit-two-col .compare__head,
-#link-building-white-vs-black .compare__table--audit-two-col .compare__row,
-#link-building-white-vs-black .compare__head,
-#link-building-white-vs-black .compare__row {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row {
   grid-template-columns: 1fr 1fr;
 }
 
 #seo-audit-vs-free-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#link-building-white-vs-black .compare__table--audit-two-col .compare__row--last .compare__cell:first-child,
-#link-building-white-vs-black .compare__row--last .compare__cell:first-child {
+#ai-agency-vs-traditional-compare .compare__table--audit-two-col .compare__row--last .compare__cell:first-child {
   border-bottom-left-radius: var(--radius-xl);
-}
-
-#link-building-white-vs-black .compare__row--last .compare__cell--us {
-  border-bottom-right-radius: var(--radius-xl);
 }
 
 /* Clear 3-col X on 2nd cell; pro column checkmark only */
@@ -10960,19 +10935,6 @@ section.section.svc-transform {
   background-repeat: no-repeat;
   box-shadow: 0 4px 12px rgba(255, 77, 58, .5);
 }
-
-/* Link building white-hat vs black-hat: two columns, no row icons */
-#link-building-white-vs-black .compare__row .compare__cell::before {
-  content: none !important;
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
-  margin: 0 !important;
-  border: none !important;
-  background: none !important;
-  box-shadow: none !important;
-}
-
 /* ---------- SEO content: search + AI dual section (hover motion) ---------- */
 .seo-ai-dual__stat:hover {
   transform: translateY(-6px) scale(1.02);
@@ -11065,27 +11027,6 @@ section.section.svc-transform {
 .wd-compare .compare__row .compare__cell:nth-child(3)::before {
   content: none;
   display: none;
-}
-
-/* Link building — white-hat vs black-hat: force 2 columns (overrides .wd-compare 3-col grid above) */
-#link-building-white-vs-black.wd-compare .compare__table--audit-two-col .compare__head,
-#link-building-white-vs-black.wd-compare .compare__table--audit-two-col .compare__row,
-#link-building-white-vs-black.wd-compare .compare__head,
-#link-building-white-vs-black.wd-compare .compare__row {
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-}
-
-#link-building-white-vs-black.wd-compare .compare__row .compare__cell:nth-child(2)::before,
-#link-building-white-vs-black.wd-compare .compare__row .compare__cell:nth-child(3)::before {
-  content: none !important;
-  display: none !important;
-}
-
-@media (max-width: 980px) {
-  #link-building-white-vs-black.wd-compare .compare__row .compare__cell:nth-child(2)::before {
-    content: attr(data-label) !important;
-    display: block !important;
-  }
 }
 
 /* On-page SEO: 4-column educational table — hide challenger ✕ markers on desktop only
@@ -15278,56 +15219,6 @@ body:has(#link-building-hero-title) .hero__stats.hero__stats--trust .hero__stat-
   }
 }
 
-/* Link Building — uniform 80px top/bottom padding on every content section */
-body:has(#link-building-hero-title) #main.svc-page > section {
-  padding-top: 80px !important;
-  padding-bottom: 80px !important;
-}
-
-body:has(#link-building-hero-title) #main.svc-page > section.svc-webdev-ticker {
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-#link-building-awareness .container {
-  max-width: var(--container);
-}
-
-#link-building-awareness .svc-ai-need__head,
-#link-building-awareness .svc-ai-need__title,
-#link-building-awareness .svc-ai-need__lede {
-  max-width: none;
-  width: 100%;
-}
-
-#link-building-timeline .svc-ai-need__head,
-#link-building-timeline .svc-ai-need__title,
-#link-building-timeline .svc-ai-need__lede {
-  max-width: none;
-  width: 100%;
-}
-
-#link-building-why-fail {
-  background: var(--white) !important;
-}
-
-#link-building-why-fail .seo-who-needs__head {
-  max-width: 100%;
-}
-
-#link-building-why-fail .seo-who-needs__title {
-  white-space: normal;
-  overflow-wrap: break-word;
-  text-wrap: balance;
-  max-width: 100%;
-  line-height: 1.15;
-}
-
-#link-building-why-fail .seo-who-needs__lede {
-  max-width: none;
-  width: 100%;
-}
-
 /* =====================================================================
    AI Consultancy — equal columns, intrinsic image + floating animation
    ===================================================================== */
@@ -15884,9 +15775,8 @@ section#ai-marketing-why-ai-powered {
   padding-right: clamp(12px, 3vw, 32px);
 }
 
-/* Email marketing + link building — What Are: image height matches copy column, equal vertical padding */
-#email-marketing-what.seo-split--equal .seo-split__grid,
-#link-building-what-is.seo-split--equal .seo-split__grid {
+/* Email marketing — What Are: single image, height matches copy column */
+#email-marketing-what.seo-split--equal .seo-split__grid {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
   gap: clamp(40px, 5vw, 68px);
@@ -15899,21 +15789,12 @@ section#ai-marketing-why-ai-powered {
   padding-left: 18px;
 }
 
-#link-building-what-is.seo-split--equal .seo-split__visual {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  padding-left: 0;
-}
-
-#email-marketing-what.seo-split--equal .seo-split__accent-bar,
-#link-building-what-is.seo-split--equal .seo-split__accent-bar {
+#email-marketing-what.seo-split--equal .seo-split__accent-bar {
   top: 0;
   bottom: 0;
 }
 
-#email-marketing-what.seo-split--equal .seo-split__photo-stack,
-#link-building-what-is.seo-split--equal .seo-split__photo-stack {
+#email-marketing-what.seo-split--equal .seo-split__photo-stack {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -15928,16 +15809,7 @@ section#ai-marketing-why-ai-powered {
   animation: none;
 }
 
-#link-building-what-is.seo-split--equal .seo-split__photo-main-wrap {
-  flex: 1;
-  display: flex;
-  min-height: 100%;
-  animation: none;
-  padding: 0;
-}
-
-#email-marketing-what.seo-split--equal .seo-split__img-main,
-#link-building-what-is.seo-split--equal .seo-split__img-main {
+#email-marketing-what.seo-split--equal .seo-split__img-main {
   width: 100%;
   height: 100%;
   min-height: 100%;
@@ -15945,34 +15817,21 @@ section#ai-marketing-why-ai-powered {
   object-fit: cover;
 }
 
-#link-building-what-is.seo-split--equal .seo-split__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 @media (max-width: 968px) {
-  #email-marketing-what.seo-split--equal .seo-split__visual,
-  #link-building-what-is.seo-split--equal .seo-split__visual {
+  #email-marketing-what.seo-split--equal .seo-split__visual {
     max-width: 520px;
     margin-inline: auto;
     min-height: 0;
   }
 
-  #email-marketing-what.seo-split--equal .seo-split__photo-main-wrap,
-  #link-building-what-is.seo-split--equal .seo-split__photo-main-wrap {
+  #email-marketing-what.seo-split--equal .seo-split__photo-main-wrap {
     min-height: 0;
   }
 
-  #email-marketing-what.seo-split--equal .seo-split__img-main,
-  #link-building-what-is.seo-split--equal .seo-split__img-main {
+  #email-marketing-what.seo-split--equal .seo-split__img-main {
     aspect-ratio: 4 / 3;
     height: auto;
     min-height: 0;
-  }
-
-  #link-building-what-is.seo-split--equal .seo-split__content {
-    justify-content: flex-start;
   }
 }
 
@@ -16231,10 +16090,6 @@ section#ai-marketing-why-ai-powered {
   .seo-split__photo-stack {
     padding-right: clamp(28px, 10vw, 48px);
     padding-bottom: 48px;
-  }
-
-  #link-building-what-is.seo-split--equal .seo-split__photo-stack {
-    padding: 0;
   }
   .seo-split__photo-secondary-wrap {
     max-width: 62%;
@@ -17344,23 +17199,6 @@ section#ai-marketing-why-ai-powered {
 
 #home-services .svc-hdr .sub a.brand-link:hover,
 #outcomes .ind-card__desc a.brand-link:hover {
-  color: var(--coral-2) !important;
-  -webkit-text-fill-color: var(--coral-2) !important;
-  text-decoration: underline !important;
-}
-
-#link-building-what-is a.brand-link,
-#link-building-services-include a.brand-link,
-#faq-link-building a.brand-link {
-  color: var(--coral) !important;
-  -webkit-text-fill-color: var(--coral) !important;
-  font-weight: 600;
-  text-decoration: none !important;
-}
-
-#link-building-what-is a.brand-link:hover,
-#link-building-services-include a.brand-link:hover,
-#faq-link-building a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;
   text-decoration: underline !important;

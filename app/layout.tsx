@@ -9,6 +9,7 @@ import { TAWK_PERFORMANCE_PATCH } from "@/lib/tawkPerformancePatch";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { GeoLayerScript } from "@/components/GeoLayerScript";
 import { MobileNavToggle } from "@/components/MobileNavToggle";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteSchemaScript } from "@/components/SiteSchemaScript";
 import TawkChatLoader from "@/components/TawkChatLoader";
 
@@ -158,6 +159,7 @@ export default function RootLayout({
           />
         ) : null}
         {children}
+        <SiteFooter />
         <MobileNavToggle />
         <CookieConsentBanner />
         <TawkChatLoader />

@@ -3428,6 +3428,13 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   margin-bottom: 18px;
 }
 
+.contact__timezone-note {
+  margin: 14px 0 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+
 .contact__form-divider {
   margin: 22px 0 18px;
   padding-top: 18px;

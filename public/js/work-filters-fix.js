@@ -24,11 +24,29 @@
     });
   }
 
+  function updateFilterCounts(buttons, cards) {
+    const allCount = cards.filter(
+      (card) => card.getAttribute("data-hide-on-all") !== "true",
+    ).length;
+
+    buttons.forEach((btn) => {
+      const filter = btn.dataset.filter || "all";
+      const count =
+        filter === "all"
+          ? allCount
+          : cards.filter((card) => parseCategories(card).includes(filter)).length;
+      const em = btn.querySelector("em");
+      if (em) em.textContent = String(count);
+    });
+  }
+
   function initCaseStudyFilters() {
     const buttons = Array.from(document.querySelectorAll(".work__filter"));
     const cards = Array.from(document.querySelectorAll(".work [data-category]"));
 
     if (!buttons.length || !cards.length) return false;
+
+    updateFilterCounts(buttons, cards);
 
     // Capture-phase handler ensures legacy bubbling listeners cannot override this behavior.
     buttons.forEach((btn) => {

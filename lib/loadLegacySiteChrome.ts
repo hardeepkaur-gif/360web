@@ -48,27 +48,27 @@ function injectGoogleReviews(html: string, gridHtml?: string): string {
   return html.replace(GOOGLE_REVIEWS_MARKER, grid.trim());
 }
 
-function withSiteFooter(markupBeforeFooter: string, gridHtml?: string): string {
-  const raw = injectGoogleReviews(`${markupBeforeFooter.trimEnd()}\n${siteFooter()}`, gridHtml);
+function wrapLegacyContent(markup: string, gridHtml?: string): string {
+  const raw = injectGoogleReviews(markup.trimEnd(), gridHtml);
   return isDev ? raw : minifyHtml(raw);
 }
 
 export function loadLegacySiteHtml(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
-  return withSiteFooter(siteHeader() + inner);
+  return wrapLegacyContent(siteHeader() + inner);
 }
 
 export function loadLegacyHomeHtml(gridHtml?: string): string {
   const innerPath = join(ROOT, "content", "body.html");
   const inner = readFileSync(innerPath, "utf-8");
-  return withSiteFooter(siteHeader() + inner, gridHtml);
+  return wrapLegacyContent(siteHeader() + inner, gridHtml);
 }
 
 export function loadLegacyPageWithSiteFooter(innerFilename: string): string {
   const innerPath = join(ROOT, "content", innerFilename);
   const inner = readFileSync(innerPath, "utf-8");
-  return withSiteFooter(siteHeader() + inner);
+  return wrapLegacyContent(siteHeader() + inner);
 }
 
 /** Header / footer only — for React pages (e.g. WordPress blog). */
