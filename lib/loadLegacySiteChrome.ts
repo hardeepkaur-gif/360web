@@ -77,5 +77,9 @@ export function loadLegacySiteHeaderHtml(): string {
 }
 
 export function loadLegacySiteFooterHtml(): string {
-  return siteFooter();
+  const year = String(new Date().getFullYear());
+  return siteFooter().replace(
+    '<span id="year"></span>',
+    `<span id="year">${year}</span>`,
+  );
 }
