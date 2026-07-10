@@ -35,7 +35,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-      <link rel="stylesheet" href="/css/home.css?v=20250710f" />
+      <link rel="stylesheet" href="/css/home.css?v=20250710l" />
       <link
         rel="preload"
         href="/assets/images/hero-home-cover.webp"
@@ -52,7 +52,7 @@ export default function Home() {
       <Script src="/js/main.js?v=20250609" strategy="afterInteractive" />
       <Script src="/js/hero-lead-form.js?v=20250710" strategy="afterInteractive" />
       <Script src="/js/contact-booking-timezone.js?v=20250710" strategy="afterInteractive" />
-      <Script src="/js/work-filters-fix.js?v=20250710" strategy="afterInteractive" />
+      <Script src="/js/work-filters-fix.js?v=20250710h" strategy="afterInteractive" />
     </>
   );
 }

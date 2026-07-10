@@ -8,15 +8,28 @@
       .filter(Boolean);
   }
 
-  function applyFilter(filter, buttons, cards) {
+  function isMobileView() {
+    return window.matchMedia("(max-width: 767px)").matches;
+  }
+
+  function applyFilter(filter, buttons, gridCards) {
     buttons.forEach((btn) => {
       btn.classList.toggle("is-active", (btn.dataset.filter || "all") === filter);
     });
 
-    cards.forEach((card) => {
+    const mobileLimit = isMobileView() ? 3 : Infinity;
+    let mobileShown = 0;
+
+    gridCards.forEach((card) => {
       const categories = parseCategories(card);
       const hideOnAll = card.getAttribute("data-hide-on-all") === "true";
-      const visible = filter === "all" ? !hideOnAll : categories.includes(filter);
+      const matches = filter === "all" ? !hideOnAll : categories.includes(filter);
+
+      let visible = matches;
+      if (matches && isMobileView()) {
+        visible = mobileShown < mobileLimit;
+        if (visible) mobileShown += 1;
+      }
 
       card.style.display = visible ? "" : "none";
       card.style.opacity = visible ? "1" : "0";
@@ -24,7 +37,8 @@
     });
   }
 
-  function updateFilterCounts(buttons, cards) {
+  function updateFilterCounts(buttons, gridCards, featured) {
+    const cards = featured ? [featured, ...gridCards] : gridCards;
     const allCount = cards.filter(
       (card) => card.getAttribute("data-hide-on-all") !== "true",
     ).length;
@@ -42,27 +56,33 @@
 
   function initCaseStudyFilters() {
     const buttons = Array.from(document.querySelectorAll(".work__filter"));
-    const cards = Array.from(document.querySelectorAll(".work [data-category]"));
+    const gridCards = Array.from(document.querySelectorAll(".work__grid .work-card[data-category]"));
+    const featured = document.querySelector(".work-feature[data-category]");
 
-    if (!buttons.length || !cards.length) return false;
+    if (!buttons.length || !gridCards.length) return false;
 
-    updateFilterCounts(buttons, cards);
+    updateFilterCounts(buttons, gridCards, featured);
 
-    // Capture-phase handler ensures legacy bubbling listeners cannot override this behavior.
     buttons.forEach((btn) => {
       btn.addEventListener(
         "click",
         (event) => {
           event.preventDefault();
           event.stopImmediatePropagation();
-          applyFilter(btn.dataset.filter || "all", buttons, cards);
+          applyFilter(btn.dataset.filter || "all", buttons, gridCards);
         },
         true
       );
     });
 
     const active = buttons.find((btn) => btn.classList.contains("is-active"))?.dataset.filter || "all";
-    applyFilter(active, buttons, cards);
+    applyFilter(active, buttons, gridCards);
+
+    window.matchMedia("(max-width: 767px)").addEventListener("change", () => {
+      const current = buttons.find((btn) => btn.classList.contains("is-active"))?.dataset.filter || "all";
+      applyFilter(current, buttons, gridCards);
+    });
+
     return true;
   }
 
