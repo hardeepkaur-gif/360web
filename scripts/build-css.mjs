@@ -24,6 +24,9 @@ const SAFELIST = {
     "open",
     "show",
     "hide",
+    "tawkchat-minified-wrapper",
+    "tawkchat-container",
+    "tawk-min-container",
   ],
   deep: [
     /^reveal/,
@@ -52,6 +55,9 @@ const SAFELIST = {
     /^wp-about/,
     /^wp-hero/,
     /^cookie-consent/,
+    /^livechat/,
+    /^to-top/,
+    /^tawk/,
   ],
   greedy: [/hover/, /focus/, /active/, /open/, /visible/, /selected/],
 };

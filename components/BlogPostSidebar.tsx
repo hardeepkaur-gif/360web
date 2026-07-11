@@ -41,9 +41,10 @@ export function BlogPostSidebar({
                       <Image
                         src={image.url}
                         alt=""
-                        width={80}
-                        height={80}
-                        sizes="80px"
+                        width={68}
+                        height={68}
+                        sizes="(max-width: 991px) 64px, 68px"
+                        className="blog-sidebar__post-img"
                       />
                     ) : (
                       <span className="blog-sidebar__post-placeholder" aria-hidden="true">

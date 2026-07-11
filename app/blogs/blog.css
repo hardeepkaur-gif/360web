@@ -280,6 +280,7 @@
   border: 1px solid rgba(15, 42, 74, 0.08);
   border-radius: 12px;
   box-shadow: 0 12px 36px rgba(15, 42, 74, 0.06);
+  overflow: hidden;
 }
 
 .blog-sidebar__widget--search {
@@ -350,6 +351,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  min-width: 0;
 }
 
 .blog-sidebar__post + .blog-sidebar__post {
@@ -361,24 +363,54 @@
 .blog-sidebar__post-link {
   display: flex;
   gap: 14px;
+  align-items: flex-start;
+  min-width: 0;
   text-decoration: none;
   color: inherit;
 }
 
+.blog-sidebar__post {
+  min-width: 0;
+}
+
 .blog-sidebar__post-thumb {
-  flex-shrink: 0;
-  width: 80px;
-  height: 80px;
+  flex: 0 0 68px;
+  width: 68px;
+  height: 68px;
+  min-width: 68px;
+  max-width: 68px;
   overflow: hidden;
   border-radius: 8px;
   background: var(--soft);
+  position: relative;
+  isolation: isolate;
 }
 
-.blog-sidebar__post-thumb img {
-  width: 100%;
-  height: 100%;
+.blog-sidebar__post-thumb > span {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  border-radius: inherit;
+  line-height: 0;
+}
+
+.blog-sidebar__post-thumb img,
+.blog-sidebar__post-img {
+  display: block !important;
+  position: static !important;
+  inset: auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden;
+  border-radius: inherit;
   object-fit: cover;
-  display: block;
+  object-position: center;
 }
 
 .blog-sidebar__post-placeholder {
@@ -618,6 +650,23 @@
   .blog-sidebar__widget--search {
     grid-column: 1 / -1;
   }
+
+  .blog-sidebar__post-thumb {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    max-width: 64px;
+  }
+
+  .blog-sidebar__post-thumb > span,
+  .blog-sidebar__post-thumb img,
+  .blog-sidebar__post-img {
+    width: 64px !important;
+    height: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+  }
 }
 
 @media (max-width: 640px) {
@@ -640,6 +689,10 @@
 
   .blog-sidebar {
     grid-template-columns: 1fr;
+  }
+
+  .blog-sidebar__post-link {
+    gap: 12px;
   }
 
   .blog-single {
