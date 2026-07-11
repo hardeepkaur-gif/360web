@@ -58,6 +58,7 @@ const SAFELIST = {
     /^livechat/,
     /^to-top/,
     /^tawk/,
+    /^proc-center/,
   ],
   greedy: [/hover/, /focus/, /active/, /open/, /visible/, /selected/],
 };
