@@ -5,7 +5,7 @@ export const DEFERRED_STYLES_LOADER = `
   var href=(p===''||p==='/')?'/css/home.css':'/css/inner.css';
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href=href+'?v=20250713n';
+  link.href=href+'?v=20250713o';
   document.head.appendChild(link);
 })();
 `.trim();

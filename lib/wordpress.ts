@@ -245,8 +245,130 @@ export function formatBlogDateBadge(isoDate: string) {
   };
 }
 
+const FAQ_TOGGLE_SVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>`;
+
+function stripFaqQuestionNumber(html: string): string {
+  return html
+    .replace(/^\s*\d+\.\s*/, "")
+    .replace(/^\s*<strong>\s*\d+\.\s*/i, "<strong>")
+    .trim();
+}
+
+function findMatchingCloseDiv(html: string, openTagEnd: number): number {
+  let depth = 1;
+  let pos = openTagEnd;
+
+  while (pos < html.length && depth > 0) {
+    const nextOpen = html.indexOf("<div", pos);
+    const nextClose = html.indexOf("</div>", pos);
+
+    if (nextClose === -1) {
+      return html.length;
+    }
+
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      depth += 1;
+      pos = nextOpen + 4;
+      continue;
+    }
+
+    depth -= 1;
+    pos = nextClose + 6;
+
+    if (depth === 0) {
+      return pos;
+    }
+  }
+
+  return pos;
+}
+
+function buildFaqRowsFromRankMathItems(
+  itemMatches: RegExpMatchArray[],
+): string {
+  return itemMatches
+    .map((match, index) => {
+      const chunk = match[1];
+      const questionMatch = chunk.match(
+        /<h3 class="rank-math-question\s*">([\s\S]*?)<\/h3>/i,
+      );
+      const answerMatch = chunk.match(
+        /<div class="rank-math-answer\s*">([\s\S]*?)<\/div>/i,
+      );
+
+      const questionHtml = questionMatch
+        ? stripFaqQuestionNumber(questionMatch[1].trim())
+        : "";
+      const answerHtml = answerMatch ? answerMatch[1].trim() : "";
+      const num = String(index + 1).padStart(2, "0");
+      const openAttr = index === 0 ? " open" : "";
+
+      return `<details class="faq-row"${openAttr}>
+  <summary class="faq-row__summary">
+    <span class="faq-row__num">${num}</span>
+    <span class="faq-row__q">${questionHtml}</span>
+    <span class="faq-row__toggle" aria-hidden="true">
+      <span class="faq-row__plus"></span>
+      <span class="faq-row__x">${FAQ_TOGGLE_SVG}</span>
+    </span>
+  </summary>
+  <div class="faq-row__body">${answerHtml}</div>
+</details>`;
+    })
+    .join("\n");
+}
+
+function transformSingleRankMathBlock(blockHtml: string): string {
+  const itemMatches = [
+    ...blockHtml.matchAll(
+      /<div id="faq-question-[^"]*" class="rank-math-list-item">([\s\S]*?)<\/div>(?=\s*<div id="faq-question-|\s*<\/div>)/gi,
+    ),
+  ];
+
+  if (!itemMatches.length) {
+    return blockHtml;
+  }
+
+  const rows = buildFaqRowsFromRankMathItems(itemMatches);
+  return `<div class="faq-v2 blog-post__faq"><div class="faq-v2__list">${rows}</div></div>`;
+}
+
+function transformRankMathFaqs(html: string): string {
+  const blockOpenRe = /<div[^>]*\brank-math-block\b[^>]*>/gi;
+  const replacements: Array<{ start: number; end: number; html: string }> =
+    [];
+  let match: RegExpExecArray | null;
+
+  while ((match = blockOpenRe.exec(html)) !== null) {
+    const start = match.index;
+    const openEnd = match.index + match[0].length;
+    const end = findMatchingCloseDiv(html, openEnd);
+    const blockHtml = html.slice(start, end);
+
+    replacements.push({
+      start,
+      end,
+      html: transformSingleRankMathBlock(blockHtml),
+    });
+  }
+
+  if (!replacements.length) {
+    return html;
+  }
+
+  let result = html;
+  for (let i = replacements.length - 1; i >= 0; i -= 1) {
+    const { start, end, html: replacement } = replacements[i];
+    result = result.slice(0, start) + replacement + result.slice(end);
+  }
+
+  return result;
+}
+
 export function preparePostContent(html: string): string {
-  return html.replace(/<img\b([^>]*?)>/gi, (_match, attrs: string) => {
+  let next = transformRankMathFaqs(html);
+
+  next = next.replace(/<img\b([^>]*?)>/gi, (_match, attrs: string) => {
     let next = attrs;
 
     // 1. Route any backend `src` through our own /_next/image proxy so the
@@ -283,6 +405,8 @@ export function preparePostContent(html: string): string {
 
     return `<img${next}>`;
   });
+
+  return next;
 }
 
 async function wpFetch<T>(

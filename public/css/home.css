@@ -8967,12 +8967,119 @@ h2.section__title--light .serif-coral,
    SERVICE PAGE — Social Media Marketing (shared .svc-page-*)
    Matches site palette: navy / blue / coral, soft section bg
    ============================================================ */
+.svc-page {
+}
+main.svc-page {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
 
 /* Service pages — hero top inset below site nav */
+#main.svc-page > section.hero.hero--editorial,
+#main.svc-page > section.wp-hero-split {
+  padding-top: 50px !important;
+}
 
 /* Service pages — editorial + devices hero: mobile stack = chip → title → copy → CTAs → stats → visual (matches on-page SEO) */
+@media (max-width: 767px) {
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(28px, 6vw, 40px);
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__content {
+    display: flex;
+    flex-direction: column;
+  }
+  #main.svc-page .hero.hero--seo-content-writing.hero--editorial.hero--webdev-mockups .hero__content {
+    align-items: flex-start;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__photo.hero__photo--devices {
+    order: 10;
+    width: 100%;
+    max-width: none;
+    margin-inline: auto;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  #main.svc-page .container {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  #main.svc-page img:not(.nav__logo):not(.proc-desc__img) {
+    max-width: 100%;
+    height: auto;
+  }
+  #main.svc-page .hero__title {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+  }
+  #main.svc-page h2,
+  #main.svc-page .section__title {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+  }
+  #main.svc-page .compare__cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  #main.svc-page .compare__cta-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.svc-page h2 {
+  font-size: 44px;
+}
 
 /* #main.svc-page editorial heroes — match home hero fold (body.html: .hero.hero--editorial) */
+@media (max-width: 820px) {
+  #main.svc-page .hero.hero--editorial .hero__inner {
+    min-height: 0;
+    gap: clamp(36px, 6vw, 52px);
+  }
+  #main.svc-page .hero.hero--webdev-mockups .hero__photo.hero__photo--devices {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  #main.svc-page .hero.hero--editorial.hero--webdev-mockups .hero__photo.hero__photo--devices.hero__photo--smm-illustration {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 560px) {
+  #main.svc-page .hero.hero--editorial .hero__title {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+  #main.svc-page .hero.hero--editorial .hero__subtitle {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  #main.svc-page .hero.hero--editorial .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  #main.svc-page .hero.hero--editorial .hero__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 /* ---------- Service pages: Web Dev hero reuses home `.hero.hero--editorial` (see line ~6749) ---------- */
 
@@ -11808,6 +11915,12 @@ body:has(#link-building-hero-title) .hero__stats.hero__stats--trust .hero__stat-
   }
 }
 
+@media (max-width: 720px) {
+  #main.svc-page .hero.hero--ai-consultancy.hero--editorial.hero--webdev-mockups .hero__photo.hero__photo--devices.hero__photo--smm-illustration {
+    min-height: 0;
+  }
+}
+
 /* AI Marketing Agency — photographic robot hero asset */
 .hero__photo--ai-marketing-hero .hero__smm-illustration {
   border-radius: clamp(14px, 2.2vw, 24px);
@@ -11921,6 +12034,12 @@ body:has(#link-building-hero-title) .hero__stats.hero__stats--trust .hero__stat-
 
 @media (max-width: 900px) and (min-width: 768px) {
   .hero.hero--seo-content-writing .hero__photo.hero__photo--devices.hero__photo--smm-illustration {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  #main.svc-page .hero.hero--seo-content-writing.hero--editorial.hero--webdev-mockups .hero__photo.hero__photo--devices.hero__photo--smm-illustration {
     min-height: 0;
   }
 }
@@ -14893,6 +15012,202 @@ section.about-system.section {
 
   .container {
     padding: 0 18px;
+  }
+}
+
+/* ================= MOBILE — uniform section spacing (40px) ================= */
+@media (max-width: 767px) {
+  main > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .about-page-hero,
+      .contact-page-hero,
+      .cs-archive-hero,
+      .svc-webdev-ticker,
+      .cta-final,
+      .trusted-section,
+      .seo-who-needs,
+      .about-system,
+      .about-founder,
+      .about-page-cta,
+      .ai-cert-stripes,
+      .about-sectors-stripes,
+      .pricing,
+      .contact,
+      .industries
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #about-what-we-do,
+      #what-we-do,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    ),
+  #main.svc-page > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .svc-webdev-ticker,
+      .cta-final,
+      .seo-who-needs,
+      .ai-cert-stripes
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    ),
+  .services-hub-page > section:not(.contact-page-hero),
+  .about-page > section:not(.about-page-hero),
+  .about-page > .about-intro,
+  .about-page > .about-system,
+  .about-page > .about-diff,
+  .about-page > .about-what-we-do,
+  .about-page > .about-sectors-stripes,
+  .about-page > .about-founder,
+  .about-page > .about-stand-for,
+  .about-page > .about-page-cta {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* Consecutive white sections — drop duplicate top padding so gap stays 40px */
+  main > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .about-page-hero,
+      .contact-page-hero,
+      .cs-archive-hero,
+      .svc-webdev-ticker,
+      .cta-final,
+      .trusted-section,
+      .seo-who-needs,
+      .about-system,
+      .about-founder,
+      .about-page-cta,
+      .ai-cert-stripes,
+      .about-sectors-stripes,
+      .pricing,
+      .contact,
+      .industries
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #about-what-we-do,
+      #what-we-do,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    )
+    + main > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .about-page-hero,
+      .contact-page-hero,
+      .cs-archive-hero,
+      .svc-webdev-ticker,
+      .cta-final,
+      .trusted-section,
+      .seo-who-needs,
+      .about-system,
+      .about-founder,
+      .about-page-cta,
+      .ai-cert-stripes,
+      .about-sectors-stripes,
+      .pricing,
+      .contact,
+      .industries
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #about-what-we-do,
+      #what-we-do,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    ),
+  #main.svc-page > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .svc-webdev-ticker,
+      .cta-final,
+      .seo-who-needs,
+      .ai-cert-stripes
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    )
+    + #main.svc-page > section:not(
+      .hero,
+      .hero--editorial,
+      .wp-hero-split,
+      .svc-webdev-ticker,
+      .cta-final,
+      .seo-who-needs,
+      .ai-cert-stripes
+    ):not(
+      #ai-marketing-why-ai-powered,
+      #why-choose-on-page-seo,
+      #email-marketing-why-choose,
+      #why-choose-cro,
+      #why-choose-seo,
+      #why-choose-seo-audit,
+      #seo-services-overview,
+      #seo-audit-common-problems,
+      #on-page-effective-2026,
+      #cro-uk-businesses,
+      #what-is-cro,
+      #email-marketing-agency-switch
+    ),
+  .about-page > section:not(.about-page-hero):not(.about-system):not(.about-founder):not(.about-page-cta):not(.about-sectors-stripes):not(.ai-cert-stripes):not(#about-what-we-do)
+    + .about-page > section:not(.about-page-hero):not(.about-system):not(.about-founder):not(.about-page-cta):not(.about-sectors-stripes):not(.ai-cert-stripes):not(#about-what-we-do),
+  .about-page > .about-intro + .about-diff,
+  .about-page > .about-diff + .about-stand-for {
+    padding-top: 0 !important;
   }
 }
 

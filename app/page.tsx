@@ -35,7 +35,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-      <link rel="stylesheet" href="/css/home.css?v=20250713a" />
+      <link rel="stylesheet" href="/css/home.css?v=20250713o" />
       <link
         rel="preload"
         href="/assets/images/hero-home-cover.webp"

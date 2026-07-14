@@ -563,12 +563,110 @@
 }
 
 .blog-post__content ul,
-.blog-post__content ol {
-  padding-left: 1.4em;
+.blog-post__content ul.wp-block-list {
+  list-style: disc;
+  margin: 0 0 1.25em;
+  padding-left: 1.5em;
+}
+
+.blog-post__content ol,
+.blog-post__content ol.wp-block-list {
+  list-style: decimal;
+  margin: 0 0 1.25em;
+  padding-left: 1.5em;
+}
+
+.blog-post__content li {
+  display: list-item;
+}
+
+.blog-post__content ul ul,
+.blog-post__content ol ol,
+.blog-post__content ul ol,
+.blog-post__content ol ul {
+  margin-top: 0.45em;
+  margin-bottom: 0;
 }
 
 .blog-post__content li + li {
   margin-top: 0.45em;
+}
+
+/* WordPress tables */
+.blog-post__content .wp-block-table,
+.blog-post__content figure.wp-block-table {
+  margin: 1.8em 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.blog-post__content table {
+  width: 100%;
+  min-width: min(100%, 520px);
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 1.55;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog-post__content table th,
+.blog-post__content table td {
+  padding: 14px 16px;
+  border: 1px solid var(--line-2);
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink-2);
+}
+
+.blog-post__content table thead th {
+  background: rgba(26, 95, 191, 0.08);
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.blog-post__content table tbody tr:nth-child(even) {
+  background: rgba(245, 247, 250, 0.75);
+}
+
+.blog-post__content table strong {
+  color: var(--navy);
+}
+
+/* Rank Math FAQ → homepage faq-v2 accordion (embedded in article) */
+.blog-post__content .blog-post__faq.faq-v2 {
+  margin: 2.5em 0;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.blog-post__content .blog-post__faq.faq-v2::before,
+.blog-post__content .blog-post__faq.faq-v2::after {
+  display: none;
+}
+
+.blog-post__content .blog-post__faq .faq-v2__list {
+  max-width: none;
+  margin: 0;
+}
+
+.blog-post__content .blog-post__faq .faq-row__summary {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.blog-post__content .blog-post__faq .faq-row__body {
+  padding-left: 64px;
+}
+
+@media (max-width: 640px) {
+  .blog-post__content .blog-post__faq .faq-row__body {
+    padding-left: 0;
+  }
 }
 
 .blog-post__content a {

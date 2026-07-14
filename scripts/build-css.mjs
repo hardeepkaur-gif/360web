@@ -29,6 +29,8 @@ const SAFELIST = {
     "about-diff",
     "about-intro",
     "about-system-metric",
+    "services-hub-page",
+    "svc-page",
     "tawkchat-container",
     "tawk-min-container",
   ],
