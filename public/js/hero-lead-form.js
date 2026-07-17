@@ -41,8 +41,7 @@
         });
       })
       .then(function () {
-        form.hidden = true;
-        if (success) success.hidden = false;
+        window.location.href = "/thank-you";
       })
       .catch(function (err) {
         window.alert(err.message || "Something went wrong. Please try again.");

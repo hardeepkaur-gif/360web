@@ -50,7 +50,7 @@ export default function Home() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js?v=20250609" strategy="afterInteractive" />
-      <Script src="/js/hero-lead-form.js?v=20250710" strategy="afterInteractive" />
+      <Script src="/js/hero-lead-form.js?v=20260717" strategy="afterInteractive" />
       <Script src="/js/contact-booking-timezone.js?v=20250710" strategy="afterInteractive" />
       <Script src="/js/work-filters-fix.js?v=20250710h" strategy="afterInteractive" />
     </>
