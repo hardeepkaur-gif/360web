@@ -58,6 +58,15 @@ export const SERVICE_SCHEMAS = {
     description:
       "Human-led AI marketing combining strategy and automation to drive better results across SEO, paid media, and content for UK businesses.",
   },
+  "llm-optimisation-services": {
+    slug: "llm-optimisation-services",
+    name: "LLM Optimisation Services",
+    serviceType: "LLM Optimisation",
+    path: "/services/llm-optimisation-services",
+    description:
+      "LLM optimisation for brand visibility in AI search and generative engines including ChatGPT, Perplexity, and Google AI Overviews.",
+  },
+
   "social-media-marketing": {
     slug: "social-media-marketing",
     name: "Social Media Marketing",
