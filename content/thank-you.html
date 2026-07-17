@@ -1,15 +1,69 @@
 <main id="main" class="thank-you-page">
-  <section class="section section--svc" style="padding-block: clamp(80px, 12vw, 140px);">
-    <div class="container" style="max-width: 640px; text-align: center;">
-      <span class="eyebrow eyebrow--center"><span class="eyebrow__line" aria-hidden="true"></span> Request received</span>
-      <h1 class="section__title" style="margin-top: 16px;">Thank you — we&rsquo;ve got your message</h1>
-      <p class="section__lede" style="margin-top: 16px;">
-        A member of our team will confirm your session or reply by email within one business day.
-      </p>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px;">
-        <a href="/" class="btn btn--coral btn--lg">Back to home</a>
-        <a href="/case-studies" class="btn btn--ghost-play">View case studies</a>
+  <section class="ty-hero" aria-labelledby="ty-title">
+    <div class="ty-hero__360" aria-hidden="true">360</div>
+    <div class="ty-hero__ring ty-hero__ring--1" aria-hidden="true"></div>
+    <div class="ty-hero__ring ty-hero__ring--2" aria-hidden="true"></div>
+    <div class="ty-hero__glow" aria-hidden="true"></div>
+
+    <div class="container ty-hero__inner">
+      <div class="ty-check" aria-hidden="true">
+        <span class="ty-check__pulse"></span>
+        <span class="ty-check__ring"></span>
+        <svg class="ty-check__mark" width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
       </div>
+
+      <span class="eyebrow eyebrow--center ty-hero__eyebrow">
+        <span class="eyebrow__line" aria-hidden="true"></span> Request received
+      </span>
+
+      <h1 id="ty-title" class="ty-hero__title">
+        Thank You &mdash; <span class="grad-coral">We&rsquo;ve Got Your Message</span>
+      </h1>
+
+      <p class="ty-hero__lede">
+        Your details are safely with our team. A specialist will review your enquiry and get back to you by email or phone within <strong>one business day</strong>.
+      </p>
+
+      <div class="ty-steps" role="list">
+        <div class="ty-step" role="listitem">
+          <span class="ty-step__num">1</span>
+          <div class="ty-step__body">
+            <h3 class="ty-step__title">We review your enquiry</h3>
+            <p class="ty-step__text">A specialist looks over your details and current setup.</p>
+          </div>
+        </div>
+        <div class="ty-step" role="listitem">
+          <span class="ty-step__num">2</span>
+          <div class="ty-step__body">
+            <h3 class="ty-step__title">We reach out</h3>
+            <p class="ty-step__text">Expect a reply within one business day to arrange a chat.</p>
+          </div>
+        </div>
+        <div class="ty-step" role="listitem">
+          <span class="ty-step__num">3</span>
+          <div class="ty-step__body">
+            <h3 class="ty-step__title">We map your plan</h3>
+            <p class="ty-step__text">You get honest, tailored next steps &mdash; no hard sell.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ty-hero__cta">
+        <a href="/" class="btn btn--coral btn--lg">
+          Back to home
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="/case-studies" class="btn btn--ghost-play btn--lg">View case studies</a>
+      </div>
+
+      <p class="ty-hero__micro">
+        In the meantime, explore our <a href="/blog">latest insights</a> or read about <a href="/about-us">who we are</a>.
+      </p>
     </div>
   </section>
 </main>
