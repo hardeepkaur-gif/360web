@@ -4809,12 +4809,14 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 .svc-panels {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 28px;
 }
 .svc-panel {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 26px;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
   scroll-margin-top: 110px;
   opacity: 1;
 }
@@ -4904,6 +4906,9 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 /* Old decorative glow no longer needed */
 .svc-panel__content {
   padding: 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 .svc-panel__eyebrow {
   display: inline-block;
@@ -4912,24 +4917,25 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   color: var(--blue);
   letter-spacing: .16em;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin: 0;
 }
 .svc-panel h3 {
   font-size: clamp(26px, 3vw, 36px);
-  margin-bottom: 14px;
+  margin: 0;
   line-height: 1.15;
 }
 .svc-panel p {
   font-size: 16px;
   color: var(--ink-3);
   line-height: 1.7;
-  margin: 0 0 22px;
+  margin: 0;
   max-width: 560px;
 }
 .svc-panel__link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-top: 4px;
   font-size: 14px;
   font-weight: 600;
   color: var(--navy);
@@ -6253,7 +6259,8 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
     -webkit-text-stroke-width: 0.85px;
     -webkit-text-stroke-color: rgba(170, 198, 235, 0.4);
   }
-  .svc-panels { gap: 36px; }
+  .svc-panels { gap: 24px; }
+  .svc-panel { gap: 16px; padding: 0; }
   .svc-panel__num { font-size: 42px; top: 16px; left: 18px; }
   .svc-panel__icon { width: 40px; height: 40px; top: 16px; right: 16px; border-radius: 10px; }
   .svc-panel__icon svg { width: 18px; height: 18px; }
@@ -14735,11 +14742,12 @@ section.about-system.section {
   }
 
   .svc-panels {
-    gap: 24px;
+    gap: 20px;
   }
 
   .svc-panel {
     gap: 12px;
+    padding: 0;
     scroll-margin-top: 72px;
   }
 

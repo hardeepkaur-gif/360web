@@ -123,6 +123,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "WordPress development services for UK businesses: custom builds, SEO-ready architecture, migrations, speed optimisation, and ongoing support.",
   },
+  "shopify-development-services": {
+    slug: "shopify-development-services",
+    name: "Shopify Development Services",
+    serviceType: "Shopify Development",
+    path: "/services/shopify-development-services",
+    description:
+      "Shopify development services for UK ecommerce brands: custom storefronts, theme customisation, SEO-safe migrations, Shopify Plus, and performance optimisation.",
+  },
 } as const satisfies Record<string, ServiceSchemaEntry>;
 
 export type ServiceSchemaSlug = keyof typeof SERVICE_SCHEMAS;
