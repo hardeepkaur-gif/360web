@@ -17253,15 +17253,60 @@ section#ai-marketing-why-ai-powered {
   padding-bottom: 0;
 }
 
-#shopify-mistakes.seo-split .seo-split__photo-main-wrap {
+#shopify-mistakes.seo-split--equal .seo-split__grid {
+  align-items: stretch;
+}
+
+#shopify-mistakes.seo-split--equal .seo-split__visual {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-left: 18px;
+}
+
+#shopify-mistakes.seo-split--equal .seo-split__accent-bar {
+  top: 0;
+  bottom: 0;
+}
+
+#shopify-mistakes.seo-split--equal .seo-split__photo-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+}
+
+#shopify-mistakes.seo-split--equal .seo-split__photo-main-wrap {
+  flex: 1;
+  display: flex;
+  min-height: 100%;
   animation: none;
 }
 
-#shopify-mistakes.seo-split .seo-split__img-main {
+#shopify-mistakes.seo-split--equal .seo-split__img-main {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  min-height: 100%;
+  aspect-ratio: unset;
   object-fit: cover;
+}
+
+@media (max-width: 968px) {
+  #shopify-mistakes.seo-split--equal .seo-split__visual {
+    padding-left: 0;
+    min-height: 0;
+  }
+
+  #shopify-mistakes.seo-split--equal .seo-split__photo-main-wrap {
+    min-height: 0;
+  }
+
+  #shopify-mistakes.seo-split--equal .seo-split__img-main {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    min-height: 0;
+  }
 }
 
 /* Email marketing — What Are: single image, height matches copy column */
@@ -19845,31 +19890,11 @@ section#ai-marketing-why-ai-powered {
   background: #eef1f6;
 }
 
-#shopify-mistakes.seo-split--top-head .seo-split__head {
-  text-align: center;
-  width: 100%;
-  max-width: 820px;
-  margin-inline: auto;
-  margin-bottom: clamp(32px, 4.5vw, 52px);
-}
-
-@media (min-width: 969px) {
-  #shopify-mistakes.seo-split--top-head .seo-split__head {
-    max-width: none;
-  }
-
-  #shopify-mistakes.seo-split--top-head .seo-split__head .seo-split__title {
-    white-space: nowrap;
-    text-wrap: nowrap;
-    font-size: clamp(30px, 2.8vw, 46px);
-  }
-}
-
-#shopify-mistakes.seo-split--top-head .seo-split__head .section__title,
-#shopify-mistakes.seo-split--top-head .seo-split__head .seo-split__title {
-  text-align: center;
-  margin-inline: auto;
-  margin-bottom: 0;
+/* Shopify mistakes — left column title */
+#shopify-mistakes .seo-split__content .seo-split__title {
+  text-align: left;
+  margin-bottom: clamp(18px, 2.5vw, 24px);
+  text-wrap: balance;
 }
 
 /* Shopify agency callout — distinct inset card within split copy */
@@ -20038,6 +20063,7 @@ section#ai-marketing-why-ai-powered {
 
 #shopify-services a.brand-link,
 #what-is-shopify-dev a.brand-link,
+#shopify-growth-blockers a.brand-link,
 #shopify-testimonials a.brand-link,
 .hero--shopify a.brand-link {
   color: var(--coral) !important;
@@ -20048,6 +20074,7 @@ section#ai-marketing-why-ai-powered {
 
 #shopify-services a.brand-link:hover,
 #what-is-shopify-dev a.brand-link:hover,
+#shopify-growth-blockers a.brand-link:hover,
 #shopify-testimonials a.brand-link:hover,
 .hero--shopify a.brand-link:hover {
   color: var(--coral-2) !important;

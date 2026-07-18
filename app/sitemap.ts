@@ -34,6 +34,7 @@ const servicePages: SitemapEntry[] = [
   "google-ads-management-services",
   "conversion-rate-optimisation-services",
   "web-development-services",
+  "shopify-development-services",
 ].map((slug) => ({
   path: `/services/${slug}`,
   changeFrequency: "monthly" as const,

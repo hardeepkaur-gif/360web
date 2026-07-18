@@ -5,13 +5,13 @@ import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Shopify Development Services UK | Custom Ecommerce Stores",
+  title: "Shopify Development Services UK | 360 Web Solutions",
   description:
-    "Shopify development services UK for custom ecommerce stores: theme customisation, migrations, Shopify Plus, performance optimisation, and ongoing support.",
+    "360 Web Solutions provides Shopify development services in the UK, building custom stores, themes, app integrations, and optimised ecommerce solutions.",
   openGraph: {
-    title: "Shopify Development Services UK | Custom Ecommerce Stores",
+    title: "Shopify Development Services UK | 360 Web Solutions",
     description:
-      "Shopify development services UK for custom ecommerce stores: theme customisation, migrations, Shopify Plus, performance optimisation, and ongoing support.",
+      "360 Web Solutions provides Shopify development services in the UK, building custom stores, themes, app integrations, and optimised ecommerce solutions.",
   },
 };
 
