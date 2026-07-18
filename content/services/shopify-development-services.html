@@ -1,64 +1,132 @@
   <main id="main" class="svc-page">
     <!-- Hero -->
-    <section class="hero hero--editorial hero--webdev-mockups hero--shopify reveal" aria-labelledby="shopify-hero-title" style="--delay:.02s">
+    <section class="hero hero--editorial hero--with-lead hero--shopify reveal" aria-labelledby="shopify-hero-title" style="--delay:.02s">
       <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-image"></div>
+        <div class="hero__bg-overlay"></div>
         <span class="hero__watermark">360</span>
-        <span class="hero__soft-glow"></span>
       </div>
 
       <div class="container hero__inner">
         <div class="hero__content">
           <span class="hero__chip reveal">
             <span class="hero__chip-dot"></span>
-            <span>Custom Shopify &middot; UK ecommerce &middot; 120+ stores delivered</span>
+            <span>120+ Shopify stores delivered by the UK-based team</span>
           </span>
 
-          <h1 id="shopify-hero-title" class="hero__title hero__title--serif reveal" style="--delay:.08s">
-            <span class="hero__title-line"><span class="hero__title-blue">Shopify Development Services</span> UK</span>
-            <span class="hero__title-line">for Custom <span class="hero__title-coral">Ecommerce Solutions</span></span>
+          <h1 id="shopify-hero-title" class="hero__title reveal" style="--delay:.08s">
+            <span class="hero__title-coral">Shopify Development Services</span> UK for Custom Ecommerce Solutions
           </h1>
 
           <p class="hero__subtitle reveal" style="--delay:.16s">
             <strong class="hero__subtitle-lead">Launching a Shopify store is easy; building one that drives conversions is the real challenge.</strong>
-            Our Shopify development services in the UK are designed to create scalable, high-converting online stores with custom design and support. At <a href="/" class="brand-link">360 Web Solutions</a>, our expert Shopify developers make sure that the store is built with functionality and improved store performance to achieve your business goals. We deliver scalable Shopify solutions for long-term growth. If you are looking for a design-led store with ongoing development support, explore our <a href="/services/web-development-services" class="brand-link">Shopify web design services</a>.
-          </p>
-
-          <p class="hero__subtitle reveal" style="--delay:.18s">
-            <strong>120+</strong> Shopify stores delivered by our UK-based team.
+            Our Shopify development services create scalable, high-converting stores with custom design, performance, and ongoing support &mdash; so your ecommerce grows with your brand.
           </p>
 
           <div class="hero__cta reveal" style="--delay:.24s">
-            <a href="/contact-us" class="btn btn--coral btn--lg">Talk to our Shopify Team</a>
-            <a href="#shopify-services" class="btn btn--ghost-play">
+            <a href="#shopify-hero-form" class="btn btn--coral btn--lg">Talk to our Shopify Team</a>
+            <a href="/case-studies" class="btn btn--ghost-play">
               <span class="btn__play-triangle" aria-hidden="true">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="6 4 20 12 6 20 6 4" />
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                  <polyline points="14 3 14 9 20 9" />
+                  <line x1="8" y1="14" x2="16" y2="14" />
                 </svg>
               </span>
-              See What We Build ↓
+              Our case studies
             </a>
           </div>
 
-          <p class="shopify-hero__certs reveal" style="--delay:.3s">
-            <span class="shopify-hero__certs-label">Our Certifications</span>
-            <span>ISO 9001:2015</span>
-            <span>ISO/IEC 27001</span>
-            <span>ISO/IEC 27701</span>
-            <span>ISO 42001</span>
-            <span>ISO 14064/14068</span>
-          </p>
+          <div class="shopify-hero__certs reveal" style="--delay:.32s">
+            <div class="shopify-hero__certs-head">
+              <span class="shopify-hero__certs-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <span class="shopify-hero__certs-label">Our Certifications</span>
+            </div>
+            <ul class="shopify-hero__certs-list" role="list">
+              <li>ISO 9001:2015</li>
+              <li>ISO/IEC 27001</li>
+              <li>ISO/IEC 27701</li>
+              <li>ISO 42001</li>
+              <li>ISO 14064/14068</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="hero__photo hero__photo--devices hero__photo--smm-illustration hero__photo--shopify-hero reveal" style="--delay:.4s">
-          <img
-            src="/assets/images/shopify-development-services-hero.webp"
-            alt="Custom Shopify ecommerce store development for UK brands"
-            class="hero__smm-illustration"
-            width="1000"
-            height="1000"
-            loading="eager"
-            decoding="async"
-          />
+        <div class="hero__lead reveal" id="shopify-hero-form" style="--delay:.4s">
+          <div class="hero-lead">
+            <div class="hero-lead__card">
+              <div class="hero-lead__bg" aria-hidden="true"></div>
+              <div class="hero-lead__overlay" aria-hidden="true"></div>
+              <header class="hero-lead__head">
+                <h2 class="hero-lead__title">Get Your Free Shopify Review</h2>
+                <span class="hero-lead__accent" aria-hidden="true"></span>
+                <p class="hero-lead__sub">Share a few details and our team will respond within one business day.</p>
+              </header>
+
+              <form class="hero-lead__form" id="heroLeadForm" novalidate>
+                <label class="hero-lead__field">
+                  <span>Full name</span>
+                  <input type="text" name="name" placeholder="Jane Harper" required autocomplete="name" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Phone</span>
+                  <input type="tel" name="phone" placeholder="+44 20 7183 5339" autocomplete="tel" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Service</span>
+                  <select name="services" required>
+                    <option value="" disabled>Select a service</option>
+                    <option value="Shopify Development" selected>Shopify Development</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="SEO">SEO</option>
+                    <option value="Google Ads / PPC">Google Ads / PPC</option>
+                    <option value="Social Media Marketing">Social Media Marketing</option>
+                    <option value="Content Writing">Content Writing</option>
+                    <option value="Conversion Rate Optimisation">Conversion Rate Optimisation</option>
+                    <option value="AI / GEO Marketing">AI / GEO Marketing</option>
+                    <option value="Email Marketing">Email Marketing</option>
+                    <option value="Link Building">Link Building</option>
+                    <option value="Multiple Services">Multiple Services</option>
+                  </select>
+                </label>
+
+                <button type="submit" class="btn btn--coral btn--lg hero-lead__submit" id="heroLeadSubmit">
+                  Get My Free Review
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </button>
+
+                <p class="hero-lead__privacy">By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+              </form>
+
+              <div class="hero-lead__success" id="heroLeadSuccess" hidden>
+                <div class="hero-lead__success-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                </div>
+                <h3 class="hero-lead__success-title">Thank you!</h3>
+                <p class="hero-lead__success-text">We&rsquo;ve received your details and will be in touch shortly.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -98,14 +166,12 @@
     <!-- What are Shopify Development Services -->
     <section class="seo-matters section section--svc" id="what-is-shopify-dev" aria-labelledby="what-is-shopify-title">
       <div class="container seo-matters__inner">
-        <div class="section__head seo-matters__head reveal">
-          <span class="eyebrow eyebrow--center"><span class="eyebrow__line"></span> The foundation</span>
-          <h2 id="what-is-shopify-title" class="section__title seo-matters__title">
-            What Are <span class="grad-coral">Shopify Development Services?</span>
-          </h2>
-        </div>
         <div class="seo-matters__grid">
           <div class="seo-matters__content reveal">
+            <span class="eyebrow"><span class="eyebrow__line"></span> The foundation</span>
+            <h2 id="what-is-shopify-title" class="section__title seo-matters__title">
+              What Are <span class="grad-coral">Shopify Development Services?</span>
+            </h2>
             <p class="seo-matters__lead">
               Work required to build and grow an e-commerce store on Shopify is included in this category. The Shopify development services include: initial store setup, theme design, custom functionality, app integration, migrations, and ongoing performance optimisation.
             </p>
@@ -118,10 +184,10 @@
             <span class="seo-matters__blob seo-matters__blob--b" aria-hidden="true"></span>
             <div class="seo-matters__frame">
               <img
-                src="/assets/images/webdev-service-shopify.webp"
-                alt="Shopify storefront development with custom design and conversion-focused UX"
-                width="640"
-                height="480"
+                src="/assets/images/what-are-shopify-development-services.webp"
+                alt="Shopify store setup, theme customisation, and launch preparation workflow"
+                width="700"
+                height="525"
                 loading="lazy"
                 decoding="async"
               />
@@ -150,9 +216,9 @@
               <span class="seo-who-needs__viz-ring" aria-hidden="true"></span>
               <figure class="seo-who-needs__hero-figure">
                 <img
-                  src="/assets/images/webdev-hero-workspace.webp"
-                  alt="Ecommerce team reviewing Shopify store performance and conversion issues"
-                  width="1200"
+                  src="/assets/images/shopify-holding-back-growth.webp"
+                  alt="Shopify developer working on storefront code and dashboard optimisation"
+                  width="800"
                   height="800"
                   loading="lazy"
                   decoding="async"
@@ -229,6 +295,169 @@
       </div>
     </section>
 
+    <!-- Our Shopify services -->
+    <section class="section section--svc svc-sec" id="shopify-services" aria-labelledby="shopify-services-title">
+      <div class="svc-360bg" aria-hidden="true">S</div>
+      <div class="svc-hdr reveal">
+        <div class="sec-tag">Our Services</div>
+        <h2 class="ttl" id="shopify-services-title">List of Our <span class="grad-coral">Shopify Development Services</span></h2>
+        <p class="sub">At <a href="/" class="brand-link">360 Web Solutions</a>, every project starts with understanding your business model. Our team of Shopify experts is there to help when you need a new storefront, a migration, or long-term development support. Our Shopify development services are built around scalability and conversion.</p>
+        <p class="sub"><a href="/contact-us" class="brand-link">Discuss your business model with our experts now &rarr;</a></p>
+      </div>
+      <div class="svc-body">
+        <div class="svc-left">
+          <div class="svc-list reveal">
+            <div class="sl active" data-svc="0">
+              <span class="sl-num">01</span>
+              <span class="sl-name">Custom Shopify Store Development</span>
+            </div>
+            <div class="sl" data-svc="1">
+              <span class="sl-num">02</span>
+              <span class="sl-name">Shopify Theme Customisation Services</span>
+            </div>
+            <div class="sl" data-svc="2">
+              <span class="sl-num">03</span>
+              <span class="sl-name">Shopify Migration Services Without SEO Disruption</span>
+            </div>
+            <div class="sl" data-svc="3">
+              <span class="sl-num">04</span>
+              <span class="sl-name">Shopify App Integration &amp; Custom Features</span>
+            </div>
+            <div class="sl" data-svc="4">
+              <span class="sl-num">05</span>
+              <span class="sl-name">Shopify Plus Development</span>
+            </div>
+            <div class="sl" data-svc="5">
+              <span class="sl-num">06</span>
+              <span class="sl-name">Shopify Performance Optimisation</span>
+            </div>
+            <div class="sl" data-svc="6">
+              <span class="sl-num">07</span>
+              <span class="sl-name">Future Shopify Support</span>
+            </div>
+          </div>
+        </div>
+        <div class="svc-right reveal">
+          <div class="svc-default" style="opacity: 0; visibility: hidden;">
+            <div class="svc-default-icon">→</div>
+            <div class="svc-default-txt">Hover a service</div>
+          </div>
+          <div class="svc-img active" data-idx="0">
+            <img src="/assets/images/shopify-svc-custom-store.webp" alt="Team designing a custom Shopify ecommerce storefront with wireframes and UX flow" width="800" height="800" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Custom Shopify Store Development</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Your Shopify store should give a smooth customer experience from product discovery to checkout, giving them no reason to abandon the cart. We build custom Shopify storefronts designed for conversions and on-page SEO, tailored to your brand and product needs rather than restrictive, one-size-fits-all templates.</p>
+                <ul class="svc-audit-list">
+                  <li>Conversion-based store structure</li>
+                  <li>Mobile-first development</li>
+                  <li>Flexible, reusable content sections</li>
+                  <li>Scalable architecture for future growth</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="1">
+            <img src="/assets/images/shopify-svc-theme-customisation.webp" alt="Designer customising a Shopify ecommerce theme with code and storefront preview" width="800" height="533" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Shopify Theme Customisation Services</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Off-the-shelf themes create generic and difficult-to-scale stores; we customise Shopify themes to improve usability and brand identity to create a smoother shopping experience.</p>
+                <ul class="svc-audit-list">
+                  <li>Custom layouts and styling</li>
+                  <li>Improved navigation and UX flow</li>
+                  <li>Shopify 2.0 section customisation</li>
+                  <li>Mobile responsiveness enhancements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="2">
+            <img src="/assets/images/shopify-svc-migration.webp" alt="Developer managing Shopify migration data and store dashboards across multiple screens" width="800" height="1000" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Shopify Migration Services Without SEO Disruption</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Migrating to Shopify shouldn&rsquo;t mean losing rankings, data, or revenue. We make sure that the process carefully protects your SEO performance and customer experience.</p>
+                <ul class="svc-audit-list">
+                  <li>WooCommerce and Magento migrations</li>
+                  <li>Product and customer data order transfer</li>
+                  <li>301 redirect mapping</li>
+                  <li>SEO-safe migration process</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="3">
+            <img src="/assets/images/shopify-svc-app-integration.webp" alt="Team integrating Shopify apps and custom ecommerce features across dashboards and code" width="1024" height="1024" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Shopify App Integration &amp; Custom Features</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Apps should support growth, so we integrate the tools your business actually needs and develop custom functionality.</p>
+                <ul class="svc-audit-list">
+                  <li>CRM and email platform integrations</li>
+                  <li>Payment gateway setup</li>
+                  <li>Subscription and loyalty functionality</li>
+                  <li>Custom API development</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="4">
+            <img src="/assets/images/shopify-svc-plus-development.webp" alt="Team developing Shopify Plus stores with analytics dashboards and ecommerce workflows" width="800" height="800" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Shopify Plus Development</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Shopify Plus provides greater flexibility for e-commerce brands that need advanced functionality and automation.</p>
+                <ul class="svc-audit-list">
+                  <li>Custom checkout experiences</li>
+                  <li>Shopify Flow automation</li>
+                  <li>Multi-channel and wholesale support</li>
+                  <li>Enterprise-level scalability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="5">
+            <img src="/assets/images/shopify-svc-performance.webp" alt="Developer reviewing Shopify website speed optimisation tools and performance score" width="800" height="800" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Shopify Performance Optimisation</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">Store speed directly impacts conversions and customer retention. We identify and fix the technical issues slowing your Shopify store down.</p>
+                <ul class="svc-audit-list">
+                  <li>Core Web Vitals optimisation</li>
+                  <li>Image and asset compression</li>
+                  <li>App bloat reduction</li>
+                  <li>Faster page load performance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="svc-img" data-idx="6">
+            <img src="/assets/images/shopify-svc-future-support.webp" alt="Shopify support team reviewing website performance dashboards and ongoing store monitoring" width="800" height="537" loading="lazy" decoding="async" />
+            <div class="svc-img-overlay"></div>
+            <div class="svc-img-text">
+              <div class="svc-img-title">Future Shopify Support</div>
+              <div class="svc-img-desc">
+                <p class="svc-audit-lede">We know that launching the store is only the first step in your business. For long-term growth, ongoing support keeps your Shopify store stable and performing.</p>
+                <ul class="svc-audit-list">
+                  <li>Regular monitoring and updates</li>
+                  <li>Bug fixes and technical support</li>
+                  <li>Performance reviews</li>
+                  <li>Priority development support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- What you need to know -->
     <section class="section industries seo-effective" id="shopify-know-before" aria-labelledby="shopify-know-title">
       <div class="industries__bg" aria-hidden="true">
@@ -243,26 +472,72 @@
 
         <div class="industries__grid">
           <article class="ind-card reveal">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 0 1-8 0" />
+              </svg>
+            </div>
+            <span class="ind-card__num">01</span>
             <h3 class="ind-card__title">Built for e-commerce</h3>
             <p class="ind-card__desc">Shopify was built as an ecosystem specifically for online selling &mdash; checkout, payments, inventory, shipping and fulfilment in one user-friendly journey.</p>
           </article>
           <article class="ind-card reveal" style="--delay:.06s">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 17l6-6 4 4 8-8" />
+                <path d="M14 7h7v7" />
+              </svg>
+            </div>
+            <span class="ind-card__num">02</span>
             <h3 class="ind-card__title">Designed to scale</h3>
             <p class="ind-card__desc">Shopify Plus is built to scale from a small product range to high-volume sales, with advanced functionality and automation for larger operations.</p>
           </article>
           <article class="ind-card reveal" style="--delay:.1s">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="2" width="10" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+            </div>
+            <span class="ind-card__num">03</span>
             <h3 class="ind-card__title">Mobile optimised</h3>
             <p class="ind-card__desc">Most e-commerce purchases happen on mobile. Shopify supports responsive storefronts and fast mobile experiences developed for performance and usability.</p>
           </article>
-          <article class="ind-card reveal" style="--delay:.14s">
+          <article class="ind-card reveal ind-card--featured" style="--delay:.14s">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <span class="ind-card__num">04</span>
             <h3 class="ind-card__title">Secure infrastructure</h3>
             <p class="ind-card__desc">Shopify manages hosting and security updates, which means fewer technical risks and less reliance on server maintenance during busy sales periods.</p>
           </article>
           <article class="ind-card reveal" style="--delay:.18s">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                <path d="M10 6.5h4M17.5 10v4M10 17.5h4M6.5 10v4" />
+              </svg>
+            </div>
+            <span class="ind-card__num">05</span>
             <h3 class="ind-card__title">Flexible integrations</h3>
             <p class="ind-card__desc">Shopify&rsquo;s app ecosystem covers email, subscriptions, CRM and loyalty &mdash; and custom development can extend functionality even further.</p>
           </article>
           <article class="ind-card reveal" style="--delay:.22s">
+            <div class="ind-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+              </svg>
+            </div>
+            <span class="ind-card__num">06</span>
             <h3 class="ind-card__title">Easy to manage internally</h3>
             <p class="ind-card__desc">A well-structured Shopify store should be simple day-to-day: update products and manage orders without depending on developers for routine tasks.</p>
           </article>
@@ -270,304 +545,63 @@
       </div>
     </section>
 
-    <!-- Our Shopify services -->
-    <section class="section section--svc svc-sec" id="shopify-services" aria-labelledby="shopify-services-title">
-      <div class="svc-360bg" aria-hidden="true">S</div>
-      <div class="svc-hdr reveal">
-        <div class="sec-tag">Our Services</div>
-        <h2 class="ttl" id="shopify-services-title">List of Our <span class="grad-coral">Shopify Development Services</span></h2>
-        <p class="sub">At <a href="/" class="brand-link">360 Web Solutions</a>, every project starts with understanding your business model. Our team of Shopify experts is there to help when you need a new storefront, a migration, or long-term development support. Our Shopify development services are built around scalability and conversion.</p>
-        <p class="sub" style="margin-top:12px"><a href="/contact-us" class="brand-link">Discuss your business model with our experts now &rarr;</a></p>
-      </div>
-      <div class="svc-body">
-        <div class="svc-left">
-          <div class="svc-list reveal">
-            <div class="sl active" data-svc="0"><span class="sl-num">01</span><span class="sl-name">Custom Shopify Store Development</span></div>
-            <div class="sl" data-svc="1"><span class="sl-num">02</span><span class="sl-name">Theme Customisation</span></div>
-            <div class="sl" data-svc="2"><span class="sl-num">03</span><span class="sl-name">Migration Without SEO Disruption</span></div>
-            <div class="sl" data-svc="3"><span class="sl-num">04</span><span class="sl-name">App Integration &amp; Custom Features</span></div>
-            <div class="sl" data-svc="4"><span class="sl-num">05</span><span class="sl-name">Shopify Plus Development</span></div>
-            <div class="sl" data-svc="5"><span class="sl-num">06</span><span class="sl-name">Performance Optimisation</span></div>
-            <div class="sl" data-svc="6"><span class="sl-num">07</span><span class="sl-name">Future Shopify Support</span></div>
-          </div>
-        </div>
-        <div class="svc-right reveal">
-          <div class="svc-img active" data-idx="0">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 01</div>
-              <div class="svc-img-title">Custom Shopify Store Development</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Your Shopify store should give a smooth customer experience from product discovery to checkout. We build custom Shopify storefronts designed for conversions and on-page SEO, tailored to your brand and product needs rather than restrictive templates.</p>
-                <ul class="svc-audit-list">
-                  <li>Conversion-based store structure</li>
-                  <li>Mobile-first development</li>
-                  <li>Flexible, reusable content sections</li>
-                  <li>Scalable architecture for future growth</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="1">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 02</div>
-              <div class="svc-img-title">Shopify Theme Customisation Services</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Off-the-shelf themes create generic and difficult-to-scale stores. We customise Shopify themes to improve usability and brand identity for a smoother shopping experience.</p>
-                <ul class="svc-audit-list">
-                  <li>Custom layouts and styling</li>
-                  <li>Improved navigation and UX flow</li>
-                  <li>Shopify 2.0 section customisation</li>
-                  <li>Mobile responsiveness enhancements</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="2">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 03</div>
-              <div class="svc-img-title">Shopify Migration Services Without SEO Disruption</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Migrating to Shopify shouldn&rsquo;t mean losing rankings, data, or revenue. We protect your SEO performance and customer experience throughout the process.</p>
-                <ul class="svc-audit-list">
-                  <li>WooCommerce and Magento migrations</li>
-                  <li>Product, customer and order data transfer</li>
-                  <li>301 redirect mapping</li>
-                  <li>SEO-safe migration process</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="3">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 04</div>
-              <div class="svc-img-title">Shopify App Integration &amp; Custom Features</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Apps should support growth. We integrate the tools your business actually needs and develop custom functionality where required.</p>
-                <ul class="svc-audit-list">
-                  <li>CRM and email platform integrations</li>
-                  <li>Payment gateway setup</li>
-                  <li>Subscription and loyalty functionality</li>
-                  <li>Custom API development</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="4">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 05</div>
-              <div class="svc-img-title">Shopify Plus Development</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Shopify Plus provides greater flexibility for e-commerce brands that need advanced functionality and automation.</p>
-                <ul class="svc-audit-list">
-                  <li>Custom checkout experiences</li>
-                  <li>Shopify Flow automation</li>
-                  <li>Multi-channel and wholesale support</li>
-                  <li>Enterprise-level scalability</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="5">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 06</div>
-              <div class="svc-img-title">Shopify Performance Optimisation</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Store speed directly impacts conversions and customer retention. We identify and fix the technical issues slowing your Shopify store down.</p>
-                <ul class="svc-audit-list">
-                  <li>Core Web Vitals optimisation</li>
-                  <li>Image and asset compression</li>
-                  <li>App bloat reduction</li>
-                  <li>Faster page load performance</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="svc-img" data-idx="6">
-            <div class="svc-img-text">
-              <div class="svc-img-eyebrow">Service 07</div>
-              <div class="svc-img-title">Future Shopify Support</div>
-              <div class="svc-img-desc">
-                <p class="svc-audit-lede">Launching the store is only the first step. Ongoing support keeps your Shopify store stable and performing for long-term growth.</p>
-                <ul class="svc-audit-list">
-                  <li>Regular monitoring and updates</li>
-                  <li>Bug fixes and technical support</li>
-                  <li>Performance reviews</li>
-                  <li>Priority development support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Common mistakes -->
-    <section class="seo-matters section section--svc section--svc-soft" id="shopify-mistakes" aria-labelledby="shopify-mistakes-title">
-      <div class="container seo-matters__inner">
-        <div class="section__head seo-matters__head reveal">
-          <span class="eyebrow eyebrow--center"><span class="eyebrow__line"></span> Avoid these pitfalls</span>
-          <h2 id="shopify-mistakes-title" class="section__title seo-matters__title">
+    <!-- Common mistakes — editorial split (matches on-page SEO UK businesses section) -->
+    <section class="seo-split section section--svc seo-split--top-head" id="shopify-mistakes" aria-labelledby="shopify-mistakes-title">
+      <div class="container seo-split__inner">
+        <header class="seo-split__head reveal">
+          <h2 id="shopify-mistakes-title" class="section__title seo-split__title">
             Common Mistakes in <span class="grad-coral">Shopify Development</span>
           </h2>
-        </div>
-        <div class="seo-matters__grid">
-          <div class="seo-matters__content reveal">
-            <p class="seo-matters__lead">
-              Most Shopify stores struggle because of users&rsquo; bad shopping experiences. A store may look alright, but small development and UX problems can slowly hurt conversions. Slow-loading pages, confusing navigation, cluttered mobile layouts, or too many installed apps all create friction during the buying journey.
-            </p>
-            <p class="seo-matters__text">
-              Pre-built Shopify themes limit flexibility as the business grows. App overload leads to slower performance. Complicated checkout and unexpected shipping costs drive cart abandonment. Long-term ecommerce growth depends on more than visual design &mdash; you need strong development foundations, engaging UX and fast performance.
-            </p>
-          </div>
-          <div class="seo-matters__visual reveal" style="--delay:.1s">
-            <span class="seo-matters__blob seo-matters__blob--a" aria-hidden="true"></span>
-            <span class="seo-matters__blob seo-matters__blob--b" aria-hidden="true"></span>
-            <div class="seo-matters__frame">
-              <img
-                src="/assets/images/webdev-approach-team-collaboration.webp"
-                alt="Team reviewing Shopify UX and development mistakes that hurt conversions"
-                width="640"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <figure class="seo-matters__card">
-              <blockquote class="seo-matters__quote">
-                Stronger conversions come from <strong>better user experiences</strong> &mdash; not quick fixes.
-              </blockquote>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Best agency + easy management -->
-    <section class="seo-choose section section--svc" id="why-choose-shopify-360" aria-labelledby="shopify-choose-title">
-      <div class="container seo-choose__inner">
-        <header class="seo-choose__intro reveal">
-          <span class="seo-choose__wm" aria-hidden="true">360</span>
-          <span class="eyebrow eyebrow--center"><span class="eyebrow__line"></span> Why choose 360</span>
-          <h2 id="shopify-choose-title" class="seo-choose__heading">
-            Best Shopify Development Agency in the <span class="grad-coral">UK</span>
-          </h2>
-          <p class="seo-choose__lede">
-            A successful Shopify store should feel simple to use from homepage to checkout. Our development approach focuses on reducing friction and creating smoother buying experiences across every device. We don&rsquo;t rely on quick fixes or unnecessary apps; we build Shopify stores with performance and long-term scalability in mind.
-          </p>
         </header>
 
-        <div class="seo-choose__split">
-          <div class="seo-choose__copy-col">
-            <h3 class="shopify-mgmt-title">Shopify Stores Designed for Easy Management</h3>
-            <p class="seo-choose__lede" style="margin-bottom:20px">Your Shopify store shouldn&rsquo;t feel difficult to manage once it goes live. We build clean backend structures and workflows your internal team can manage confidently.</p>
-            <ol class="seo-choose__list">
-              <li class="seo-choose__item reveal" style="--delay:0.04s">
-                <span class="seo-choose__num" aria-hidden="true">01</span>
-                <div class="seo-choose__body"><p class="seo-choose__text">Flexible content management</p></div>
-              </li>
-              <li class="seo-choose__item reveal" style="--delay:0.08s">
-                <span class="seo-choose__num" aria-hidden="true">02</span>
-                <div class="seo-choose__body"><p class="seo-choose__text">Reusable Shopify 2.0 sections</p></div>
-              </li>
-              <li class="seo-choose__item reveal" style="--delay:0.12s">
-                <span class="seo-choose__num" aria-hidden="true">03</span>
-                <div class="seo-choose__body"><p class="seo-choose__text">Reduced developer dependency</p></div>
-              </li>
-              <li class="seo-choose__item reveal" style="--delay:0.16s">
-                <span class="seo-choose__num" aria-hidden="true">04</span>
-                <div class="seo-choose__body"><p class="seo-choose__text">Simpler operational workflows</p></div>
-              </li>
-              <li class="seo-choose__item reveal" style="--delay:0.2s">
-                <span class="seo-choose__num" aria-hidden="true">05</span>
-                <div class="seo-choose__body"><p class="seo-choose__text">Easier product and campaign updates</p></div>
-              </li>
-            </ol>
-            <div class="reveal" style="margin-top:28px">
-              <a href="/contact-us" class="btn btn--coral btn--lg">Design your Shopify store with us</a>
-            </div>
+        <div class="seo-split__grid">
+          <div class="seo-split__content reveal">
+            <p class="seo-split__lead">
+              Most Shopify stores struggle because of users&rsquo; bad shopping experiences. A store may look alright, but small development and UX problems can slowly hurt conversions. Slow-loading pages, confusing navigation, cluttered mobile layouts, or too many installed apps all create friction during the buying journey.
+            </p>
+
+            <p>Pre-built Shopify themes limit the flexibility of a store as the business grows. It becomes harder to customise and manage the store properly. The same is the case with app overload; installing a separate app for every feature leads to slower performance and customer experience.</p>
+
+            <p>Some of the main reasons shoppers abandon their carts are complicated checkout and unexpected shipping costs. Long-term ecommerce growth depends on more than visual design alone. A high-performing Shopify store needs strong development foundations, an engaging user experience and fast performance for a better customer journey.</p>
           </div>
 
-          <div class="seo-choose__visual reveal" style="--delay:.12s">
-            <div class="seo-choose__frame">
-              <img
-                src="/assets/images/team-collaboration-hero-bg.webp"
-                alt="360 Web Solutions team building scalable Shopify stores for UK ecommerce brands"
-                width="800"
-                height="600"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <div class="seo-choose__badge">
-              <p class="seo-choose__badge-title">Performance-First Shopify Builds</p>
-              <p class="seo-choose__badge-sub">Custom &middot; scalable &middot; conversion-led &middot; UK in-house delivery</p>
-              <div class="seo-choose__meter" role="presentation" aria-hidden="true">
-                <div class="seo-choose__meter-fill"></div>
+          <div class="seo-split__visual reveal">
+            <span class="seo-split__accent-bar" aria-hidden="true"></span>
+            <div class="seo-split__photo-stack">
+              <div class="seo-split__photo-main-wrap">
+                <img
+                  class="seo-split__img-main"
+                  src="/assets/images/shopify-holding-back-growth.webp"
+                  alt="Shopify store growth held back by development and UX mistakes affecting conversions."
+                  width="560"
+                  height="700"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Testimonials placeholder -->
-    <section class="section section--svc section--svc-soft shopify-proof" id="shopify-testimonials" aria-labelledby="shopify-proof-title">
-      <div class="container">
-        <div class="section__head reveal">
-          <span class="eyebrow"><span class="eyebrow__line"></span> Social proof</span>
-          <h2 id="shopify-proof-title" class="section__title">What Our <span class="grad-coral">Shopify Clients</span> Say</h2>
-          <p class="section__lede">Client testimonials for Shopify projects will appear here. In the meantime, explore our <a href="/case-studies" class="brand-link">case studies</a> to see the results we deliver.</p>
-        </div>
-        <div class="shopify-proof__grid">
-          <blockquote class="shopify-proof__card reveal">
-            <p class="shopify-proof__quote">&ldquo;Placeholder testimonial &mdash; client quote about Shopify store performance and conversion improvements.&rdquo;</p>
-            <footer class="shopify-proof__meta"><strong>Client Name</strong><span>Ecommerce Brand, UK</span></footer>
-          </blockquote>
-          <blockquote class="shopify-proof__card reveal" style="--delay:.08s">
-            <p class="shopify-proof__quote">&ldquo;Placeholder testimonial &mdash; client quote about migration, speed, and ongoing Shopify support.&rdquo;</p>
-            <footer class="shopify-proof__meta"><strong>Client Name</strong><span>Retail Brand, UK</span></footer>
-          </blockquote>
-          <blockquote class="shopify-proof__card reveal" style="--delay:.14s">
-            <p class="shopify-proof__quote">&ldquo;Placeholder testimonial &mdash; client quote about custom Shopify development and ease of management.&rdquo;</p>
-            <footer class="shopify-proof__meta"><strong>Client Name</strong><span>D2C Brand, UK</span></footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why 360 -->
-    <section class="seo-matters section section--svc" id="why-360-shopify" aria-labelledby="why-360-shopify-title">
-      <div class="container seo-matters__inner">
-        <div class="section__head seo-matters__head reveal">
-          <span class="eyebrow eyebrow--center"><span class="eyebrow__line"></span> Partnership</span>
-          <h2 id="why-360-shopify-title" class="section__title seo-matters__title">
-            Why You Need 360 Web Solutions For Developing a <span class="grad-coral">Shopify Store</span>
-          </h2>
-        </div>
-        <div class="seo-matters__grid">
-          <div class="seo-matters__content reveal">
-            <p class="seo-matters__lead">
-              Choosing a development partner is about working with a team that understands e-commerce growth and the technical decisions that directly impact sales. We work with UK businesses that need Shopify development aligned with local e-commerce expectations and growth goals.
-            </p>
-            <p class="seo-matters__text">
-              Our communication is clear and consistent from strategy to post-launch support. We focus more on performance and optimisation than aesthetics to make sure that every new user becomes a valuable and loyal customer. Our goal is to build a scalable Shopify store that supports long-term ecommerce growth and flexibility.
-            </p>
-          </div>
-          <div class="seo-matters__visual reveal" style="--delay:.1s">
-            <span class="seo-matters__blob seo-matters__blob--a" aria-hidden="true"></span>
-            <span class="seo-matters__blob seo-matters__blob--b" aria-hidden="true"></span>
-            <div class="seo-matters__frame">
-              <img
-                src="/assets/images/about-intro-team.webp"
-                alt="360 Web Solutions Shopify development team supporting UK ecommerce growth"
-                width="640"
-                height="480"
-                loading="lazy"
-                decoding="async"
-              />
+        <aside class="shopify-agency-callout shopify-agency-callout--full reveal" aria-label="Why choose our Shopify development team">
+          <span class="shopify-agency-callout__wm" aria-hidden="true">360</span>
+          <div class="shopify-agency-callout__inner">
+            <div class="shopify-agency-callout__head">
+              <span class="shopify-agency-callout__badge">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6 5.7 21l2.3-7.2-6-4.4h7.6L12 2z" fill="currentColor" />
+                </svg>
+                UK Shopify experts
+              </span>
+              <h3 class="shopify-agency-callout__title">
+                Best Shopify Development Agency in the <span class="grad-coral">UK</span>
+              </h3>
             </div>
+            <p class="shopify-agency-callout__text">
+              A successful Shopify store should feel simple to use from the moment customers land on the homepage to the final checkout step. Our development approach focuses on reducing friction and creating smoother buying experiences across every device. We don&rsquo;t rely on quick fixes or unnecessary apps; we build Shopify stores with performance and long-term scalability in mind. Because stronger conversions come from better user experiences.
+            </p>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
@@ -676,6 +710,160 @@
           <button class="pn-dot" data-step="3" aria-label="Step 4: Quality Assurance"></button>
           <button class="pn-dot" data-step="4" aria-label="Step 5: Launch"></button>
           <button class="pn-dot" data-step="5" aria-label="Step 6: Post-launch Support"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Easy management — svc-transform layout (matches AI Consultancy “What Does an AI Consultant Do?”) -->
+    <section class="section svc-transform svc-transform--ai" id="shopify-easy-management" aria-labelledby="shopify-choose-title">
+      <div class="container svc-transform__grid">
+        <div class="svc-transform__content reveal" style="--delay:.1s">
+          <span class="eyebrow"><span class="eyebrow__line" aria-hidden="true"></span> Why choose 360</span>
+          <h2 id="shopify-choose-title" class="section__title">
+            Shopify Stores Designed for <span class="grad-coral">Easy Management</span>
+          </h2>
+          <p class="svc-transform__desc svc-transform__desc--lede">
+            Your Shopify store shouldn&rsquo;t feel difficult to manage once it goes live. We build clean backend structures and workflows your internal team can manage confidently.
+          </p>
+          <p class="svc-transform__list-intro">Every store we build gives your team:</p>
+          <ul class="svc-transform__bullets">
+            <li>Flexible content management</li>
+            <li>Reusable Shopify 2.0 sections</li>
+            <li>Reduced developer dependency</li>
+            <li>Simpler operational workflows</li>
+            <li>Easier product and campaign updates</li>
+          </ul>
+          <a href="/contact-us" class="btn btn--coral btn--lg svc-transform__cta">Design your Shopify store with us</a>
+        </div>
+
+        <div class="svc-transform__visual reveal" style="--delay:.04s">
+          <div class="svc-transform__visual-bg" aria-hidden="true">
+            <span class="svc-transform__dots"></span>
+            <span class="svc-transform__stripe"></span>
+          </div>
+          <div class="svc-transform__photos">
+            <div class="svc-transform__photo svc-transform__photo--primary">
+              <img
+                src="/assets/images/shopify-easy-management.webp"
+                alt="Person browsing and managing a Shopify store on laptop and mobile for a seamless ecommerce experience"
+                width="800"
+                height="1000"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials — same Google reviews section as homepage -->
+    <section class="section gr-section" id="shopify-testimonials" aria-label="Client Google reviews">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow"><span class="eyebrow__line"></span> Client voices</span>
+          <h2 class="section__title">What clients say after the <span class="grad">first 90 days.</span></h2>
+          <p class="section__lede">Verified reviews from our Google Business Profile, reviewer names and text match Google exactly.</p>
+        </div>
+
+        <div class="gr-summary reveal">
+          <div class="gr-summary__brand">
+            <span class="gr-g" aria-hidden="true">
+              <svg viewBox="0 0 48 48" width="36" height="36">
+                <path fill="#4285F4"
+                  d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z" />
+                <path fill="#34A853"
+                  d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z" />
+                <path fill="#FBBC05"
+                  d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z" />
+                <path fill="#EA4335"
+                  d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z" />
+              </svg>
+            </span>
+            <div class="gr-summary__info">
+              <h3 class="gr-summary__title">360 Web Solutions &ndash; Digital Marketing Agency UK <svg class="gr-verified" viewBox="0 0 24 24" width="18"
+                  height="18" aria-label="Verified">
+                  <path fill="#1A73E8" d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+                  <path fill="#fff" d="M10 17l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                </svg></h3>
+              <div class="gr-summary__meta">
+                <a class="gr-summary__count" href="https://share.google/VlClB6KZzYiCQH0vc" target="_blank" rel="nofollow noopener">Read all reviews on Google</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="gr-summary__actions">
+            <a class="gr-btn gr-btn--ghost" href="https://share.google/VlClB6KZzYiCQH0vc" target="_blank" rel="nofollow noopener" aria-label="Write a review on Google">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="16" height="16">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+              Write a review
+            </a>
+            <a class="gr-btn gr-btn--primary" href="https://share.google/VlClB6KZzYiCQH0vc" target="_blank" rel="nofollow noopener" aria-label="View all reviews on Google">
+              View all on Google
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" width="14" height="14">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="gr-grid reveal">
+<!-- @google-reviews-grid@ -->
+        </div>
+
+        <div class="gr-more reveal">
+          <a class="gr-more__link" href="https://share.google/VlClB6KZzYiCQH0vc" target="_blank" rel="nofollow noopener" role="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" width="16" height="16">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+            View all reviews on Google
+          </a>
+          <p class="gr-more__note">Excerpts from our <a href="https://share.google/VlClB6KZzYiCQH0vc" target="_blank" rel="nofollow noopener">Google Business Profile</a>. See the full review on Google.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why 360 — trust card layout (matches AI Consultancy trust section) -->
+    <section class="section section--svc svc-ai-trust" id="why-360-shopify" aria-labelledby="why-360-shopify-title">
+      <div class="container">
+        <div class="svc-ai-trust__card reveal">
+          <header class="svc-ai-trust__head">
+            <span class="eyebrow eyebrow--center"><span class="eyebrow__line" aria-hidden="true"></span> Partnership</span>
+            <h2 id="why-360-shopify-title" class="section__title svc-ai-trust__title">
+              <span class="svc-ai-trust__title-row">Why You Need <span class="grad-coral">360 Web Solutions</span> For</span>
+              <span class="svc-ai-trust__title-row">Developing a Shopify Store</span>
+            </h2>
+          </header>
+          <div class="svc-ai-trust__copy">
+            <p>
+              Choosing a development partner is about working with a team that understands e-commerce growth and the technical decisions that directly impact sales. We work with UK businesses that need Shopify development aligned with local e-commerce expectations and growth goals.
+            </p>
+            <aside class="svc-ai-trust__pullquote" aria-label="How 360 Web Solutions approaches Shopify development">
+              <p>
+                Our communication is clear and consistent from strategy to post-launch support. We focus more on performance and optimisation than aesthetics to make sure that every new user becomes a valuable and loyal customer. Our goal is to build a scalable Shopify store that supports long-term ecommerce growth and flexibility.
+              </p>
+            </aside>
+            <p class="svc-ai-trust__cta">
+              <a href="/contact-us" class="btn btn--coral btn--lg">Design your Shopify store with us</a>
+            </p>
+          </div>
+          <div class="svc-ai-trust__media">
+            <img
+              src="/assets/images/about-intro-team.webp"
+              alt="360 Web Solutions Shopify development team supporting UK ecommerce growth"
+              width="667"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
       </div>
     </section>

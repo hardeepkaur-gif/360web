@@ -30,6 +30,7 @@ export default function ShopifyDevelopmentServicesPage() {
         suppressHydrationWarning
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
+      <Script src="/js/hero-lead-form.js?v=20260718" strategy="afterInteractive" />
     </>
   );
 }
