@@ -1,9 +1,9 @@
   <main id="main" class="svc-page">
-    <!-- Hero — editorial split + serif headline + multi-device mockups (mirrors web-dev page) -->
-    <section class="hero hero--editorial hero--webdev-mockups reveal" aria-labelledby="smm-hero-title" style="--delay:.02s">
+    <section class="hero hero--editorial hero--with-lead hero--smm reveal" aria-labelledby="smm-hero-title" style="--delay:.02s">
       <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-image"></div>
+        <div class="hero__bg-overlay"></div>
         <span class="hero__watermark">360</span>
-        <span class="hero__soft-glow"></span>
       </div>
 
       <div class="container hero__inner">
@@ -14,30 +14,32 @@
           </span>
 
           <h1 id="smm-hero-title" class="hero__title hero__title--serif reveal" style="--delay:.08s">
-            <span class="hero__title-line"><span class="hero__title-blue">UK Social Media Marketing</span> Agency With Measurable <span class="hero__title-coral">Results</span></span>
+            <span class="hero__title-line"><span class="hero__title-coral">UK Social Media Marketing</span> Agency With Measurable <span class="hero__title-coral">Results</span></span>
           </h1>
 
           <p class="hero__subtitle reveal" style="--delay:.16s">
             <strong class="hero__subtitle-lead">We build social media that drives revenue, not impressions.</strong> Strategy, content systems and paid campaigns engineered to move leads, conversions and pipeline &mdash; trusted by UK brands across LinkedIn, Meta, Instagram, TikTok and YouTube.
           </p>
 
-          <div class="hero__cta reveal" style="--delay:.24s">
-              <a href="/contact-us" class="btn btn--coral btn--lg">Talk to a Social Media Specialist</a>
+          <div class="hero__cta reveal" style="--delay:.28s">
+            <a href="/contact-us" class="btn btn--coral btn--lg">Talk to a Social Media Specialist</a>
             <a href="/case-studies" class="btn btn--ghost-play">
               <span class="btn__play-triangle" aria-hidden="true">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor">
-                  <polygon points="6 4 20 12 6 20 6 4" />
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                  <polyline points="14 3 14 9 20 9" />
+                  <line x1="8" y1="14" x2="16" y2="14" />
                 </svg>
               </span>
               Our Case Studies
             </a>
-            </div>
+          </div>
 
           <div class="hero__stats hero__stats--compact reveal" style="--delay:.32s">
             <div class="hero__stat">
-              <strong class="hero__stat-value"><span class="hero__stat-accent">&pound;</span><span class="count" data-count="2.4">0</span><span class="hero__stat-accent">M+</span></strong>
+              <strong class="hero__stat-value"><span class="hero__stat-figure"><span class="hero__stat-prefix" aria-hidden="true">&pound;</span><span class="count" data-count="2.4" data-decimals="1">2.4</span></span><span class="hero__stat-accent">M+</span></strong>
               <span class="hero__stat-label">Revenue through campaigns</span>
-          </div>
+            </div>
             <div class="hero__stat">
               <strong class="hero__stat-value"><span class="count" data-count="142">0</span><span class="hero__stat-accent">%</span></strong>
               <span class="hero__stat-label">Avg. engagement growth</span>
@@ -49,16 +51,76 @@
           </div>
         </div>
 
-        <div class="hero__photo hero__photo--devices hero__photo--smm-illustration reveal" style="--delay:.4s">
-          <img
-            src="/assets/images/social-media-hero.webp"
-            alt="Smartphone surrounded by floating social media platform icons"
-            class="hero__smm-illustration"
-            width="800"
-            height="800"
-            loading="eager"
-            decoding="async"
-          />
+        <div class="hero__lead reveal" id="smm-hero-form" style="--delay:.4s">
+          <div class="hero-lead">
+            <div class="hero-lead__card">
+              <div class="hero-lead__bg" aria-hidden="true"></div>
+              <div class="hero-lead__overlay" aria-hidden="true"></div>
+              <header class="hero-lead__head">
+                <h2 class="hero-lead__title">Talk to a Social Media Specialist</h2>
+                <span class="hero-lead__accent" aria-hidden="true"></span>
+                <p class="hero-lead__sub">Share a few details and our team will respond within one business day.</p>
+              </header>
+
+              <form class="hero-lead__form" id="heroLeadForm" novalidate>
+                <label class="hero-lead__field">
+                  <span>Full name</span>
+                  <input type="text" name="name" placeholder="Jane Harper" required autocomplete="name" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Phone</span>
+                  <input type="tel" name="phone" placeholder="+44 20 7183 5339" autocomplete="tel" />
+                </label>
+
+                <label class="hero-lead__field">
+                  <span>Service</span>
+                  <select name="services" required>
+                    <option value="" disabled>Select a service</option>
+                    <option value="Social Media Marketing" selected>Social Media Marketing</option>
+                    <option value="Google Ads / PPC">Google Ads / PPC</option>
+                    <option value="Shopify Development">Shopify Development</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="SEO">SEO</option>
+                    <option value="Content Writing">Content Writing</option>
+                    <option value="Conversion Rate Optimisation">Conversion Rate Optimisation</option>
+                    <option value="AI / GEO Marketing">AI / GEO Marketing</option>
+                    <option value="Email Marketing">Email Marketing</option>
+                    <option value="Link Building">Link Building</option>
+                    <option value="Multiple Services">Multiple Services</option>
+                  </select>
+                </label>
+
+                <button type="submit" class="btn btn--coral btn--lg hero-lead__submit" id="heroLeadSubmit">
+                  Get My Free Consultation
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </button>
+
+                <p class="hero-lead__privacy">By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</p>
+              </form>
+
+              <div class="hero-lead__success" id="heroLeadSuccess" hidden>
+                <div class="hero-lead__success-icon" aria-hidden="true">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                </div>
+                <h3 class="hero-lead__success-title">Thank you!</h3>
+                <p class="hero-lead__success-text">We&rsquo;ve received your details and will be in touch shortly.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -106,7 +106,7 @@ export default function GoogleAdsManagementServicesPage() {
       <ServiceSchemaScript slug="google-ads-management-services" />
       <link
         rel="preload"
-        href="/assets/images/google-ads-management-hero-v2.webp"
+        href="/assets/images/google-ads-management-hero-v2.webp?v=20260719f"
         as="image"
         type="image/webp"
         fetchPriority="high"
@@ -126,6 +126,7 @@ export default function GoogleAdsManagementServicesPage() {
         strategy="lazyOnload"
       />
       <Script src="/js/google-ads-process.js?v=20250709" strategy="afterInteractive" />
+      <Script src="/js/hero-lead-form.js?v=20260719" strategy="afterInteractive" />
     </>
   );
 }

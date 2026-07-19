@@ -173,7 +173,7 @@ export default function LocalSeoServicesPage() {
       <ServiceSchemaScript slug="local-seo-services" />
       <link
         rel="preload"
-        href="/assets/images/local-seo-hero.webp"
+        href="/assets/images/local-seo-hero.webp?v=20260719g"
         as="image"
         type="image/webp"
         fetchPriority="high"
@@ -195,6 +195,7 @@ export default function LocalSeoServicesPage() {
         src="/js/local-seo-process.js"
         strategy="lazyOnload"
       />
+      <Script src="/js/hero-lead-form.js?v=20260719" strategy="afterInteractive" />
     </>
   );
 }
