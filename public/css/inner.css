@@ -6848,7 +6848,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 .hero-lead__title {
   margin: 0 0 12px;
   font-family: var(--font-display);
-  font-size: clamp(24px, 2.6vw, 32px);
+  font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -0.02em;
