@@ -2452,7 +2452,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   .gr-g svg { width: 30px; height: 30px; }
   .gr-summary__title { font-size: 17px; }
   .gr-summary__score { font-size: 18px; }
-  .gr-summary__actions { width: 100%; }
+  .gr-summary__actions { width: 100%; display: none; }
   .gr-btn { flex: 1; justify-content: center; }
   .gr-breakdown { padding: 18px; }
   .gr-card { padding: 18px; }
