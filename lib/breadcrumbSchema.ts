@@ -144,6 +144,12 @@ export const PAGE_BREADCRUMBS = {
       path: "/intellectual-property-notice",
     },
   ],
+  healthcareDigitalMarketingAgency: [
+    {
+      name: "Healthcare Digital Marketing Agency",
+      path: "/healthcare-digital-marketing-agency",
+    },
+  ],
 } as const satisfies Record<string, BreadcrumbItem[]>;
 
 export const PAGE_DESCRIPTIONS = {
@@ -169,6 +175,8 @@ export const PAGE_DESCRIPTIONS = {
     "Refund and cancellation terms for 360 Smart Solutions Limited client engagements.",
   intellectualPropertyNotice:
     "Intellectual property notice for 360websolutions.co.uk and client deliverables.",
+  healthcareDigitalMarketingAgency:
+    "Healthcare digital marketing agency for UK clinics, hospitals, and healthcare businesses — NHS-experienced leadership, SEO, paid media, and compliant patient lead generation.",
 } as const;
 
 export type PageBreadcrumbKey = keyof typeof PAGE_BREADCRUMBS;

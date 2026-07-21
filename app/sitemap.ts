@@ -18,6 +18,15 @@ const staticPages: SitemapEntry[] = [
   { path: "/blogs", changeFrequency: "weekly", priority: 0.7 },
 ];
 
+/** Keep in sync with `content/partials/site-header.html` Industries dropdown. */
+const industryPages: SitemapEntry[] = [
+  {
+    path: "/healthcare-digital-marketing-agency",
+    changeFrequency: "monthly",
+    priority: 0.85,
+  },
+];
+
 /** Keep in sync with `content/partials/site-header.html` Services dropdown. */
 const servicePages: SitemapEntry[] = [
   "on-page-seo-services",
@@ -81,6 +90,7 @@ function mapStaticEntries(entries: SitemapEntry[]): MetadataRoute.Sitemap {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticSitemap = mapStaticEntries([
     ...staticPages,
+    ...industryPages,
     ...servicePages,
     ...caseStudyPages,
     ...legalPages,
