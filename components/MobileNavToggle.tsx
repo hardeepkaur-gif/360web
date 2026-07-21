@@ -3,12 +3,27 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+function closeDropdowns() {
+  document.querySelectorAll(".nav__dropdown.is-open").forEach((dropdown) => {
+    dropdown.classList.remove("is-open");
+    const trigger = dropdown.querySelector(
+      ":scope > a, :scope > .nav__dropdown-trigger",
+    );
+    trigger?.setAttribute("aria-expanded", "false");
+  });
+}
+
+function isMobileNav() {
+  return window.matchMedia("(max-width: 991px)").matches;
+}
+
 function closeMenu() {
   const menu = document.querySelector(".nav__menu");
   const btn = document.getElementById("navToggle");
   menu?.classList.remove("is-open");
   document.body.classList.remove("nav-open");
   btn?.setAttribute("aria-expanded", "false");
+  closeDropdowns();
 }
 
 function toggleMenu() {
@@ -37,6 +52,29 @@ export function MobileNavToggle() {
         e.stopPropagation();
         toggleMenu();
         return;
+      }
+
+      if (isMobileNav()) {
+        const dropdown = target.closest(".nav__dropdown");
+        if (dropdown) {
+          const trigger = target.closest(
+            ".nav__dropdown > a, .nav__dropdown > .nav__dropdown-trigger",
+          );
+          if (trigger && trigger.parentElement === dropdown) {
+            const isOpen = dropdown.classList.contains("is-open");
+
+            e.preventDefault();
+            if (isOpen) {
+              dropdown.classList.remove("is-open");
+              trigger.setAttribute("aria-expanded", "false");
+            } else {
+              closeDropdowns();
+              dropdown.classList.add("is-open");
+              trigger.setAttribute("aria-expanded", "true");
+            }
+            return;
+          }
+        }
       }
 
       const menu = document.querySelector(".nav__menu");
