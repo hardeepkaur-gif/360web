@@ -56,7 +56,15 @@ export const metadata: Metadata = {
     "theme-color": "#0F2A4A",
     "p:domain_verify": "6502b3662f974c843f233e786efd5816",
   },
-  icons: { icon: "/assets/images/logo.webp" },
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon-32x32.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const INLINE_CSS = `
