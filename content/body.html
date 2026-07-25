@@ -619,6 +619,9 @@
     <section class="sectors-bridge" aria-label="Not in one of our core sectors?">
       <div class="container">
         <div class="sectors-bridge__card reveal">
+          <span class="sectors-bridge__blob sectors-bridge__blob--navy" aria-hidden="true"></span>
+          <span class="sectors-bridge__blob sectors-bridge__blob--coral" aria-hidden="true"></span>
+
           <div class="sectors-bridge__content">
             <h2 class="sectors-bridge__title">
               Not in one of <span class="grad-coral">these sectors?</span>
@@ -642,51 +645,40 @@
               </li>
             </ul>
             <div class="sectors-bridge__actions">
-              <a href="/#contact" class="sectors-bridge__btn">Book a free strategy session</a>
-              <p class="sectors-bridge__note">Free · 60 minutes · No obligation</p>
+              <a href="/#contact" class="sectors-bridge__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Book a free strategy session
+              </a>
+              <span class="sectors-bridge__note">Free session · No obligation</span>
             </div>
           </div>
 
-          <div class="sectors-bridge__visual" aria-hidden="true">
+          <div class="sectors-bridge__phone-col" aria-hidden="true">
             <div class="sectors-bridge__phone">
-              <span class="sectors-bridge__phone-btn sectors-bridge__phone-btn--silent"></span>
-              <span class="sectors-bridge__phone-btn sectors-bridge__phone-btn--vol-up"></span>
-              <span class="sectors-bridge__phone-btn sectors-bridge__phone-btn--vol-down"></span>
-              <span class="sectors-bridge__phone-btn sectors-bridge__phone-btn--power"></span>
+              <span class="sectors-bridge__phone-notch"></span>
               <div class="sectors-bridge__phone-screen">
-                <span class="sectors-bridge__phone-notch"></span>
-                <div class="sectors-bridge__phone-status">
-                  <span>9:41</span>
-                  <span class="sectors-bridge__phone-icons" aria-hidden="true"></span>
+                <div class="sectors-bridge__screen-top">
+                  <span class="sectors-bridge__screen-badge">Strategy Session</span>
+                  <strong>Growth Plan Call</strong>
+                  <span>This week · 10:00 AM</span>
                 </div>
-                <div class="sectors-bridge__app">
-                  <p class="sectors-bridge__app-label">Book a session</p>
-                  <h3 class="sectors-bridge__app-title">Growth Plan Call</h3>
-                  <p class="sectors-bridge__app-meta">This week · 60 minutes · Free</p>
-
-                  <div class="sectors-bridge__app-card">
-                    <div class="sectors-bridge__app-avatar">360</div>
-                    <div class="sectors-bridge__app-card-copy">
-                      <strong>360 Strategist</strong>
-                      <em>Senior growth specialist</em>
+                <div class="sectors-bridge__screen-hero">
+                  <div class="sectors-bridge__screen-hero-card">
+                    <span class="sectors-bridge__screen-hero-mark">360</span>
+                    <div>
+                      <strong>Any niche welcome</strong>
+                      <em>Startups &amp; UK SMEs</em>
                     </div>
-                    <span class="sectors-bridge__app-dot"></span>
                   </div>
-
-                  <div class="sectors-bridge__app-slots">
-                    <span>Tue 10:00</span>
-                    <span class="is-active">Wed 14:00</span>
-                    <span>Thu 11:30</span>
-                  </div>
-
-                  <ul class="sectors-bridge__app-list">
-                    <li><span></span>Clear next steps</li>
-                    <li><span></span>No obligation</li>
-                  </ul>
-
-                  <div class="sectors-bridge__app-cta">Confirm booking</div>
                 </div>
-                <span class="sectors-bridge__phone-home"></span>
+                <ul class="sectors-bridge__screen-list">
+                  <li>Clear strategy for your stage</li>
+                  <li>SEO · PPC · Content · AI</li>
+                </ul>
+                <div class="sectors-bridge__screen-foot">
+                  <span>Senior strategist</span>
+                  <strong>Free</strong>
+                </div>
               </div>
             </div>
           </div>
@@ -900,8 +892,6 @@
           </div>
 
           <div class="ai-stats ai-stats--stack" aria-label="AI search metrics">
-            <span class="ai-stats__ambient ai-stats__ambient--1" aria-hidden="true"></span>
-            <span class="ai-stats__ambient ai-stats__ambient--2" aria-hidden="true"></span>
             <div class="ai-stat">
               <div class="ai-stat__metric">
                 <span class="ai-stat__icon ai-stat__icon--traffic" aria-hidden="true">
@@ -910,7 +900,7 @@
                     <polyline points="17 6 23 6 23 12" />
                   </svg>
                 </span>
-                <strong class="ai-stat__value"><span class="count" data-count="357" data-suffix="%">357%</span></strong>
+                <strong class="ai-stat__value"><span class="count" data-count="331" data-suffix="%">331%</span></strong>
               </div>
               <p>Growth in AI referral traffic in 12 months, the channel your analytics probably isn&rsquo;t tracking</p>
             </div>
@@ -936,7 +926,7 @@
                     <path d="M11 8v6M8 11h6" />
                   </svg>
                 </span>
-                <strong class="ai-stat__value"><span class="count" data-count="94" data-suffix="%">94%</span></strong>
+                <strong class="ai-stat__value"><span class="count" data-count="87" data-suffix="%">87%</span></strong>
               </div>
               <p>of Google AI Overviews cite a page from the top 20 traditional search results</p>
             </div>
@@ -1908,10 +1898,13 @@
       </div>
     </section>
 
-    <!-- ================= CTA (LIGHT + LAPTOP) ================= -->
+    <!-- ================= CTA (CSL-style light + phone) ================= -->
     <section class="cta-final cta-final--light" id="cta-final">
       <div class="container">
         <div class="cta-final__card reveal">
+          <span class="cta-final__blob cta-final__blob--navy" aria-hidden="true"></span>
+          <span class="cta-final__blob cta-final__blob--coral" aria-hidden="true"></span>
+
           <div class="cta-final__content">
             <h2 class="section__title cta-final__title">
               Not sure where your marketing is <span class="grad-coral">falling short?</span>
@@ -1934,63 +1927,40 @@
               </li>
             </ul>
             <div class="cta-final__actions">
-              <a href="/#contact" class="btn btn--coral btn--lg cta-final__btn">Book your free session</a>
-              <p class="cta-final__note">Free · 60 minutes · No obligation</p>
+              <a href="/#contact" class="btn btn--coral btn--lg cta-final__btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                Book your free session
+              </a>
+              <span class="cta-final__note">Free session · No obligation</span>
             </div>
           </div>
 
-          <div class="cta-final__visual" aria-hidden="true">
-            <div class="cta-final__laptop">
-              <div class="cta-final__laptop-lid">
-                <span class="cta-final__laptop-cam"></span>
-                <div class="cta-final__laptop-screen">
-                  <div class="cta-final__desk">
-                    <div class="cta-final__desk-bar">
-                      <span></span><span></span><span></span>
-                      <em>360 Web Solutions</em>
-                    </div>
-                    <div class="cta-final__desk-body">
-                      <div class="cta-final__desk-side">
-                        <strong>Audit</strong>
-                        <p>Website</p>
-                        <p>Keywords</p>
-                        <p>Paid media</p>
-                        <p class="is-active">Growth plan</p>
-                      </div>
-                      <div class="cta-final__desk-main">
-                        <div class="cta-final__desk-head">
-                          <div>
-                            <span>Free strategy session</span>
-                            <strong>Marketing Gap Review</strong>
-                          </div>
-                          <b>60 min</b>
-                        </div>
-                        <div class="cta-final__desk-score">
-                          <div>
-                            <em>Visibility score</em>
-                            <strong>72</strong>
-                          </div>
-                          <div class="cta-final__desk-bars" aria-hidden="true">
-                            <i style="--h:46%"></i>
-                            <i style="--h:68%"></i>
-                            <i style="--h:54%"></i>
-                            <i style="--h:82%"></i>
-                            <i style="--h:70%"></i>
-                          </div>
-                        </div>
-                        <div class="cta-final__desk-rows">
-                          <div><span>Website audit</span><strong>Ready</strong></div>
-                          <div><span>Keyword gaps</span><strong>Mapped</strong></div>
-                          <div><span>Next-step plan</span><strong>Included</strong></div>
-                        </div>
-                        <div class="cta-final__desk-cta">Book your free session</div>
-                      </div>
+          <div class="cta-final__phone-col" aria-hidden="true">
+            <div class="cta-final__phone">
+              <span class="cta-final__phone-notch"></span>
+              <div class="cta-final__phone-screen">
+                <div class="cta-final__screen-top">
+                  <span class="cta-final__screen-badge">Website Audit</span>
+                  <strong>Marketing Gap Review</strong>
+                  <span>60 minutes · Free</span>
+                </div>
+                <div class="cta-final__screen-hero">
+                  <div class="cta-final__screen-hero-card">
+                    <span class="cta-final__screen-hero-mark">360</span>
+                    <div>
+                      <strong>Visibility check</strong>
+                      <em>Site · Keywords · Paid</em>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="cta-final__laptop-base">
-                <span class="cta-final__laptop-notch"></span>
+                <ul class="cta-final__screen-list">
+                  <li>Website audit included</li>
+                  <li>Clear next-step plan</li>
+                </ul>
+                <div class="cta-final__screen-foot">
+                  <span>Senior strategist</span>
+                  <strong>Book now</strong>
+                </div>
               </div>
             </div>
           </div>
