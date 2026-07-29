@@ -293,7 +293,7 @@ h2 {
 }
 
 .nav__brand { display: flex; align-items: center; }
-.nav__logo { height: 44px; width: auto; }
+.nav__logo { height: 50px; width: auto; max-width: min(160px, 42vw); }
 
 .nav__menu > ul {
   display: flex; gap: 36px; align-items: center;
@@ -3861,8 +3861,9 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 /* Brand column */
 .footer__brand { max-width: 360px; }
 .footer__logo {
-  height: 44px;
+  height: 72px;
   width: auto;
+  max-width: min(180px, 70vw);
   display: block;
   filter: none;
 }

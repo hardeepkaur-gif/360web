@@ -285,7 +285,7 @@ h2 {
 }
 
 .nav__brand { display: flex; align-items: center; }
-.nav__logo { height: 44px; width: auto; }
+.nav__logo { height: 50px; width: auto; max-width: min(160px, 42vw); }
 
 .nav__menu > ul {
   display: flex; gap: 36px; align-items: center;
@@ -3322,8 +3322,9 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 /* Brand column */
 .footer__brand { max-width: 360px; }
 .footer__logo {
-  height: 44px;
+  height: 72px;
   width: auto;
+  max-width: min(180px, 70vw);
   display: block;
   filter: none;
 }
@@ -4367,16 +4368,12 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   .ai-sec__glow--blue,
   .ai-sec__aurora,
   .ai-sec__bokeh,
-  .ai-stats__ambient--1,
-  .ai-stats__ambient--2,
   .ai-stat::after,
   .ai-stat__value::after {
     animation: none !important;
   }
   .ai-sec__aurora { opacity: .45; }
   .ai-sec__bokeh { opacity: .28; transform: none; }
-  .ai-stats__ambient--1,
-  .ai-stats__ambient--2 { opacity: .38; transform: none; }
   .ai-stat::after { opacity: .55; transform: none; }
 }
 
@@ -4385,35 +4382,6 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   z-index: 2;
 }
 /* Column-level glow orbs (Itzone-style animated backdrop behind counters) */
-.ai-stats__ambient {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
-  filter: blur(48px);
-  opacity: .55;
-}
-.ai-stats__ambient--1 {
-  width: min(280px, 72vw);
-  height: min(280px, 72vw);
-  top: -6%;
-  right: -12%;
-  background: radial-gradient(circle, rgba(26, 95, 191, .45) 0%, transparent 68%);
-  animation: aiStatsAmbientDrift 14s ease-in-out infinite;
-}
-.ai-stats__ambient--2 {
-  width: min(240px, 65vw);
-  height: min(240px, 65vw);
-  bottom: 8%;
-  left: -18%;
-  background: radial-gradient(circle, rgba(255, 77, 58, .32) 0%, transparent 70%);
-  animation: aiStatsAmbientDrift 18s ease-in-out infinite reverse;
-  animation-delay: -4s;
-}
-@keyframes aiStatsAmbientDrift {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: .45; }
-  50%      { transform: translate(-4%, 6%) scale(1.12); opacity: .62; }
-}
 .ai-stats--stack {
   position: relative;
   isolation: isolate;
@@ -5015,7 +4983,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 /* AI Marketing — four use-case cards: 2×2 from tablet up (default industries grid is 3 cols) */
 @media (min-width: 821px) {
-  #ai-marketing-business-use .industries__grid,
+  
   #cro-uk-businesses .industries__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: 980px;
@@ -7723,108 +7691,10 @@ a.hero__pill--rating:focus-visible {
 }
 
 /* ---------- AI Marketing Agency — modern UK agency (editorial + highlights) ---------- */
-.ai-mkt-modern.section--svc {
-  padding-block: clamp(72px, 10vw, 108px);
-  background: var(--soft);
-  border-top: 1px solid var(--line);
-}
-
-.ai-mkt-modern__inner {
-  max-width: 1160px;
-}
-
-.ai-mkt-modern__grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(260px, 340px);
-  gap: clamp(32px, 5vw, 56px);
-  align-items: start;
-}
-
-.ai-mkt-modern__main .section__title.seo-split__title {
-  margin-bottom: 18px;
-}
-
-.ai-mkt-modern__aside {
-  position: sticky;
-  top: 96px;
-}
-
-.ai-mkt-modern__highlights {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.ai-mkt-modern__hi {
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 18px 18px 17px 16px;
-  margin: 0;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 38px rgba(15, 42, 74, 0.06);
-  transition: border-color 0.28s ease, box-shadow 0.28s ease;
-}
 
 .ai-mkt-modern__hi:hover {
   border-color: color-mix(in srgb, var(--coral) 32%, var(--line));
   box-shadow: 0 16px 44px rgba(15, 42, 74, 0.09);
-}
-
-.ai-mkt-modern__hi-icon {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  color: var(--navy);
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--blue) 14%, var(--white)),
-    color-mix(in srgb, var(--coral) 10%, var(--white))
-  );
-}
-
-.ai-mkt-modern__hi-copy {
-  min-width: 0;
-}
-
-.ai-mkt-modern__hi-title {
-  display: block;
-  margin: 0 0 6px;
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--navy);
-}
-
-.ai-mkt-modern__hi-desc {
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.48;
-  color: var(--ink-3);
-}
-
-@media (max-width: 960px) {
-  .ai-mkt-modern__grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .ai-mkt-modern__main {
-    order: 1;
-  }
-
-  .ai-mkt-modern__aside {
-    position: static;
-    order: 2;
-  }
 }
 
 .hero--webdev-mockups .hero__title.hero__title--sentence-case {
@@ -8855,13 +8725,6 @@ a.hero__pill--rating:focus-visible {
 .sectors-bridge__title {
   max-width: 680px;
 }
-.sectors-bridge__em {
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--coral);
-}
 
 .sectors-bridge__sub {
   font-size: 15px;
@@ -9267,8 +9130,7 @@ h2.section__title--light,
 /* Accent words on light backgrounds — solid coral */
 h2 .grad,
 h2 .grad-coral,
-h2 .serif-coral,
-h2 .sectors-bridge__em {
+h2 .serif-coral {
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 800;
@@ -9290,7 +9152,6 @@ h2.section__title--light .grad-coral,
 h2.section__title--light .serif-coral,
 .sectors-bridge__title .grad,
 .sectors-bridge__title .grad-coral,
-.sectors-bridge__title .sectors-bridge__em,
 .compare .section__title--light .grad,
 .compare .section__title--light .grad-coral,
 .compare .section__title--light .serif-coral {
@@ -18558,8 +18419,7 @@ section#ai-marketing-why-ai-powered {
 }
 
 #ai-marketing-tools-human-strategy .svc-ai-trust__copy a.brand-link,
-#ai-marketing-services-include .svc-img-desc a.brand-link,
-#ai-marketing-why-ai-powered .seo-split__content p a.brand-link {
+#ai-marketing-services-include .svc-img-desc a.brand-link {
   color: var(--coral) !important;
   -webkit-text-fill-color: var(--coral) !important;
   font-weight: 600;
@@ -19450,230 +19310,18 @@ section#email-marketing-agency-switch.seo-matters {
 }
 
 /* ---------- AI consultancy services: pricing section (brand-aligned) ---------- */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial {
-  position: relative;
-  padding-top: 0;
-  padding-bottom: clamp(72px, 10vw, 100px);
-  background: var(--soft);
-  color: var(--ink);
-  font-family: var(--font-body);
-  overflow-x: clip;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .container.svc-ai-cost-ed__wrap {
-  max-width: 1100px;
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
 
 /* Header — centered stack (matches page section heads) */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0;
-  align-self: center;
-  width: 100%;
-  padding-bottom: clamp(28px, 4vw, 40px);
-  border-bottom: 2px solid var(--navy);
-  max-width: 52rem;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__header .eyebrow {
-  margin-bottom: 18px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__main-title {
-  text-align: center;
-  width: 100%;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__straight-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: var(--navy);
-  color: var(--white);
-  border-radius: 99px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-top: 4px;
-  margin-bottom: 20px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__straight-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--coral);
-  flex-shrink: 0;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__intro {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.65;
-  color: var(--ink-3);
-  font-weight: 400;
-  max-width: 48rem;
-  margin-inline: auto;
-}
 
 /* Subsection titles — matches service .ttl scale, slightly smaller */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__subhd {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.2vw, 34px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.025em;
-  color: var(--navy);
-  margin: 0 0 18px;
-  text-align: center;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__subhd:first-of-type {
-  margin-top: clamp(32px, 5vw, 48px);
-}
 
 /* Market bars */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bars-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: clamp(44px, 6vw, 60px);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row--t1 {
-  --bar-color: var(--blue);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row--t2 {
-  --bar-color: var(--navy);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row--t3 {
-  --bar-color: var(--coral);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row {
-  display: grid;
-  grid-template-columns: minmax(0, 200px) 1fr auto;
-  align-items: center;
-  gap: clamp(14px, 2.5vw, 20px);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-name {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.3;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-sub {
-  font-family: var(--font-body);
-  font-size: 11px;
-  color: var(--ink-3);
-  font-weight: 400;
-  margin-top: 3px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-track {
-  height: 12px;
-  background: var(--line);
-  border-radius: 99px;
-  overflow: hidden;
-  position: relative;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-fill {
-  height: 100%;
-  border-radius: 99px;
-  background: linear-gradient(90deg, var(--bar-color, var(--blue)), var(--bar-color, var(--blue)));
-  width: 0%;
-  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
 
 #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row.reveal.is-visible .svc-ai-cost-ed__bar-fill {
   width: var(--bar-w, 0%);
 }
 
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-price {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--bar-color, var(--blue));
-  white-space: nowrap;
-}
-
 /* Pricing table */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__price-table {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  border: 2px solid var(--navy);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  margin-bottom: clamp(36px, 5vw, 48px);
-  background: var(--white);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-head {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--navy);
-  padding: 14px 28px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-head-col {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-head-col--right {
-  text-align: right;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 0;
-  border-bottom: 1px solid var(--line);
-  transition: background 0.25s ease;
-  cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row:last-child {
-  border-bottom: none;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, var(--blue), var(--coral));
-  transform: scaleY(0);
-  transform-origin: center top;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
 
 #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row:hover {
   background: rgba(26, 95, 191, 0.04);
@@ -19683,146 +19331,7 @@ section#email-marketing-agency-switch.seo-matters {
   transform: scaleY(1);
 }
 
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row--featured {
-  background: rgba(255, 77, 58, 0.06);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-cell {
-  padding: 22px 28px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-num {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: rgba(15, 42, 74, 0.18);
-  flex-shrink: 0;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-name {
-  font-family: var(--font-body);
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--ink);
-  line-height: 1.35;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-badge {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 99px;
-  background: var(--coral);
-  color: var(--white);
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-price-cell {
-  padding: 22px 28px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-left: 1px solid var(--line);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-price {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--coral);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-period {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--ink-3);
-  margin-left: 6px;
-  font-weight: 400;
-}
-
 /* CTA — navy band + shared .btn.btn--coral */
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-  gap: 2rem;
-  background: linear-gradient(145deg, var(--navy) 0%, var(--navy-2) 55%, var(--navy-3) 100%);
-  border-radius: var(--radius-lg);
-  padding: clamp(32px, 5vw, 44px) clamp(28px, 5vw, 52px);
-  position: relative;
-  overflow: hidden;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta::before {
-  content: "";
-  position: absolute;
-  right: -80px;
-  top: -80px;
-  width: 280px;
-  height: 280px;
-  border-radius: 50%;
-  border: 60px solid rgba(255, 255, 255, 0.05);
-  pointer-events: none;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta::after {
-  content: "";
-  position: absolute;
-  right: 60px;
-  bottom: -60px;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 40px solid rgba(255, 255, 255, 0.035);
-  pointer-events: none;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-text {
-  position: relative;
-  z-index: 1;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-eyebrow {
-  margin-bottom: 14px;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-headline.section__title {
-  margin-bottom: 12px;
-  font-size: clamp(32px, 4.5vw, 44px);
-  line-height: 1.12;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-headline.section__title--light {
-  background: none;
-  -webkit-text-fill-color: var(--white);
-  color: var(--white);
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-sub {
-  margin: 0;
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.72);
-  font-weight: 400;
-  line-height: 1.6;
-  max-width: 34rem;
-}
-
-#svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-btn {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-}
 
 #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-btn:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.85);
@@ -19830,76 +19339,6 @@ section#email-marketing-agency-switch.seo-matters {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-row {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-price {
-    justify-self: start;
-    white-space: normal;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-eyebrow {
-    justify-content: center;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-btn {
-    justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    margin-inline: auto;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-sub {
-    margin-inline: auto;
-  }
-}
-
-@media (max-width: 720px) {
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__cta-headline.section__title {
-    font-size: 34px;
-  }
-}
-
-@media (max-width: 640px) {
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-head {
-    display: none;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row {
-    grid-template-columns: 1fr;
-    padding: 18px 20px;
-    border-bottom: 1px solid var(--line);
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-price-cell {
-    border-left: none;
-    padding: 12px 0 0;
-    justify-content: flex-start;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-cell {
-    padding: 0;
-    align-items: flex-start;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__bar-fill {
-    transition: none;
-  }
-
-  #svc-ai-consultancy-cost.svc-ai-cost--editorial .svc-ai-cost-ed__pt-row::before {
-    transition: none;
-  }
-}
 
 section#why-choose-on-page-seo,
 section#email-marketing-why-choose {

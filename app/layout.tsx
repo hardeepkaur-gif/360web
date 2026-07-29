@@ -106,7 +106,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.72);backdrop-filter:saturate(150%) blur(18px);-webkit-backdrop-filter:saturate(150%) blur(18px);border-bottom:1px solid rgba(15,42,74,.06);overflow:visible}
 .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;padding:16px 28px;position:relative}
 .nav__brand{display:flex;align-items:center}
-.nav__logo{height:44px;width:auto}
+.nav__logo{height:50px;width:auto;max-width:min(160px,42vw)}
 .nav__menu>ul{display:flex;gap:36px;align-items:center}
 .nav__menu a{font-size:14px;font-weight:500;color:var(--ink-2);position:relative}
 .nav__actions{display:flex;align-items:center;gap:18px}
