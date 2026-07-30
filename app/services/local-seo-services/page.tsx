@@ -173,9 +173,9 @@ export default function LocalSeoServicesPage() {
       <ServiceSchemaScript slug="local-seo-services" />
       <link
         rel="preload"
-        href="/assets/images/local-seo-hero.webp?v=20260719g"
+        href="/assets/images/local-seo-hero-bg.png?v=20260730p"
         as="image"
-        type="image/webp"
+        type="image/png"
         fetchPriority="high"
       />
       <style

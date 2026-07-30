@@ -72,7 +72,9 @@ const INLINE_CSS = `
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,svg{max-width:100%;display:block}
+img{max-width:100%;height:auto;display:block}
+svg{max-width:100%}
+svg:not([width]):not([height]):not(.proc-svg){width:24px;height:24px}
 a{color:inherit;text-decoration:none}
 #svc-webdev-transform .svc-transform__desc a.brand-link{color:#FF4D3A!important;font-weight:600;text-decoration:none!important;-webkit-text-fill-color:#FF4D3A!important}
 #svc-webdev-transform .svc-transform__desc a.brand-link:hover{color:#FF6A5A!important;text-decoration:underline!important;-webkit-text-fill-color:#FF6A5A!important}
