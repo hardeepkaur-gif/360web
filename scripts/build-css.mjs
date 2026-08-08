@@ -31,6 +31,7 @@ const SAFELIST = {
     "about-system-metric",
     "services-hub-page",
     "svc-page",
+    "brand-link",
     "tawkchat-container",
     "tawk-min-container",
   ],

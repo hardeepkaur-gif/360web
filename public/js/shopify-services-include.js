@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const section = document.getElementById("google-ads-services-include");
+  const section = document.getElementById("shopify-services");
   if (!section) return;
 
   const left = section.querySelector(".svc-left");
@@ -20,7 +20,6 @@
 
     const leftH = left.offsetHeight;
     const activeText = right.querySelector(".svc-img.active .svc-img-text");
-    // Overlay text is absolute; grow panel so the full copy (incl. links) stays visible.
     const textNeeded = activeText ? activeText.offsetHeight + 48 : 0;
     const needed = Math.max(leftH, textNeeded, 520);
 

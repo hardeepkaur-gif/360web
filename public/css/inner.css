@@ -83,6 +83,17 @@ svg:not([width]):not([height]):not(.proc-svg) {
 }
 button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 a { color: inherit; text-decoration: none; transition: color .25s var(--ease); }
+a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
+}
 ul { list-style: none; margin: 0; padding: 0; }
 input, select, textarea { font-family: inherit; font-size: inherit; color: inherit; }
 
@@ -4319,7 +4330,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   text-align: center;
 }
 
-/* Copy left � counters right ? equal width & equal column height */
+/* Copy left ? counters right ? equal width & equal column height */
 .ai-sec__split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5014,7 +5025,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   z-index: 2;
 }
 
-/* AI Marketing ? four use-case cards: 2�2 from tablet up (default industries grid is 3 cols) */
+/* AI Marketing ? four use-case cards: 2?2 from tablet up (default industries grid is 3 cols) */
 @media (min-width: 821px) {
   
   #cro-uk-businesses .industries__grid {
@@ -5253,7 +5264,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   padding: 0 min(20px, 3vw);
   box-sizing: border-box;
 }
-/* max-width: restores pre?viewBox scale (670/560 � 580 ? 694; round to ~700px) */
+/* max-width: restores pre?viewBox scale (670/560 ? 580 ? 694; round to ~700px) */
 .proc-svg {
   display: block;
   width: 100%;
@@ -9765,8 +9776,8 @@ a.hero__pill--rating:focus-visible {
 
 /* ============================================================
    FAQ v2 ? Editorial accordion rows
-   Matches reference: faded number + big title + toggle (+/�)
-   Active row turns coral, � circle replaces the +
+   Matches reference: faded number + big title + toggle (+/?)
+   Active row turns coral, ? circle replaces the +
    ============================================================ */
 .faq-v2 {
   background: var(--white);
@@ -9886,7 +9897,7 @@ a.hero__pill--rating:focus-visible {
   transition: color .3s var(--ease);
 }
 
-/* --- Toggle (+ / �) --- */
+/* --- Toggle (+ / ?) --- */
 .faq-row__toggle {
   position: relative;
   width: 36px;
@@ -12077,6 +12088,7 @@ section.section.svc-transform {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(7, 22, 41, .12) 0%, rgba(7, 22, 41, .68) 100%);
+  pointer-events: none;
 }
 .svc-img-text {
   position: absolute;
@@ -12084,6 +12096,18 @@ section.section.svc-transform {
   right: 24px;
   bottom: 20px;
   z-index: 2;
+}
+.svc-img-desc a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  pointer-events: auto;
+}
+.svc-img-desc a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
 }
 .svc-img-title {
   font-family: var(--font-display);
@@ -13801,7 +13825,7 @@ section.section.svc-transform {
     align-items: flex-start;
   }
 }
-/* WordPress offerings: 3�2 grid + homepage-style icons + blue hover */
+/* WordPress offerings: 3?2 grid + homepage-style icons + blue hover */
 .wp-offer--svc-grid {
   background: #f5f7fa;
 }
@@ -17483,7 +17507,7 @@ body:has(#link-building-hero-title) .hero__stats.hero__stats--trust .hero__stat-
   }
 }
 
-/* SEO Content Writing hero ? intrinsic image size (1024� asset), frame + gentle motion */
+/* SEO Content Writing hero ? intrinsic image size (1024? asset), frame + gentle motion */
 .hero.hero--seo-content-writing .hero__photo.hero__photo--devices.hero__photo--seo-content-hero.hero__photo--smm-illustration {
   min-height: 0;
 }
@@ -19377,34 +19401,58 @@ section#ai-marketing-why-ai-powered {
 }
 
 #ai-marketing-tools-human-strategy .svc-ai-trust__copy a.brand-link,
-#ai-marketing-services-include .svc-img-desc a.brand-link {
+#ai-marketing-services-include .svc-img-desc a.brand-link,
+#google-ads-services-include .svc-img-desc a.brand-link {
   color: var(--coral) !important;
   -webkit-text-fill-color: var(--coral) !important;
   font-weight: 600;
-  text-decoration: none !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
 }
 
 #ai-marketing-tools-human-strategy .svc-ai-trust__copy a.brand-link:hover,
 #ai-marketing-services-include .svc-img-desc a.brand-link:hover,
-#ai-marketing-why-ai-powered .seo-split__content p a.brand-link:hover {
+#ai-marketing-why-ai-powered .seo-split__content p a.brand-link:hover,
+#google-ads-services-include .svc-img-desc a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;
   text-decoration: underline !important;
 }
 
 #home-services .svc-hdr .sub a.brand-link,
+#shopify-services .svc-hdr .sub a.brand-link,
 #outcomes .ind-card__desc a.brand-link {
   color: var(--coral) !important;
   -webkit-text-fill-color: var(--coral) !important;
   font-weight: 600;
-  text-decoration: none !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
 }
 
 #home-services .svc-hdr .sub a.brand-link:hover,
+#shopify-services .svc-hdr .sub a.brand-link:hover,
 #outcomes .ind-card__desc a.brand-link:hover {
   color: var(--coral-2) !important;
   -webkit-text-fill-color: var(--coral-2) !important;
   text-decoration: underline !important;
+}
+
+#shopify-growth-blockers .seo-who-needs__acc-body-inner a.brand-link,
+#shopify-services .svc-img-desc a.brand-link,
+#shopify-process .section__lede a.brand-link {
+  color: var(--coral) !important;
+  -webkit-text-fill-color: var(--coral) !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+  pointer-events: auto;
+}
+
+#shopify-growth-blockers .seo-who-needs__acc-body-inner a.brand-link:hover,
+#shopify-services .svc-img-desc a.brand-link:hover,
+#shopify-process .section__lede a.brand-link:hover {
+  color: var(--coral-2) !important;
+  -webkit-text-fill-color: var(--coral-2) !important;
 }
 
 .seo-results-expect__visual {
