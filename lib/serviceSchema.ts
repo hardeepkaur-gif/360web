@@ -42,6 +42,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "SEO content built on keyword research, search intent, and topical authority so pages rank on Google and get cited by AI search tools.",
   },
+  "copywriting-agency": {
+    slug: "copywriting-agency",
+    name: "Copywriting Agency",
+    serviceType: "Copywriting",
+    path: "/services/copywriting-agency",
+    description:
+      "360 Web Solutions, a UK copywriting agency delivering high-converting websites, landing pages, email and ad copy to help turn visitors into leads.",
+  },
   "ai-consultancy-services": {
     slug: "ai-consultancy-services",
     name: "AI Consultancy Services",
