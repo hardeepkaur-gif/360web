@@ -10573,6 +10573,8 @@ section.section.svc-transform {
 
 /* AI Consultancy vs AI Automation Agency ? AUTOMATION workshop backdrop */
 
+/* Copywriting agency: freelancer vs agency vs 360 — homepage compare layout */
+
 /* SEO audit + email marketing: two-column chip strip */
 
 /* Email tool vs agency: Feature + Tool + Agency (3 columns, desktop only) */
@@ -10796,7 +10798,9 @@ section.section.svc-transform {
 /* On-page SEO: 4-column educational table ? hide challenger ? markers on desktop only
    (mobile compare layout reuses nth-child labels via ::before). */
 
-/* CRO pricing ? two-column type vs cost table */
+/* CRO pricing — two-column project vs cost table */
+
+/* Copywriting pricing — light split: table left, factors right */
 
 /* Local SEO compare table: narrower width, balanced columns */
 /* Local SEO compare table: narrower width, balanced columns (desktop only) */
@@ -12363,15 +12367,22 @@ section.section.svc-transform {
   min-height: auto;
 }
 
-/* Hero H1: exactly three lines ? line 1 / line 2 / remainder */
-.hero.hero--on-page-seo #seo-hero-title .hero__title-line {
+/* Hero H1: line blocks — on-page SEO = 3 lines; copywriting = 4 lines */
+.hero.hero--on-page-seo #seo-hero-title .hero__title-line,
+.hero.hero--copywriting #copywriting-hero-title .hero__title-line {
   display: block;
 }
 @media (min-width: 560px) {
   .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
-  .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(2) {
+  .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(2),
+  .hero.hero--copywriting #copywriting-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
+  .hero.hero--copywriting #copywriting-hero-title.hero__title > span.hero__title-line:nth-of-type(2) {
     white-space: nowrap;
   }
+}
+
+.hero.hero--copywriting #copywriting-hero-title {
+  max-width: 100%;
 }
 
 .hero__on-page-seo-frame {
