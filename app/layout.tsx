@@ -151,7 +151,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero-lead__head{margin-bottom:24px;text-align:center}
 .hero-lead__title{margin:0 0 12px;font-size:clamp(20px,2.2vw,26px);font-weight:800;line-height:1.15;color:#fff!important;-webkit-text-fill-color:#fff}
 .hero-lead__accent{display:block;width:56px;height:3px;margin:0 auto 14px;border-radius:999px;background:#FF4D3A}
-.hero-lead__sub{margin:0 auto;max-width:34ch;font-size:14px;line-height:1.55;color:#fff!important}
+.hero-lead__sub{margin:0 auto;max-width:100%;width:100%;font-size:14px;line-height:1.55;text-align:center;color:#fff!important}
 .hero-lead__form{display:grid;grid-template-columns:1fr 1fr;gap:14px;color:#fff;text-align:left}
 .hero-lead__field{display:flex;flex-direction:column;gap:7px}
 .hero-lead__field>span{font-size:12.5px;font-weight:700;color:#fff!important}

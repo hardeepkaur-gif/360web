@@ -50,6 +50,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "360 Web Solutions, a UK copywriting agency delivering high-converting websites, landing pages, email and ad copy to help turn visitors into leads.",
   },
+  "digital-pr-agency": {
+    slug: "digital-pr-agency",
+    name: "Digital PR Agency",
+    serviceType: "Digital PR",
+    path: "/services/digital-pr-agency",
+    description:
+      "Tired of wasting money on PR that doesn’t work? Our digital PR agency secures high-authority links, genuine coverage and higher ranking. Book a free call.",
+  },
   "ai-consultancy-services": {
     slug: "ai-consultancy-services",
     name: "AI Consultancy Services",

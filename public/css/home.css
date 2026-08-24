@@ -7157,6 +7157,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 .hero-lead__head {
   margin-bottom: 22px;
+  text-align: center;
 }
 
 .hero-lead__badge {
@@ -7196,10 +7197,13 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 }
 
 .hero-lead__sub {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
   font-size: 14px;
   line-height: 1.55;
   color: var(--ink-3);
+  text-align: center;
 }
 
 .hero-lead__form {
@@ -12367,16 +12371,20 @@ section.section.svc-transform {
   min-height: auto;
 }
 
-/* Hero H1: line blocks — on-page SEO = 3 lines; copywriting = 4 lines */
+/* Hero H1: line blocks — on-page SEO / digital PR = 3 lines; copywriting = 4 lines */
 .hero.hero--on-page-seo #seo-hero-title .hero__title-line,
-.hero.hero--copywriting #copywriting-hero-title .hero__title-line {
+.hero.hero--copywriting #copywriting-hero-title .hero__title-line,
+.hero.hero--digital-pr #digital-pr-hero-title .hero__title-line {
   display: block;
 }
 @media (min-width: 560px) {
   .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
   .hero.hero--on-page-seo #seo-hero-title.hero__title > span.hero__title-line:nth-of-type(2),
   .hero.hero--copywriting #copywriting-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
-  .hero.hero--copywriting #copywriting-hero-title.hero__title > span.hero__title-line:nth-of-type(2) {
+  .hero.hero--copywriting #copywriting-hero-title.hero__title > span.hero__title-line:nth-of-type(2),
+  .hero.hero--digital-pr #digital-pr-hero-title.hero__title > span.hero__title-line:nth-of-type(1),
+  .hero.hero--digital-pr #digital-pr-hero-title.hero__title > span.hero__title-line:nth-of-type(2),
+  .hero.hero--digital-pr #digital-pr-hero-title.hero__title > span.hero__title-line:nth-of-type(3) {
     white-space: nowrap;
   }
 }
@@ -13493,7 +13501,8 @@ section#email-marketing-agency-switch.seo-matters {
 
 /* Scroll-in: slide from left + stagger uses existing .reveal --delay */
 
-#seo-audit-duration .seo-audit-time__item.reveal.is-visible {
+#seo-audit-duration .seo-audit-time__item.reveal.is-visible,
+#digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -13509,13 +13518,15 @@ section#email-marketing-agency-switch.seo-matters {
   }
 }
 
-#seo-audit-duration .seo-audit-time__item.reveal.is-visible::before {
+#seo-audit-duration .seo-audit-time__item.reveal.is-visible::before,
+#digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible::before {
   animation: seo-audit-time-bar-shimmer 4.2s ease-in-out infinite;
   animation-delay: calc(var(--delay, 0s) + 0.35s);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover {
+  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover,
+  #digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible:hover {
     transform: translate3d(0, -5px, 0);
     border-color: rgba(255, 77, 58, 0.2);
     box-shadow:
@@ -13525,7 +13536,8 @@ section#email-marketing-agency-switch.seo-matters {
     background: linear-gradient(180deg, #ffffff 0%, #f5f8fc 100%);
   }
 
-  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover::before {
+  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover::before,
+  #digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible:hover::before {
     width: 4px;
     top: 10px;
     bottom: 10px;
@@ -13537,18 +13549,21 @@ section#email-marketing-agency-switch.seo-matters {
 
 @media (prefers-reduced-motion: reduce) {
   
-  #seo-audit-duration .seo-audit-time__item.reveal.is-visible {
+  #seo-audit-duration .seo-audit-time__item.reveal.is-visible,
+  #digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible {
     transition-duration: 0.01ms;
     animation: none !important;
     transform: none;
     opacity: 1;
   }
 
-  #seo-audit-duration .seo-audit-time__item.reveal.is-visible::before {
+  #seo-audit-duration .seo-audit-time__item.reveal.is-visible::before,
+  #digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible::before {
     animation: none !important;
   }
 
-  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover {
+  #seo-audit-duration .seo-audit-time__item.reveal.is-visible:hover,
+  #digital-pr-who-we-work .seo-audit-time__item.reveal.is-visible:hover {
     transform: none;
   }
 }
