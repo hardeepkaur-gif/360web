@@ -43,6 +43,8 @@ const SAFELIST = {
     /^proc/,
     /^contact__cal/,
     /^work-card/,
+    /^webdev-cases/,
+    /^svc-page/,
     /^ind-card/,
     /^gr-/,
     /^faq/,

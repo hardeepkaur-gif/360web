@@ -6959,6 +6959,114 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   background-image: url("/assets/images/shopify-hero-bg.png");
 }
 
+/* Web Dev case studies — scoped (no homepage `.work` classes) */
+#main.svc-page.svc-page--webdev {
+  display: flex;
+  flex-direction: column;
+}
+#main.svc-page.svc-page--webdev > .hero.hero--webdev {
+  order: 1;
+  position: relative;
+  z-index: 2;
+}
+#main.svc-page.svc-page--webdev > .svc-webdev-ticker { order: 2; }
+#main.svc-page.svc-page--webdev > #svc-webdev-transform { order: 3; }
+#main.svc-page.svc-page--webdev > #include { order: 4; }
+#main.svc-page.svc-page--webdev > #website-types { order: 5; }
+#main.svc-page.svc-page--webdev > #agency-compare { order: 6; }
+#main.svc-page.svc-page--webdev > #dev-process { order: 7; }
+#main.svc-page.svc-page--webdev > .wd-migration { order: 8; }
+#main.svc-page.svc-page--webdev > #webdev-case-studies { order: 9; }
+#main.svc-page.svc-page--webdev > #faq-webdev { order: 10; }
+.webdev-cases__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+.webdev-cases__card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+}
+.webdev-cases__card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(15, 42, 74, .12);
+}
+.webdev-cases__media {
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--navy);
+}
+.webdev-cases__body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.webdev-cases__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.webdev-cases__tags span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(15, 42, 74, .06);
+  color: var(--ink-2);
+}
+.webdev-cases__body h3 {
+  font-size: 22px;
+  margin: 0;
+}
+.webdev-cases__body p {
+  margin: 0;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.55;
+  flex: 1;
+}
+.webdev-cases__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--blue);
+}
+.webdev-cases__card:hover .webdev-cases__link {
+  color: var(--coral);
+}
+@media (max-width: 991px) {
+  .webdev-cases__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .webdev-cases__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero.hero--editorial.hero--with-lead.hero--webdev .hero__bg-image {
+  background-image: url("/assets/images/web-development-services-hero.webp");
+  background-position: 18% center;
+}
+
+.hero.hero--webdev .hero-lead__title {
+  font-size: clamp(17px, 1.7vw, 21px);
+}
+
 /* Shopify hero ? certifications strip */
 .hero--shopify .shopify-hero__certs {
   margin-top: 8px;
@@ -9716,7 +9824,8 @@ main.svc-page {
     line-height: 1.12 !important;
   }
   #main.svc-page h2,
-  #main.svc-page .section__title {
+  #main.svc-page .section__title,
+  #main.svc-page .ttl {
     font-size: 28px !important;
     line-height: 1.15 !important;
   }
@@ -9728,6 +9837,10 @@ main.svc-page {
   #main.svc-page .compare__cta-actions .btn {
     width: 100%;
     justify-content: center;
+  }
+  #main.svc-page .svc-img img {
+    width: 100%;
+    object-fit: cover;
   }
 }
 .svc-page h2 {
@@ -10134,6 +10247,12 @@ section.section.svc-transform {
   -webkit-text-fill-color: var(--coral-2) !important;
 }
 @media (max-width: 767px) {
+
+  #main.svc-page .svc-sec {
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
 
   /* SMM ? services section: no extra top gap after diagnosis block */
 }
@@ -10990,6 +11109,9 @@ section.section.svc-transform {
 }
 
 /* WordPress sub-service page: distinct but brand-consistent visuals */
+.svc-page--wordpress .wp-about-split {
+  background: var(--white);
+}
 
 /* WordPress page: about / company two-column block */
 .wp-about-split {
@@ -11553,6 +11675,17 @@ section.section.svc-transform {
     margin-left: -6px;
     margin-right: -6px;
   }
+}
+.svc-page--wordpress .wp-compare .compare__table {
+  box-shadow: 0 28px 72px rgba(6, 20, 38, .36);
+}
+.svc-page--wordpress .wp-faq {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(26,95,191,.08) 0, rgba(26,95,191,0) 34%),
+    linear-gradient(180deg, #f7fafe 0%, #f3f7fc 100%);
+}
+.svc-page--wordpress .wp-faq .faq-row {
+  border-radius: 14px;
 }
 
 /* WordPress page: split hero (copy + photo + floating cards, brand colours) */
