@@ -13,13 +13,11 @@ export const metadata: Metadata = {
   title: DIGITAL_PR_TITLE,
   description: DIGITAL_PR_DESCRIPTION,
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
+      index: true,
+      follow: true,
     },
   },
   alternates: {

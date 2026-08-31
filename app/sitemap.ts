@@ -37,6 +37,7 @@ const servicePages: SitemapEntry[] = [
   "ai-consultancy-services",
   "ai-marketing-agency",
   "llm-optimisation-services",
+  "digital-pr-agency",
   "social-media-marketing",
 
   "email-marketing-services",
