@@ -58,6 +58,19 @@ body:has(#digital-pr-hero-title) #main.svc-page {
   min-width: 0;
 }
 
+body:has(#digital-pr-hero-title) #main.svc-page a.brand-link {
+  color: #ff4d3a !important;
+  -webkit-text-fill-color: #ff4d3a !important;
+  font-weight: 600;
+  text-decoration: underline !important;
+  text-underline-offset: 2px;
+}
+
+body:has(#digital-pr-hero-title) #main.svc-page a.brand-link:hover {
+  color: #ff6a5a !important;
+  -webkit-text-fill-color: #ff6a5a !important;
+}
+
 @media (max-width: 767px) {
   body:has(#digital-pr-hero-title) #main.svc-page h2 {
     font-size: 28px !important;
