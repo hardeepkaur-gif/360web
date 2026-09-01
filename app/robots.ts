@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/thank-you', '/services/digital-pr-agency'],
+        disallow: ['/thank-you'],
       },
     ],
     sitemap: 'https://www.360websolutions.co.uk/sitemap.xml',
