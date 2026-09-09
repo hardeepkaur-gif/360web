@@ -36,7 +36,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-      <link rel="stylesheet" href="/css/home.css?v=20260909c" />
+      <link rel="stylesheet" href="/css/home.css?v=20260909e" />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
