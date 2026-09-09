@@ -7017,10 +7017,12 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
 
 #home .hero__content .hero__subtitle {
   color: #ffffff;
+  font-size: 16px;
 }
 
 #home .hero__content .hero__subtitle-lead {
   color: #ffffff;
+  font-size: 16px;
 }
 
 #home .hero__content .btn--ghost-play {
@@ -15274,7 +15276,7 @@ section.about-system.section {
   }
 
   #home .hero__content .hero__subtitle {
-    font-size: 14.5px;
+    font-size: 16px;
     line-height: 1.65;
     max-width: none;
   }
