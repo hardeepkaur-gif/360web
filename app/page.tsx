@@ -1,8 +1,9 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
+import { HomeHero } from "@/components/HomeHero";
 import { HomeSchemaScript } from "@/components/HomeSchemaScript";
-import { loadLegacyHomeHtml } from "@/lib/loadLegacySiteChrome";
+import { loadLegacyHomePageParts } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
   title: "Award-Winning Digital Marketing Agency London | SEO and PPC",
@@ -25,7 +26,7 @@ const LEGACY_SERVICES_HASH_REDIRECT = `
 `.trim();
 
 export default function Home() {
-  const html = loadLegacyHomeHtml();
+  const { headerHtml, heroInnerHtml, mainRestHtml } = loadLegacyHomePageParts();
 
   return (
     <>
@@ -35,24 +36,25 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-      <link rel="stylesheet" href="/css/home.css?v=20260718g" />
-      <link
-        rel="preload"
-        href="/assets/images/hero-home-cover.webp"
-        as="image"
-        type="image/webp"
-        fetchPriority="high"
-      />
+      <link rel="stylesheet" href="/css/home.css?v=20260909b" />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
-        dangerouslySetInnerHTML={{ __html: html }}
+        dangerouslySetInnerHTML={{ __html: headerHtml }}
         suppressHydrationWarning
       />
+      <main id="main">
+        <HomeHero innerHtml={heroInnerHtml} />
+        <div
+          style={{ display: "contents" }}
+          dangerouslySetInnerHTML={{ __html: mainRestHtml }}
+          suppressHydrationWarning
+        />
+      </main>
       <Script src="/js/main.js?v=20250609" strategy="afterInteractive" />
       <Script src="/js/hero-lead-form.js?v=20260717" strategy="afterInteractive" />
       <Script src="/js/contact-booking-timezone.js?v=20250710" strategy="afterInteractive" />
-      <Script src="/js/work-filters-fix.js?v=20250710h" strategy="afterInteractive" />
+      <Script src="/js/work-filters-form.js?v=20250710h" strategy="afterInteractive" />
     </>
   );
 }
