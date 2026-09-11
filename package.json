@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^16.2.12",
+    "next": "^16.3.4",
     "nodemailer": "^9.0.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
@@ -27,7 +27,7 @@
     "eslint-config-next": "^16.2.12",
     "html-minifier-terser": "^7.2.0",
     "postcss": "^8.5.14",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "tailwindcss": "^3.4.19",
     "terser": "^5.48.0",
     "typescript": "5.9.3"
