@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
 description: Lighthouse Performance 100 — measured baseline, root causes, and working rules for 360 Web Solutions
-=======
-description: Lighthouse Performance 100 rules for 360 Web Solutions — measured baseline, root causes, and one-change-at-a-time workflow
->>>>>>> 586d77ce3897649f059ff26e512e3a6292db0504
 alwaysApply: true
 ---
 
@@ -15,21 +11,16 @@ Lighthouse Performance 100 on both mobile and desktop.
 
 ## MEASURED BASELINE (PageSpeed Insights, 9 Sept 2026 — facts, not guesses)
 
-<<<<<<< HEAD
-- Mobile  81 — FCP 2.0s | LCP 4.7s | TBT 70ms  | CLS 0.001 | SI 2.1s
-=======
 - Mobile 81 — FCP 2.0s | LCP 4.7s | TBT 70ms | CLS 0.001 | SI 2.1s
->>>>>>> 586d77ce3897649f059ff26e512e3a6292db0504
 - Desktop 91 — FCP 0.5s | LCP 1.0s | TBT 170ms | CLS 0.022 | SI 1.9s
 
 ## CONFIRMED ROOT CAUSES
 
-<<<<<<< HEAD
 1. `public/css/home.css` (74.6 KiB, unminified, 63% unused) loaded with plain `<link>` tags in the document head — THREE references. Render-blocks ~1,530 ms on mobile. Never goes through the Next.js CSS pipeline.
 2. LCP element is `div.hero__bg-image` (CSS `background-image` `/assets/images/hero-home-cover.webp`). Preload scanner cannot discover background images; LCP waits for stylesheet parse.
 3. Tawk.to live chat boots on page load — 20 requests to embed.tawk.to / va.tawk.to + main-thread work. Desktop TBT (170ms) worse than mobile (70ms).
 4. Both gtag.js and gtm.js load — 288.7 KiB total, 136.8 KiB never executed.
-5. Five vanilla scripts in `public/js/` preloaded at high priority: `main.js`, `hero-lead-form.js`, `contact-booking-timezone.js`, `work-filters-fix.js`, `recordConsoleEvents.js`
+5. Five vanilla scripts in `public/js/` preloaded at high priority: `main.js`, `hero-lead-form.js`, `contact-booking-timezone.js`, `work-filters-form.js`, `recordConsoleEvents.js`
 6. `/assets/images/logo.webp` is 320×180 but renders at 78×44.
 7. Homepage has ~2,027 DOM elements and ships ~14 KiB of legacy JS polyfills.
 
@@ -44,38 +35,3 @@ Lighthouse Performance 100 on both mobile and desktop.
 - Do not touch any file not asked about.
 - If unsure whether something is safe, stop and ask instead of guessing.
 - If any design risk appears on any page, tell the user in the menu first — the site is live.
-=======
-1. `public/css/home.css` (74.6 KiB, unminified, 63% unused) is loaded with plain
-   `<link>` tags in the document head — THREE references in total. It render-blocks
-   for 1,530 ms on mobile. It never goes through the Next.js CSS pipeline.
-2. The LCP element is `div.hero__bg-image`, which paints a CSS background-image
-   (`/assets/images/hero-home-cover.webp`). The preload scanner cannot discover
-   background images, so LCP waits for the whole stylesheet to parse.
-3. Tawk.to live chat boots on page load — 20 requests to embed.tawk.to and
-   va.tawk.to, plus main-thread work. This is why desktop TBT (170ms) is WORSE
-   than mobile TBT (70ms).
-4. Both `gtag.js` and `gtm.js` load — 288.7 KiB total, 136.8 KiB never executed.
-5. Five vanilla scripts in `public/js/` are preloaded at high priority:
-   `main.js`, `hero-lead-form.js`, `contact-booking-timezone.js`, `work-filters-fix.js`,
-   `recordConsoleEvents.js`
-6. `/assets/images/logo.webp` is 320x180 but renders at 78x44.
-7. The homepage has 2,027 DOM elements and ships 14 KiB of legacy JS polyfills.
-
-## WORKING RULES — follow for every performance task
-
-- Make ONE change at a time. Never batch unrelated fixes.
-- This is a performance-only refactor. Do not change any visual appearance,
-  layout, copy, or behaviour that a user can see.
-- Show the diff and wait for confirmation before writing files.
-- After every change, list exactly which files were touched and why.
-- If a change could affect CLS or cause layout shift, say so BEFORE making it.
-- Do not add any dependency without telling first and explaining why.
-- Do not touch any file not asked about.
-- If unsure whether something is safe, stop and ask instead of guessing.
-- If any design/layout risk appears on a live page, warn the user first before applying.
-
-## LIVE SITE SAFETY
-
-The site is live (www.360websolutions.co.uk). Prefer reversible, isolated changes.
-Never silently alter visible design, content, or form behaviour.
->>>>>>> 586d77ce3897649f059ff26e512e3a6292db0504

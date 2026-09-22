@@ -36,7 +36,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-<<<<<<< HEAD
       <link
         rel="preload"
         href="/assets/images/hero-home-cover.webp"
@@ -44,9 +43,6 @@ export default function Home() {
         type="image/webp"
         fetchPriority="high"
       />
-=======
-      <link rel="stylesheet" href="/css/home.css?v=20260909e" />
->>>>>>> 586d77ce3897649f059ff26e512e3a6292db0504
       <div
         className="site-legacy"
         style={{ display: "contents" }}
