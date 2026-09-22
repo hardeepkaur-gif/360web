@@ -460,11 +460,16 @@ export async function fetchPosts(
 }
 
 export async function fetchPostBySlug(slug: string): Promise<WPPost | null> {
-  const { data } = await wpFetch<WPPost[]>(
-    `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1&status=publish`,
-  );
+  try {
+    const { data } = await wpFetch<WPPost[]>(
+      `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1&status=publish`,
+    );
 
-  return data[0] ?? null;
+    return data[0] ?? null;
+  } catch (err) {
+    console.error(`[wordpress] fetchPostBySlug failed for "${slug}":`, err);
+    return null;
+  }
 }
 
 export async function fetchPostCommentCount(postId: number): Promise<number> {

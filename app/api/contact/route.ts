@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const OWNER_EMAIL = process.env.CONTACT_EMAIL ?? "info@360websolutions.co.uk";
+const OWNER_EMAIL = "info@360websolutions.co.uk";
 const SMTP_USER = process.env.SMTP_USER ?? OWNER_EMAIL;
 const SMTP_PASS = process.env.SMTP_PASS ?? "";
 
@@ -58,18 +58,28 @@ function thankYouHtml(name: string, formType: string) {
          <p style="color:#333;line-height:1.7">We typically respond within one business day. If your enquiry is urgent, call us at <a href="tel:+442071835339" style="color:#FF4D3A">+44 (0)20 7183 5339</a>.</p>`;
 
   return `
-    <div style="font-family:Inter,Arial,sans-serif;max-width:600px;margin:0 auto">
-      <div style="background:#0F2A4A;padding:24px 32px;border-radius:12px 12px 0 0;text-align:center">
-        <img src="https://360websolutions.co.uk/assets/images/logo.webp" alt="360 Web Solutions" width="140" style="margin-bottom:8px" />
-      </div>
-      <div style="background:#fff;padding:32px;border:1px solid #E5E7EB;border-top:none;border-radius:0 0 12px 12px">
-        <h2 style="margin:0 0 16px;font-size:22px;color:#0F2A4A">Hi ${firstName},</h2>
-        ${body}
-        <hr style="border:none;border-top:1px solid #E5E7EB;margin:28px 0" />
-        <p style="font-size:13px;color:#888;margin:0">360 Web Solutions — Digital Marketing Agency, London, UK<br/>
-        <a href="https://360websolutions.co.uk" style="color:#FF4D3A">360websolutions.co.uk</a></p>
-      </div>
-    </div>`;
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F4F6F9;font-family:Inter,Arial,sans-serif">
+      <tr>
+        <td align="center" style="padding:32px 16px">
+          <table role="presentation" width="600" cellspacing="0" cellpadding="0" style="max-width:600px;width:100%;background:#ffffff;border:1px solid #E2E8F0;border-radius:16px;box-shadow:0 12px 40px rgba(15,42,74,0.10);overflow:hidden">
+            <tr>
+              <td style="background:#ffffff;padding:28px 32px 24px;text-align:center;border-bottom:1px solid #EEF1F5">
+                <img src="https://360websolutions.co.uk/assets/images/logo-360-web-it.png" alt="360 Web Solutions" width="78" height="44" style="display:block;margin:0 auto;border:0;height:44px;width:auto;max-width:100%" />
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:32px;background:#ffffff">
+                <h2 style="margin:0 0 16px;font-size:22px;color:#0F2A4A">Hi ${firstName},</h2>
+                ${body}
+                <hr style="border:none;border-top:1px solid #E5E7EB;margin:28px 0" />
+                <p style="font-size:13px;color:#888;margin:0">360 Web Solutions — Digital Marketing Agency, London, UK<br/>
+                <a href="https://360websolutions.co.uk" style="color:#FF4D3A;text-decoration:none">360websolutions.co.uk</a></p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>`;
 }
 
 /* ------------------------------------------------------------------ */
@@ -106,9 +116,12 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    if (!SMTP_PASS) {
-      console.error("[contact] SMTP_PASS not set — skipping email send");
-      return NextResponse.json({ ok: true, warning: "Email not configured" });
+    if (!SMTP_PASS || !SMTP_USER) {
+      console.error("[contact] SMTP_USER or SMTP_PASS not set — cannot send email");
+      return NextResponse.json(
+        { error: "Email service is not configured. Please call us directly." },
+        { status: 503 },
+      );
     }
 
     const ownerData: Record<string, string> =

@@ -58,9 +58,9 @@ export default function SocialMediaMarketingPage() {
       <ServiceSchemaScript slug="social-media-marketing" />
       <link
         rel="preload"
-        href="/assets/images/social-media-hero-bg.png?v=20260730p"
+        href="/assets/images/social-media-hero-v2.webp?v=20260719j"
         as="image"
-        type="image/png"
+        type="image/webp"
         fetchPriority="high"
       />
       <style

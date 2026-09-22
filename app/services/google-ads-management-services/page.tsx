@@ -94,24 +94,6 @@ body:has(#google-ads-hero-title) #main.svc-page {
     min-height: 0 !important;
   }
 }
-
-#google-ads-services-include .svc-img-overlay {
-  pointer-events: none;
-}
-
-#google-ads-services-include .svc-img-desc a.brand-link {
-  color: #ff4d3a !important;
-  -webkit-text-fill-color: #ff4d3a !important;
-  font-weight: 600;
-  text-decoration: underline !important;
-  text-underline-offset: 2px;
-  pointer-events: auto;
-}
-
-#google-ads-services-include .svc-img-desc a.brand-link:hover {
-  color: #ff6a5a !important;
-  -webkit-text-fill-color: #ff6a5a !important;
-}
 `;
 
 export default function GoogleAdsManagementServicesPage() {
@@ -124,9 +106,9 @@ export default function GoogleAdsManagementServicesPage() {
       <ServiceSchemaScript slug="google-ads-management-services" />
       <link
         rel="preload"
-        href="/assets/images/google-ads-hero-bg.png?v=20260730p"
+        href="/assets/images/google-ads-management-hero-v2.webp?v=20260719f"
         as="image"
-        type="image/png"
+        type="image/webp"
         fetchPriority="high"
       />
       <style
@@ -140,7 +122,7 @@ export default function GoogleAdsManagementServicesPage() {
       />
       <Script src="/js/main.js" strategy="lazyOnload" />
       <Script
-        src="/js/google-ads-services-include.js?v=20260808a"
+        src="/js/google-ads-services-include.js"
         strategy="lazyOnload"
       />
       <Script src="/js/google-ads-process.js?v=20250709" strategy="afterInteractive" />

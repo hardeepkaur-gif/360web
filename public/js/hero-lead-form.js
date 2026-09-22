@@ -37,6 +37,7 @@
       .then(function (res) {
         return res.json().then(function (data) {
           if (!res.ok) throw new Error(data.error || "Failed to send. Please try again.");
+          if (data.warning) throw new Error("Email could not be sent. Please try again or call us.");
           return data;
         });
       })
