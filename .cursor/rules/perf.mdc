@@ -1,0 +1,37 @@
+---
+description: Lighthouse Performance 100 — measured baseline, root causes, and working rules for 360 Web Solutions
+alwaysApply: true
+---
+
+# Performance work — 360 Web Solutions
+
+You are working on the Next.js site for 360 Web Solutions (www.360websolutions.co.uk).
+It uses the App Router and a Turbopack build. The single goal of this work is
+Lighthouse Performance 100 on both mobile and desktop.
+
+## MEASURED BASELINE (PageSpeed Insights, 9 Sept 2026 — facts, not guesses)
+
+- Mobile  81 — FCP 2.0s | LCP 4.7s | TBT 70ms  | CLS 0.001 | SI 2.1s
+- Desktop 91 — FCP 0.5s | LCP 1.0s | TBT 170ms | CLS 0.022 | SI 1.9s
+
+## CONFIRMED ROOT CAUSES
+
+1. `public/css/home.css` (74.6 KiB, unminified, 63% unused) loaded with plain `<link>` tags in the document head — THREE references. Render-blocks ~1,530 ms on mobile. Never goes through the Next.js CSS pipeline.
+2. LCP element is `div.hero__bg-image` (CSS `background-image` `/assets/images/hero-home-cover.webp`). Preload scanner cannot discover background images; LCP waits for stylesheet parse.
+3. Tawk.to live chat boots on page load — 20 requests to embed.tawk.to / va.tawk.to + main-thread work. Desktop TBT (170ms) worse than mobile (70ms).
+4. Both gtag.js and gtm.js load — 288.7 KiB total, 136.8 KiB never executed.
+5. Five vanilla scripts in `public/js/` preloaded at high priority: `main.js`, `hero-lead-form.js`, `contact-booking-timezone.js`, `work-filters-fix.js`, `recordConsoleEvents.js`
+6. `/assets/images/logo.webp` is 320×180 but renders at 78×44.
+7. Homepage has ~2,027 DOM elements and ships ~14 KiB of legacy JS polyfills.
+
+## WORKING RULES
+
+- Make ONE change at a time. Never batch unrelated fixes.
+- Performance-only refactor. Do not change visual appearance, layout, copy, or user-visible behaviour.
+- Show the diff and wait for confirmation before writing files.
+- After every change, list exactly which files were touched and why.
+- If a change could affect CLS or cause layout shift, say so BEFORE making it.
+- Do not add any dependency without explaining why first.
+- Do not touch any file not asked about.
+- If unsure whether something is safe, stop and ask instead of guessing.
+- If any design risk appears on any page, tell the user in the menu first — the site is live.

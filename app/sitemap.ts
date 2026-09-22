@@ -57,6 +57,7 @@ const caseStudyPages: SitemapEntry[] = [
   "rdx-sports",
   "virco-dental",
   "xogo-sports",
+  "real-estate-agents-london",
 ].map((slug) => ({
   path: `/case-studies/${slug}`,
   changeFrequency: "monthly" as const,
