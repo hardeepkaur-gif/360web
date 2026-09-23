@@ -1,5 +1,4 @@
 import { hasAcceptedCookies } from "@/lib/cookieConsent";
-import { patchTawkPerformanceLogging } from "@/lib/tawkPerformancePatch";
 
 const DEFAULT_TAWK_EMBED_SRC =
   "https://embed.tawk.to/6a154f283f29381c3623f315/1jphjqelu";
@@ -41,7 +40,6 @@ export function injectTawk() {
   if (window.__tawkInjected || !hasAcceptedCookies()) return;
 
   window.__tawkInjected = true;
-  patchTawkPerformanceLogging();
   ensureTawkOnLoadHandlers();
 
   window.Tawk_LoadStart = new Date();

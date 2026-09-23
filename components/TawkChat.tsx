@@ -8,35 +8,27 @@ import {
   injectTawk,
   openTawkChat,
 } from "@/lib/tawkEmbed";
-import { patchTawkPerformanceLogging } from "@/lib/tawkPerformancePatch";
 
 const INTERACTION_EVENTS = [
   "scroll",
   "pointerdown",
   "keydown",
   "touchstart",
-  "mousemove",
 ] as const;
 
 /**
- * Loads Tawk.to only after first user interaction or 5s idle.
- * Same embed URL / Tawk_API behaviour as before (via lib/tawkEmbed).
+ * Loads Tawk.to only on the first real user interaction.
+ * Same embed URL / Tawk_API behaviour (via lib/tawkEmbed).
  * Does not touch GTM, gtag, or Meta Pixel.
  */
 export default function TawkChat() {
   useEffect(() => {
-    patchTawkPerformanceLogging();
     window.openTawkChat = openTawkChat;
 
     let armed = false;
     let loaded = false;
-    let timer: ReturnType<typeof setTimeout> | undefined;
 
     const cleanupTriggers = () => {
-      if (timer !== undefined) {
-        clearTimeout(timer);
-        timer = undefined;
-      }
       for (const eventName of INTERACTION_EVENTS) {
         window.removeEventListener(eventName, onArm);
       }
@@ -63,7 +55,6 @@ export default function TawkChat() {
     for (const eventName of INTERACTION_EVENTS) {
       window.addEventListener(eventName, onArm, { once: true, passive: true });
     }
-    timer = setTimeout(onArm, 5000);
 
     window.addEventListener("360:cookie-consent", onConsent);
 

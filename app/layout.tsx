@@ -4,7 +4,6 @@ import Script from "next/script";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
-import { TAWK_PERFORMANCE_PATCH } from "@/lib/tawkPerformancePatch";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { GeoLayerScript } from "@/components/GeoLayerScript";
@@ -134,7 +133,7 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .hero__photo-frame{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md)}
 .hero__photo-img{width:100%;height:auto;display:block;object-fit:cover;aspect-ratio:16/9}
 .hero__lead{position:relative;width:100%;align-self:center}
-.hero__stat-accent{display:inline-block;font-variant-numeric:tabular-nums;min-width:3ch}
+.hero__stat-value .count{display:inline-block;font-variant-numeric:tabular-nums}
 .hero-lead{position:relative;padding:clamp(12px,1.8vw,18px);border-radius:clamp(28px,3.5vw,40px);border:1.5px solid rgba(255,255,255,.55);background:transparent}
 .hero-lead__card{position:relative;padding:clamp(28px,3.4vw,40px) clamp(22px,3vw,36px);border-radius:clamp(20px,2.6vw,28px);background:transparent;overflow:hidden;isolation:isolate;text-align:center}
 .hero-lead__bg{position:absolute;inset:0;z-index:0;background-image:url("/assets/images/team-collaboration-hero-bg.webp");background-size:cover;background-position:center;pointer-events:none}
@@ -245,13 +244,6 @@ fbq('track','PageView');`,
         {/* End Meta Pixel (noscript) */}
         <SiteSchemaScript />
         <GeoLayerScript />
-        {process.env.NODE_ENV === "production" ? (
-          <Script
-            id="tawk-performance-patch"
-            strategy="beforeInteractive"
-            dangerouslySetInnerHTML={{ __html: TAWK_PERFORMANCE_PATCH }}
-          />
-        ) : null}
         {children}
         <SiteFooter />
         <MobileNavToggle />

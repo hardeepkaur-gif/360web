@@ -8702,6 +8702,8 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   flex-shrink: 0;
 }
 .hero--editorial .hero__stat-value .count {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
   font: inherit;
   font-weight: inherit;
   letter-spacing: inherit;
@@ -8709,9 +8711,6 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   flex-shrink: 0;
 }
 .hero--editorial .hero__stat-accent {
-  display: inline-block;
-  font-variant-numeric: tabular-nums;
-  min-width: 3ch;
   color: var(--coral);
   font: inherit;
   font-weight: inherit;
