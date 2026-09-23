@@ -12,7 +12,7 @@ export function HomeHero({ innerHtml }: HomeHeroProps) {
           src="/assets/images/hero-home-cover.webp"
           alt=""
           fill
-          sizes="100vw"
+          sizes="(min-width:1200px) 1335px, 100vw"
           quality={65}
           className="hero__bg-image"
           style={{ objectFit: "cover" }}

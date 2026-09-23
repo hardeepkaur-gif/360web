@@ -36,13 +36,6 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: LEGACY_SERVICES_HASH_REDIRECT }}
       />
       <HomeSchemaScript />
-      <link
-        rel="preload"
-        href="/assets/images/hero-home-cover.webp"
-        as="image"
-        type="image/webp"
-        fetchPriority="high"
-      />
       <div
         className="site-legacy"
         style={{ display: "contents" }}
@@ -57,7 +50,7 @@ export default function Home() {
           suppressHydrationWarning
         />
       </main>
-      <Script src="/js/main.js?v=20250609" strategy="afterInteractive" />
+      <Script src="/js/main.js?v=20250609" strategy="lazyOnload" />
       <Script src="/js/hero-lead-form.js?v=20260717" strategy="afterInteractive" />
       <Script src="/js/contact-booking-timezone.js?v=20250710" strategy="lazyOnload" />
     </>

@@ -4,6 +4,12 @@ export const TAWK_PERFORMANCE_PATCH = `
 (function(){
   if(window.__tawkPerfPatched) return;
   window.__tawkPerfPatched=true;
+  var oce=console.error.bind(console);
+  console.error=function(){
+    var a=arguments[0];
+    if(typeof a==="string"&&a.indexOf("[Tawk/Logger]")!==-1) return;
+    return oce.apply(console,arguments);
+  };
   function isPerf(u){
     return typeof u==="string"&&u.indexOf("${TAWK_PERFORMANCE_URL}")!==-1;
   }
@@ -63,6 +69,14 @@ export function patchTawkPerformanceLogging() {
   if (typeof window === "undefined" || window.__tawkPerfPatched) return;
 
   const isPerf = (url: string) => url.includes(TAWK_PERFORMANCE_URL);
+
+  // Tawk logs routine reports via console.error; Next.js dev overlay treats that as a crash.
+  const originalConsoleError = console.error.bind(console);
+  console.error = (...args: unknown[]) => {
+    const first = args[0];
+    if (typeof first === "string" && first.includes("[Tawk/Logger]")) return;
+    originalConsoleError(...args);
+  };
 
   const okFetch = () =>
     Promise.resolve(
