@@ -1,18 +1,18 @@
 import Script from "next/script";
 import type { Metadata } from "next";
 
-import "../case-study-d1.css";
+import "../real-estate-london.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 
 export const metadata: Metadata = {
-  title: "Virco Dental | 360 Web Solutions eBay Marketplace Growth",
+  title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
   description:
-    "How 360 Web Solutions built marketplace authority for Virco Dental on eBay UK marketplace SEO, and e-commerce in a trust-critical healthcare category.",
+    "How 360 Web Solutions built a two-channel e-commerce presence for British Dental Health (Virco) — 98k+ items sold, 99.8% positive feedback, and 319 products live on Shopify.",
   openGraph: {
-    title: "Virco Dental | 360 Web Solutions eBay Marketplace Growth",
+    title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
     description:
-      "How 360 Web Solutions built marketplace authority for Virco Dental on eBay UK marketplace SEO, and e-commerce in a trust-critical healthcare category.",
+      "How 360 Web Solutions built a two-channel e-commerce presence for British Dental Health (Virco) — 98k+ items sold, 99.8% positive feedback, and 319 products live on Shopify.",
   },
 };
 
@@ -32,4 +32,3 @@ export default function VircoDentalCaseStudyPage() {
     </>
   );
 }
-
