@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
     description:
-      "From storefront to scalable marketplace engine — marketplace SEO, on-page SEO, and CRO for a 25-year combat sports brand on Amazon UK/EU.",
+      "From storefront to scalable marketplace engine: marketplace SEO, on-page SEO, and CRO for a 25-year combat sports brand on Amazon UK/EU.",
   },
 };
 

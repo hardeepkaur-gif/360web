@@ -106,6 +106,12 @@ export const CASE_STUDY_BREADCRUMBS = {
   "ehealth-solutions": "eHealth Solutions",
   "uk-frozen-food": "UK Frozen Food",
   "real-estate-agents-london": "Real Estate Agents London",
+  "real-estate-agents-london-google-ads":
+    "Real Estate Agents London: Google Ads",
+  "real-estate-agents-london-local-seo":
+    "Real Estate Agents London: Local Search Rankings",
+  brodex: "Brodex",
+  koolmax: "Koolmax",
 } as const;
 
 export type CaseStudySlug = keyof typeof CASE_STUDY_BREADCRUMBS;

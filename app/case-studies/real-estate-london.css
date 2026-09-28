@@ -1021,17 +1021,34 @@
 }
 
 /* ---------- Virco Dental (same layout system) ---------- */
+.cs-page--virco .cs-imgs--single{grid-template-columns:1fr}
+.cs-page--virco .cs-about__body h2{margin-bottom:0}
+@media (max-width:767px){
+  #main.cs-page--virco > section:not(.cs-hero):not(.cs-kpis){padding-top:28px !important;padding-bottom:28px !important}
+  #main.cs-page--virco > section.cs-kpis{padding-bottom:28px !important}
+}
+.cs-page--virco .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--virco .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--virco .cs-why__media{min-height:0;background:#fff}
+.cs-page--virco .cs-why__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--virco .cs-imgs--single .cs-img-slot{height:auto;aspect-ratio:1000/378}
 .cs-page--virco .cs-hero__bg-image{
   background-image:url("/assets/images/case-studies/cs-virco-hero.webp");
   background-position:center center;
 }
-.cs-page--virco .cs-client-logo-chip--text{
+.cs-page--virco .cs-client-logo-chip--text,
+.cs-page--xogo .cs-client-logo-chip--text,
+.cs-page--brodex .cs-client-logo-chip--text,
+.cs-page--koolmax .cs-client-logo-chip--text{
   flex-direction:column;
   align-items:flex-start;
   gap:2px;
   min-width:140px;
 }
-.cs-page--virco .cs-client-logo-chip--text strong{
+.cs-page--virco .cs-client-logo-chip--text strong,
+.cs-page--xogo .cs-client-logo-chip--text strong,
+.cs-page--brodex .cs-client-logo-chip--text strong,
+.cs-page--koolmax .cs-client-logo-chip--text strong{
   font-family:var(--font-display);
   font-size:20px;
   font-weight:800;
@@ -1039,13 +1056,19 @@
   letter-spacing:.04em;
   line-height:1.1;
 }
-.cs-page--virco .cs-client-logo-chip--text span{
+.cs-page--virco .cs-client-logo-chip--text span,
+.cs-page--xogo .cs-client-logo-chip--text span,
+.cs-page--brodex .cs-client-logo-chip--text span,
+.cs-page--koolmax .cs-client-logo-chip--text span{
   font-size:11px;
   font-weight:600;
   color:var(--muted);
   line-height:1.2;
 }
-.cs-page--virco .cs-gcard__brand--text{
+.cs-page--virco .cs-gcard__brand--text,
+.cs-page--xogo .cs-gcard__brand--text,
+.cs-page--brodex .cs-gcard__brand--text,
+.cs-page--koolmax .cs-gcard__brand--text{
   display:inline-flex;
   align-items:center;
   justify-content:center;
@@ -1054,14 +1077,20 @@
   border:1px solid var(--line);
   border-radius:8px;
 }
-.cs-page--virco .cs-gcard__brand--text strong{
+.cs-page--virco .cs-gcard__brand--text strong,
+.cs-page--xogo .cs-gcard__brand--text strong,
+.cs-page--brodex .cs-gcard__brand--text strong,
+.cs-page--koolmax .cs-gcard__brand--text strong{
   font-family:var(--font-display);
   font-size:18px;
   font-weight:800;
   color:var(--ink);
   letter-spacing:.04em;
 }
-.cs-page--virco .cs-gcard__avatar--text{
+.cs-page--virco .cs-gcard__avatar--text,
+.cs-page--xogo .cs-gcard__avatar--text,
+.cs-page--brodex .cs-gcard__avatar--text,
+.cs-page--koolmax .cs-gcard__avatar--text{
   display:grid;
   place-items:center;
   font-family:var(--font-display);
@@ -1070,7 +1099,36 @@
   color:var(--ink);
   background:#fff;
 }
-.cs-page--virco .cs-kpi .cs-serif-num{font-size:34px}
+.cs-page--virco .cs-kpi .cs-serif-num,
+.cs-page--xogo .cs-kpi .cs-serif-num,
+.cs-page--brodex .cs-kpi .cs-serif-num,
+.cs-page--koolmax .cs-kpi .cs-serif-num{font-size:34px}
 @media (max-width:720px){
-  .cs-page--virco .cs-kpi .cs-serif-num{font-size:26px}
+  .cs-page--virco .cs-kpi .cs-serif-num,
+  .cs-page--xogo .cs-kpi .cs-serif-num,
+  .cs-page--brodex .cs-kpi .cs-serif-num,
+  .cs-page--koolmax .cs-kpi .cs-serif-num{font-size:26px}
+}
+
+/* ---------- XOGO Sports (same layout system) ---------- */
+.cs-page--xogo .cs-imgs--single{grid-template-columns:1fr}
+.cs-page--xogo .cs-imgs--single .cs-img-slot{height:auto;aspect-ratio:1020/680}
+@media (min-width:1101px){
+  .cs-page--xogo .cs-approach__grid .cs-acard{grid-column:span 2}
+  .cs-page--xogo .cs-approach__grid .cs-acard:nth-child(4){grid-column:2 / span 2}
+}
+.cs-page--xogo .cs-about__body h2{margin-bottom:0}
+.cs-page--xogo section.cs-results,
+.cs-page--virco section.cs-results{background:#ffffff}
+.cs-page--xogo section#cta-final,
+.cs-page--virco section#cta-final{background:#FFFFFF;padding-bottom:70px}
+@media (max-width:720px){
+  .cs-page--xogo section#cta-final,
+  .cs-page--virco section#cta-final{padding-bottom:48px}
+}
+.cs-page--xogo .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--xogo .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--xogo .cs-hero__bg-image{
+  background-image:url("/assets/images/case-studies/cs-xogo-hero.webp");
+  background-position:center center;
 }
