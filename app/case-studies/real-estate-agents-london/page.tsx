@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Real Estate Agents London Case Study | Local SEO Results",
   description:
-    "How 360 Web Solutions took Real Estate Agents London from average map rank 8.9 to 1.1 in 6 months: 448 page-1 queries, 1,649 enquiries, and 413 Google reviews at 4.8★.",
+    "How we took Real Estate Agents London from map rank 8.9 to 1.1 in 6 months: 448 page-1 queries, 1,649 enquiries, and 413 Google reviews at a 4.8★ average.",
   openGraph: {
     title: "Real Estate Agents London Case Study | Local SEO Results",
     description:
-      "How 360 Web Solutions took Real Estate Agents London from average map rank 8.9 to 1.1 in 6 months: 448 page-1 queries, 1,649 enquiries, and 413 Google reviews at 4.8★.",
+      "How we took Real Estate Agents London from map rank 8.9 to 1.1 in 6 months: 448 page-1 queries, 1,649 enquiries, and 413 Google reviews at a 4.8★ average.",
   },
 };
 

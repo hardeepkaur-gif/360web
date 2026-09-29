@@ -8,14 +8,12 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Koolmax Case Study | WordPress to Shopify Migration",
   description:
-    "How 360 Web Solutions migrated Bolton refrigeration supplier Koolmax from a broken WordPress site to Shopify, with 8.6K% organic traffic growth and a £1,750.08 average order value.",
+    "We moved Bolton refrigeration supplier Koolmax from a failing WordPress site to Shopify, driving 8.6K% organic growth and a £1,750.08 average order value.",
   openGraph: {
     title: "Koolmax Case Study | WordPress to Shopify Migration",
     description:
-      "How 360 Web Solutions migrated Bolton refrigeration supplier Koolmax from a broken WordPress site to Shopify, with 8.6K% organic traffic growth and a £1,750.08 average order value.",
+      "We moved Bolton refrigeration supplier Koolmax from a failing WordPress site to Shopify, driving 8.6K% organic growth and a £1,750.08 average order value.",
   },
-  // Draft: remove `robots` and add "koolmax" to app/sitemap.ts when going live.
-  robots: { index: false, follow: false },
 };
 
 export default function KoolmaxCaseStudyPage() {

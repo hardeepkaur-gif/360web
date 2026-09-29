@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Real Estate Agents London Case Study | Local SEO Rankings",
   description:
-    "How a ten-month local SEO programme took Real Estate Agents London from an average map position of 8.9 to 1.1, ahead of nine competing agencies.",
+    "How a ten-month local SEO programme moved Real Estate Agents London from an average map position of 8.9 to 1.1, ranking ahead of nine competitor agencies.",
   openGraph: {
     title: "Real Estate Agents London Case Study | Local SEO Rankings",
     description:
-      "How a ten-month local SEO programme took Real Estate Agents London from an average map position of 8.9 to 1.1, ahead of nine competing agencies.",
+      "How a ten-month local SEO programme moved Real Estate Agents London from an average map position of 8.9 to 1.1, ranking ahead of nine competitor agencies.",
   },
   // Draft: remove `robots` and add "real-estate-agents-london-local-seo" to app/sitemap.ts when going live.
   robots: { index: false, follow: false },

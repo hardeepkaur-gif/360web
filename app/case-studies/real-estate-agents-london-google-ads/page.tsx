@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Real Estate Agents London Case Study | Google Ads Results",
   description:
-    "How 360 Web Solutions used Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
+    "How 360 Web Solutions ran Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
   openGraph: {
     title: "Real Estate Agents London Case Study | Google Ads Results",
     description:
-      "How 360 Web Solutions used Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
+      "How 360 Web Solutions ran Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
   },
   // Draft: remove `robots` and re-add "real-estate-agents-london-google-ads" to app/sitemap.ts when going live.
   robots: { index: false, follow: false },

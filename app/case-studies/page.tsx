@@ -7,11 +7,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Case Studies | 360 Web Solutions",
   description:
-    "Explore all 360 Web Solutions case studies across SEO, content writing, web development, and AI consultancy.",
+    "Explore 360 Web Solutions case studies showing real, measurable results in local SEO, Google Ads, Shopify, web development and Amazon growth for UK firms.",
   openGraph: {
     title: "Case Studies | 360 Web Solutions",
     description:
-      "See how we delivered growth for RDX Sports, Virco Dental, Xogo Sports, Propday CRM, and eHealth Solutions.",
+      "See how we delivered growth for RDX Sports, Virco Dental, XOGO Sports, Koolmax, Brodex, Propday CRM and eHealth Solutions with measurable, proven results.",
   },
 };
 

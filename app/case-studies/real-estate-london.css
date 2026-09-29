@@ -1110,6 +1110,56 @@
   .cs-page--koolmax .cs-kpi .cs-serif-num{font-size:26px}
 }
 
+/* ---------- Brodex (same layout system) ---------- */
+.cs-page--brodex .cs-laptop__screen img{object-fit:contain;object-position:top center;background:#fff}
+.cs-page--brodex .cs-imgs--single{grid-template-columns:1fr}
+.cs-page--brodex .cs-imgs--single .cs-img-slot img{object-position:top center}
+@media (min-width:1101px){
+  .cs-page--brodex .cs-about__grid{align-items:stretch}
+  .cs-page--brodex .cs-snapshot{align-self:start;margin-bottom:0}
+  .cs-page--brodex .cs-imgs--single{flex:1;grid-template-rows:1fr}
+  .cs-page--brodex .cs-imgs--single .cs-img-slot{position:relative;height:auto;min-height:200px}
+  .cs-page--brodex .cs-imgs--single .cs-img-slot img{position:absolute;inset:0}
+}
+@media (max-width:1100px){
+  .cs-page--brodex .cs-imgs--single .cs-img-slot{height:auto;aspect-ratio:1280/800}
+}
+.cs-page--brodex .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--brodex .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--brodex .cs-why__media{min-height:0;background:#fff}
+.cs-page--brodex .cs-why__media img{min-height:0;height:auto;object-fit:contain}
+
+/* ---------- Koolmax ---------- */
+.cs-page--koolmax .cs-client-logo-chip img{height:28px;max-width:200px}
+.cs-page--koolmax .cs-gcard__brand img{height:27px;max-width:190px}
+.cs-page--koolmax .cs-imgs--single{grid-template-columns:1fr}
+.cs-page--koolmax .cs-imgs--single .cs-img-slot img{object-position:top center}
+.cs-page--koolmax .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--koolmax .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--koolmax .cs-why__media{min-height:0;background:#fff}
+.cs-page--koolmax .cs-why__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--koolmax .cs-cta-laptop__screen img{object-fit:contain}
+@media (min-width:1101px){
+  .cs-page--koolmax .cs-about__grid{align-items:stretch}
+  .cs-page--koolmax .cs-snapshot{align-self:start;margin-bottom:0}
+  .cs-page--koolmax .cs-imgs--single{flex:1;grid-template-rows:1fr}
+  .cs-page--koolmax .cs-imgs--single .cs-img-slot{position:relative;height:auto;min-height:200px}
+  .cs-page--koolmax .cs-imgs--single .cs-img-slot img{position:absolute;inset:0}
+}
+@media (max-width:1100px){
+  .cs-page--koolmax .cs-imgs--single .cs-img-slot{height:auto;aspect-ratio:1018/459}
+}
+@media (min-width:1101px){
+  .cs-page--koolmax .cs-results__layout{align-items:stretch}
+  .cs-page--koolmax .cs-results__media{display:flex}
+  .cs-page--koolmax .cs-results__media .cs-shot{flex:1}
+  .cs-page--koolmax .cs-results__media img{flex:1 1 0;min-height:0;height:0;object-fit:cover;object-position:top center}
+}
+@media (max-width:720px){
+  .cs-page--koolmax .cs-client-logo-chip img{height:23px;max-width:160px}
+  .cs-page--koolmax .cs-gcard__brand img{height:23px;max-width:160px}
+}
+
 /* ---------- XOGO Sports (same layout system) ---------- */
 .cs-page--xogo .cs-imgs--single{grid-template-columns:1fr}
 .cs-page--xogo .cs-imgs--single .cs-img-slot{height:auto;aspect-ratio:1020/680}
@@ -1119,12 +1169,18 @@
 }
 .cs-page--xogo .cs-about__body h2{margin-bottom:0}
 .cs-page--xogo section.cs-results,
-.cs-page--virco section.cs-results{background:#ffffff}
+.cs-page--virco section.cs-results,
+.cs-page--brodex section.cs-results,
+.cs-page--koolmax section.cs-results{background:#ffffff}
 .cs-page--xogo section#cta-final,
-.cs-page--virco section#cta-final{background:#FFFFFF;padding-bottom:70px}
+.cs-page--virco section#cta-final,
+.cs-page--brodex section#cta-final,
+.cs-page--koolmax section#cta-final{background:#FFFFFF;padding-bottom:70px}
 @media (max-width:720px){
   .cs-page--xogo section#cta-final,
-  .cs-page--virco section#cta-final{padding-bottom:48px}
+  .cs-page--virco section#cta-final,
+  .cs-page--brodex section#cta-final,
+  .cs-page--koolmax section#cta-final{padding-bottom:48px}
 }
 .cs-page--xogo .cs-challenge__media{min-height:0;background:#fff}
 .cs-page--xogo .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}

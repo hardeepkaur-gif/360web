@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
   description:
-    "How 360 Web Solutions transformed RDX Sports from fragmented Amazon listings into a conversion-engineered marketplace operation across UK and EU.",
+    "How 360 Web Solutions transformed RDX Sports from fragmented Amazon listings into a conversion-engineered marketplace operation across both the UK and EU.",
   openGraph: {
     title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
     description:
-      "From storefront to scalable marketplace engine: marketplace SEO, on-page SEO, and CRO for a 25-year combat sports brand on Amazon UK/EU.",
+      "From storefront to scalable marketplace engine: marketplace SEO, on-page SEO and CRO for a 25-year combat sports brand selling on Amazon in the UK and EU.",
   },
 };
 

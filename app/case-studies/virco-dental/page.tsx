@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
   description:
-    "How 360 Web Solutions built a two-channel e-commerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback, and 319 products live on Shopify.",
+    "How we built a two-channel ecommerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback and 319 products now on Shopify.",
   openGraph: {
     title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
     description:
-      "How 360 Web Solutions built a two-channel e-commerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback, and 319 products live on Shopify.",
+      "How we built a two-channel ecommerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback and 319 products now on Shopify.",
   },
 };
 

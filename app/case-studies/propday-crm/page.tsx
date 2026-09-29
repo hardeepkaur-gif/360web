@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
   description:
-    "See how 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting.",
+    "How 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting for UK letting agencies.",
   openGraph: {
     title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
     description:
-      "See how 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting.",
+      "How 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting for UK letting agencies.",
   },
 };
 

@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "XOGO Sports Case Study | eBay & Amazon Marketplace Growth",
   description:
-    "How 360 Web Solutions took XOGO Sports off the price floor: 13,000+ items sold at 100% positive feedback, 4,140 buyer ratings, and an Amazon UK Brand Store.",
+    "How 360 Web Solutions took XOGO Sports off the price floor: 13,000+ items sold with 100% positive feedback, 4,140 buyer ratings and an Amazon Brand Store.",
   openGraph: {
     title: "XOGO Sports Case Study | eBay & Amazon Marketplace Growth",
     description:
-      "How 360 Web Solutions took XOGO Sports off the price floor: 13,000+ items sold at 100% positive feedback, 4,140 buyer ratings, and an Amazon UK Brand Store.",
+      "How 360 Web Solutions took XOGO Sports off the price floor: 13,000+ items sold with 100% positive feedback, 4,140 buyer ratings and an Amazon Brand Store.",
   },
 };
 

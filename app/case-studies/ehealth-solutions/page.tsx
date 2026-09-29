@@ -8,11 +8,11 @@ import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 export const metadata: Metadata = {
   title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
   description:
-    "How 360 Web Solutions delivered secure healthcare software including ePrivate Prescription, EMRpro and LabLink for UK providers.",
+    "How 360 Web Solutions delivered secure clinical software, including ePrivate Prescription, EMRpro and LabLink, for private healthcare providers in the UK.",
   openGraph: {
     title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
     description:
-      "How 360 Web Solutions delivered secure healthcare software including ePrivate Prescription, EMRpro and LabLink for UK providers.",
+      "How 360 Web Solutions delivered secure clinical software, including ePrivate Prescription, EMRpro and LabLink, for private healthcare providers in the UK.",
   },
 };
 
