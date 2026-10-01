@@ -1129,6 +1129,33 @@
 .cs-page--brodex .cs-why__media{min-height:0;background:#fff}
 .cs-page--brodex .cs-why__media img{min-height:0;height:auto;object-fit:contain}
 
+/* ---------- Real Estate Agents London: Google Ads ---------- */
+.cs-page--re-ads .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--re-ads .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--re-ads .cs-why__media{min-height:0;background:#fff}
+.cs-page--re-ads .cs-why__media img{min-height:0;height:auto;object-fit:contain}
+.cs-page--re-seo .cs-challenge__media{min-height:0;background:#fff}
+.cs-page--re-seo .cs-challenge__media img{min-height:0;height:auto;object-fit:cover;object-position:top left}
+.cs-page--re-seo .cs-why__media{min-height:0;background:#fff}
+.cs-page--re-seo .cs-why__media img{min-height:0;height:auto;object-fit:cover;object-position:top left}
+@media (min-width:1101px){
+  .cs-page--re-seo .cs-why__grid{align-items:stretch}
+  .cs-page--re-seo .cs-why__media img{position:absolute;inset:0;width:100%;height:100%}
+  .cs-page--re-seo .cs-challenge__grid{align-items:stretch}
+  .cs-page--re-seo .cs-challenge__media img{position:absolute;inset:0;width:100%;height:100%}
+  .cs-page--re-ads .cs-about__grid,
+  .cs-page--re-seo .cs-about__grid{align-items:stretch}
+  .cs-page--re-ads .cs-snapshot,
+  .cs-page--re-seo .cs-snapshot{align-self:start;margin-bottom:0}
+  .cs-page--re-ads .cs-about .cs-imgs,
+  .cs-page--re-seo .cs-about .cs-imgs{flex:1;grid-template-rows:1fr}
+  .cs-page--re-ads .cs-about .cs-img-slot,
+  .cs-page--re-seo .cs-about .cs-img-slot{position:relative;height:auto;min-height:200px}
+  .cs-page--re-ads .cs-about .cs-img-slot img,
+  .cs-page--re-seo .cs-about .cs-img-slot img{position:absolute;inset:0}
+  .cs-page--re-seo .cs-approach__grid .cs-acard{grid-column:span 2}
+}
+
 /* ---------- Koolmax ---------- */
 .cs-page--koolmax .cs-client-logo-chip img{height:28px;max-width:200px}
 .cs-page--koolmax .cs-gcard__brand img{height:27px;max-width:190px}
@@ -1154,6 +1181,10 @@
   .cs-page--koolmax .cs-results__media{display:flex}
   .cs-page--koolmax .cs-results__media .cs-shot{flex:1}
   .cs-page--koolmax .cs-results__media img{flex:1 1 0;min-height:0;height:0;object-fit:cover;object-position:top center}
+  .cs-page--re-seo .cs-results__layout{align-items:stretch}
+  .cs-page--re-seo .cs-results__media{display:flex}
+  .cs-page--re-seo .cs-results__media .cs-shot{flex:1}
+  .cs-page--re-seo .cs-results__media img{flex:1 1 0;min-height:0;height:0;object-fit:cover;object-position:left center}
 }
 @media (max-width:720px){
   .cs-page--koolmax .cs-client-logo-chip img{height:23px;max-width:160px}
@@ -1171,16 +1202,22 @@
 .cs-page--xogo section.cs-results,
 .cs-page--virco section.cs-results,
 .cs-page--brodex section.cs-results,
-.cs-page--koolmax section.cs-results{background:#ffffff}
+.cs-page--koolmax section.cs-results,
+.cs-page--re-ads section.cs-results,
+.cs-page--re-seo section.cs-results{background:#ffffff}
 .cs-page--xogo section#cta-final,
 .cs-page--virco section#cta-final,
 .cs-page--brodex section#cta-final,
-.cs-page--koolmax section#cta-final{background:#FFFFFF;padding-bottom:70px}
+.cs-page--koolmax section#cta-final,
+.cs-page--re-ads section#cta-final,
+.cs-page--re-seo section#cta-final{background:#FFFFFF;padding-bottom:70px}
 @media (max-width:720px){
   .cs-page--xogo section#cta-final,
   .cs-page--virco section#cta-final,
   .cs-page--brodex section#cta-final,
-  .cs-page--koolmax section#cta-final{padding-bottom:48px}
+  .cs-page--koolmax section#cta-final,
+  .cs-page--re-ads section#cta-final,
+  .cs-page--re-seo section#cta-final{padding-bottom:48px}
 }
 .cs-page--xogo .cs-challenge__media{min-height:0;background:#fff}
 .cs-page--xogo .cs-challenge__media img{min-height:0;height:auto;object-fit:contain}

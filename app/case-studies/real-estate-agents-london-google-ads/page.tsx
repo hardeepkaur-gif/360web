@@ -14,8 +14,6 @@ export const metadata: Metadata = {
     description:
       "How 360 Web Solutions ran Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
   },
-  // Draft: remove `robots` and re-add "real-estate-agents-london-google-ads" to app/sitemap.ts when going live.
-  robots: { index: false, follow: false },
 };
 
 export default function RealEstateAgentsLondonGoogleAdsCaseStudyPage() {

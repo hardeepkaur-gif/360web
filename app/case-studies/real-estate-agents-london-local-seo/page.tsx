@@ -14,8 +14,6 @@ export const metadata: Metadata = {
     description:
       "How a ten-month local SEO programme moved Real Estate Agents London from an average map position of 8.9 to 1.1, ranking ahead of nine competitor agencies.",
   },
-  // Draft: remove `robots` and add "real-estate-agents-london-local-seo" to app/sitemap.ts when going live.
-  robots: { index: false, follow: false },
 };
 
 export default function RealEstateAgentsLondonLocalSeoCaseStudyPage() {
