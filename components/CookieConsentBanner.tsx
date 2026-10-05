@@ -13,8 +13,22 @@ export default function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let idleId = 0;
+    const showWhenIdle = () => {
+      const show = () => setVisible(true);
+      if ("requestIdleCallback" in window) {
+        idleId = window.requestIdleCallback(show, { timeout: 2000 });
+      } else {
+        idleId = window.setTimeout(show, 300);
+      }
+    };
+
     if (!getCookieConsent()) {
-      setVisible(true);
+      if (document.readyState === "complete") {
+        showWhenIdle();
+      } else {
+        window.addEventListener("load", showWhenIdle, { once: true });
+      }
     }
 
     const openSettings = () => setVisible(true);
@@ -30,6 +44,9 @@ export default function CookieConsentBanner() {
     document.addEventListener("click", onDocumentClick);
 
     return () => {
+      window.removeEventListener("load", showWhenIdle);
+      if ("cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
+      window.clearTimeout(idleId);
       window.removeEventListener("360:cookie-settings", openSettings);
       document.removeEventListener("click", onDocumentClick);
     };
