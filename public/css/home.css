@@ -15940,3 +15940,30 @@ section.about-system.section {
   }
 }
 
+
+/* Homepage case studies: second row as an auto-advancing slider */
+#work .work__grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 14px 4px 34px;
+  margin: -14px -4px -34px;
+}
+#work .work__grid::-webkit-scrollbar { display: none; }
+#work .work__grid > .work-card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+@media (max-width: 1100px) {
+  #work .work__grid > .work-card { flex-basis: calc((100% - 24px) / 2); }
+}
+@media (max-width: 720px) {
+  #work .work__grid { gap: 16px; }
+  #work .work__grid > .work-card { flex-basis: 100%; }
+}

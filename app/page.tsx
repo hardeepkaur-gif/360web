@@ -53,6 +53,7 @@ export default function Home() {
       <Script src="/js/main.js?v=20260923a" strategy="lazyOnload" />
       <Script src="/js/hero-lead-form.js?v=20260717" strategy="afterInteractive" />
       <Script src="/js/contact-booking-timezone.js?v=20250710" strategy="lazyOnload" />
+      <Script src="/js/work-slider.js?v=20261005a" strategy="lazyOnload" />
     </>
   );
 }
