@@ -16,7 +16,7 @@ export default function CookieConsentBanner() {
     let idleId = 0;
     const showWhenIdle = () => {
       const show = () => setVisible(true);
-      if ("requestIdleCallback" in window) {
+      if (typeof window.requestIdleCallback === "function") {
         idleId = window.requestIdleCallback(show, { timeout: 2000 });
       } else {
         idleId = window.setTimeout(show, 300);
@@ -45,7 +45,7 @@ export default function CookieConsentBanner() {
 
     return () => {
       window.removeEventListener("load", showWhenIdle);
-      if ("cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
+      if (typeof window.cancelIdleCallback === "function") window.cancelIdleCallback(idleId);
       window.clearTimeout(idleId);
       window.removeEventListener("360:cookie-settings", openSettings);
       document.removeEventListener("click", onDocumentClick);
