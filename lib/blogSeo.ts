@@ -1,8 +1,15 @@
 import type { Metadata } from "next";
+import { cache } from "react";
 
 import { SITE_URL } from "@/lib/site";
 import { DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/socialMeta";
-import { proxyWpImage, stripHtml, type WPPost } from "@/lib/wordpress";
+import {
+  decodeWpHtml,
+  fetchWithRetry,
+  proxyWpImage,
+  stripHtml,
+  type WPPost,
+} from "@/lib/wordpress";
 
 export type BlogSeoMeta = {
   title?: string;
@@ -27,24 +34,29 @@ function readTitleTag(html: string) {
   return html.match(/<title[^>]*>([^<]*)<\/title>/i)?.[1]?.trim();
 }
 
+const decodeText = (value: string | undefined) =>
+  value === undefined ? undefined : decodeWpHtml(value);
+
 export function parseSeoFromHtml(html: string): BlogSeoMeta {
   return {
-    title: readTitleTag(html),
-    description: readMetaTag(html, "description", "name"),
-    ogTitle: readMetaTag(html, "og:title", "property"),
-    ogDescription: readMetaTag(html, "og:description", "property"),
+    title: decodeText(readTitleTag(html)),
+    description: decodeText(readMetaTag(html, "description", "name")),
+    ogTitle: decodeText(readMetaTag(html, "og:title", "property")),
+    ogDescription: decodeText(readMetaTag(html, "og:description", "property")),
     ogImage: readMetaTag(html, "og:image", "property"),
     robots: readMetaTag(html, "robots", "name"),
     canonical: readMetaTag(html, "canonical", "property"),
   };
 }
 
-/** Pull Rank Math / Yoast meta from the WordPress permalink HTML. */
-export async function fetchRankMathSeo(
-  wpPermalink: string,
-): Promise<BlogSeoMeta | null> {
-  try {
-    const res = await fetch(wpPermalink, {
+/**
+ * Pull Rank Math / Yoast meta from the WordPress permalink HTML. Transient
+ * failures throw (so ISR keeps the last good page); a permanent 4xx falls back
+ * to excerpt-based meta.
+ */
+export const fetchRankMathSeo = cache(
+  async (wpPermalink: string): Promise<BlogSeoMeta | null> => {
+    const res = await fetchWithRetry(wpPermalink, {
       next: { revalidate: 300 },
       headers: { Accept: "text/html" },
     });
@@ -52,10 +64,8 @@ export async function fetchRankMathSeo(
     if (!res.ok) return null;
 
     return parseSeoFromHtml(await res.text());
-  } catch {
-    return null;
-  }
-}
+  },
+);
 
 export function buildFallbackSeo(post: WPPost, sitePath: string): BlogSeoMeta {
   const title = stripHtml(post.title.rendered);

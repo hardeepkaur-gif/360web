@@ -103,18 +103,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...legalPages,
   ]);
 
-  try {
-    const posts = await fetchAllPostsForSitemap();
+  // A WordPress failure throws: ISR keeps the last good sitemap instead of
+  // publishing one with every blog URL missing.
+  const posts = await fetchAllPostsForSitemap();
 
-    const blogPostEntries: MetadataRoute.Sitemap = posts.map((post) => ({
-      url: `${SITE_URL}/blogs/${post.slug}`,
-      lastModified: new Date(post.modified),
-      changeFrequency: "weekly",
-      priority: 0.6,
-    }));
+  const blogPostEntries: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/blogs/${post.slug}`,
+    lastModified: new Date(post.modified),
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
 
-    return [...staticSitemap, ...blogPostEntries];
-  } catch {
-    return staticSitemap;
-  }
+  return [...staticSitemap, ...blogPostEntries];
 }

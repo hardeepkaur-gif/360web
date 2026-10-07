@@ -8,7 +8,7 @@ import { JsonLdScript } from "@/components/JsonLdScript";
 import { LegacySiteShell } from "@/components/LegacySiteShell";
 import { createBlogListingSchemaGraph } from "@/lib/blogSchema";
 import { socialMeta } from "@/lib/socialMeta";
-import { fetchPosts } from "@/lib/wordpress";
+import { fetchPosts, WpApiError } from "@/lib/wordpress";
 
 export const revalidate = 300;
 
@@ -40,8 +40,10 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
 
   try {
     postsResult = await fetchPosts(currentPage, undefined, { search, categorySlug: category });
-  } catch {
-    notFound();
+  } catch (err) {
+    // WP answers 400 for an out-of-range ?page=; anything else must not become a 404.
+    if (err instanceof WpApiError && err.status === 400) notFound();
+    throw err;
   }
 
   const { posts, totalPages } = postsResult;

@@ -1,3 +1,5 @@
+import { cache } from "react";
+
 import { SITE_URL } from "@/lib/site";
 
 const DEFAULT_WP_API =
@@ -50,6 +52,59 @@ export function proxyWpImage(
 export const BLOG_POSTS_PER_PAGE = 9;
 
 export const BLOG_REVALIDATE_SECONDS = 300;
+
+const WP_TIMEOUT_MS = 9000;
+const WP_MAX_RETRIES = 2;
+
+export class WpApiError extends Error {
+  constructor(
+    message: string,
+    readonly status?: number,
+  ) {
+    super(message);
+    this.name = "WpApiError";
+  }
+}
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+/**
+ * Fetch from the WordPress host with a per-attempt timeout, retrying network
+ * errors, timeouts, 429 and 5xx. Other 4xx responses are returned to the caller.
+ * Throws `WpApiError` once retries are exhausted — callers must not turn that
+ * into "not found", or ISR will cache a 404 for a live post.
+ */
+export async function fetchWithRetry(
+  url: string,
+  init: RequestInit = {},
+): Promise<Response> {
+  let lastError: unknown;
+
+  for (let attempt = 0; attempt <= WP_MAX_RETRIES; attempt += 1) {
+    if (attempt > 0) await sleep(400 * 2 ** (attempt - 1));
+
+    try {
+      const res = await fetch(url, {
+        ...init,
+        signal: AbortSignal.timeout(WP_TIMEOUT_MS),
+      });
+      if (res.status !== 429 && res.status < 500) return res;
+      lastError = new WpApiError(
+        `WordPress responded ${res.status} for ${url}`,
+        res.status,
+      );
+    } catch (err) {
+      lastError = err;
+    }
+  }
+
+  if (lastError instanceof WpApiError) throw lastError;
+  throw new WpApiError(
+    `WordPress request failed for ${url}: ${
+      lastError instanceof Error ? lastError.message : String(lastError)
+    }`,
+  );
+}
 
 export type WPEmbeddedMedia = {
   source_url: string;
@@ -120,12 +175,27 @@ const entityMap: Record<string, string> = {
   "&ldquo;": "\u201C",
   "&mdash;": "\u2014",
   "&ndash;": "\u2013",
+  "&hellip;": "\u2026",
+  "&apos;": "'",
 };
+
+function decodeEntity(match: string, code: string): string {
+  const named = entityMap[match];
+  if (named) return named;
+  if (code.startsWith("#")) {
+    const isHex = code[1] === "x" || code[1] === "X";
+    const point = Number.parseInt(code.slice(isHex ? 2 : 1), isHex ? 16 : 10);
+    if (Number.isInteger(point) && point > 0 && point <= 0x10ffff) {
+      return String.fromCodePoint(point);
+    }
+  }
+  return match;
+}
 
 export function decodeWpHtml(value: string): string {
   return value
     .replace(/<[^>]*>/g, "")
-    .replace(/&(#x?[0-9a-fA-F]+|\w+);/g, (match) => entityMap[match] ?? match)
+    .replace(/&(#x?[0-9a-fA-F]+|\w+);/g, decodeEntity)
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -193,9 +263,10 @@ export function getCategoryTags(post: WPPost): string[] {
   return [label];
 }
 
+/** Cosmetic only — a failure shows "0 Comments" rather than failing the page. */
 async function fetchCommentCount(postId: number): Promise<number> {
   try {
-    const res = await fetch(
+    const res = await fetchWithRetry(
       `${WORDPRESS_API_URL}/wp/v2/comments?post=${postId}&per_page=1&status=approve`,
       { next: { revalidate: BLOG_REVALIDATE_SECONDS } },
     );
@@ -413,16 +484,27 @@ async function wpFetch<T>(
   path: string,
   init?: RequestInit,
 ): Promise<{ data: T; headers: Headers }> {
-  const res = await fetch(`${WORDPRESS_API_URL}${path}`, {
+  const res = await fetchWithRetry(`${WORDPRESS_API_URL}${path}`, {
     ...init,
     next: { revalidate: BLOG_REVALIDATE_SECONDS },
   });
 
   if (!res.ok) {
-    throw new Error(`WordPress API error ${res.status} for ${path}`);
+    throw new WpApiError(`WordPress API error ${res.status} for ${path}`, res.status);
   }
 
-  return { data: (await res.json()) as T, headers: res.headers };
+  try {
+    return { data: (await res.json()) as T, headers: res.headers };
+  } catch {
+    throw new WpApiError(`WordPress API returned invalid JSON for ${path}`, res.status);
+  }
+}
+
+function assertArray<T>(data: T[], path: string): T[] {
+  if (!Array.isArray(data)) {
+    throw new WpApiError(`WordPress API returned a non-array body for ${path}`);
+  }
+  return data;
 }
 
 export async function fetchPosts(
@@ -459,18 +541,19 @@ export async function fetchPosts(
   };
 }
 
-export async function fetchPostBySlug(slug: string): Promise<WPPost | null> {
-  try {
-    const { data } = await wpFetch<WPPost[]>(
-      `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1&status=publish`,
-    );
+/**
+ * `null` only when WordPress successfully answers with no post; API failures throw.
+ * Wrapped in `cache()` because fetches carrying an AbortSignal are not memoised,
+ * and generateMetadata + the page both need the post.
+ */
+export const fetchPostBySlug = cache(
+  async (slug: string): Promise<WPPost | null> => {
+    const path = `/wp/v2/posts?slug=${encodeURIComponent(slug)}&_embed=1&status=publish`;
+    const { data } = await wpFetch<WPPost[]>(path);
 
-    return data[0] ?? null;
-  } catch (err) {
-    console.error(`[wordpress] fetchPostBySlug failed for "${slug}":`, err);
-    return null;
-  }
-}
+    return assertArray(data, path)[0] ?? null;
+  },
+);
 
 export async function fetchPostCommentCount(postId: number): Promise<number> {
   return fetchCommentCount(postId);
@@ -509,11 +592,10 @@ export async function fetchAllPostSlugs(): Promise<string[]> {
   let totalPages = 1;
 
   while (page <= totalPages) {
-    const { data, headers } = await wpFetch<WPPost[]>(
-      `/wp/v2/posts?page=${page}&per_page=100&_fields=slug&status=publish`,
-    );
+    const path = `/wp/v2/posts?page=${page}&per_page=100&_fields=slug&status=publish`;
+    const { data, headers } = await wpFetch<WPPost[]>(path);
 
-    slugs.push(...data.map((post) => post.slug));
+    slugs.push(...assertArray(data, path).map((post) => post.slug));
     totalPages = Number.parseInt(headers.get("X-WP-TotalPages") ?? "1", 10);
     page += 1;
   }
@@ -527,13 +609,10 @@ export async function fetchAllPostsForSitemap(): Promise<WPPostSitemapEntry[]> {
   let totalPages = 1;
 
   while (page <= totalPages) {
-    const { data, headers } = await wpFetch<
-      Array<{ slug: string; modified: string }>
-    >(
-      `/wp/v2/posts?page=${page}&per_page=100&_fields=slug,modified&status=publish`,
-    );
+    const path = `/wp/v2/posts?page=${page}&per_page=100&_fields=slug,modified&status=publish`;
+    const { data, headers } = await wpFetch<WPPostSitemapEntry[]>(path);
 
-    entries.push(...data);
+    entries.push(...assertArray(data, path));
     totalPages = Number.parseInt(headers.get("X-WP-TotalPages") ?? "1", 10);
     page += 1;
   }

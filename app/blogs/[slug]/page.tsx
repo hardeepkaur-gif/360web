@@ -38,31 +38,24 @@ export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
+  // WordPress errors propagate so ISR keeps serving the last good page.
+  const post = await fetchPostBySlug(slug);
 
-  try {
-    const post = await fetchPostBySlug(slug);
-
-    if (!post) {
-      return {
-        title: "Blog post not found | 360 Web Solutions",
-        robots: { index: false, follow: false },
-      };
-    }
-
-    const seo = await resolvePostSeo(post, `/blogs/${slug}`);
-    return {
-      ...seoToMetadata(seo),
-      robots: {
-        index: true,
-        follow: true,
-      },
-    };
-  } catch {
+  if (!post) {
     return {
       title: "Blog post not found | 360 Web Solutions",
       robots: { index: false, follow: false },
     };
   }
+
+  const seo = await resolvePostSeo(post, `/blogs/${slug}`);
+  return {
+    ...seoToMetadata(seo),
+    robots: {
+      index: true,
+      follow: true,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
@@ -75,9 +68,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const [seo, commentCount, recentPosts, categories] = await Promise.all([
     resolvePostSeo(post, `/blogs/${slug}`),
-    fetchPostCommentCount(post.id).catch(() => 0),
-    fetchRecentPosts(4, slug).catch(() => []),
-    fetchCategories().catch(() => []),
+    fetchPostCommentCount(post.id),
+    fetchRecentPosts(4, slug),
+    fetchCategories(),
   ]);
 
   const title = stripHtml(post.title.rendered);
