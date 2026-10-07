@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { caseStudySocialImage, socialMeta } from "@/lib/socialMeta";
 
 import "../real-estate-london.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
   title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
   description:
     "How we built a two-channel ecommerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback and 319 products now on Shopify.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/virco-dental",
     title: "Virco Dental Case Study | eBay & Shopify E-Commerce Growth",
     description:
       "How we built a two-channel ecommerce presence for British Dental Health (Virco): 98k+ items sold, 99.8% positive feedback and 319 products now on Shopify.",
-  },
+    image: caseStudySocialImage("og-virco.webp", "Virco Dental"),
+  }),
 };
 
 export default function VircoDentalCaseStudyPage() {

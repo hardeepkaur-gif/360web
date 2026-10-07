@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "About Us | 360 Web Solutions and digital marketing agency",
   description:
     "Meet 360 Web Solutions, a UK AI-powered digital agency delivering SEO, PPC, web development and growth strategies from a single team.",
-  openGraph: {
+  ...socialMeta({
+    path: "/about-us",
     title: "About Us | 360 Web Solutions and digital marketing agency",
     description:
       "Meet 360 Web Solutions, a UK AI-powered digital agency delivering SEO, PPC, web development and growth strategies from a single team.",
-  },
+  }),
 };
 
 export default function AboutUsPage() {

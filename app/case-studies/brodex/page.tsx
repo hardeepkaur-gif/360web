@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { caseStudySocialImage, socialMeta } from "@/lib/socialMeta";
 
 import "../real-estate-london.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
   title: "Brodex Case Study | Brand, SEO & WooCommerce Build",
   description:
     "How we built the digital estate for UK manufacturer Brodex: one brand system, a 72-product WooCommerce store, 33 categories and 8.7× faster page delivery.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/brodex",
     title: "Brodex Case Study | Brand, SEO & WooCommerce Build",
     description:
       "How we built the digital estate for UK manufacturer Brodex: one brand system, a 72-product WooCommerce store, 33 categories and 8.7× faster page delivery.",
-  },
+    image: caseStudySocialImage("og-brodex.webp", "Brodex"),
+  }),
 };
 
 export default function BrodexCaseStudyPage() {

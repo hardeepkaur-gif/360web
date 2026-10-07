@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Expert Email Marketing Services UK | Drive Real ROI",
   description:
     "Expert email marketing services for UK businesses, from strategy and campaign to design and automation, fully managed by our team. Book a free consultation.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/email-marketing-services",
     title: "Expert Email Marketing Services UK | Drive Real ROI",
     description:
       "Expert email marketing services for UK businesses, from strategy and campaign to design and automation, fully managed by our team. Book a free consultation.",
-  },
+  }),
 };
 
 const EMAIL_MARKETING_ROUTE_RESPONSIVE_CSS = `

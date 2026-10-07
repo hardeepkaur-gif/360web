@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { caseStudySocialImage, socialMeta } from "@/lib/socialMeta";
 
 import "../real-estate-london.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
   title: "Real Estate Agents London Case Study | Google Ads Results",
   description:
     "How 360 Web Solutions ran Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/real-estate-agents-london-google-ads",
     title: "Real Estate Agents London Case Study | Google Ads Results",
     description:
       "How 360 Web Solutions ran Google Ads across eight dedicated property websites to generate 470 quality enquiries for Real Estate Agents London in 8 months.",
-  },
+    image: caseStudySocialImage("og-real-estate-london.webp", "Real Estate Agents London"),
+  }),
 };
 
 export default function RealEstateAgentsLondonGoogleAdsCaseStudyPage() {

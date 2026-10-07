@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Privacy Policy | 360 Web Solutions",
   description:
     "How 360 Web Solutions Ltd collects, uses, and protects personal data — UK GDPR aligned, plain English.",
-  openGraph: {
+  ...socialMeta({
+    path: "/privacy-policy",
     title: "Privacy Policy | 360 Web Solutions",
     description:
       "Privacy Policy for 360 Web Solutions: data collection, legal basis, retention, cookies, your rights, and how to contact us.",
-  },
+  }),
 };
 
 export default function PrivacyPolicyPage() {

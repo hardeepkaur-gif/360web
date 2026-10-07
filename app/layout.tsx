@@ -4,6 +4,7 @@ import Script from "next/script";
 
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/socialMeta";
 
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import { GeoLayerScript } from "@/components/GeoLayerScript";
@@ -47,6 +48,16 @@ export const metadata: Metadata = {
     types: {
       "text/plain": "/llms.txt",
     },
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_GB",
+    images: [DEFAULT_SOCIAL_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [DEFAULT_SOCIAL_IMAGE.url],
   },
   verification: {
     google: "qFAlOPARTVXuj6f7WAXVTmHYp2nJQf51ssGKmjNzUHQ",

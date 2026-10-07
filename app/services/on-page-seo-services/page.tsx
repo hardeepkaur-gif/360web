@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "On-Page SEO Services UK | 360 Web Solutions",
   description:
     "Struggling to rank in UK search results? 360 Web Solutions delivers on-page SEO services that improves rankings and traffic with full in-house execution",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/on-page-seo-services",
     title: "On-Page SEO Services UK | 360 Web Solutions",
     description:
       "Struggling to rank in UK search results? 360 Web Solutions delivers on-page SEO services that improves rankings and traffic with full in-house execution",
-  },
+  }),
 };
 
 /**

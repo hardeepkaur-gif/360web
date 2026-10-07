@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { HomeHero } from "@/components/HomeHero";
 import { HomeSchemaScript } from "@/components/HomeSchemaScript";
@@ -9,11 +10,12 @@ export const metadata: Metadata = {
   title: "Award-Winning Digital Marketing Agency London | SEO and PPC",
   description:
     "UK digital marketing agency for SEO, PPC, web design, and content — in-house strategy, execution, and measurable growth across every channel.",
-  openGraph: {
+  ...socialMeta({
+    path: "/",
     title: "Award-Winning Digital Marketing Agency London | SEO and PPC",
     description:
       "UK digital marketing agency for SEO, PPC, web design, and content — in-house strategy, execution, and measurable growth across every channel.",
-  },
+  }),
 };
 
 const LEGACY_SERVICES_HASH_REDIRECT = `

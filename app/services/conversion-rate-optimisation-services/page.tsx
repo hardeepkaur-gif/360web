@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "CRO Agency UK | Conversion Rate Optimisation Services",
   description:
     "Fix conversion barriers fast with our Conversion Rate Optimisation services. Convert more visitors without more ad spend. Book your one-hour audit.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/conversion-rate-optimisation-services",
     title: "CRO Agency UK | Conversion Rate Optimisation Services",
     description:
       "Fix conversion barriers fast with our Conversion Rate Optimisation services. Convert more visitors without more ad spend. Book your one-hour audit.",
-  },
+  }),
 };
 
 const CRO_ROUTE_RESPONSIVE_CSS = `

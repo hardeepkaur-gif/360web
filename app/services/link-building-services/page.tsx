@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Link Building Services UK That Earns High Authority Backlinks",
   description:
     "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/link-building-services",
     title: "Link Building Services UK That Earns High Authority Backlinks",
     description:
       "Manual link building services for UK businesses. Earn editorial backlinks through white-hat outreach, digital PR and targeted placements that Google rewards.",
-  },
+  }),
 };
 
 const LINK_BUILDING_ROUTE_RESPONSIVE_CSS = `

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import "../case-study-d1.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,12 @@ export const metadata: Metadata = {
   title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
   description:
     "How 360 Web Solutions delivered secure clinical software, including ePrivate Prescription, EMRpro and LabLink, for private healthcare providers in the UK.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/ehealth-solutions",
     title: "eHealth Solutions | 360 Web Solutions Healthcare Digital",
     description:
       "How 360 Web Solutions delivered secure clinical software, including ePrivate Prescription, EMRpro and LabLink, for private healthcare providers in the UK.",
-  },
+  }),
 };
 
 export default function EhealthSolutionsCaseStudyPage() {

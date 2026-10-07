@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -9,11 +10,12 @@ export const metadata: Metadata = {
     "WordPress Development Services UK | Custom WordPress Websites — 360 Web Solutions",
   description:
     "WordPress development services for UK businesses: custom builds, technical SEO-ready architecture, migrations, speed optimisation, and ongoing support.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/wordpress-development-services",
     title: "WordPress Development Services | 360 Web Solutions",
     description:
       "Custom WordPress websites built for speed, visibility, and conversions.",
-  },
+  }),
 };
 
 export default function WordPressDevelopmentServicesPage() {

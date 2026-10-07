@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Healthcare Digital Marketing Agency - Medical Marketing London",
   description:
     "Grow your healthcare business with a digital marketing agency that combines NHS experience, SEO, PPC, content, and web design to generate qualified leads.",
-  openGraph: {
+  ...socialMeta({
+    path: "/healthcare-digital-marketing-agency",
     title: "Healthcare Digital Marketing Agency - Medical Marketing London",
     description:
       "Grow your healthcare business with a digital marketing agency that combines NHS experience, SEO, PPC, content, and web design to generate qualified leads.",
-  },
+  }),
 };
 
 const HEALTHCARE_ROUTE_RESPONSIVE_CSS = `

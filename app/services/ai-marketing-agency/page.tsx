@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Human-Led AI Marketing Agency | 360 Web Solutions UK",
   description:
     "Our AI-powered marketing agency is a mix of human strategy and AI automation. Designed for UK businesses, to help them get better results across Google.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/ai-marketing-agency",
     title: "Human-Led AI Marketing Agency | 360 Web Solutions UK",
     description:
       "Our AI-powered marketing agency is a mix of human strategy and AI automation. Designed for UK businesses, to help them get better results across Google.",
-  },
+  }),
 };
 
 const AI_MARKETING_SECTION_CSS = `

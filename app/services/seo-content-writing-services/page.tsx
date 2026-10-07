@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "SEO Content Writing Services for Google & AI Search",
   description:
     "Rank faster with SEO content built on keyword research. Written by an in-house UK team so you rank on Google and get cited by tools like ChatGPT and Perplexity.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/seo-content-writing-services",
     title: "SEO Content Writing Services for Google & AI Search",
     description:
       "Rank faster with SEO content built on keyword research. Written by an in-house UK team so you rank on Google and get cited by tools like ChatGPT and Perplexity.",
-  },
+  }),
 };
 
 export default function SeoContentWritingServicesPage() {

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "SEO Audit Services UK | Technical, Content & AI SEO Audits",
   description:
     "Get a professional SEO audit for your website. We review technical SEO, content, rankings, backlinks, competitors and AI visibility with clear action points.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/seo-audit-services",
     title: "SEO Audit Services UK | Technical, Content & AI SEO Audits",
     description:
       "Get a professional SEO audit for your website. We review technical SEO, content, rankings, backlinks, competitors and AI visibility with clear action points.",
-  },
+  }),
 };
 
 /**

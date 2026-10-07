@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import "../case-study-d1.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,12 @@ export const metadata: Metadata = {
   title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
   description:
     "How 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting for UK letting agencies.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/propday-crm",
     title: "Propday CRM | 360 Web Solutions Custom PropTech Platform",
     description:
       "How 360 Web Solutions built Propday CRM, a custom lettings platform with compliance workflows, automation and real-time reporting for UK letting agencies.",
-  },
+  }),
 };
 
 export default function PropdayCrmCaseStudyPage() {

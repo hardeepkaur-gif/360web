@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Disclaimer | 360 Web Solutions",
   description:
     "Website disclaimer for 360 Smart Solutions Limited trading as 360 Web Solutions covering SEO results, content accuracy, third-party links and liability.",
-  openGraph: {
+  ...socialMeta({
+    path: "/disclaimer",
     title: "Disclaimer | 360 Web Solutions",
     description:
       "Website disclaimer for 360 Smart Solutions Limited trading as 360 Web Solutions covering SEO results, content accuracy, third-party links and liability.",
-  },
+  }),
 };
 
 export default function DisclaimerPage() {

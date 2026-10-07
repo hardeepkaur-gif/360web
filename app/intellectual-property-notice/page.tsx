@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Intellectual Property Notice | 360 Web Solutions",
   description:
     "Copyright, trade marks, permitted use of 360websolutions.co.uk content, client deliverables, and how to report IP concerns — 360 Smart Solutions Limited.",
-  openGraph: {
+  ...socialMeta({
+    path: "/intellectual-property-notice",
     title: "Intellectual Property Notice | 360 Web Solutions",
     description:
       "IP ownership, brand use, deliverables framework, proprietary methodologies, and enforcement — England and Wales.",
-  },
+  }),
 };
 
 export default function IntellectualPropertyNoticePage() {

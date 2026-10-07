@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "LLM Optimisation & AI SEO Services UK | 360 Web Solutions",
   description:
     "Improve AI search visibility with GEO, AEO and LLM optimisation. 360 Web Solutions helps brands increase their chance of appearing in ChatGPT and AI Overviews.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/llm-optimisation-services",
     title: "LLM Optimisation & AI SEO Services UK | 360 Web Solutions",
     description:
       "Improve AI search visibility with GEO, AEO and LLM optimisation. 360 Web Solutions helps brands increase their chance of appearing in ChatGPT and AI Overviews.",
-  },
+  }),
 };
 
 export default function LlmOptimisationServicesPage() {

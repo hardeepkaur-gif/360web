@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Refund & Cancellation Policy | 360 Web Solutions",
   description:
     "How 360 Smart Solutions Limited handles refunds and cancellations for retainer and project engagements — notice periods, deposits, and statutory rights.",
-  openGraph: {
+  ...socialMeta({
+    path: "/refund-cancellation-policy",
     title: "Refund & Cancellation Policy | 360 Web Solutions",
     description:
       "Cancellation notice, fees during notice, project refunds, eligibility, and how to request — England and Wales.",
-  },
+  }),
 };
 
 export default function RefundCancellationPolicyPage() {

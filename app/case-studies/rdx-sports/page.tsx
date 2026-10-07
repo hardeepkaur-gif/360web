@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import "../case-study-d1.css";
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
@@ -9,11 +10,12 @@ export const metadata: Metadata = {
   title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
   description:
     "How 360 Web Solutions transformed RDX Sports from fragmented Amazon listings into a conversion-engineered marketplace operation across both the UK and EU.",
-  openGraph: {
+  ...socialMeta({
+    path: "/case-studies/rdx-sports",
     title: "RDX Sports | 360 Web Solutions Amazon Marketplace Growth",
     description:
       "From storefront to scalable marketplace engine: marketplace SEO, on-page SEO and CRO for a 25-year combat sports brand selling on Amazon in the UK and EU.",
-  },
+  }),
 };
 
 export default function RdxSportsCaseStudyPage() {

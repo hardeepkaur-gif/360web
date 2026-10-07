@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Google Ads Management UK | 360 Web Solutions",
   description:
     "Wasting budget on Google ads that don't convert? Our expert Google Ads management delivers real leads and full transparency, with no long contracts.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/google-ads-management-services",
     title: "Google Ads Management UK | 360 Web Solutions",
     description:
       "Wasting budget on Google ads that don't convert? Our expert Google Ads management delivers real leads and full transparency, with no long contracts.",
-  },
+  }),
 };
 
 const GOOGLE_ADS_ROUTE_RESPONSIVE_CSS = `

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Local SEO Services UK | Improve Local Rankings Fast",
   description:
     "Boost your visibility with local SEO services tailored for UK businesses. Improve Google rankings, maps visibility, traffic, and local leads.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/local-seo-services",
     title: "Local SEO Services UK | Improve Local Rankings Fast",
     description:
       "Boost your visibility with local SEO services tailored for UK businesses. Improve Google rankings, maps visibility, traffic, and local leads.",
-  },
+  }),
 };
 
 const LOCAL_SEO_ROUTE_RESPONSIVE_CSS = `

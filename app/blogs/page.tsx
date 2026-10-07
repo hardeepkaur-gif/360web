@@ -7,6 +7,7 @@ import { BlogPagination } from "@/components/BlogPagination";
 import { JsonLdScript } from "@/components/JsonLdScript";
 import { LegacySiteShell } from "@/components/LegacySiteShell";
 import { createBlogListingSchemaGraph } from "@/lib/blogSchema";
+import { socialMeta } from "@/lib/socialMeta";
 import { fetchPosts } from "@/lib/wordpress";
 
 export const revalidate = 300;
@@ -18,12 +19,11 @@ export const metadata: Metadata = {
   title: "Blog | 360 Web Solutions",
   description: LISTING_DESCRIPTION,
   alternates: { canonical: "https://www.360websolutions.co.uk/blogs" },
-  openGraph: {
+  ...socialMeta({
+    path: "/blogs",
     title: "Blog | 360 Web Solutions",
     description: LISTING_DESCRIPTION,
-    url: "https://www.360websolutions.co.uk/blogs",
-    type: "website",
-  },
+  }),
 };
 
 type BlogsPageProps = {

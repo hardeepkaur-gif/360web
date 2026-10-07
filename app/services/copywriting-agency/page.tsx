@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Copywriting Agency UK | 360 Web Solutions",
   description:
     "360 Web Solutions, a UK copywriting agency delivering high-converting websites, landing pages, email and ad copy to help turn visitors into leads.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/copywriting-agency",
     title: "Copywriting Agency UK | 360 Web Solutions",
     description:
       "360 Web Solutions, a UK copywriting agency delivering high-converting websites, landing pages, email and ad copy to help turn visitors into leads.",
-  },
+  }),
 };
 
 const COPYWRITING_ROUTE_RESPONSIVE_CSS = `

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Web Development Services | Custom Websites That Convert",
   description:
     "Web development services built for speed, UX, SEO and conversions. We create custom, WordPress, Shopify and ecommerce websites for UK businesses.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/web-development-services",
     title: "Web Development Services | Custom Websites That Convert",
     description:
       "Web development services built for speed, UX, SEO and conversions. We create custom, WordPress, Shopify and ecommerce websites for UK businesses.",
-  },
+  }),
 };
 
 const WEBDEV_ROUTE_CSS = `

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
@@ -11,11 +12,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/services",
   },
-  openGraph: {
+  ...socialMeta({
+    path: "/services",
     title: "Digital Marketing Services UK | 360 Web Solutions",
     description:
       "Browse our full range of in-house digital marketing services — SEO, content, AI, social, email, CRO, and web development.",
-  },
+  }),
 };
 
 export default function ServicesPage() {

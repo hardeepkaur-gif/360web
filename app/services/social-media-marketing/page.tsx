@@ -1,5 +1,6 @@
 import Script from "next/script";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { ServiceSchemaScript } from "@/components/ServiceSchemaScript";
 import { loadLegacyPageWithSiteFooter } from "@/lib/loadLegacySiteChrome";
@@ -8,11 +9,12 @@ export const metadata: Metadata = {
   title: "Social Media Marketing Services UK - 360 Web Solutions",
   description:
     "We build social media strategies, content systems and paid campaigns that drive measurable business growth. Trusted social media marketing agency in the UK.",
-  openGraph: {
+  ...socialMeta({
+    path: "/services/social-media-marketing",
     title: "Social Media Marketing Services UK - 360 Web Solutions",
     description:
       "We build social media strategies, content systems and paid campaigns that drive measurable business growth. Trusted social media marketing agency in the UK.",
-  },
+  }),
 };
 
 const SMM_ROUTE_RESPONSIVE_CSS = `

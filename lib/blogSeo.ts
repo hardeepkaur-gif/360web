@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { SITE_URL } from "@/lib/site";
+import { DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/socialMeta";
 import { proxyWpImage, stripHtml, type WPPost } from "@/lib/wordpress";
 
 export type BlogSeoMeta = {
@@ -98,7 +99,7 @@ export function seoToMetadata(seo: BlogSeoMeta): Metadata {
   // og:image / twitter:image must be absolute and served from our own domain.
   const ogImage = seo.ogImage
     ? proxyWpImage(seo.ogImage, { width: 1200, absolute: true })
-    : undefined;
+    : `${SITE_URL}${DEFAULT_SOCIAL_IMAGE.url}`;
 
   return {
     title,
@@ -113,13 +114,15 @@ export function seoToMetadata(seo: BlogSeoMeta): Metadata {
       description: seo.ogDescription ?? description,
       url: canonical,
       type: "article",
-      images: ogImage ? [{ url: ogImage }] : undefined,
+      siteName: SITE_NAME,
+      locale: "en_GB",
+      images: [{ url: ogImage }],
     },
     twitter: {
-      card: ogImage ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: seo.ogTitle ?? title,
       description: seo.ogDescription ?? description,
-      images: ogImage ? [ogImage] : undefined,
+      images: [ogImage],
     },
   };
 }

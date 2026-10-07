@@ -1,6 +1,7 @@
 import Script from "next/script";
 import { loadLegacySiteHtml } from "@/lib/loadLegacySiteChrome";
 import type { Metadata } from "next";
+import { socialMeta } from "@/lib/socialMeta";
 
 import { BreadcrumbSchemaScript } from "@/components/BreadcrumbSchemaScript";
 
@@ -10,11 +11,12 @@ export const metadata: Metadata = {
   title: "Acceptable Use Policy | 360 Web Solutions",
   description:
     "Standards of conduct for using 360websolutions.co.uk and services from 360 Smart Solutions Limited trading as 360 Web Solutions.",
-  openGraph: {
+  ...socialMeta({
+    path: "/acceptable-use-policy",
     title: "Acceptable Use Policy | 360 Web Solutions",
     description:
       "Permitted use, prohibited conduct, client obligations, breach consequences, and reporting — England and Wales.",
-  },
+  }),
 };
 
 export default function AcceptableUsePolicyPage() {
