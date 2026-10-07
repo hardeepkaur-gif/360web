@@ -8,6 +8,7 @@ import {
   fetchWithRetry,
   proxyWpImage,
   stripHtml,
+  WORDPRESS_API_URL,
   type WPPost,
 } from "@/lib/wordpress";
 
@@ -50,12 +51,25 @@ export function parseSeoFromHtml(html: string): BlogSeoMeta {
 }
 
 /**
- * Pull Rank Math / Yoast meta from the WordPress permalink HTML. Transient
- * failures throw (so ISR keeps the last good page); a permanent 4xx falls back
- * to excerpt-based meta.
+ * Pull Rank Math meta via its headless `getHead` endpoint, falling back to the
+ * permalink HTML. Transient failures throw (so ISR keeps the last good page);
+ * a permanent 4xx on both falls back to excerpt-based meta.
  */
 export const fetchRankMathSeo = cache(
   async (wpPermalink: string): Promise<BlogSeoMeta | null> => {
+    const headRes = await fetchWithRetry(
+      `${WORDPRESS_API_URL}/rankmath/v1/getHead?url=${encodeURIComponent(wpPermalink)}`,
+      { next: { revalidate: 300 } },
+    );
+
+    if (headRes.ok) {
+      const body = (await headRes.json().catch(() => null)) as
+        | { success?: boolean; head?: string }
+        | null;
+      if (body?.success && body.head) return parseSeoFromHtml(body.head);
+    }
+
+    // Headless endpoint unavailable (e.g. setting switched off): read the permalink HTML.
     const res = await fetchWithRetry(wpPermalink, {
       next: { revalidate: 300 },
       headers: { Accept: "text/html" },
