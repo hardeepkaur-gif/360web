@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
-import Script from "next/script";
-
 import { DEFERRED_STYLES_LOADER } from "@/lib/deferredStyles";
 import { SITE_URL } from "@/lib/site";
 import { DEFAULT_SOCIAL_IMAGE, SITE_NAME } from "@/lib/socialMeta";
@@ -181,6 +179,34 @@ h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--navy);letter-spacing:
 .reveal.is-visible{opacity:1;transform:none}
 @media(max-width:991px){.nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#fff!important}body.nav-open .nav{z-index:99999!important}.nav__inner{flex-wrap:nowrap;padding:10px 28px!important}.hero__inner{grid-template-columns:1fr;gap:40px;min-height:auto!important;padding-top:12px}#home .hero__inner{grid-template-columns:1fr;min-height:auto!important;padding-top:12px}.hero--editorial .hero__title,#home .hero__content .hero__title{font-size:clamp(30px,7vw,42px)}#home .hero__content .hero__stats,.hero--with-lead .hero__content .hero__stats{flex-direction:row;flex-wrap:nowrap;gap:10px}#home .hero__content .hero__stat,.hero--with-lead .hero__content .hero__stat{flex:1 1 0;min-width:0;width:auto}#home .hero__content .hero__cta,.hero--with-lead .hero__content .hero__cta{flex-direction:row;flex-wrap:nowrap}#home .hero__content .btn--coral,#home .hero__content .btn--ghost-play,.hero--with-lead .hero__content .btn--coral,.hero--with-lead .hero__content .btn--ghost-play{width:auto;flex:1 1 0;min-width:0;font-size:13px;padding:12px 14px}.nav__menu{display:none!important;position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;margin:0!important;padding:76px 28px 28px!important;background:#fff!important;z-index:99998!important;box-shadow:none!important;border-bottom:none!important;overflow-y:auto!important;-webkit-overflow-scrolling:touch;opacity:1!important;visibility:visible!important;pointer-events:auto!important;transform:none!important}.nav__menu.is-open,body.nav-open .nav__menu{display:block!important}.nav__menu>ul{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:16px!important;list-style:none!important;margin:0!important;padding:0!important;width:100%!important}.nav__menu li{width:100%}.nav__menu a{display:block!important;padding:10px 0!important;font-size:16px!important;color:#0F2A4A!important}.nav__dropdown:hover .nav__dropdown-panel,.nav__dropdown:focus-within .nav__dropdown-panel{opacity:0!important;visibility:hidden!important;display:none!important}.nav__dropdown-panel{position:static!important;opacity:0!important;visibility:hidden!important;transform:none!important;box-shadow:none!important;border:none!important;border-radius:0!important;padding:0!important;margin:0!important;min-width:auto!important;background:transparent!important;display:none!important;max-height:0;overflow:hidden;transition:max-height .25s var(--ease),opacity .2s var(--ease),padding .2s var(--ease),margin .2s var(--ease)}.nav__dropdown.is-open .nav__dropdown-panel{opacity:1!important;visibility:visible!important;display:block!important;border-left:3px solid rgba(26,95,191,.16)!important;padding:6px 0 8px 12px!important;margin:6px 0 0 2px!important;max-height:800px;overflow:visible}.nav__dropdown.is-open>.nav__caret{transform:rotate(180deg)}.nav__caret{transition:transform .2s var(--ease)}.nav__phone{display:none}.nav__toggle{display:flex!important;position:relative!important;z-index:99999!important}.nav__actions .btn{display:none!important}.hero__subtitle{margin-inline:auto}.announcement{display:none}body.nav-open{overflow:hidden}}
 @media(max-width:600px){.hero{padding:48px 0 40px}.hero__inner{padding:12px 16px 0;gap:28px}.container{padding:0 18px}.hero-lead__card{padding:20px 16px}}
+@media(min-width:992px){
+:where(#home).hero--editorial .hero__chip{font-family:var(--font-display);letter-spacing:-.005em}
+:where(#home).hero--editorial .hero__chip-dot{width:8px;height:8px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 3px rgba(255,77,58,.22)}
+#home .hero__content .hero__subtitle{font-size:16px}
+:where(#home).hero--editorial .hero__subtitle-lead{display:block;font-weight:700;margin-bottom:10px;letter-spacing:-.005em}
+#home .hero__content .hero__cta{flex-direction:row;flex-wrap:nowrap;align-items:center;gap:clamp(10px,2vw,14px)}
+:where(#home).hero--editorial .btn--coral{background:var(--coral);color:var(--white);padding:16px 28px;font-weight:600;font-size:15px;border-radius:var(--btn-radius);box-shadow:0 14px 34px rgba(255,77,58,.28)}
+:where(#home).hero--editorial .btn--ghost-play{background:transparent;color:var(--navy);border:1px solid #D7DEEB;padding:15px 24px;font-size:15px;font-weight:600;border-radius:var(--btn-radius);display:inline-flex;align-items:center;gap:10px}
+#home .hero__content .btn--ghost-play{color:#fff;border-color:rgba(255,255,255,.4)}
+#home .hero__content .btn--coral,#home .hero__content .btn--ghost-play{width:auto;flex:0 1 auto;padding:13px clamp(14px,2.5vw,22px);font-size:clamp(13px,1.5vw,15px);white-space:nowrap}
+:where(#home) .btn__play-triangle{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--navy);color:var(--white)}
+:where(#home).hero--editorial .hero__stats{display:flex;align-items:flex-start;gap:clamp(36px,5vw,56px);flex-wrap:wrap;max-width:none;padding:20px 0 0;margin-top:4px;border-top:1px solid #D7DEEB}
+#home .hero__content .hero__stats{border-top-color:rgba(255,255,255,.2);display:flex;flex-direction:row;flex-wrap:nowrap;justify-content:space-between;align-items:flex-start;gap:clamp(10px,2.5vw,28px)}
+#home .hero__content .hero__stat{flex:1 1 0;min-width:0;text-align:left}
+:where(#home).hero--editorial .hero__stat-value{display:flex;flex-direction:row;flex-wrap:nowrap;align-items:baseline;gap:0;white-space:nowrap;font-family:var(--font-display);font-size:34px;font-weight:800;line-height:1.05;letter-spacing:-.025em;margin-bottom:8px}
+:where(#home).hero--editorial .hero__stat-figure{display:inline-flex;flex-direction:row;flex-wrap:nowrap;align-items:baseline;white-space:nowrap;font:inherit;font-weight:inherit;letter-spacing:inherit}
+:where(#home).hero--editorial .hero__stat-prefix{font:inherit;font-weight:inherit;color:inherit;flex-shrink:0}
+:where(#home).hero--editorial .hero__stat-value .count{display:inline-block;font-variant-numeric:tabular-nums;font:inherit;font-weight:inherit;letter-spacing:inherit;color:inherit;flex-shrink:0}
+:where(#home).hero--editorial .hero__stat-accent{font:inherit;font-weight:inherit;letter-spacing:inherit;flex-shrink:0}
+:where(#home).hero--editorial .hero__stat-label{display:block;font-family:var(--font-body);font-size:15px;font-weight:600;line-height:1.4;text-transform:none;letter-spacing:-.01em}
+#home .hero__content .hero__stat-value{font-size:clamp(20px,2.8vw,28px);margin-bottom:4px}
+#home .hero__content .hero__stat-value,#home .hero__content .hero__stat-figure,#home .hero__content .hero__stat-prefix,#home .hero__content .hero__stat-value .count,#home .hero__content .hero__stat-accent{color:#fff}
+#home .hero__content .hero__stat-label{color:rgba(255,255,255,.75);font-size:clamp(10px,1.2vw,12px);line-height:1.3}
+:where(#home) .hero-lead__field>span{letter-spacing:.02em;text-transform:none}
+:where(#home) .hero-lead__field input,:where(#home) .hero-lead__field select{font-family:var(--font-body)}
+:where(#home) .hero-lead__field select{appearance:none;cursor:pointer;padding-right:40px;background-color:#fff;background-image:linear-gradient(45deg,transparent 50%,#5B6A82 50%),linear-gradient(135deg,#5B6A82 50%,transparent 50%);background-position:calc(100% - 22px) calc(50% + 2px),calc(100% - 16px) calc(50% + 2px);background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+:where(#home) .hero-lead__privacy{line-height:1.45}
+}
 `.trim();
 
 export default function RootLayout({
@@ -195,9 +221,8 @@ export default function RootLayout({
     >
       <head>
         <style dangerouslySetInnerHTML={{ __html: INLINE_CSS }} />
-        <Script
+        <script
           id="deferred-styles-loader"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: DEFERRED_STYLES_LOADER }}
         />
       </head>
