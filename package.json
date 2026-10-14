@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
+    "minify:css": "node scripts/minify-css.mjs",
+    "prebuild": "node scripts/minify-css.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

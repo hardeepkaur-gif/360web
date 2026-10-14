@@ -2,10 +2,10 @@
 export const DEFERRED_STYLES_LOADER = `
 (function(){
   var p=(location.pathname||'/').replace(/\\/$/,'')||'/';
-  var href=(p===''||p==='/')?'/css/home.css':'/css/inner.css';
+  var href=(p===''||p==='/')?'/css/home.min.css':'/css/inner.min.css';
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href=href+'?v=20261013b';
+  link.href=href+'?v=20261014b';
   document.head.appendChild(link);
 })();
 `.trim();
