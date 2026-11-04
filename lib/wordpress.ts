@@ -354,12 +354,24 @@ function findMatchingCloseDiv(html: string, openTagEnd: number): number {
   return pos;
 }
 
-function buildFaqRowsFromRankMathItems(
-  itemMatches: RegExpMatchArray[],
-): string {
-  return itemMatches
-    .map((match, index) => {
-      const chunk = match[1];
+function extractRankMathListItems(blockHtml: string): string[] {
+  const itemOpenRe =
+    /<div\b[^>]*\bid="faq-question-[^"]*"[^>]*\bclass="[^"]*\brank-math-list-item\b[^"]*"[^>]*>|<div\b[^>]*\bclass="[^"]*\brank-math-list-item\b[^"]*"[^>]*\bid="faq-question-[^"]*"[^>]*>/gi;
+  const items: string[] = [];
+  let match: RegExpExecArray | null;
+
+  while ((match = itemOpenRe.exec(blockHtml)) !== null) {
+    const openEnd = match.index + match[0].length;
+    const closeEnd = findMatchingCloseDiv(blockHtml, openEnd);
+    items.push(blockHtml.slice(openEnd, closeEnd - "</div>".length));
+  }
+
+  return items;
+}
+
+function buildFaqRowsFromRankMathItems(itemChunks: string[]): string {
+  return itemChunks
+    .map((chunk, index) => {
       const questionMatch = chunk.match(
         /<h3 class="rank-math-question\s*">([\s\S]*?)<\/h3>/i,
       );
@@ -374,7 +386,7 @@ function buildFaqRowsFromRankMathItems(
       const num = String(index + 1).padStart(2, "0");
       const openAttr = index === 0 ? " open" : "";
 
-      return `<details class="faq-row"${openAttr}>
+      return `<details class="faq-row" name="blog-faq"${openAttr}>
   <summary class="faq-row__summary">
     <span class="faq-row__num">${num}</span>
     <span class="faq-row__q">${questionHtml}</span>
@@ -390,17 +402,13 @@ function buildFaqRowsFromRankMathItems(
 }
 
 function transformSingleRankMathBlock(blockHtml: string): string {
-  const itemMatches = [
-    ...blockHtml.matchAll(
-      /<div id="faq-question-[^"]*" class="rank-math-list-item">([\s\S]*?)<\/div>(?=\s*<div id="faq-question-|\s*<\/div>)/gi,
-    ),
-  ];
+  const itemChunks = extractRankMathListItems(blockHtml);
 
-  if (!itemMatches.length) {
+  if (!itemChunks.length) {
     return blockHtml;
   }
 
-  const rows = buildFaqRowsFromRankMathItems(itemMatches);
+  const rows = buildFaqRowsFromRankMathItems(itemChunks);
   return `<div class="faq-v2 blog-post__faq"><div class="faq-v2__list">${rows}</div></div>`;
 }
 

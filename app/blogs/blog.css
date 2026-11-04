@@ -661,6 +661,14 @@
 
 .blog-post__content .blog-post__faq .faq-row__body {
   padding-left: 64px;
+  /* inner.css runs faqFadeIn on every body at load; closed <details>
+     leave opacity stuck at 0, so answers stay invisible after open. */
+  opacity: 1;
+  animation: none;
+}
+
+.blog-post__content .blog-post__faq .faq-row[open] .faq-row__body {
+  animation: faqFadeIn 0.4s var(--ease);
 }
 
 @media (max-width: 640px) {
