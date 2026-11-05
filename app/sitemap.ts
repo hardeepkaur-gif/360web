@@ -54,7 +54,6 @@ const servicePages: SitemapEntry[] = [
 
 const caseStudyPages: SitemapEntry[] = [
   "ehealth-solutions",
-  "propday-crm",
   "rdx-sports",
   "virco-dental",
   "xogo-sports",

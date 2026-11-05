@@ -20,6 +20,16 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // Drafted case study — permanent redirect away from the public URL.
+  if (
+    path === '/case-studies/propday-crm' ||
+    path === '/case-studies/propday-crm/'
+  ) {
+    const url = req.nextUrl.clone();
+    url.pathname = '/case-studies';
+    return NextResponse.redirect(url, 301);
+  }
+
   if (SPAM_PATTERNS.some((re) => re.test(path))) {
     return new NextResponse('410 Gone', {
       status: 410,

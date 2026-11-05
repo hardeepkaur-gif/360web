@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     path: "/case-studies",
     title: "Case Studies | 360 Web Solutions",
     description:
-      "See how we delivered growth for RDX Sports, Virco Dental, XOGO Sports, Koolmax, Brodex, Propday CRM and eHealth Solutions with measurable, proven results.",
+      "See how we delivered growth for RDX Sports, Virco Dental, XOGO Sports, Koolmax, Brodex and eHealth Solutions with measurable, proven results.",
   }),
 };
 
