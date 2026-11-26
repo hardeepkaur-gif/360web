@@ -12352,6 +12352,24 @@ section.section.svc-transform {
   display: block;
 }
 
+/* PPC Services hero — reuse on-page SEO frame; keep H1 inside text column */
+.hero.hero--ppc .hero__content {
+  min-width: 0;
+}
+.hero.hero--ppc #ppc-hero-title {
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.hero.hero--ppc #ppc-hero-title .hero__title-line {
+  display: block;
+}
+@media (min-width: 560px) {
+  .hero.hero--ppc #ppc-hero-title.hero__title > span.hero__title-line {
+    white-space: nowrap;
+  }
+}
+
 .hero.hero--editorial.hero--webdev-mockups.hero--on-page-seo .hero__inner {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(48px, 5vw, 72px);
