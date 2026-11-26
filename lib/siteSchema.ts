@@ -43,6 +43,10 @@ export const SITE_SERVICES = [
     path: "/services/email-marketing-services",
   },
   {
+    name: "PPC Services",
+    path: "/services/ppc-services",
+  },
+  {
     name: "Google Ads Management",
     path: "/services/google-ads-management-services",
   },

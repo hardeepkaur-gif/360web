@@ -91,6 +91,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "Email marketing services where strategy, automation, and design work together to turn your inbox into a revenue-generating engine.",
   },
+  "ppc-services": {
+    slug: "ppc-services",
+    name: "PPC Services",
+    serviceType: "Pay-Per-Click Advertising",
+    path: "/services/ppc-services",
+    description:
+      "Is your ad spend paying for itself? Our London PPC services find the waste, fix it, and manage campaigns to agreed targets. Get your free PPC review.",
+  },
   "google-ads-management-services": {
     slug: "google-ads-management-services",
     name: "Google Ads Management",

@@ -42,6 +42,7 @@ const servicePages: SitemapEntry[] = [
   "social-media-marketing",
 
   "email-marketing-services",
+  "ppc-services",
   "google-ads-management-services",
   "conversion-rate-optimisation-services",
   "web-development-services",
