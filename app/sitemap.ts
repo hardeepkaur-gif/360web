@@ -33,6 +33,7 @@ const servicePages: SitemapEntry[] = [
   "local-seo-services",
   "seo-audit-services",
   "seo-content-writing-services",
+  "content-marketing-services",
   "copywriting-agency",
   "link-building-services",
   "ai-consultancy-services",

@@ -42,6 +42,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "SEO content built on keyword research, search intent, and topical authority so pages rank on Google and get cited by AI search tools.",
   },
+  "content-marketing-services": {
+    slug: "content-marketing-services",
+    name: "Content marketing services",
+    serviceType: "Content Marketing",
+    path: "/services/content-marketing-services",
+    description:
+      "Publishing content but getting no leads? Our content marketing services plan, write, and measure content that brings in leads. Get my free content review.",
+  },
   "copywriting-agency": {
     slug: "copywriting-agency",
     name: "Copywriting Agency",

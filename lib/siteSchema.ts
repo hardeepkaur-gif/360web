@@ -23,6 +23,10 @@ export const SITE_SERVICES = [
     path: "/services/seo-content-writing-services",
   },
   {
+    name: "Content marketing services",
+    path: "/services/content-marketing-services",
+  },
+  {
     name: "Copywriting Agency",
     path: "/services/copywriting-agency",
   },
