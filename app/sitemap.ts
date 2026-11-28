@@ -29,6 +29,7 @@ const industryPages: SitemapEntry[] = [
 
 /** Keep in sync with `content/partials/site-header.html` Services dropdown. */
 const servicePages: SitemapEntry[] = [
+  "seo-services",
   "on-page-seo-services",
   "local-seo-services",
   "seo-audit-services",

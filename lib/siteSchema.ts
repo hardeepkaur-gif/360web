@@ -7,6 +7,10 @@ export const HOMEPAGE_ID = `${SITE_URL}/#webpage`;
 /** Keep in sync with header navigation / sitemap service list. */
 export const SITE_SERVICES = [
   {
+    name: "SEO Services",
+    path: "/services/seo-services",
+  },
+  {
     name: "On-Page SEO Services",
     path: "/services/on-page-seo-services",
   },

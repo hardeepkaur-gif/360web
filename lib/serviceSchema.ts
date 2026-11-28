@@ -10,6 +10,14 @@ export type ServiceSchemaEntry = {
 };
 
 export const SERVICE_SCHEMAS = {
+  "seo-services": {
+    slug: "seo-services",
+    name: "SEO Services",
+    serviceType: "Search Engine Optimisation",
+    path: "/services/seo-services",
+    description:
+      "360 Web Solutions’ SEO services offer technical, on-page, local, AI search, and all, with a free audit and upfront pricing. Book a free consultation now.",
+  },
   "on-page-seo-services": {
     slug: "on-page-seo-services",
     name: "On-Page SEO Services",
