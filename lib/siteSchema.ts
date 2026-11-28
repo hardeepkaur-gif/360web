@@ -63,6 +63,10 @@ export const SITE_SERVICES = [
     path: "/services/conversion-rate-optimisation-services",
   },
   {
+    name: "Product Development Services",
+    path: "/services/product-development-services",
+  },
+  {
     name: "Web Development Services",
     path: "/services/web-development-services",
   },

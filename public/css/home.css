@@ -6485,7 +6485,7 @@ a.gr-action:hover { background: var(--g-hover); color: var(--g-text); }
   }
 
   .cta-final--light .cta-final__checks {
-    justify-content: center;
+  justify-content: center;
   }
 
   .cta-final--light .cta-final__actions {

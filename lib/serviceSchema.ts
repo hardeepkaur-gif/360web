@@ -131,6 +131,14 @@ export const SERVICE_SCHEMAS = {
     description:
       "Conversion rate optimisation services that fix conversion barriers and convert more visitors without increasing ad spend.",
   },
+  "product-development-services": {
+    slug: "product-development-services",
+    name: "Product Development Services",
+    serviceType: "Product Development",
+    path: "/services/product-development-services",
+    description:
+      "Product development services for startups and SMEs, with costs agreed before the build and working software to review every sprint. Book a free consultation.",
+  },
   "web-development-services": {
     slug: "web-development-services",
     name: "Web Development Services",
